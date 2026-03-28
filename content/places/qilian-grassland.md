@@ -24,6 +24,15 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2z805pWp93A" title="Qilian Mountains: nature's high-altitude treasure trove in NW China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">CGTN documentary on the ecology and landscape of the Qilian range</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/MkzpAdWWzxQ" title="Driving Through China's Most Breathtaking Mountain Road | Qilian Mountains & Eboling Pass 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">4K driving footage through the Qilian mountain passes</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/wjtUPvldRLc" title="3000m High Cliff Road in Qilian Mountains, China: The Only Route for Tibetan Herders 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">dramatic cliff road footage showing the high-altitude pastoral landscape</div>
+</div>
+</div>
 
 ## Overview
 
@@ -57,12 +66,3 @@ Late June through early August is peak season for the grassland. July is ideal: 
 ## Why It's Worth It
 
 After five days of salt, sand, and painted stone, arriving at a high-altitude green valley in the Qilian Mountains — cool air, wildflowers, snow peaks, yaks on every hill — is the best possible final note to a route built on landscape contrasts. The morning horseback ride is an hour that most first-time visitors to China would never find on their own.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/MkzpAdWWzxQ" title="Driving Through China's Most Breathtaking Mountain Road | Qilian Mountains & Eboling Pass 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">4K driving footage through the Qilian mountain passes</div>
-</div>
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/wjtUPvldRLc" title="3000m High Cliff Road in Qilian Mountains, China: The Only Route for Tibetan Herders 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">dramatic cliff road footage showing the high-altitude pastoral landscape</div>
-</div>
-</div>

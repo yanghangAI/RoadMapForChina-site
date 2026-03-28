@@ -24,6 +24,11 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ze73Eec2Nts" title="Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">covers both the dunes and the Crescent Moon Spring</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/l880-PjP5dY" title="China's GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">entertaining travel vlog covering Dunhuang including the Mingsha dunes</div>
+</div>
+</div>
 
 ## Overview
 
@@ -57,8 +62,3 @@ Late afternoon and sunset (5:30–8:00pm) in July is the optimal window. The dun
 ## Why It's Worth It
 
 There is a lake of jade-green water that has existed for 2,000 years in the heart of a desert, not three hundred metres from a dune the size of a small mountain. No photograph — however good — conveys what it feels like to stand between the two at sunset.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/l880-PjP5dY" title="China's GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">entertaining travel vlog covering Dunhuang including the Mingsha dunes</div>
-</div>
-</div>

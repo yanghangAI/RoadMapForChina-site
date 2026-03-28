@@ -24,6 +24,15 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/0ii_qi-ztxI" title="Qinghai Dachaidan Emerald Lake 0525A2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">footage of the emerald-colored salt lake pools at Dachaidan</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/GfEKX327RTs" title="Emerald Lake — Qinghai Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">short travel video of the jade-green waters</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/BZICUTXhZS4" title="Three Magical Lakes of Qinghai: Qinghai Lake · Emerald Lake · Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">comparison of all three major Qinghai lake destinations</div>
+</div>
+</div>
 
 ## Overview
 
@@ -56,12 +65,3 @@ June through September. July afternoons offer good light and stable weather. Mor
 ## Why It's Worth It
 
 Most first-time visitors to China see ancient temples and busy cities — Feicui Hu is something else entirely: an alien mineral landscape that looks like the surface of a different planet, almost entirely unknown outside China, requiring no ticket, no queue, and no crowd to interpret it for you.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/GfEKX327RTs" title="Emerald Lake — Qinghai Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">short travel video of the jade-green waters</div>
-</div>
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/BZICUTXhZS4" title="Three Magical Lakes of Qinghai: Qinghai Lake · Emerald Lake · Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">comparison of all three major Qinghai lake destinations</div>
-</div>
-</div>

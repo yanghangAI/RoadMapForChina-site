@@ -24,6 +24,15 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ARlqQy-eXKg" title="Rapeseed flowers in Qilian Mountain, Menyuan County, Qinghai Province, China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground footage of the Menyuan rapeseed fields with the Qilian mountains as backdrop</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Xjc8XhzAlM0" title="Live: Stunning rapeseed flowers bloom in Qinghai – Ep. 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">live broadcast footage of the bloom at peak season</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/8oNERtR0IN8" title="Golden sea of rapeseed flowers attract tourists in Qinghai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">news-style coverage of the annual bloom and visitor experience</div>
+</div>
+</div>
 
 ## Overview
 
@@ -56,12 +65,3 @@ Mid-July to early August is peak bloom. The precise peak varies by year dependin
 ## Why It's Worth It
 
 A high plateau valley turned entirely yellow from horizon to mountain, with snow peaks behind it — this is one of those landscapes that reminds you why you came somewhere this far from home.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Xjc8XhzAlM0" title="Live: Stunning rapeseed flowers bloom in Qinghai – Ep. 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">live broadcast footage of the bloom at peak season</div>
-</div>
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/8oNERtR0IN8" title="Golden sea of rapeseed flowers attract tourists in Qinghai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">news-style coverage of the annual bloom and visitor experience</div>
-</div>
-</div>

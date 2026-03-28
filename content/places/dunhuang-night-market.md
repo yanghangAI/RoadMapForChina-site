@@ -24,6 +24,11 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/v4tFAjWUIY0" title="CRAZY Desert Food Feast! China Dunhuang Food Tour of Hexi Corridor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">extended street food walkthrough of the Shazhou night market with tasting commentary</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/IRhr48Y6Gp8" title="3 Days Dunhuang Travel: Mogao Caves, Great Wall and Desert | China Travel ep.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">covers the night market as part of a full Dunhuang itinerary</div>
+</div>
+</div>
 
 ## Overview
 
@@ -58,8 +63,3 @@ The night market runs May through October, with July and August being peak seaso
 ## Why It's Worth It
 
 After days in the empty basin, a first-time visitor to China who walks into Shazhou Night Market at 7:30pm on a July evening is getting an unfiltered hit of Chinese street life — the food, the noise, the generosity of a culture that treats eating in public as both pleasure and social ritual.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/IRhr48Y6Gp8" title="3 Days Dunhuang Travel: Mogao Caves, Great Wall and Desert | China Travel ep.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">covers the night market as part of a full Dunhuang itinerary</div>
-</div>
-</div>

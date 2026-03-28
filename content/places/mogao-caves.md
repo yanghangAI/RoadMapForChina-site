@@ -24,6 +24,19 @@
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/hK4PxrQH8ok" title="Mogao Caves (UNESCO/NHK)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">UNESCO and NHK co-produced documentary on the caves and their history</div>
 </div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/-LbyuIi9BYI" title="What are the Mogao Caves and why are they special?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">accessible introduction to the site's significance</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/zInyehUgriE" title="Exploring the Mogao Caves: Journey into the Ancient Splendor | China Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English-language visitor's guide and walkthrough</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/J2ODpmJS_Dg" title="Cave Temples of Dunhuang: Buddhist Art on China's Silk Road" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Getty Research Institute lecture on the art and manuscripts</div>
+</div>
+</div>
 
 ## Overview
 
@@ -59,16 +72,3 @@ The caves are open year-round but July is the busiest month. Morning slots (star
 ## Why It's Worth It
 
 To stand inside a cave that a Tang Dynasty merchant paid to decorate in 720 AD, surrounded by paintings that have not moved in 1,300 years, looking at Buddhist figures rendered with the full technical mastery of the greatest empire of the medieval world — there is no comparable experience in China, and very few comparable experiences anywhere on earth.
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/-LbyuIi9BYI" title="What are the Mogao Caves and why are they special?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">accessible introduction to the site's significance</div>
-</div>
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/zInyehUgriE" title="Exploring the Mogao Caves: Journey into the Ancient Splendor | China Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">English-language visitor's guide and walkthrough</div>
-</div>
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/J2ODpmJS_Dg" title="Cave Temples of Dunhuang: Buddhist Art on China's Silk Road" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">Getty Research Institute lecture on the art and manuscripts</div>
-</div>
-</div>
