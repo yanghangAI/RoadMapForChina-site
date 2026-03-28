@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>`;
 
     const detailLink = stop.slug
-      ? `<a href="/${stop.slug}" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>`
+      ? `<a href="../${stop.slug}" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>`
       : '';
 
     const popup = `
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div style="font-family:-apple-system,sans-serif; min-width:170px;">
         <div style="font-weight:bold; font-size:14px; margin-bottom:2px;">${stop.name}</div>
         <div style="color:#777; font-size:12px; margin-bottom:4px;">${stop.day}</div>
-        <a href="/${stop.slug}" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>
+        <a href="../${stop.slug}" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>
         ${mapLinks}
       </div>`;
 
