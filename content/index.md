@@ -17,9 +17,9 @@
 | 3         | Jul 20 | Dachaidan → Dunhuang | 500km · 6h   | Qaidam Basin drive                 | Dunhuang  | 38–42°C |
 | 4         | Jul 21 | Dunhuang             | —            | Mogao Caves, Mingsha Dunes         | Dunhuang  | 38–42°C |
 | 5         | Jul 22 | Dunhuang → Jiayuguan | 400km · 4.5h | Jiayuguan Fort + Overhanging Wall  | Jiayuguan | 30–35°C |
-| 6         | Jul 23 | Jiayuguan → Qilian   | 460km · 6h   | Qicai Danxia, Menyuan flowers      | Qilian    | 20–25°C |
-| 7         | Jul 24 | Qilian → Xining      | 220km · 3h   | Horseback riding                   | —         | 20–25°C |
-| **Total** |        |                      | **~2,210km** |                                    |           |         |
+| 6         | Jul 23 | Jiayuguan → Qilian   | 410km · 5.5h | Qicai Danxia, Qilian grassland     | Qilian    | 20–25°C |
+| 7         | Jul 24 | Qilian → Xining      | 280km · 3.5h | Horseback riding, Menyuan flowers  | —         | 20–25°C |
+| **Total** |        |                      | **~2,220km** |                                    |           |         |
 
 ---
 
@@ -108,26 +108,29 @@
 - **8:00am** Depart Jiayuguan
 - **10:30am** Arrive [[places/qicai-danxia|Zhangye Qicai Danxia]]<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=38.937,100.467&q=Qicai+Danxia" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=38.937,100.467" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=100.467,38.937&name=七彩丹霞" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=38.937,100.467&title=七彩丹霞&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — morning light is ideal for the colors. Take the shuttle buses between platforms. 2.5hrs.
 - **1:30pm** Lunch in Zhangye
-- **2:30pm** Drive toward Qilian County via Menyuan (~230km, 3hrs)
-- **~4:30pm** [[places/menyuan-flowers|Menyuan rapeseed flower fields]]<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=37.383,101.617&q=Menyuan+Flowers" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=37.383,101.617" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=101.617,37.383&name=门源油菜花" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=37.383,101.617&title=门源油菜花&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — peak late July, 30min stop if in bloom. Pull over anywhere along the valley road.
-- **5:30pm** Arrive [[places/qilian-grassland|Qilian County]]<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=38.183,100.25&q=Qilian+County" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=38.183,100.25" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=100.25,38.183&name=祁连草原" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=38.183,100.25&title=祁连草原&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details>, check in, riverside walk at dusk
+- **2:30pm** Drive south to Qilian County via G227 (~180km, 2.5hrs) — direct mountain route, no backtracking
+- **5:00pm** Arrive [[places/qilian-grassland|Qilian County]]<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=38.183,100.25&q=Qilian+County" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=38.183,100.25" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=100.25,38.183&name=祁连草原" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=38.183,100.25&title=祁连草原&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details>, check in, riverside walk at dusk
 - **Evening** Lamb hotpot dinner — Qilian lamb is among the best in Qinghai
 - **Tonight:** Ask hotel to arrange 7 horses for 8:00am tomorrow
 
 | | |
 |--|--|
-| ![Qicai Danxia](photos/qicai-danxia.jpg) | ![Menyuan Flowers](photos/menyuan-flowers.jpg) |
+| ![Qicai Danxia](photos/qicai-danxia.jpg) | ![Qilian Grassland](photos/qilian-grassland.jpg) |
 
 ---
 
-## Day 7 — July 24 · Qilian → Xining
-*220km · 3h driving*
+## Day 7 — July 24 · Qilian → Menyuan → Xining
+*280km · 3.5h driving*
 
 - **8:00am** 1hr horseback ride on the grassland (~¥120/person). Bring a warm layer — 2,800m at 8am is cold.
-- **9:30am** Depart Qilian
-- **12:30pm** Arrive Xining — lunch, return car, train home
+- **9:30am** Depart Qilian east on S302
+- **11:00am** [[places/menyuan-flowers|Menyuan rapeseed flower fields]]<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=37.383,101.617&q=Menyuan+Flowers" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=37.383,101.617" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=101.617,37.383&name=门源油菜花" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=37.383,101.617&title=门源油菜花&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — 30min stop if in bloom. The yellow fields with snow peaks behind are the perfect farewell image.
+- **12:00pm** Continue north on G227 to Xining (~160km, 2hrs)
+- **2:00pm** Arrive Xining — lunch, return car, train home
 
-![Qilian Grassland](photos/qilian-grassland.jpg)
+| | |
+|--|--|
+| ![Qilian Grassland](photos/qilian-grassland.jpg) | ![Menyuan Flowers](photos/menyuan-flowers.jpg) |
 
 ---
 
