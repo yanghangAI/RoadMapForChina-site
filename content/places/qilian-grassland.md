@@ -17,6 +17,14 @@
 |--|--|
 | ![Qilian Grassland 2](../photos/qilian-grassland-2.jpg) | ![Qilian Grassland 3](../photos/qilian-grassland-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2z805pWp93A" title="Qilian Mountains: nature's high-altitude treasure trove in NW China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">CGTN documentary on the ecology and landscape of the Qilian range</div>
+</div>
+
 ## Overview
 
 Qilian County (祁连县) sits at 2,787 metres at the confluence of the Babao River valley and the Qilian Mountains — a county of roughly 50,000 people, predominantly Tibetan and Yugur, whose economy runs on herding, tourism, and small-scale mining. The grassland that surrounds and runs above the county town is among the most accessible and visually dramatic high-altitude pastoral landscapes in northwest China: rolling hills of alpine meadow grass interspersed with wildflowers, traversed by clear mountain streams, backed by the Qilian ridgeline that in July is still white-capped with winter snow.
@@ -49,14 +57,6 @@ Late June through early August is peak season for the grassland. July is ideal: 
 ## Why It's Worth It
 
 After five days of salt, sand, and painted stone, arriving at a high-altitude green valley in the Qilian Mountains — cool air, wildflowers, snow peaks, yaks on every hill — is the best possible final note to a route built on landscape contrasts. The morning horseback ride is an hour that most first-time visitors to China would never find on their own.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2z805pWp93A" title="Qilian Mountains: nature's high-altitude treasure trove in NW China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">CGTN documentary on the ecology and landscape of the Qilian range</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/MkzpAdWWzxQ" title="Driving Through China's Most Breathtaking Mountain Road | Qilian Mountains & Eboling Pass 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">4K driving footage through the Qilian mountain passes</div>

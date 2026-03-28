@@ -17,6 +17,14 @@
 |--|--|
 | ![Menyuan Flowers 2](../photos/menyuan-flowers-2.jpg) | ![Menyuan Flowers 3](../photos/menyuan-flowers-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ARlqQy-eXKg" title="Rapeseed flowers in Qilian Mountain, Menyuan County, Qinghai Province, China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground footage of the Menyuan rapeseed fields with the Qilian mountains as backdrop</div>
+</div>
+
 ## Overview
 
 Menyuan County (门源回族自治县) in the northeastern corner of Qinghai Province hosts what is commonly described as the world's largest continuous rapeseed flower field — over 330,000 acres (roughly 133,000 hectares) of Brassica napus planted in the valley floor at 2,900 metres altitude, backed by the snow-capped ridgeline of the Qilian Mountains to the north and the lower Datong Mountains to the south. In peak bloom, the valley floor is an unbroken plane of brilliant yellow that extends to the base of the mountains — a color saturation that the altitude and clean air amplify to an almost painful intensity.
@@ -48,14 +56,6 @@ Mid-July to early August is peak bloom. The precise peak varies by year dependin
 ## Why It's Worth It
 
 A high plateau valley turned entirely yellow from horizon to mountain, with snow peaks behind it — this is one of those landscapes that reminds you why you came somewhere this far from home.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ARlqQy-eXKg" title="Rapeseed flowers in Qilian Mountain, Menyuan County, Qinghai Province, China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground footage of the Menyuan rapeseed fields with the Qilian mountains as backdrop</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Xjc8XhzAlM0" title="Live: Stunning rapeseed flowers bloom in Qinghai – Ep. 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">live broadcast footage of the bloom at peak season</div>

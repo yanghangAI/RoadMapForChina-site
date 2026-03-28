@@ -17,6 +17,14 @@
 |--|--|
 | ![Mogao Caves 2](../photos/mogao-caves-2.jpg) | ![Mogao Caves 3](../photos/mogao-caves-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/hK4PxrQH8ok" title="Mogao Caves (UNESCO/NHK)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">UNESCO and NHK co-produced documentary on the caves and their history</div>
+</div>
+
 ## Overview
 
 The Mogao Caves are one of the great artistic monuments of human civilization. Cut into a cliff face 25 kilometres southeast of Dunhuang over a period of roughly a thousand years — from the 4th century to the 14th century AD — 735 caves contain the world's largest surviving collection of Buddhist art: approximately 45,000 square metres of painted murals, 2,400 painted clay sculptures, and a library of manuscripts that, when rediscovered in 1900, comprised the oldest printed book in existence (the Diamond Sutra, dated 868 AD) and tens of thousands of documents in Chinese, Tibetan, Sanskrit, Sogdian, and other Silk Road languages.
@@ -51,14 +59,6 @@ The caves are open year-round but July is the busiest month. Morning slots (star
 ## Why It's Worth It
 
 To stand inside a cave that a Tang Dynasty merchant paid to decorate in 720 AD, surrounded by paintings that have not moved in 1,300 years, looking at Buddhist figures rendered with the full technical mastery of the greatest empire of the medieval world — there is no comparable experience in China, and very few comparable experiences anywhere on earth.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/hK4PxrQH8ok" title="Mogao Caves (UNESCO/NHK)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">UNESCO and NHK co-produced documentary on the caves and their history</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/-LbyuIi9BYI" title="What are the Mogao Caves and why are they special?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">accessible introduction to the site's significance</div>

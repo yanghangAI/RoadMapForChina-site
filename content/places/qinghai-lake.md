@@ -17,6 +17,14 @@
 |--|--|
 | ![Qinghai Lake 2](../photos/qinghai-lake-2.jpg) | ![Qinghai Lake 3](../photos/qinghai-lake-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2tc4tt9WqO4" title="Cycling Around Qinghai Lake: A Ride Like No Other" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">solo cyclist circumnavigates China's largest lake</div>
+</div>
+
 ## Overview
 
 Qinghai Lake is the largest lake in China and the largest saltwater lake in Central Asia, covering 4,583 square kilometres at an altitude of 3,196 metres. Its scale is difficult to convey in photographs: standing on the north shore, the far edge simply disappears into the horizon, more like a sea than a lake. The water is a deep, saturated blue — the kind of blue that seems artificially vivid in person, the result of the altitude, the mineral content, and the clarity of the high-plateau atmosphere.
@@ -48,14 +56,6 @@ July is ideal: water levels are at their highest, surrounding hills are green, a
 ## Why It's Worth It
 
 There are large lakes elsewhere in the world, but there is nothing quite like standing beside 4,500 square kilometres of intensely blue water at altitude, with Tibetan prayer flags snapping in the plateau wind — it is one of those landscapes that physically recalibrates your sense of scale.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2tc4tt9WqO4" title="Cycling Around Qinghai Lake: A Ride Like No Other" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">solo cyclist circumnavigates China's largest lake</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/g8iLyRb8eGs" title="I was riding solo the Qinghai Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">personal cycling vlog around the lake shore</div>

@@ -17,6 +17,10 @@
 |--|--|
 | ![Shandan Horse Farm 2](../photos/shandan-horse-farm-2.jpg) | ![Shandan Horse Farm 3](../photos/shandan-horse-farm-3.jpg) |
 
+## Videos
+
+- [Shandan Horse Farm: A jewel of the Silk Road and Qilian Mountains — China Daily](http://gansu.chinadaily.com.cn/2024-05/20/c_988621.htm) — video and photo feature on the farm's history, summer landscape, and horse herds (China Daily 2024)
+
 ## Overview
 
 The Shandan Military Horse Farm (山丹军马场) is, depending on who you ask, either the largest military horse farm in the world or the largest in Asia — either way, it is enormous. Covering over 2,000 square kilometres of alpine grassland at the northern foot of the Lenglong Ridge of the Qilian Mountains, Shandan straddles the border of Gansu and Qinghai provinces and sits squarely on the route between Zhangye and Menyuan — which makes it a natural stop on the Day 6 drive.
@@ -50,7 +54,3 @@ June to September. **July is optimal**: the grass is fully green, the rapeseed m
 ## Why It's Worth It
 
 Two thousand years of unbroken horse breeding history, tens of thousands of horses roaming a valley that looks like the edge of the world — and it is directly on the road you are already driving.
-
-## Videos
-
-- [Shandan Horse Farm: A jewel of the Silk Road and Qilian Mountains — China Daily](http://gansu.chinadaily.com.cn/2024-05/20/c_988621.htm) — video and photo feature on the farm's history, summer landscape, and horse herds (China Daily 2024)

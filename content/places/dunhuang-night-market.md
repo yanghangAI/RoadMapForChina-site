@@ -17,6 +17,14 @@
 |--|--|
 | ![Dunhuang Night Market 2](../photos/dunhuang-night-market-2.jpg) | ![Dunhuang Night Market 3](../photos/dunhuang-night-market-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/v4tFAjWUIY0" title="CRAZY Desert Food Feast! China Dunhuang Food Tour of Hexi Corridor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">extended street food walkthrough of the Shazhou night market with tasting commentary</div>
+</div>
+
 ## Overview
 
 Shazhou Night Market (沙州夜市) is the beating commercial and social heart of Dunhuang in summer evenings — a pedestrian street roughly 400 metres long that transforms after sunset into a dense, loud, aromatic corridor of street food stalls, souvenir sellers, musicians, and crowds that stay until midnight or beyond. For a group arriving from three days of near-empty desert and basin highways, it is a deliberate and welcome shock: the density, the noise, the heat of the grills, the competing smells of cumin and lamb fat and dried apricots are all turned up high.
@@ -50,14 +58,6 @@ The night market runs May through October, with July and August being peak seaso
 ## Why It's Worth It
 
 After days in the empty basin, a first-time visitor to China who walks into Shazhou Night Market at 7:30pm on a July evening is getting an unfiltered hit of Chinese street life — the food, the noise, the generosity of a culture that treats eating in public as both pleasure and social ritual.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/v4tFAjWUIY0" title="CRAZY Desert Food Feast! China Dunhuang Food Tour of Hexi Corridor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">extended street food walkthrough of the Shazhou night market with tasting commentary</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/IRhr48Y6Gp8" title="3 Days Dunhuang Travel: Mogao Caves, Great Wall and Desert | China Travel ep.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">covers the night market as part of a full Dunhuang itinerary</div>

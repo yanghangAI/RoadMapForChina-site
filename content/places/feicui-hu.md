@@ -17,6 +17,14 @@
 |--|--|
 | ![Feicui Hu 2](../photos/feicui-hu-2.jpg) | ![Feicui Hu 3](../photos/feicui-hu-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/0ii_qi-ztxI" title="Qinghai Dachaidan Emerald Lake 0525A2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">footage of the emerald-colored salt lake pools at Dachaidan</div>
+</div>
+
 ## Overview
 
 Feicui Hu — "Jade Lake" (翡翠湖) — is the collective name for a series of shallow salt lakes clustered in the Qaidam Basin near Dachaidan (大柴旦), colored in shades of turquoise, emerald, cobalt, and jade-green that seem digitally altered in photographs but are entirely natural in person. The colors come from the interaction of different mineral concentrations — potassium, magnesium, lithium, and boron salts — with halophilic algae and brine shrimp that produce carotenoids. Different basins at different depths register entirely different colors, sometimes meters apart.
@@ -48,14 +56,6 @@ June through September. July afternoons offer good light and stable weather. Mor
 ## Why It's Worth It
 
 Most first-time visitors to China see ancient temples and busy cities — Feicui Hu is something else entirely: an alien mineral landscape that looks like the surface of a different planet, almost entirely unknown outside China, requiring no ticket, no queue, and no crowd to interpret it for you.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/0ii_qi-ztxI" title="Qinghai Dachaidan Emerald Lake 0525A2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">footage of the emerald-colored salt lake pools at Dachaidan</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/GfEKX327RTs" title="Emerald Lake — Qinghai Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">short travel video of the jade-green waters</div>

@@ -17,6 +17,10 @@
 |--|--|
 | ![Ta'er Monastery 2](../photos/taer-monastery-2.jpg) | ![Ta'er Monastery 3](../photos/taer-monastery-3.jpg) |
 
+## Videos
+
+- [Kumbum Monastery — Elevated Trips](https://www.elevatedtrips.com/locations/kumbum-monastery/) — detailed photo and video documentary of the monastery's architecture and atmosphere (travel website with embedded video)
+
 ## Overview
 
 Ta'er Monastery — known in Tibetan as Kumbum, meaning "the place of one hundred thousand images of Buddha" — is one of the six great monasteries of the Gelug school of Tibetan Buddhism and one of the most important religious sites in all of China. Located 26 kilometres southwest of Xining in Huangzhong County, the monastery was founded in 1583 on the birthplace of Tsongkhapa, the 14th-century scholar-monk who reformed Tibetan Buddhism and established the Gelug school — the tradition of the Dalai Lamas. A silver stupa marks the exact spot where Tsongkhapa was born; his mother reportedly planted a sandalwood tree there, and according to tradition, 100,000 images of the Buddha miraculously appeared on the tree's leaves — the origin of the monastery's Tibetan name.
@@ -50,7 +54,3 @@ Open year-round, 7:00am–18:00pm (high season) or 8:00am–17:00pm (low season)
 ## Why It's Worth It
 
 Ta'er Monastery is the one place on or near this route where the landscape gives way to something entirely human — a thousand years of Buddhist art and living monastic tradition packed into a single extraordinary hillside complex.
-
-## Videos
-
-- [Kumbum Monastery — Elevated Trips](https://www.elevatedtrips.com/locations/kumbum-monastery/) — detailed photo and video documentary of the monastery's architecture and atmosphere (travel website with embedded video)

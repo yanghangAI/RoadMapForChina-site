@@ -17,6 +17,14 @@
 |--|--|
 | ![Qicai Danxia 2](../photos/qicai-danxia-2.jpg) | ![Qicai Danxia 3](../photos/qicai-danxia-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/TC-nvgFi5HU" title="Unbelievable Rainbow Mountains of Zhangye Danxia | Amazing Places in China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground-level footage of the colored formations</div>
+</div>
+
 ## Overview
 
 "Qicai" means "seven-colored" and "Danxia" refers to the geological formation — a specific type of red sandstone and conglomerate landscape found in certain parts of China that erodes into dramatic cliffs, towers, and ravines. Zhangye's Qicai Danxia takes the Danxia form to its most extreme chromatic expression: the rock strata here were laid down as sediment in an inland sea over 24 million years, each layer recording a different mineral environment — iron oxides producing reds and oranges, chlorite producing greens, manganese producing purples and blues, silica producing yellows and whites. Time, uplift, and erosion then cut through the stack to expose the cross-section, resulting in a hillscape banded in stripes of color that run the full spectrum.
@@ -49,14 +57,6 @@ June through October. July mornings (7:00–9:00am) are ideal for light and temp
 ## Why It's Worth It
 
 The images look like digital color grading. Arriving in person and understanding that these are real geological strata, each stripe a chapter of 24 million years of planetary history, is the kind of encounter with Earth's deep time that is rare and not easily forgotten.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/TC-nvgFi5HU" title="Unbelievable Rainbow Mountains of Zhangye Danxia | Amazing Places in China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground-level footage of the colored formations</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/1bft6NWuVbk" title="RAINBOW MOUNTAINS of CHINA: Why You Need To Visit Zhangye" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">English travel vlog with practical visitor information and photography tips</div>

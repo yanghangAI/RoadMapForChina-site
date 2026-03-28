@@ -17,6 +17,10 @@
 |--|--|
 | ![Zhangye Dafo 2](../photos/zhangye-dafo-2.jpg) | ![Zhangye Dafo 3](../photos/zhangye-dafo-3.jpg) |
 
+## Videos
+
+- [Zhangye Dafo Temple — China Discovery guide](https://www.chinadiscovery.com/gansu/zhangye/giant-buddha-temple.html) — detailed written guide with embedded photography and visitor information (travel website)
+
 ## Overview
 
 The Giant Buddha Temple (大佛寺, Dàfó Sì — "Great Buddha Temple") in the centre of Zhangye city houses China's largest indoor reclining Buddha: a 34.5-metre clay-on-timber statue of the historical Buddha Shakyamuni at the moment of parinirvana, entering final nirvana. Built in 1098 during the Western Xia dynasty, the statue is almost certainly the oldest surviving major Buddhist monument in the Gansu corridor. The ten disciples of the Buddha stand arranged behind the reclining figure in the same hall; the scale of the composition is genuinely staggering — up to eight people can stand on the ear of the main figure. The entire complex was designated a major national cultural heritage site in 1996.
@@ -49,7 +53,3 @@ Open year-round, typically 8:00am–18:00pm. July is fine — there is no outdoo
 ## Why It's Worth It
 
 You are already stopping in Zhangye for lunch — spending 30 minutes standing next to a 900-year-old 34-metre reclining Buddha that Marco Polo may have seen is one of the best free upgrades available anywhere on this trip.
-
-## Videos
-
-- [Zhangye Dafo Temple — China Discovery guide](https://www.chinadiscovery.com/gansu/zhangye/giant-buddha-temple.html) — detailed written guide with embedded photography and visitor information (travel website)

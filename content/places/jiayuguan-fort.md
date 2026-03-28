@@ -17,6 +17,14 @@
 |--|--|
 | ![Jiayuguan Fort 2](../photos/jiayuguan-fort-2.jpg) | ![Jiayuguan Fort 3](../photos/jiayuguan-fort-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/a2r4u3j11u8" title="JIAYUGUAN FORT at the end of the GREAT WALL OF CHINA!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English travel vlog exploring the fort and its western Great Wall context</div>
+</div>
+
 ## Overview
 
 Jiayuguan Fort is the westernmost major fort of the Ming Dynasty Great Wall, built in 1372 at the narrowest point of the Hexi Corridor — a natural bottleneck between the Qilian Mountains to the south and the Mazong Mountains to the north, where the corridor squeezes to roughly 15 kilometres across before opening onto the desert steppes of Central Asia. It was designated "天下第一雄关" — "The Greatest Pass Under Heaven" — a claim that in the Ming Dynasty meant: the last point of Chinese civilization, beyond which the empire's writ did not run.
@@ -50,14 +58,6 @@ Year-round; July is hot (30–35°C) but manageable with early morning or late a
 ## Why It's Worth It
 
 You are standing at the exact point where an empire decided to stop — the literal edge of 2,000 years of Chinese civilization, looking west across the desert toward Dunhuang, Kashgar, and ultimately Rome. The weight of that position is fully present in the stones.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/a2r4u3j11u8" title="JIAYUGUAN FORT at the end of the GREAT WALL OF CHINA!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">English travel vlog exploring the fort and its western Great Wall context</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/XOmG9wWP8NM" title="The Great Wall & the fort of Jiayuguan (CHINA) | Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">documentary-style coverage of the fort and surrounding wall sections</div>

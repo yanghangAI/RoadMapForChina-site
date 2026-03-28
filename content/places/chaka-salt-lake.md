@@ -17,6 +17,14 @@
 | ----------------------------------------------------- | ----------------------------------------------------- |
 | ![Chaka Salt Lake 2](../photos/chaka-salt-lake-2.jpg) | ![Chaka Salt Lake 3](../photos/chaka-salt-lake-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/rvGn31AUYhI" title="CHAKA SALT LAKE: China's Incredible MIRROR OF THE SKY! | Qinghai Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English-language travel guide covering the mirror reflection experience and practical tips</div>
+</div>
+
 ## Overview
 
 Chaka Salt Lake has acquired a powerful reputation in the last decade as "China's sky mirror" (天空之镜) — a place where a thin film of water over a flat white salt crust creates a perfect reflection of the sky, dissolving the boundary between ground and air until visitors appear to walk through clouds. This is not exaggeration: when conditions are right, at sunrise with no wind, the effect is genuinely disorienting and extraordinary.
@@ -49,14 +57,6 @@ July mornings are ideal. Be at the lake by 6:30–7:00am before wind picks up an
 ## Why It's Worth It
 
 Photographs circulate constantly online, but standing on the actual salt flat at dawn — feet in cool brine, the entire sky mirrored beneath you, the Kunlun Mountains framing the horizon — is one of those experiences that no image fully prepares you for.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/rvGn31AUYhI" title="CHAKA SALT LAKE: China's Incredible MIRROR OF THE SKY! | Qinghai Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">English-language travel guide covering the mirror reflection experience and practical tips</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/u5wjVLlEZ-k" title="How to get to Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">logistics and transport from Xining</div>

@@ -17,6 +17,14 @@
 |--|--|
 | ![Yardang 2](../photos/yardang-2.jpg) | ![Yardang 3](../photos/yardang-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Wog6wcMCoPE" title="Silk Road 10 — Dunhuang Yadan National Geopark" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Travel footage driving through the formation areas with commentary on the geology and the Silk Road context</div>
+</div>
+
 ## Overview
 
 Dunhuang Yardang National Geopark — known to locals and travellers as 魔鬼城, "Devil City" — is one of the most unearthly landscapes in China. Located approximately 180 kilometres northwest of Dunhuang in the Gansu desert, the park preserves an extraordinary field of wind-sculpted rock formations called yardangs: ridges, towers, and mesas of compressed silt and clay that have been carved by desert winds over millions of years into forms that suggest ruined buildings, crouching animals, and ghostly figures. The Chinese name "Devil City" comes from the sound the wind makes at night, howling and shrieking through the gaps between formations in a way that travellers for centuries described as demonic. The effect is genuinely eerie: standing in the late afternoon light among hundreds of pale golden pillars that stretch to the horizon, it is not difficult to understand why Silk Road caravans detoured around this place after dark.
@@ -50,12 +58,4 @@ May to October. July visits work well — the sun sets late (around 8pm), giving
 ## Why It's Worth It
 
 If Dunhuang is already the most otherworldly stop on this trip, the Yardang Geopark is what you add when you want to leave Earth entirely.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Wog6wcMCoPE" title="Silk Road 10 — Dunhuang Yadan National Geopark" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">Travel footage driving through the formation areas with commentary on the geology and the Silk Road context</div>
-</div>
 </div>

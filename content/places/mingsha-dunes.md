@@ -17,6 +17,14 @@
 |--|--|
 | ![Mingsha Dunes 2](../photos/mingsha-dunes-2.jpg) | ![Mingsha Dunes 3](../photos/mingsha-dunes-3.jpg) |
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ze73Eec2Nts" title="Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">covers both the dunes and the Crescent Moon Spring</div>
+</div>
+
 ## Overview
 
 Mingsha Shan (鸣沙山), "Singing Sand Mountain," is a range of sand dunes rising up to 250 metres directly adjacent to Dunhuang city — you can see them from the hotel window. The "singing" refers to the deep, resonant humming sound the dunes emit when wind blows across the dry sand grains or when large volumes of sand slide down a dune face: a low, sustained tone that can be felt as much as heard, variously described over the centuries as music, the sound of drums, or the voices of the dead.
@@ -49,14 +57,6 @@ Late afternoon and sunset (5:30–8:00pm) in July is the optimal window. The dun
 ## Why It's Worth It
 
 There is a lake of jade-green water that has existed for 2,000 years in the heart of a desert, not three hundred metres from a dune the size of a small mountain. No photograph — however good — conveys what it feels like to stand between the two at sunset.
-
-## Videos
-
-<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
-<div>
-<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ze73Eec2Nts" title="Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
-<div style="font-size:12px; color:#666; margin-top:4px;">covers both the dunes and the Crescent Moon Spring</div>
-</div>
 <div>
 <iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/l880-PjP5dY" title="China's GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
 <div style="font-size:12px; color:#666; margin-top:4px;">entertaining travel vlog covering Dunhuang including the Mingsha dunes</div>
