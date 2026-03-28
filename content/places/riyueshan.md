@@ -13,6 +13,14 @@
 
 ![Riyueshan Pass](../photos/riyueshan.jpg)
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/CZuwQnwSV7A" title="Riyueshan Pass · 日月山" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+</div>
+</div>
+
 ## Overview
 
 Riyueshan Pass sits at 3,520 metres above sea level on the eastern edge of the Tibetan Plateau, straddling the divide between the humid agricultural lands of the Yellow River basin and the high, arid steppe of the Plateau. The pass marks one of the most significant cultural and ecological thresholds in all of China: to the east, Han farming civilization; to the west, the nomadic Tibetan world. The air changes here, the vegetation thins, and the sky opens up in a way that feels physical.
