@@ -18,7 +18,7 @@
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">15–20°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Xining → Chaka &nbsp;·&nbsp; 300km / 4h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Riyueshan · Qinghai Lake · Chaka</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/riyueshan">Riyueshan</a> · <a href="places/qinghai-lake">Qinghai Lake</a> · <a href="places/chaka-salt-lake">Chaka</a></div>
 <div style="font-size:12px; color:#888;">🛏 Chaka</div>
 </div>
 
@@ -28,7 +28,7 @@
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">20–28°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Chaka → Dachaidan &nbsp;·&nbsp; 330km / 4h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Chaka sunrise · Delingha · Feicui Hu</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/chaka-salt-lake">Chaka sunrise</a> · <a href="places/delingha">Delingha</a> · <a href="places/feicui-hu">Feicui Hu</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dachaidan</div>
 </div>
 
@@ -38,7 +38,7 @@
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dachaidan → Dunhuang &nbsp;·&nbsp; 500km / 6h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Qaidam Basin desert highway</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Qaidam Basin desert highway · <a href="places/dunhuang-night-market">Night Market</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
 </div>
 
@@ -48,7 +48,7 @@
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🏕 Dunhuang full day</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Mogao Caves · Mingsha Dunes</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/mogao-caves">Mogao Caves</a> · <a href="places/mingsha-dunes">Mingsha Dunes</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
 </div>
 
@@ -58,7 +58,7 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">30–35°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dunhuang → Jiayuguan &nbsp;·&nbsp; 400km / 4.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Jiayuguan Fort · Overhanging Wall</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/jiayuguan-fort">Jiayuguan Fort</a> · Overhanging Wall</div>
 <div style="font-size:12px; color:#888;">🛏 Jiayuguan</div>
 </div>
 
@@ -68,7 +68,7 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Jiayuguan → Qilian &nbsp;·&nbsp; 410km / 5.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Qicai Danxia · Qilian grassland</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qicai-danxia">Qicai Danxia</a> · <a href="places/qilian-grassland">Qilian grassland</a></div>
 <div style="font-size:12px; color:#888;">🛏 Qilian</div>
 </div>
 
@@ -78,13 +78,13 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Qilian → Xining &nbsp;·&nbsp; 280km / 3.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Horseback riding · Menyuan flowers</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qilian-grassland">Horseback riding</a> · <a href="places/menyuan-flowers">Menyuan flowers</a></div>
 <div style="font-size:12px; color:#888;">🏠 Back to Xining</div>
 </div>
 
 </div>
 
-<div style="font-size:13px; color:#888; margin-top:4px;">Total distance: ~2,220km over 7 days</div>
+<div style="font-size:13px; color:#888; margin-top:4px;">Total ~2,220km · <a href="map">🗺 View Route Map</a></div>
 
 ---
 
