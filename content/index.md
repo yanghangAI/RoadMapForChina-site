@@ -246,10 +246,51 @@
 
 These places are near the route but not in the main plan. Add them if you have flexibility or want to extend specific days.
 
-| Destination | Near | Extra Time | Notes |
-|-------------|------|------------|-------|
-| [[places/yardang\|Yardang Geopark 雅丹魔鬼城]] | Dunhuang | Half day | 180km west of Dunhuang; best at sunset; requires leaving Day 4 very early or spending a 3rd night in Dunhuang |
-| [[places/taer-monastery\|Ta'er Monastery 塔尔寺]] | Xining | 2–3hrs | 26km from Xining; visit morning of Jul 18 before car pickup, or as a standalone pre-trip activity |
-| [[places/zhuoer-mountain\|Zhuoer Mountain 卓尔山]] | Qilian | 2hrs | Adjacent to Qilian town; cable car; add to Day 6 evening or Day 7 before horseback riding |
-| [[places/zhangye-dafo\|Giant Buddha Temple 大佛寺]] | Zhangye | 30min | In Zhangye city; add during Day 6 lunch stop; zero extra driving |
-| [[places/shandan-horse-farm\|Shandan Horse Farm 山丹军马场]] | Menyuan | 45min | On the Day 6 route between Zhangye and Menyuan; roadside stop to see free-roaming horses |
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; margin:1rem 0;">
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;"><a href="places/taer-monastery">Ta'er Monastery 塔尔寺</a></span>
+  <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">2–3 hrs</span>
+</div>
+<div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Xining</div>
+<div style="font-size:13px; color:#444;">26km from Xining. Visit the morning of Day 1 before departure, or as a pre-trip standalone activity.</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;"><a href="places/yardang">Yardang Geopark 雅丹魔鬼城</a></span>
+  <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">Half day</span>
+</div>
+<div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Dunhuang</div>
+<div style="font-size:13px; color:#444;">180km west of Dunhuang. Best at sunset. Requires an early start on Day 4 or a 3rd night in Dunhuang.</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;"><a href="places/zhangye-dafo">Giant Buddha Temple 大佛寺</a></span>
+  <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">30 min</span>
+</div>
+<div style="font-size:12px; color:#888; margin-bottom:6px;">📍 In Zhangye · Day 6 lunch stop</div>
+<div style="font-size:13px; color:#444;">Right in Zhangye city. Tack on during the Day 6 lunch break — zero extra driving.</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;"><a href="places/shandan-horse-farm">Shandan Horse Farm 山丹军马场</a></span>
+  <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">45 min</span>
+</div>
+<div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Day 6 route · Zhangye → Qilian</div>
+<div style="font-size:13px; color:#444;">On the road between Zhangye and Qilian. Stop to see free-roaming horses in the open grassland.</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;"><a href="places/zhuoer-mountain">Zhuoer Mountain 卓尔山</a></span>
+  <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">2 hrs</span>
+</div>
+<div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Qilian town</div>
+<div style="font-size:13px; color:#444;">Adjacent to Qilian town with a cable car. Add on Day 6 evening or Day 7 morning before horseback riding.</div>
+</div>
+
+</div>
