@@ -14,7 +14,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #2f855a;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 1 · Jul 18</span>
+  <a href="#day-1" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 1 · Jul 18</a>
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">15–20°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Xining → Chaka &nbsp;·&nbsp; 300km / 4h</div>
@@ -24,7 +24,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #2f855a;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 2 · Jul 19</span>
+  <a href="#day-2" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 2 · Jul 19</a>
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">20–28°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Chaka → Dachaidan &nbsp;·&nbsp; 330km / 4h</div>
@@ -34,7 +34,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #c05621;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 3 · Jul 20</span>
+  <a href="#day-3" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 3 · Jul 20</a>
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dachaidan → Dunhuang &nbsp;·&nbsp; 500km / 6h</div>
@@ -44,7 +44,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #c05621;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 4 · Jul 21</span>
+  <a href="#day-4" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 4 · Jul 21</a>
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🏕 Dunhuang full day</div>
@@ -54,7 +54,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 5 · Jul 22</span>
+  <a href="#day-5" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 5 · Jul 22</a>
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">30–35°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dunhuang → Jiayuguan &nbsp;·&nbsp; 400km / 4.5h</div>
@@ -64,7 +64,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 6 · Jul 23</span>
+  <a href="#day-6" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 6 · Jul 23</a>
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Jiayuguan → Qilian &nbsp;·&nbsp; 410km / 5.5h</div>
@@ -74,7 +74,7 @@
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;">Day 7 · Jul 24</span>
+  <a href="#day-7" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Day 7 · Jul 24</a>
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Qilian → Xining &nbsp;·&nbsp; 280km / 3.5h</div>
@@ -88,6 +88,7 @@
 
 ---
 
+<span id="day-1"></span>
 ## Day 1 — July 18 · Xining → Qinghai Lake → Chaka
 *300km · 4h driving · Sleep: Chaka · 15–20°C*
 
@@ -105,6 +106,7 @@
 
 ---
 
+<span id="day-2"></span>
 ## Day 2 — July 19 · Chaka → Delingha → Feicui Hu
 *330km · 4h driving · Sleep: Dachaidan · 20–28°C*
 
@@ -125,6 +127,7 @@
 
 ---
 
+<span id="day-3"></span>
 ## Day 3 — July 20 · Dachaidan → Dunhuang · The Desert Highway
 *500km · 6h driving · Sleep: Dunhuang · 38–42°C*
 
@@ -139,6 +142,7 @@
 
 ---
 
+<span id="day-4"></span>
 ## Day 4 — July 21 · Dunhuang Full Day
 *Sleep: Dunhuang · 38–42°C*
 
@@ -154,6 +158,7 @@
 
 ---
 
+<span id="day-5"></span>
 ## Day 5 — July 22 · Dunhuang → Jiayuguan
 *400km · 4.5h driving · Sleep: Jiayuguan · 30–35°C*
 
@@ -167,6 +172,7 @@
 
 ---
 
+<span id="day-6"></span>
 ## Day 6 — July 23 · Jiayuguan → Qicai Danxia → Qilian
 *460km · 6h driving · Sleep: Qilian · 20–25°C*
 
@@ -184,6 +190,7 @@
 
 ---
 
+<span id="day-7"></span>
 ## Day 7 — July 24 · Qilian → Menyuan → Xining
 *280km · 3.5h driving*
 
