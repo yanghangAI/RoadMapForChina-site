@@ -1,5 +1,16 @@
 # Delingha & Haizi Poetry Park · 德令哈·海子诗歌园
 
+<details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
+<summary style="list-style:none; font-size:1.2rem; user-select:none;">📍</summary>
+<div style="position:absolute; top:2rem; left:0; background:white; border:1px solid #ddd; border-radius:10px; padding:10px 14px; z-index:999; box-shadow:0 4px 16px rgba(0,0,0,0.15); min-width:180px; white-space:nowrap;">
+<div style="font-weight:bold; font-size:13px; margin-bottom:8px; color:#333;">Open in Maps</div>
+<a href="https://maps.apple.com/?ll=37.367,97.367&q=Delingha" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🍎 Apple Maps</a>
+<a href="https://www.google.com/maps?q=37.367,97.367" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🌐 Google Maps</a>
+<a href="https://uri.amap.com/marker?position=97.367,37.367&name=德令哈" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
+<a href="https://api.map.baidu.com/marker?location=37.367,97.367&title=德令哈&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
+</div>
+</details>
+
 ![Delingha](../photos/delingha.jpg)
 
 ## Overview

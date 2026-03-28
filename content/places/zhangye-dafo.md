@@ -1,5 +1,16 @@
 # Giant Buddha Temple · 张掖大佛寺
 
+<details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
+<summary style="list-style:none; font-size:1.2rem; user-select:none;">📍</summary>
+<div style="position:absolute; top:2rem; left:0; background:white; border:1px solid #ddd; border-radius:10px; padding:10px 14px; z-index:999; box-shadow:0 4px 16px rgba(0,0,0,0.15); min-width:180px; white-space:nowrap;">
+<div style="font-weight:bold; font-size:13px; margin-bottom:8px; color:#333;">Open in Maps</div>
+<a href="https://maps.apple.com/?ll=38.936,100.452&q=Zhangye+Giant+Buddha" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🍎 Apple Maps</a>
+<a href="https://www.google.com/maps?q=38.936,100.452" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🌐 Google Maps</a>
+<a href="https://uri.amap.com/marker?position=100.452,38.936&name=张掖大佛寺" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
+<a href="https://api.map.baidu.com/marker?location=38.936,100.452&title=张掖大佛寺&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
+</div>
+</details>
+
 ![Zhangye Dafo](../photos/zhangye-dafo.jpg)
 
 | | |

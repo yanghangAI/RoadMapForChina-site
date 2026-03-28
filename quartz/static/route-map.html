@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Route Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f5f5; }
+  #map { height: 100vh; width: 100%; }
+  .legend {
+    position: absolute;
+    bottom: 24px;
+    left: 12px;
+    z-index: 1000;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="legend">
+  <div><span class="legend-dot" style="background:#2b6cb0"></span>Xining (Start/End)</div>
+  <div><span class="legend-dot" style="background:#2f855a"></span>Days 1–2 · Qinghai</div>
+  <div><span class="legend-dot" style="background:#c05621"></span>Days 3–4 · Dunhuang</div>
+  <div><span class="legend-dot" style="background:#6b46c1"></span>Days 5–7 · Hexi & Qilian</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const map = L.map('map', { zoomControl: true }).setView([38.5, 98.5], 6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  const stops = [
+    { name: "Xining · 西宁",              day: "Start / End", coords: [36.617, 101.778], slug: null,                        color: "#2b6cb0", num: "S" },
+    { name: "Riyueshan Pass · 日月山",     day: "Day 1",       coords: [36.517, 101.083], slug: "places/riyueshan",          color: "#2f855a", num: 1 },
+    { name: "Qinghai Lake · 青海湖",       day: "Day 1",       coords: [36.900, 100.183], slug: "places/qinghai-lake",       color: "#2f855a", num: 2 },
+    { name: "Chaka Salt Lake · 茶卡盐湖",  day: "Day 1–2",     coords: [36.717,  99.083], slug: "places/chaka-salt-lake",    color: "#2f855a", num: 3 },
+    { name: "Delingha · 德令哈",           day: "Day 2",       coords: [37.367,  97.367], slug: "places/delingha",           color: "#2f855a", num: 4 },
+    { name: "Feicui Hu · 翡翠湖",          day: "Day 2",       coords: [37.850,  95.367], slug: "places/feicui-hu",          color: "#2f855a", num: 5 },
+    { name: "Dunhuang · 敦煌",             day: "Day 3–4",     coords: [40.142,  94.662], slug: "places/dunhuang-night-market", color: "#c05621", num: 6 },
+    { name: "Mogao Caves · 莫高窟",        day: "Day 4",       coords: [40.038,  94.806], slug: "places/mogao-caves",        color: "#c05621", num: 7 },
+    { name: "Mingsha Dunes · 鸣沙山",      day: "Day 4",       coords: [40.085,  94.674], slug: "places/mingsha-dunes",      color: "#c05621", num: 8 },
+    { name: "Jiayuguan Fort · 嘉峪关",     day: "Day 5",       coords: [39.817,  98.300], slug: "places/jiayuguan-fort",     color: "#6b46c1", num: 9 },
+    { name: "Qicai Danxia · 七彩丹霞",     day: "Day 6",       coords: [38.937, 100.467], slug: "places/qicai-danxia",       color: "#6b46c1", num: 10 },
+    { name: "Menyuan Flowers · 门源油菜花", day: "Day 6",       coords: [37.383, 101.617], slug: "places/menyuan-flowers",    color: "#6b46c1", num: 11 },
+    { name: "Qilian Grassland · 祁连草原",  day: "Day 6–7",     coords: [38.183, 100.250], slug: "places/qilian-grassland",   color: "#6b46c1", num: 12 },
+  ];
+
+  // Route polyline
+  L.polyline(stops.map(s => s.coords), {
+    color: '#e53e3e', weight: 3, opacity: 0.65, dashArray: '8, 6'
+  }).addTo(map);
+
+  // Markers
+  stops.forEach(stop => {
+    const icon = L.divIcon({
+      html: `<div style="
+        background:${stop.color}; color:white; width:28px; height:28px;
+        border-radius:50%; display:flex; align-items:center; justify-content:center;
+        font-size:11px; font-weight:bold; border:2px solid white;
+        box-shadow:0 2px 6px rgba(0,0,0,0.35); cursor:pointer;
+      ">${stop.num}</div>`,
+      className: '', iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -18]
+    });
+
+    const lat = stop.coords[0], lng = stop.coords[1];
+    const name = encodeURIComponent(stop.name);
+    const mapLinks = `
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+        <a href="https://maps.apple.com/?ll=${lat},${lng}&q=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🍎 Apple Maps</a>
+        <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🌐 Google Maps</a>
+        <a href="https://uri.amap.com/marker?position=${lng},${lat}&name=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🗺 高德地图</a>
+        <a href="https://api.map.baidu.com/marker?location=${lat},${lng}&title=${name}&output=html" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🔵 百度地图</a>
+      </div>`;
+
+    const detailLink = stop.slug
+      ? `<a href="/${stop.slug}" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>`
+      : '';
+
+    const popup = `
+      <div style="font-family:-apple-system,sans-serif; min-width:170px;">
+        <div style="font-weight:bold; font-size:14px; margin-bottom:2px;">${stop.name}</div>
+        <div style="color:#777; font-size:12px; margin-bottom:4px;">${stop.day}</div>
+        ${detailLink}
+        ${mapLinks}
+      </div>`;
+
+    L.marker(stop.coords, { icon }).addTo(map).bindPopup(popup, { maxWidth: 240 });
+  });
+
+  setTimeout(() => map.invalidateSize(), 100);
+});
+</script>
+</body>
+</html>
