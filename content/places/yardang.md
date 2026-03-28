@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=93.1,40.483&name=雅丹魔鬼城" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=40.483,93.1&title=雅丹魔鬼城&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Yardang%20National%20Geopark%20%C2%B7%20%E9%9B%85%E4%B8%B9%E9%AD%94%E9%AC%BC%E5%9F%8E%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Yardang](../photos/yardang.jpg)
 

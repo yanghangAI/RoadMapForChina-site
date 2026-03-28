@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=101.569,36.486&name=塔尔寺" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=36.486,101.569&title=塔尔寺&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Ta%27er%20Monastery%20%C2%B7%20%E5%A1%94%E5%B0%94%E5%AF%BA%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Ta'er Monastery](../photos/taer-monastery.jpg)
 

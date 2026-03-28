@@ -18,7 +18,7 @@
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">15–20°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Xining → Chaka &nbsp;·&nbsp; 300km / 4h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/riyueshan">Riyueshan</a> · <a href="places/qinghai-lake">Qinghai Lake</a> · <a href="places/chaka-salt-lake">Chaka</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/riyueshan">Riyueshan</a><a href="https://www.google.com/search?q=Riyueshan%20Pass%20%E6%97%A5%E6%9C%88%E5%B1%B1%20Qinghai&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/qinghai-lake">Qinghai Lake</a><a href="https://www.google.com/search?q=Qinghai%20Lake%20%E9%9D%92%E6%B5%B7%E6%B9%96&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/chaka-salt-lake">Chaka</a><a href="https://www.google.com/search?q=Chaka%20Salt%20Lake%20%E8%8C%B6%E5%8D%A1%E7%9B%90%E6%B9%96&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🛏 Chaka</div>
 </div>
 
@@ -28,7 +28,7 @@
   <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">20–28°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Chaka → Dachaidan &nbsp;·&nbsp; 330km / 4h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/chaka-salt-lake">Chaka sunrise</a> · <a href="places/delingha">Delingha</a> · <a href="places/feicui-hu">Feicui Hu</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/chaka-salt-lake">Chaka sunrise</a><a href="https://www.google.com/search?q=Chaka%20Salt%20Lake%20%E8%8C%B6%E5%8D%A1%E7%9B%90%E6%B9%96&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/delingha">Delingha</a><a href="https://www.google.com/search?q=Delingha%20%E5%BE%B7%E4%BB%A4%E5%93%88%20Qinghai&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/feicui-hu">Feicui Hu</a><a href="https://www.google.com/search?q=Feicui%20Hu%20%E7%BF%A1%E7%BF%A0%E6%B9%96%20Dachaidan&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dachaidan</div>
 </div>
 
@@ -38,7 +38,7 @@
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dachaidan → Dunhuang &nbsp;·&nbsp; 500km / 6h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 Qaidam Basin desert highway · <a href="places/dunhuang-night-market">Night Market</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Qaidam Basin desert highway · <a href="places/dunhuang-night-market">Night Market</a><a href="https://www.google.com/search?q=Dunhuang%20Night%20Market%20%E6%95%A6%E7%85%8C%E5%A4%9C%E5%B8%82&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
 </div>
 
@@ -48,7 +48,7 @@
   <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🏕 Dunhuang full day</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/mogao-caves">Mogao Caves</a> · <a href="places/mingsha-dunes">Mingsha Dunes</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/mogao-caves">Mogao Caves</a><a href="https://www.google.com/search?q=Mogao%20Caves%20%E8%8E%AB%E9%AB%98%E7%AA%9F%20Dunhuang&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/mingsha-dunes">Mingsha Dunes</a><a href="https://www.google.com/search?q=Mingsha%20Dunes%20%E9%B8%A3%E6%B2%99%E5%B1%B1%20Dunhuang&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
 </div>
 
@@ -58,7 +58,7 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">30–35°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dunhuang → Jiayuguan &nbsp;·&nbsp; 400km / 4.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/jiayuguan-fort">Jiayuguan Fort</a> · Overhanging Wall</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/jiayuguan-fort">Jiayuguan Fort</a><a href="https://www.google.com/search?q=Jiayuguan%20Fort%20%E5%98%89%E5%B3%AA%E5%85%B3&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · Overhanging Wall</div>
 <div style="font-size:12px; color:#888;">🛏 Jiayuguan</div>
 </div>
 
@@ -68,7 +68,7 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Jiayuguan → Qilian &nbsp;·&nbsp; 410km / 5.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qicai-danxia">Qicai Danxia</a> · <a href="places/qilian-grassland">Qilian grassland</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qicai-danxia">Qicai Danxia</a><a href="https://www.google.com/search?q=Qicai%20Danxia%20%E4%B8%83%E5%BD%A9%E4%B8%B9%E9%9C%9E%20Zhangye&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/qilian-grassland">Qilian grassland</a><a href="https://www.google.com/search?q=Qilian%20Grassland%20%E7%A5%81%E8%BF%9E%E8%8D%89%E5%8E%9F&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🛏 Qilian</div>
 </div>
 
@@ -78,7 +78,7 @@
   <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
 </div>
 <div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Qilian → Xining &nbsp;·&nbsp; 280km / 3.5h</div>
-<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qilian-grassland">Horseback riding</a> · <a href="places/menyuan-flowers">Menyuan flowers</a></div>
+<div style="font-size:13px; margin-bottom:4px;">📍 <a href="places/qilian-grassland">Horseback riding</a><a href="https://www.google.com/search?q=Qilian%20Grassland%20%E7%A5%81%E8%BF%9E%E8%8D%89%E5%8E%9F&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a> · <a href="places/menyuan-flowers">Menyuan flowers</a><a href="https://www.google.com/search?q=Menyuan%20Rapeseed%20Flowers%20%E9%97%A8%E6%BA%90%E6%B2%B9%E8%8F%9C%E8%8A%B1&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></div>
 <div style="font-size:12px; color:#888;">🏠 Back to Xining</div>
 </div>
 
@@ -257,7 +257,7 @@ These places are near the route but not in the main plan. Add them if you have f
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;"><a href="places/taer-monastery">Ta'er Monastery 塔尔寺</a></span>
+  <span style="font-weight:700; font-size:15px;"><a href="places/taer-monastery">Ta'er Monastery 塔尔寺</a><a href="https://www.google.com/search?q=Ta%27er%20Monastery%20%E5%A1%94%E5%B0%94%E5%AF%BA%20Xining&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></span>
   <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">2–3 hrs</span>
 </div>
 <div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Xining</div>
@@ -266,7 +266,7 @@ These places are near the route but not in the main plan. Add them if you have f
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;"><a href="places/yardang">Yardang Geopark 雅丹魔鬼城</a></span>
+  <span style="font-weight:700; font-size:15px;"><a href="places/yardang">Yardang Geopark 雅丹魔鬼城</a><a href="https://www.google.com/search?q=Yardang%20Geopark%20%E9%9B%85%E4%B8%B9%E9%AD%94%E9%AC%BC%E5%9F%8E%20Dunhuang&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></span>
   <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">Half day</span>
 </div>
 <div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Dunhuang</div>
@@ -275,7 +275,7 @@ These places are near the route but not in the main plan. Add them if you have f
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;"><a href="places/zhangye-dafo">Giant Buddha Temple 大佛寺</a></span>
+  <span style="font-weight:700; font-size:15px;"><a href="places/zhangye-dafo">Giant Buddha Temple 大佛寺</a><a href="https://www.google.com/search?q=Zhangye%20Giant%20Buddha%20Temple%20%E5%A4%A7%E4%BD%9B%E5%AF%BA&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></span>
   <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">30 min</span>
 </div>
 <div style="font-size:12px; color:#888; margin-bottom:6px;">📍 In Zhangye · Day 6 lunch stop</div>
@@ -284,7 +284,7 @@ These places are near the route but not in the main plan. Add them if you have f
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;"><a href="places/shandan-horse-farm">Shandan Horse Farm 山丹军马场</a></span>
+  <span style="font-weight:700; font-size:15px;"><a href="places/shandan-horse-farm">Shandan Horse Farm 山丹军马场</a><a href="https://www.google.com/search?q=Shandan%20Horse%20Farm%20%E5%B1%B1%E4%B8%B9%E5%86%9B%E9%A9%AC%E5%9C%BA&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></span>
   <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">45 min</span>
 </div>
 <div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Day 6 route · Zhangye → Qilian</div>
@@ -293,7 +293,7 @@ These places are near the route but not in the main plan. Add them if you have f
 
 <div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #718096;">
 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-  <span style="font-weight:700; font-size:15px;"><a href="places/zhuoer-mountain">Zhuoer Mountain 卓尔山</a></span>
+  <span style="font-weight:700; font-size:15px;"><a href="places/zhuoer-mountain">Zhuoer Mountain 卓尔山</a><a href="https://www.google.com/search?q=Zhuoer%20Mountain%20%E5%8D%93%E5%B0%94%E5%B1%B1%20Qilian&tbm=isch" target="_blank" style="text-decoration:none; font-size:11px; margin-left:3px;" title="Search images">🖼</a></span>
   <span style="font-size:12px; background:#f7f7f7; color:#555; padding:2px 8px; border-radius:12px;">2 hrs</span>
 </div>
 <div style="font-size:12px; color:#888; margin-bottom:6px;">📍 Near Qilian town</div>

@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=101.0,38.733&name=山丹军马场" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=38.733,101.0&title=山丹军马场&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Shandan%20Military%20Horse%20Farm%20%C2%B7%20%E5%B1%B1%E4%B8%B9%E5%86%9B%E9%A9%AC%E5%9C%BA%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Shandan Horse Farm](../photos/shandan-horse-farm.jpg)
 

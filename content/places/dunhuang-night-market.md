@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=94.662,40.142&name=沙州夜市" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=40.142,94.662&title=沙州夜市&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Dunhuang%20Shazhou%20Night%20Market%20%C2%B7%20%E6%B2%99%E5%B7%9E%E5%A4%9C%E5%B8%82%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Dunhuang Night Market](../photos/dunhuang-night-market.jpg)
 

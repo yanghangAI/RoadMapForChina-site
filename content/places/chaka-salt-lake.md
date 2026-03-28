@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=99.083,36.717&name=茶卡盐湖" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=36.717,99.083&title=茶卡盐湖&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Chaka%20Salt%20Lake%20%C2%B7%20%E8%8C%B6%E5%8D%A1%E7%9B%90%E6%B9%96%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Chaka Salt Lake](../photos/chaka-salt-lake.jpg)
 

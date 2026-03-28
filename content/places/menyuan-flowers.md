@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=101.617,37.383&name=门源油菜花" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=37.383,101.617&title=门源油菜花&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Menyuan%20Rapeseed%20Flowers%20%C2%B7%20%E9%97%A8%E6%BA%90%E6%B2%B9%E8%8F%9C%E8%8A%B1%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Menyuan Flowers](../photos/menyuan-flowers.jpg)
 

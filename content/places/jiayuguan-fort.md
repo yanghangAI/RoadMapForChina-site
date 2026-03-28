@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=98.3,39.817&name=嘉峪关" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=39.817,98.3&title=嘉峪关&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Jiayuguan%20Fort%20%C2%B7%20%E5%98%89%E5%B3%AA%E5%85%B3%E5%9F%8E%E6%A5%BC%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Jiayuguan Fort](../photos/jiayuguan-fort.jpg)
 

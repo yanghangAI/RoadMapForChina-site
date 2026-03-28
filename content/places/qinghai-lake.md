@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=100.183,36.9&name=青海湖" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=36.9,100.183&title=青海湖&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Qinghai%20Lake%20%C2%B7%20%E9%9D%92%E6%B5%B7%E6%B9%96%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Qinghai Lake](../photos/qinghai-lake.jpg)
 

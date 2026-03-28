@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=95.367,37.85&name=翡翠湖" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=37.85,95.367&title=翡翠湖&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Feicui%20Hu%20/%20Dachaidan%20%C2%B7%20%E7%BF%A1%E7%BF%A0%E6%B9%96%C2%B7%E5%A4%A7%E6%9F%B4%E6%97%A6%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Feicui Hu](../photos/feicui-hu.jpg)
 

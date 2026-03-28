@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=101.083,36.517&name=日月山" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=36.517,101.083&title=日月山&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Riyueshan%20Pass%20%C2%B7%20%E6%97%A5%E6%9C%88%E5%B1%B1%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Riyueshan Pass](../photos/riyueshan.jpg)
 

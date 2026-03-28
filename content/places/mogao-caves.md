@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=94.806,40.038&name=莫高窟" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=40.038,94.806&title=莫高窟&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Mogao%20Caves%20%C2%B7%20%E8%8E%AB%E9%AB%98%E7%AA%9F%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Mogao Caves](../photos/mogao-caves.jpg)
 

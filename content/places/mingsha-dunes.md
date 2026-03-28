@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=94.674,40.085&name=鸣沙山月牙泉" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=40.085,94.674&title=鸣沙山月牙泉&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Mingsha%20Sand%20Dunes%20%26%20Crescent%20Moon%20Spring%20%C2%B7%20%E9%B8%A3%E6%B2%99%E5%B1%B1%C2%B7%E6%9C%88%E7%89%99%E6%B3%89%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Mingsha Dunes](../photos/mingsha-dunes.jpg)
 

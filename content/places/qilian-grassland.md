@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=100.25,38.183&name=祁连草原" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=38.183,100.25&title=祁连草原&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Qilian%20Grassland%20%C2%B7%20%E7%A5%81%E8%BF%9E%E8%8D%89%E5%8E%9F%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Qilian Grassland](../photos/qilian-grassland.jpg)
 

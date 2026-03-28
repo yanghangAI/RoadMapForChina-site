@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=97.367,37.367&name=德令哈" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=37.367,97.367&title=德令哈&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Delingha%20%26%20Haizi%20Poetry%20Park%20%C2%B7%20%E5%BE%B7%E4%BB%A4%E5%93%88%C2%B7%E6%B5%B7%E5%AD%90%E8%AF%97%E6%AD%8C%E5%9B%AD%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Delingha](../photos/delingha.jpg)
 

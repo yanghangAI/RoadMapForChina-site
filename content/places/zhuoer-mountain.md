@@ -9,7 +9,7 @@
 <a href="https://uri.amap.com/marker?position=100.244,38.196&name=卓尔山" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🗺 高德地图 (Amap)</a>
 <a href="https://api.map.baidu.com/marker?location=38.196,100.244&title=卓尔山&output=html" target="_blank" style="display:block; padding:5px 0; text-decoration:none; font-size:13px; color:#333;">🔵 百度地图 (Baidu)</a>
 </div>
-</details>
+</details> <a href="https://www.google.com/search?q=Zhuoer%20Mountain%20%C2%B7%20%E5%8D%93%E5%B0%94%E5%B1%B1%20China%20travel&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
 ![Zhuoer Mountain](../photos/zhuoer-mountain.jpg)
 
