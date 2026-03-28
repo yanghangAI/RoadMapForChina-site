@@ -10,16 +10,81 @@
 
 ## Trip Overview
 
-| Day       | Date   | Route                | Drive        | Key Stops                          | Sleep     | Temp    |
-| --------- | ------ | -------------------- | ------------ | ---------------------------------- | --------- | ------- |
-| 1         | Jul 18 | Xining → Chaka       | 300km · 4h   | Riyueshan, Qinghai Lake, Chaka     | Chaka     | 15–20°C |
-| 2         | Jul 19 | Chaka → Dachaidan    | 330km · 4h   | Chaka sunrise, Delingha, Feicui Hu | Dachaidan | 20–28°C |
-| 3         | Jul 20 | Dachaidan → Dunhuang | 500km · 6h   | Qaidam Basin drive                 | Dunhuang  | 38–42°C |
-| 4         | Jul 21 | Dunhuang             | —            | Mogao Caves, Mingsha Dunes         | Dunhuang  | 38–42°C |
-| 5         | Jul 22 | Dunhuang → Jiayuguan | 400km · 4.5h | Jiayuguan Fort + Overhanging Wall  | Jiayuguan | 30–35°C |
-| 6         | Jul 23 | Jiayuguan → Qilian   | 410km · 5.5h | Qicai Danxia, Qilian grassland     | Qilian    | 20–25°C |
-| 7         | Jul 24 | Qilian → Xining      | 280km · 3.5h | Horseback riding, Menyuan flowers  | —         | 20–25°C |
-| **Total** |        |                      | **~2,220km** |                                    |           |         |
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; margin:1rem 0;">
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #2f855a;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 1 · Jul 18</span>
+  <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">15–20°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Xining → Chaka &nbsp;·&nbsp; 300km / 4h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Riyueshan · Qinghai Lake · Chaka</div>
+<div style="font-size:12px; color:#888;">🛏 Chaka</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #2f855a;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 2 · Jul 19</span>
+  <span style="font-size:12px; background:#f0fdf4; color:#276749; padding:2px 8px; border-radius:12px;">20–28°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Chaka → Dachaidan &nbsp;·&nbsp; 330km / 4h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Chaka sunrise · Delingha · Feicui Hu</div>
+<div style="font-size:12px; color:#888;">🛏 Dachaidan</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #c05621;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 3 · Jul 20</span>
+  <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dachaidan → Dunhuang &nbsp;·&nbsp; 500km / 6h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Qaidam Basin desert highway</div>
+<div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #c05621;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 4 · Jul 21</span>
+  <span style="font-size:12px; background:#fff7ed; color:#9c4221; padding:2px 8px; border-radius:12px;">38–42°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🏕 Dunhuang full day</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Mogao Caves · Mingsha Dunes</div>
+<div style="font-size:12px; color:#888;">🛏 Dunhuang</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 5 · Jul 22</span>
+  <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">30–35°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Dunhuang → Jiayuguan &nbsp;·&nbsp; 400km / 4.5h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Jiayuguan Fort · Overhanging Wall</div>
+<div style="font-size:12px; color:#888;">🛏 Jiayuguan</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 6 · Jul 23</span>
+  <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Jiayuguan → Qilian &nbsp;·&nbsp; 410km / 5.5h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Qicai Danxia · Qilian grassland</div>
+<div style="font-size:12px; color:#888;">🛏 Qilian</div>
+</div>
+
+<div style="border:1px solid var(--lightgray,#e5e5e5); border-radius:10px; padding:14px; border-left:4px solid #6b46c1;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+  <span style="font-weight:700; font-size:15px;">Day 7 · Jul 24</span>
+  <span style="font-size:12px; background:#faf5ff; color:#553c9a; padding:2px 8px; border-radius:12px;">20–25°C</span>
+</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚗 Qilian → Xining &nbsp;·&nbsp; 280km / 3.5h</div>
+<div style="font-size:13px; margin-bottom:4px;">📍 Horseback riding · Menyuan flowers</div>
+<div style="font-size:12px; color:#888;">🏠 Back to Xining</div>
+</div>
+
+</div>
+
+<div style="font-size:13px; color:#888; margin-top:4px;">Total distance: ~2,220km over 7 days</div>
 
 ---
 
