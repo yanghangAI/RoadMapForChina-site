@@ -52,5 +52,13 @@ There is a lake of jade-green water that has existed for 2,000 years in the hear
 
 ## Videos
 
-- [Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring](https://www.youtube.com/watch?v=ze73Eec2Nts) — covers both the dunes and the Crescent Moon Spring
-- [China's GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS](https://www.youtube.com/watch?v=l880-PjP5dY) — entertaining travel vlog covering Dunhuang including the Mingsha dunes
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ze73Eec2Nts" title="Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">covers both the dunes and the Crescent Moon Spring</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/l880-PjP5dY" title="China's GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">entertaining travel vlog covering Dunhuang including the Mingsha dunes</div>
+</div>
+</div>

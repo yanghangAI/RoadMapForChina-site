@@ -51,6 +51,17 @@ There are large lakes elsewhere in the world, but there is nothing quite like st
 
 ## Videos
 
-- [Cycling Around Qinghai Lake: A Ride Like No Other](https://www.youtube.com/watch?v=2tc4tt9WqO4) — solo cyclist circumnavigates China's largest lake
-- [I was riding solo the Qinghai Lake](https://www.youtube.com/watch?v=g8iLyRb8eGs) — personal cycling vlog around the lake shore
-- [Bicycle touring around Qinghai Lake, China](https://www.youtube.com/watch?v=G8GDylFCDpU) — touring cyclist perspective of the full circuit
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/2tc4tt9WqO4" title="Cycling Around Qinghai Lake: A Ride Like No Other" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">solo cyclist circumnavigates China's largest lake</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/g8iLyRb8eGs" title="I was riding solo the Qinghai Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">personal cycling vlog around the lake shore</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/G8GDylFCDpU" title="Bicycle touring around Qinghai Lake, China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">touring cyclist perspective of the full circuit</div>
+</div>
+</div>

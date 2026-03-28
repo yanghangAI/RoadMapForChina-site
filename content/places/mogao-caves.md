@@ -54,7 +54,21 @@ To stand inside a cave that a Tang Dynasty merchant paid to decorate in 720 AD, 
 
 ## Videos
 
-- [Mogao Caves (UNESCO/NHK)](https://www.youtube.com/watch?v=hK4PxrQH8ok) — UNESCO and NHK co-produced documentary on the caves and their history
-- [What are the Mogao Caves and why are they special?](https://www.youtube.com/watch?v=-LbyuIi9BYI) — accessible introduction to the site's significance
-- [Exploring the Mogao Caves: Journey into the Ancient Splendor | China Travel Guide](https://www.youtube.com/watch?v=zInyehUgriE) — English-language visitor's guide and walkthrough
-- [Cave Temples of Dunhuang: Buddhist Art on China's Silk Road](https://www.youtube.com/watch?v=J2ODpmJS_Dg) — Getty Research Institute lecture on the art and manuscripts
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/hK4PxrQH8ok" title="Mogao Caves (UNESCO/NHK)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">UNESCO and NHK co-produced documentary on the caves and their history</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/-LbyuIi9BYI" title="What are the Mogao Caves and why are they special?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">accessible introduction to the site's significance</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/zInyehUgriE" title="Exploring the Mogao Caves: Journey into the Ancient Splendor | China Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English-language visitor's guide and walkthrough</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/J2ODpmJS_Dg" title="Cave Temples of Dunhuang: Buddhist Art on China's Silk Road" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Getty Research Institute lecture on the art and manuscripts</div>
+</div>
+</div>

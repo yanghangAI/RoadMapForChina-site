@@ -51,6 +51,17 @@ A high plateau valley turned entirely yellow from horizon to mountain, with snow
 
 ## Videos
 
-- [Rapeseed flowers in Qilian Mountain, Menyuan County, Qinghai Province, China](https://www.youtube.com/watch?v=ARlqQy-eXKg) — aerial and ground footage of the Menyuan rapeseed fields with the Qilian mountains as backdrop
-- [Live: Stunning rapeseed flowers bloom in Qinghai – Ep. 8](https://www.youtube.com/watch?v=Xjc8XhzAlM0) — live broadcast footage of the bloom at peak season
-- [Golden sea of rapeseed flowers attract tourists in Qinghai](https://www.youtube.com/watch?v=8oNERtR0IN8) — news-style coverage of the annual bloom and visitor experience
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/ARlqQy-eXKg" title="Rapeseed flowers in Qilian Mountain, Menyuan County, Qinghai Province, China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground footage of the Menyuan rapeseed fields with the Qilian mountains as backdrop</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Xjc8XhzAlM0" title="Live: Stunning rapeseed flowers bloom in Qinghai – Ep. 8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">live broadcast footage of the bloom at peak season</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/8oNERtR0IN8" title="Golden sea of rapeseed flowers attract tourists in Qinghai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">news-style coverage of the annual bloom and visitor experience</div>
+</div>
+</div>

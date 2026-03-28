@@ -53,5 +53,13 @@ After days in the empty basin, a first-time visitor to China who walks into Shaz
 
 ## Videos
 
-- [CRAZY Desert Food Feast! China Dunhuang Food Tour of Hexi Corridor](https://www.youtube.com/watch?v=v4tFAjWUIY0) — extended street food walkthrough of the Shazhou night market with tasting commentary
-- [3 Days Dunhuang Travel: Mogao Caves, Great Wall and Desert | China Travel ep.3](https://www.youtube.com/watch?v=IRhr48Y6Gp8) — covers the night market as part of a full Dunhuang itinerary
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/v4tFAjWUIY0" title="CRAZY Desert Food Feast! China Dunhuang Food Tour of Hexi Corridor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">extended street food walkthrough of the Shazhou night market with tasting commentary</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/IRhr48Y6Gp8" title="3 Days Dunhuang Travel: Mogao Caves, Great Wall and Desert | China Travel ep.3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">covers the night market as part of a full Dunhuang itinerary</div>
+</div>
+</div>

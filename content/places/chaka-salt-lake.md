@@ -52,6 +52,17 @@ Photographs circulate constantly online, but standing on the actual salt flat at
 
 ## Videos
 
-- [CHAKA SALT LAKE: China's Incredible MIRROR OF THE SKY! | Qinghai Travel Guide](https://www.youtube.com/watch?v=rvGn31AUYhI) — English-language travel guide covering the mirror reflection experience and practical tips
-- [How to get to Chaka Salt Lake](https://www.youtube.com/watch?v=u5wjVLlEZ-k) — logistics and transport from Xining
-- [What to expect at Chaka Salt Lake](https://www.youtube.com/watch?v=vf8XzN9wKHY) — honest on-the-ground account of the visit experience
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/rvGn31AUYhI" title="CHAKA SALT LAKE: China's Incredible MIRROR OF THE SKY! | Qinghai Travel Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English-language travel guide covering the mirror reflection experience and practical tips</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/u5wjVLlEZ-k" title="How to get to Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">logistics and transport from Xining</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/vf8XzN9wKHY" title="What to expect at Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">honest on-the-ground account of the visit experience</div>
+</div>
+</div>

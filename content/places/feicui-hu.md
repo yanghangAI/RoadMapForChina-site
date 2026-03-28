@@ -51,6 +51,17 @@ Most first-time visitors to China see ancient temples and busy cities — Feicui
 
 ## Videos
 
-- [Qinghai Dachaidan Emerald Lake 0525A2](https://www.youtube.com/watch?v=0ii_qi-ztxI) — footage of the emerald-colored salt lake pools at Dachaidan
-- [Emerald Lake — Qinghai Tour](https://www.youtube.com/watch?v=GfEKX327RTs) — short travel video of the jade-green waters
-- [Three Magical Lakes of Qinghai: Qinghai Lake · Emerald Lake · Chaka Salt Lake](https://www.youtube.com/watch?v=BZICUTXhZS4) — comparison of all three major Qinghai lake destinations
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/0ii_qi-ztxI" title="Qinghai Dachaidan Emerald Lake 0525A2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">footage of the emerald-colored salt lake pools at Dachaidan</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/GfEKX327RTs" title="Emerald Lake — Qinghai Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">short travel video of the jade-green waters</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/BZICUTXhZS4" title="Three Magical Lakes of Qinghai: Qinghai Lake · Emerald Lake · Chaka Salt Lake" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">comparison of all three major Qinghai lake destinations</div>
+</div>
+</div>

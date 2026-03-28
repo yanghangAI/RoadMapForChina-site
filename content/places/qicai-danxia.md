@@ -52,5 +52,13 @@ The images look like digital color grading. Arriving in person and understanding
 
 ## Videos
 
-- [Unbelievable Rainbow Mountains of Zhangye Danxia | Amazing Places in China](https://www.youtube.com/watch?v=TC-nvgFi5HU) — aerial and ground-level footage of the colored formations
-- [RAINBOW MOUNTAINS of CHINA: Why You Need To Visit Zhangye](https://www.youtube.com/watch?v=1bft6NWuVbk) — English travel vlog with practical visitor information and photography tips
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/TC-nvgFi5HU" title="Unbelievable Rainbow Mountains of Zhangye Danxia | Amazing Places in China" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">aerial and ground-level footage of the colored formations</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/1bft6NWuVbk" title="RAINBOW MOUNTAINS of CHINA: Why You Need To Visit Zhangye" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English travel vlog with practical visitor information and photography tips</div>
+</div>
+</div>

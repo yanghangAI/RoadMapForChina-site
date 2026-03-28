@@ -53,4 +53,9 @@ If Dunhuang is already the most otherworldly stop on this trip, the Yardang Geop
 
 ## Videos
 
-- [Silk Road 10 — Dunhuang Yadan National Geopark](https://www.youtube.com/watch?v=Wog6wcMCoPE) — Travel footage driving through the formation areas with commentary on the geology and the Silk Road context
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/Wog6wcMCoPE" title="Silk Road 10 — Dunhuang Yadan National Geopark" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Travel footage driving through the formation areas with commentary on the geology and the Silk Road context</div>
+</div>
+</div>

@@ -53,5 +53,13 @@ You are standing at the exact point where an empire decided to stop — the lite
 
 ## Videos
 
-- [JIAYUGUAN FORT at the end of the GREAT WALL OF CHINA!](https://www.youtube.com/watch?v=a2r4u3j11u8) — English travel vlog exploring the fort and its western Great Wall context
-- [The Great Wall & the fort of Jiayuguan (CHINA) | Episode 1](https://www.youtube.com/watch?v=XOmG9wWP8NM) — documentary-style coverage of the fort and surrounding wall sections
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/a2r4u3j11u8" title="JIAYUGUAN FORT at the end of the GREAT WALL OF CHINA!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">English travel vlog exploring the fort and its western Great Wall context</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/XOmG9wWP8NM" title="The Great Wall & the fort of Jiayuguan (CHINA) | Episode 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">documentary-style coverage of the fort and surrounding wall sections</div>
+</div>
+</div>
