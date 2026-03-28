@@ -50,8 +50,6 @@ title: Beijing
 - **6:00pm** Back at Jiangtai Lu
 - **7:30pm** 🍽 Dinner: **Haidilao hotpot** (海底捞), Sanlitun branch — great first hotpot experience, good service, manageable for first-timers
 
-![Beijing Great Wall Mutianyu](photos/beijing-great-wall.jpg)
-
 ---
 
 ## Day 3 · July 16 — Imperial City + Night Train
@@ -97,4 +95,4 @@ title: Beijing
 ## Onward
 
 **July 16 night** → Night train to Xi'an · arrives July 17 morning
-[[full-trip-overview|← Back to Full Trip Overview]]
+[[index|← Full Trip Overview]]

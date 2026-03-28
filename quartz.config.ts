@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "大西北 Road Trip 2026",
-    pageTitleSuffix: " · 大西北",
+    pageTitle: "China Road Trip 2026",
+    pageTitleSuffix: " · China 2026",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
