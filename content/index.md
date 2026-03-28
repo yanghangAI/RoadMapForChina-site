@@ -4,6 +4,7 @@
 **Loop:** Xining → Qinghai Lake → Chaka → Feicui Hu → Dunhuang → Jiayuguan → Danxia → Qilian → Xining
 
 > **Before you go:** [[places/packing-list|Packing List]] · [[places/useful-phrases|Useful Chinese Phrases]]
+> **Navigate:** [[map|🗺 Interactive Route Map]]
 
 ---
 
