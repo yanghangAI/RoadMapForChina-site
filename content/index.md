@@ -67,7 +67,15 @@ aliases:
 
 </div>
 
-<div style="font-size:13px; color:#888; margin-top:4px;">Total 22 days · <a href="map">🗺 Route Maps</a></div>
+<div style="font-size:13px; color:#888; margin-top:4px;">Total 22 days · <a href="map">🗺 All Route Maps</a></div>
+
+---
+
+## Route Map
+
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/full-trip-map.html" style="width:100%; height:500px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+
+Click a marker to see dates, transport, and a link to the detailed trip plan.
 
 ---
 

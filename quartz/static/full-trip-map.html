@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Trip Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f5f5; }
+  #map { height: 100vh; width: 100%; }
+  .legend {
+    position: absolute;
+    bottom: 24px;
+    left: 12px;
+    z-index: 1000;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 12px;
+    line-height: 2;
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="legend">
+  <div><span class="legend-dot" style="background:#2b6cb0"></span>Phase 1 · Beijing</div>
+  <div><span class="legend-dot" style="background:#c07a10"></span>Phase 2 · Xi'an</div>
+  <div><span class="legend-dot" style="background:#2f855a"></span>Phase 3 · Northwest</div>
+  <div><span class="legend-dot" style="background:#c05621"></span>Phase 4 · Chengdu</div>
+  <div><span class="legend-dot" style="background:#6b46c1"></span>Phase 5 · Yunnan</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const map = L.map('map', { zoomControl: true }).setView([33, 108], 5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  const phases = [
+    {
+      name: "Beijing · 北京",
+      phase: "Phase 1",
+      dates: "Jul 14–16",
+      transport: "✈️ Arrive Daxing 12:10",
+      slug: "trips/beijing",
+      coords: [39.905, 116.391],
+      color: "#2b6cb0",
+      num: 1
+    },
+    {
+      name: "Xi'an · 西安",
+      phase: "Phase 2",
+      dates: "Jul 17",
+      transport: "🚄 Night train from Beijing (~11h)",
+      slug: null,
+      coords: [34.341, 108.940],
+      color: "#c07a10",
+      num: 2
+    },
+    {
+      name: "Xining · 西宁",
+      phase: "Phase 3 · Northwest Loop",
+      dates: "Jul 18–24",
+      transport: "🚄 High-speed from Xi'an (~4h)",
+      slug: "trips/northwest",
+      coords: [36.617, 101.778],
+      color: "#2f855a",
+      num: 3
+    },
+    {
+      name: "Chengdu · 成都",
+      phase: "Phase 4",
+      dates: "Jul 25–26",
+      transport: "✈️ Fly from Xining (~2h)",
+      slug: null,
+      coords: [30.657, 104.066],
+      color: "#c05621",
+      num: 4
+    },
+    {
+      name: "Kunming · 昆明",
+      phase: "Phase 5 · Yunnan",
+      dates: "Jul 27 – Aug 3",
+      transport: "🚄 High-speed from Chengdu (~4–5h)",
+      slug: null,
+      coords: [25.046, 102.706],
+      color: "#6b46c1",
+      num: 5
+    },
+  ];
+
+  // Route polyline
+  L.polyline(phases.map(p => p.coords), {
+    color: '#e53e3e', weight: 3, opacity: 0.6, dashArray: '10, 7'
+  }).addTo(map);
+
+  // Markers
+  phases.forEach(phase => {
+    const icon = L.divIcon({
+      html: `<div style="
+        background:${phase.color}; color:white; width:32px; height:32px;
+        border-radius:50%; display:flex; align-items:center; justify-content:center;
+        font-size:13px; font-weight:bold; border:2px solid white;
+        box-shadow:0 2px 8px rgba(0,0,0,0.4); cursor:pointer;
+      ">${phase.num}</div>`,
+      className: '', iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
+    });
+
+    const lat = phase.coords[0], lng = phase.coords[1];
+    const name = encodeURIComponent(phase.name);
+    const mapLinks = `
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+        <a href="https://maps.apple.com/?ll=${lat},${lng}&q=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🍎 Apple Maps</a>
+        <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🌐 Google Maps</a>
+        <a href="https://uri.amap.com/marker?position=${lng},${lat}&name=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🗺 高德地图</a>
+        <a href="https://api.map.baidu.com/marker?location=${lat},${lng}&title=${name}&output=html" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🔵 百度地图</a>
+      </div>`;
+
+    const planLink = phase.slug
+      ? `<a href="../${phase.slug}" target="_top" style="display:inline-block; margin-top:6px; font-size:12px; color:#2b6cb0; text-decoration:none;">View Trip Plan →</a>`
+      : `<span style="display:inline-block; margin-top:6px; font-size:12px; color:#aaa;">Trip plan coming soon</span>`;
+
+    const popup = `
+      <div style="font-family:-apple-system,sans-serif; min-width:180px;">
+        <div style="font-weight:bold; font-size:15px; margin-bottom:2px;">${phase.name}</div>
+        <div style="color:#555; font-size:12px; margin-bottom:2px;">${phase.phase} · ${phase.dates}</div>
+        <div style="color:#888; font-size:12px; margin-bottom:4px;">${phase.transport}</div>
+        ${planLink}
+        ${mapLinks}
+      </div>`;
+
+    L.marker(phase.coords, { icon }).addTo(map).bindPopup(popup, { maxWidth: 260 });
+  });
+
+  setTimeout(() => map.invalidateSize(), 100);
+});
+</script>
+</body>
+</html>
