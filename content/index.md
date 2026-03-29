@@ -67,7 +67,7 @@ aliases:
 
 </div>
 
-<div style="font-size:13px; color:#888; margin-top:4px;">Total 22 days · <a href="map">🗺 Northwest Route Map</a></div>
+<div style="font-size:13px; color:#888; margin-top:4px;">Total 22 days · <a href="map">🗺 Route Maps</a></div>
 
 ---
 

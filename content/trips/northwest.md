@@ -3,9 +3,9 @@
 **Group:** 7 people (5 Italians, 2 Chinese) · 1 car (7-seater) · Budget–midrange
 **Loop:** Xining → Qinghai Lake → Chaka → Feicui Hu → Dunhuang → Jiayuguan → Danxia → Qilian → Xining
 
-> **Before you go:** [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
 > **Overview:** [[index|← Full Trip Overview]]
-> **Navigate:** [[map|🗺 Interactive Route Map]]
+> **Before you go:** [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
+> **Navigate:** [[map|🗺 Route Maps]]
 
 ---
 
@@ -85,7 +85,21 @@
 
 </div>
 
-<div style="font-size:13px; color:#888; margin-top:4px;">Total ~2,220km · <a href="map">🗺 View Route Map</a></div>
+<div style="font-size:13px; color:#888; margin-top:4px;">Total ~2,220km · <a href="#route-map">🗺 View Route Map</a></div>
+
+---
+
+## Route Map
+
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/route-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+
+| | |
+|---|---|
+| 🔵 Blue | Start / End — Xining |
+| 🟢 Green | Days 1–2 — Qinghai & Qaidam |
+| 🟠 Orange | Days 3–4 — Dunhuang |
+| 🟣 Purple | Days 5–7 — Hexi Corridor & Qilian |
+| ◆ Grey | Optional stops |
 
 ---
 

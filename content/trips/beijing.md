@@ -10,6 +10,7 @@ title: Beijing · 北京
 
 > **Overview:** [[index|← Full Trip Overview]]
 > **Before you go:** [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
+> **Navigate:** [[map|🗺 Route Maps]]
 
 ---
 

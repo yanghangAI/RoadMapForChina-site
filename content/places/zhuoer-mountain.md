@@ -17,10 +17,6 @@
 |--|--|
 | ![Zhuoer Mountain 2](../photos/zhuoer-mountain-2.jpg) | ![Zhuoer Mountain 3](../photos/zhuoer-mountain-3.jpg) |
 
-## Videos
-
-- [Mount Zhuoer — Trip.com travel moment](https://au.trip.com/moments/detail/qilian-120123-131461975/) — visitor photography and video from the summit viewpoint showing the layered valley landscape (travel platform with embedded videos)
-
 ## Overview
 
 Zhuoer Mountain — known in Tibetan as "Zongmu Mayou Ma," meaning Beautiful Red Queen — rises immediately above Qilian County town on its north bank, separated from the town by the Babao River. It is a branch of the Qilian mountain range composed of exposed red sandstone in the Danxia style — the same geological formation responsible for the rainbow colours at Zhangye — but here it appears against a backdrop of vivid green alpine meadows, rapeseed flower fields, and the distant white snow peaks of the Qilian range itself. The result is a layered landscape of extraordinary photographic quality: red rock in the foreground, green valley below, yellow flowers in season, blue sky, and white peaks behind. It is one of the most photographed viewpoints in Qinghai.
