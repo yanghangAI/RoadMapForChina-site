@@ -11,6 +11,19 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Nanluoguxiang+Hutongs+南锣鼓巷+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/gQZO0d_ZYmU" title="Beijing Snacks & Food — Nanluoguxiang Hutong Tour 4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">4K food and hutong walk covering snacks, street vendors, and alleyway culture</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/HV3Xx3nZFnQ" title="Beijing Hutong Walking Tour — Nanluoguxiang to Drum Tower" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Best walking route for first-time visitors through hutong neighbourhood</div>
+</div>
+</div>
+
 ## Overview
 
 Nanluoguxiang is the most accessible introduction to Beijing's hutong culture — the network of narrow alleyways and courtyard homes (四合院, siheyuan) that formed the residential fabric of the imperial capital for 700 years. The main lane runs 786 metres north to south, lined with converted courtyard homes turned into cafés, boutiques, and snack stalls, with 8 historic side alleys branching east and west into quieter residential territory.

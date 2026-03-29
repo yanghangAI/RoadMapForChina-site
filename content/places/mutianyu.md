@@ -11,6 +11,19 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Mutianyu+Great+Wall+慕田峪长城+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/8jY9_zuhxyc" title="Great Wall of China — Mutianyu | Travel Guide | Beijing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Covers Mutianyu section, cable car, and comparison with other Great Wall sections</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/hEVBVFQwbd4" title="Great Wall of China | Solo Travel Mini Vlog Beijing Day Trip" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Day trip vlog from Beijing to Mutianyu including the toboggan slide</div>
+</div>
+</div>
+
 ## Overview
 
 Mutianyu is the best section of the Great Wall to visit from Beijing — better than the famous but overcrowded Badaling, better than the crumbling but unrestored sections favoured by hikers. It sits 75km northeast of Beijing, restored to its Ming Dynasty condition, running along a ridge of the Yanshan Mountains with forested valleys falling away on both sides.

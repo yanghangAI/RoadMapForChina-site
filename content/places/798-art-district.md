@@ -11,6 +11,19 @@
 </div>
 </details> <a href="https://www.google.com/search?q=798+Art+District+Beijing+大山子艺术区&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/TOVeeQO6rNs" title="Hidden Art in Beijing's 798 District" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Exploration of galleries, street art, and the industrial architecture of the complex</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/GMNMQFw4WsY" title="My Favourite Place In Beijing — The 798 Art District" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Personal tour of the district highlighting the best galleries and spaces</div>
+</div>
+</div>
+
 ## Overview
 
 798 Art District (大山子艺术区) is Beijing's contemporary art hub, built inside a decommissioned state military electronics factory complex in the Dashanzi neighbourhood of Chaoyang. The factories were built in the early 1950s by East German engineers in the Bauhaus industrial style — wide saw-tooth skylights, exposed brick, massive concrete frames — and operated as Factory 718, producing electronics for the Chinese military.

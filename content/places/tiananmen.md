@@ -11,6 +11,19 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Tiananmen+Square+天安门广场+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/k0WUjshZpxg" title="Beijing Travel Tips — Tiananmen Square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Practical guide to visiting the square including security, monuments, and layout</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/HYtNfndaatw" title="Is Tiananmen Square the Largest Square in the World?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">History and significance of the square and its place in Chinese political life</div>
+</div>
+</div>
+
 ## Overview
 
 Tiananmen Square is the symbolic centre of the People's Republic of China — the largest public square in the world at 440,000 square metres, capable of holding one million people. It sits on the same north-south imperial axis as the Forbidden City immediately to its north, and was designed in its current form in 1949 when Mao Zedong proclaimed the founding of the PRC from the Gate of Heavenly Peace.

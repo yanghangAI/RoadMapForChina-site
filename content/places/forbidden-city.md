@@ -11,6 +11,19 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Forbidden+City+故宫+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/B3OfLdZISMs" title="Walking Tour In The Forbidden City 4K | World Heritage | Beijing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">4K walking tour through the full south-north axis of the palace complex</div>
+</div>
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/WeU9FshZdeg" title="Forbidden City Beijing | Complete Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Chapter-based guide covering Meridian Gate, Golden Water Bridges, and Imperial Garden</div>
+</div>
+</div>
+
 ## Overview
 
 The Forbidden City — officially the Palace Museum (故宫博物院) — was the imperial palace of China for 24 emperors across the Ming and Qing dynasties, from 1420 to 1912. It is the largest surviving palace complex on earth: 72 hectares, 980 buildings, nearly 9,000 rooms enclosed within a 10-metre-high wall and a 52-metre-wide moat. For almost five centuries, ordinary Chinese were forbidden to enter on pain of death — hence the name.
