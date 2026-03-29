@@ -53,6 +53,20 @@ title: Beijing · 北京
 
 ---
 
+## Route Map
+
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/beijing-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+
+| | |
+|---|---|
+| 🔵 Blue | Home Base — Jiangtai Lu |
+| 🟢 Green | Day 1 — Arrival afternoon |
+| 🟠 Orange | Day 2 — Great Wall day |
+| 🟣 Purple | Day 3 — Imperial Beijing |
+| ◆ Grey | Optional stops |
+
+---
+
 > ⚠️ **Book immediately:**
 > - **Forbidden City tickets** — 40,000/day cap in July, sells out weeks ahead → [gugong.dpm.org.cn](https://gugong.dpm.org.cn)
 > - **Night train Beijing West → Xi'an (Jul 16)** — 6 people, 2 soft sleeper compartments → [12306.cn](https://www.12306.cn)
