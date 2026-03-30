@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/delingha
+---
+
 # Delingha & Haizi Poetry Park · 德令哈·海子诗歌园
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

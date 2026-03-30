@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/qilian-grassland
+---
+
 # Qilian Grassland · 祁连草原
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Qilian Grassland](../photos/qilian-grassland.jpg)
 
-| | |
-|--|--|
+|                                                         |                                                         |
+| ------------------------------------------------------- | ------------------------------------------------------- |
 | ![Qilian Grassland 2](../photos/qilian-grassland-2.jpg) | ![Qilian Grassland 3](../photos/qilian-grassland-3.jpg) |
 
 ## Videos

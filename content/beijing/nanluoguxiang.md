@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/nanluoguxiang
+---
+
 # Nanluoguxiang Hutongs · 南锣鼓巷
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

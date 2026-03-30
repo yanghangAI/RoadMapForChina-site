@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/zhuoer-mountain
+---
+
 # Zhuoer Mountain · 卓尔山
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Zhuoer Mountain](../photos/zhuoer-mountain.jpg)
 
-| | |
-|--|--|
+|                                                       |                                                       |
+| ----------------------------------------------------- | ----------------------------------------------------- |
 | ![Zhuoer Mountain 2](../photos/zhuoer-mountain-2.jpg) | ![Zhuoer Mountain 3](../photos/zhuoer-mountain-3.jpg) |
 
 ## Overview

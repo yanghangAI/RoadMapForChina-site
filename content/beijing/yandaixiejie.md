@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/yandaixiejie
+---
+
 # Yandaixiejie · 烟袋斜街
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

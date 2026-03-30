@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/tiananmen
+---
+
 # Tiananmen Square · 天安门广场
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

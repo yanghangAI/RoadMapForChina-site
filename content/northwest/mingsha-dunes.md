@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/mingsha-dunes
+---
+
 # Mingsha Sand Dunes & Crescent Moon Spring · 鸣沙山·月牙泉
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Mingsha Dunes](../photos/mingsha-dunes.jpg)
 
-| | |
-|--|--|
+|                                                   |                                                   |
+| ------------------------------------------------- | ------------------------------------------------- |
 | ![Mingsha Dunes 2](../photos/mingsha-dunes-2.jpg) | ![Mingsha Dunes 3](../photos/mingsha-dunes-3.jpg) |
 
 ## Videos

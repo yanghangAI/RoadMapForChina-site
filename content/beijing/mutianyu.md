@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/mutianyu
+---
+
 # Mutianyu Great Wall · 慕田峪长城
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/taer-monastery
+---
+
 # Ta'er Monastery · 塔尔寺
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Ta'er Monastery](../photos/taer-monastery.jpg)
 
-| | |
-|--|--|
+|                                                      |                                                      |
+| ---------------------------------------------------- | ---------------------------------------------------- |
 | ![Ta'er Monastery 2](../photos/taer-monastery-2.jpg) | ![Ta'er Monastery 3](../photos/taer-monastery-3.jpg) |
 
 ## Overview

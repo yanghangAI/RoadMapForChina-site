@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/yardang
+---
+
 # Yardang National Geopark · 雅丹魔鬼城
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Yardang](../photos/yardang.jpg)
 
-| | |
-|--|--|
+|                                       |                                       |
+| ------------------------------------- | ------------------------------------- |
 | ![Yardang 2](../photos/yardang-2.jpg) | ![Yardang 3](../photos/yardang-3.jpg) |
 
 ## Videos

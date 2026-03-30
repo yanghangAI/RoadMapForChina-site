@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/jiayuguan-fort
+---
+
 # Jiayuguan Fort · 嘉峪关城楼
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Jiayuguan Fort](../photos/jiayuguan-fort.jpg)
 
-| | |
-|--|--|
+|                                                     |                                                     |
+| --------------------------------------------------- | --------------------------------------------------- |
 | ![Jiayuguan Fort 2](../photos/jiayuguan-fort-2.jpg) | ![Jiayuguan Fort 3](../photos/jiayuguan-fort-3.jpg) |
 
 ## Videos

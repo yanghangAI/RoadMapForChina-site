@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/798-art-district
+---
+
 # 798 Art District · 798艺术区
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

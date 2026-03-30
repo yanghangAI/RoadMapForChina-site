@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/forbidden-city
+---
+
 # Forbidden City · 故宫博物院
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

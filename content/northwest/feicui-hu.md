@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/feicui-hu
+---
+
 # Feicui Hu / Dachaidan · 翡翠湖·大柴旦
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Feicui Hu](../photos/feicui-hu.jpg)
 
-| | |
-|--|--|
+|                                           |                                           |
+| ----------------------------------------- | ----------------------------------------- |
 | ![Feicui Hu 2](../photos/feicui-hu-2.jpg) | ![Feicui Hu 3](../photos/feicui-hu-3.jpg) |
 
 ## Videos

@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/shandan-horse-farm
+---
+
 # Shandan Military Horse Farm · 山丹军马场
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Shandan Horse Farm](../photos/shandan-horse-farm.jpg)
 
-| | |
-|--|--|
+|                                                             |                                                             |
+| ----------------------------------------------------------- | ----------------------------------------------------------- |
 | ![Shandan Horse Farm 2](../photos/shandan-horse-farm-2.jpg) | ![Shandan Horse Farm 3](../photos/shandan-horse-farm-3.jpg) |
 
 ## Overview

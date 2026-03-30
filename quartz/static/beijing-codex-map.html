@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Route Map</title>
+    <title>Beijing Codex Route Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -44,11 +44,15 @@
   <body>
     <div id="map"></div>
     <div class="legend">
-      <div><span class="legend-dot" style="background: #2b6cb0"></span>Xining (Start/End)</div>
-      <div><span class="legend-dot" style="background: #2f855a"></span>Days 1–2 · Qinghai</div>
-      <div><span class="legend-dot" style="background: #c05621"></span>Days 3–4 · Dunhuang</div>
+      <div><span class="legend-dot" style="background: #2b6cb0"></span>Home Base · Jiangtai Lu</div>
+      <div><span class="legend-dot" style="background: #2f855a"></span>Day 1 · 798 arrival day</div>
       <div>
-        <span class="legend-dot" style="background: #6b46c1"></span>Days 5–7 · Hexi & Qilian
+        <span class="legend-dot" style="background: #c05621"></span>Day 2 · Great Wall + Summer
+        Palace
+      </div>
+      <div>
+        <span class="legend-dot" style="background: #6b46c1"></span>Day 3 · Forbidden City + Hutongs
+        + Train
       </div>
       <div style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #eee">
         <span
@@ -61,12 +65,12 @@
             margin-right: 8px;
           "
         ></span
-        >Optional stops
+        >Optional Codex swap
       </div>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const map = L.map("map", { zoomControl: true }).setView([38.5, 98.5], 6)
+        const map = L.map("map", { zoomControl: true }).setView([40.02, 116.41], 10)
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: "© OpenStreetMap contributors",
@@ -75,150 +79,89 @@
 
         const stops = [
           {
-            name: "Xining · 西宁",
-            day: "Start / End",
-            coords: [36.617, 101.778],
+            name: "Home Base · 丽都饭店附近",
+            day: "Base · All Days",
+            coords: [39.972, 116.476],
             slug: null,
             color: "#2b6cb0",
-            num: "S",
+            num: "H",
           },
           {
-            name: "Riyueshan Pass · 日月山",
-            day: "Day 1",
-            coords: [36.517, 101.083],
-            slug: "northwest/riyueshan",
+            name: "798 Art District · 798艺术区",
+            day: "Day 1 · Afternoon",
+            coords: [39.984, 116.497],
+            slug: "beijing/798-art-district",
             color: "#2f855a",
             num: 1,
           },
           {
-            name: "Qinghai Lake · 青海湖",
-            day: "Day 1",
-            coords: [36.9, 100.183],
-            slug: "northwest/qinghai-lake",
-            color: "#2f855a",
+            name: "Mutianyu Great Wall · 慕田峪长城",
+            day: "Day 2 · Morning",
+            coords: [40.433, 116.567],
+            slug: "beijing/mutianyu",
+            color: "#c05621",
             num: 2,
           },
           {
-            name: "Chaka Salt Lake · 茶卡盐湖",
-            day: "Day 1–2",
-            coords: [36.717, 99.083],
-            slug: "northwest/chaka-salt-lake",
-            color: "#2f855a",
+            name: "Summer Palace · 颐和园",
+            day: "Day 2 · Afternoon",
+            coords: [39.999, 116.275],
+            slug: null,
+            color: "#c05621",
             num: 3,
           },
           {
-            name: "Delingha · 德令哈",
-            day: "Day 2",
-            coords: [37.367, 97.367],
-            slug: "northwest/delingha",
-            color: "#2f855a",
+            name: "Tiananmen Square · 天安门广场",
+            day: "Day 3 · Morning",
+            coords: [39.905, 116.391],
+            slug: "beijing/tiananmen",
+            color: "#6b46c1",
             num: 4,
           },
           {
-            name: "Feicui Hu · 翡翠湖",
-            day: "Day 2",
-            coords: [37.85, 95.367],
-            slug: "northwest/feicui-hu",
-            color: "#2f855a",
+            name: "Forbidden City · 故宫博物院",
+            day: "Day 3 · Morning",
+            coords: [39.916, 116.39],
+            slug: "beijing/forbidden-city",
+            color: "#6b46c1",
             num: 5,
           },
           {
-            name: "Dunhuang · 敦煌",
-            day: "Day 3–4",
-            coords: [40.142, 94.662],
-            slug: "northwest/dunhuang-night-market",
-            color: "#c05621",
+            name: "Nanluoguxiang · 南锣鼓巷",
+            day: "Day 3 · Lunch + Walk",
+            coords: [39.937, 116.399],
+            slug: "beijing/nanluoguxiang",
+            color: "#6b46c1",
             num: 6,
           },
           {
-            name: "Mogao Caves · 莫高窟",
-            day: "Day 4",
-            coords: [40.038, 94.806],
-            slug: "northwest/mogao-caves",
-            color: "#c05621",
+            name: "Yandaixiejie · 烟袋斜街",
+            day: "Day 3 · Late Afternoon",
+            coords: [39.943, 116.392],
+            slug: "beijing/yandaixiejie",
+            color: "#6b46c1",
             num: 7,
           },
           {
-            name: "Mingsha Dunes · 鸣沙山",
-            day: "Day 4",
-            coords: [40.085, 94.674],
-            slug: "northwest/mingsha-dunes",
-            color: "#c05621",
+            name: "Beijing West Station · 北京西站",
+            day: "Day 3 · Evening",
+            coords: [39.895, 116.322],
+            slug: null,
+            color: "#6b46c1",
             num: 8,
-          },
-          {
-            name: "Jiayuguan Fort · 嘉峪关",
-            day: "Day 5",
-            coords: [39.817, 98.3],
-            slug: "northwest/jiayuguan-fort",
-            color: "#6b46c1",
-            num: 9,
-          },
-          {
-            name: "Qicai Danxia · 七彩丹霞",
-            day: "Day 6",
-            coords: [38.937, 100.467],
-            slug: "northwest/qicai-danxia",
-            color: "#6b46c1",
-            num: 10,
-          },
-          {
-            name: "Qilian Grassland · 祁连草原",
-            day: "Day 6–7",
-            coords: [38.183, 100.25],
-            slug: "northwest/qilian-grassland",
-            color: "#6b46c1",
-            num: 11,
-          },
-          {
-            name: "Menyuan Flowers · 门源油菜花",
-            day: "Day 7",
-            coords: [37.383, 101.617],
-            slug: "northwest/menyuan-flowers",
-            color: "#6b46c1",
-            num: 12,
           },
         ]
 
         const optional = [
           {
-            name: "Ta'er Monastery · 塔尔寺",
-            day: "Optional · near Xining",
-            coords: [36.486, 101.569],
-            slug: "northwest/taer-monastery",
-            color: "#718096",
-          },
-          {
-            name: "Yardang Geopark · 雅丹魔鬼城",
-            day: "Optional · near Dunhuang",
-            coords: [40.483, 93.1],
-            slug: "northwest/yardang",
-            color: "#718096",
-          },
-          {
-            name: "Giant Buddha · 张掖大佛寺",
-            day: "Optional · in Zhangye",
-            coords: [38.936, 100.452],
-            slug: "northwest/zhangye-dafo",
-            color: "#718096",
-          },
-          {
-            name: "Shandan Horse Farm · 山丹军马场",
-            day: "Optional · Day 6 route",
-            coords: [38.733, 101.0],
-            slug: "northwest/shandan-horse-farm",
-            color: "#718096",
-          },
-          {
-            name: "Zhuoer Mountain · 卓尔山",
-            day: "Optional · near Qilian",
-            coords: [38.196, 100.244],
-            slug: "northwest/zhuoer-mountain",
+            name: "Panjiayuan Antique Market · 潘家园旧货市场",
+            day: "Optional · swap-in market stop",
+            coords: [39.876, 116.461],
+            slug: "beijing/panjiayuan",
             color: "#718096",
           },
         ]
 
-        // Route polyline
         L.polyline(
           stops.map((s) => s.coords),
           {
@@ -229,7 +172,6 @@
           },
         ).addTo(map)
 
-        // Markers
         stops.forEach((stop) => {
           const icon = L.divIcon({
             html: `<div style="
@@ -274,7 +216,6 @@
           L.marker(stop.coords, { icon }).addTo(map).bindPopup(popup, { maxWidth: 240 })
         })
 
-        // Optional destination markers (diamond shape)
         optional.forEach((stop) => {
           const icon = L.divIcon({
             html: `<div style="
@@ -303,11 +244,15 @@
            style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🔵 百度地图</a>
       </div>`
 
+          const detailLink = stop.slug
+            ? `<a href="../${stop.slug}" target="_top" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>`
+            : ""
+
           const popup = `
       <div style="font-family:-apple-system,sans-serif; min-width:170px;">
         <div style="font-weight:bold; font-size:14px; margin-bottom:2px;">${stop.name}</div>
         <div style="color:#777; font-size:12px; margin-bottom:4px;">${stop.day}</div>
-        <a href="../${stop.slug}" target="_top" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>
+        ${detailLink}
         ${mapLinks}
       </div>`
 

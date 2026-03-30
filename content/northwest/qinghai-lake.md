@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/qinghai-lake
+---
+
 # Qinghai Lake · 青海湖
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Qinghai Lake](../photos/qinghai-lake.jpg)
 
-| | |
-|--|--|
+|                                                 |                                                 |
+| ----------------------------------------------- | ----------------------------------------------- |
 | ![Qinghai Lake 2](../photos/qinghai-lake-2.jpg) | ![Qinghai Lake 3](../photos/qinghai-lake-3.jpg) |
 
 ## Videos

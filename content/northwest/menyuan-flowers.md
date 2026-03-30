@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/menyuan-flowers
+---
+
 # Menyuan Rapeseed Flowers · 门源油菜花
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Menyuan Flowers](../photos/menyuan-flowers.jpg)
 
-| | |
-|--|--|
+|                                                       |                                                       |
+| ----------------------------------------------------- | ----------------------------------------------------- |
 | ![Menyuan Flowers 2](../photos/menyuan-flowers-2.jpg) | ![Menyuan Flowers 3](../photos/menyuan-flowers-3.jpg) |
 
 ## Videos

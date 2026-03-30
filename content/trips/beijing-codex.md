@@ -21,32 +21,32 @@ tags:
 - Keep Day 1 light after arrival.
 - Keep Mutianyu as the Great Wall day.
 - Reduce cross-city friction on departure day.
-- Use Nanluoguxiang as the lunch and hutong stop, then continue to Yandaixiejia.
+- Use Nanluoguxiang as the lunch and hutong stop, then continue to Yandaixiejie.
 
 ---
 
 ## Route Map
 
-<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/beijing-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/beijing-codex-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
 
-| | |
-|---|---|
-| 🔵 Blue | Home Base — Jiangtai Lu |
-| 🟢 Green | Day 1 — Arrival afternoon |
-| 🟠 Orange | Day 2 — Great Wall day |
-| 🟣 Purple | Day 3 — Imperial Beijing |
-| ◆ Grey | Optional stops |
+|           |                                          |
+| --------- | ---------------------------------------- |
+| 🔵 Blue   | Home Base — Jiangtai Lu                  |
+| 🟢 Green  | Day 1 — Arrival afternoon                |
+| 🟠 Orange | Day 2 — Great Wall + Summer Palace       |
+| 🟣 Purple | Day 3 — Forbidden City + Hutongs + Train |
+| ◆ Grey    | Optional Codex swap                      |
 
 ---
 
 ## Day 1 — July 14 · Arrival + Easy Evening
 
-*Arrive Daxing 12:10 · keep the first day close to home*
+_Arrive Daxing 12:10 · keep the first day close to home_
 
 - **12:10pm** Land at Beijing Daxing International Airport.
 - **~2:00pm** Clear customs, collect luggage, pick up rental car.
 - **~3:30pm** Reach Jiangtai Lu, drop bags, reset.
-- **4:30–6:30pm** [[798-art-district|798 Art District]] — easy first walk, low pressure, no hard schedule.
+- **4:30–6:30pm** [[beijing/798-art-district|798 Art District]] — easy first walk, low pressure, no hard schedule.
 - **7:00pm** Dinner near Jiangtai / 798 instead of a longer cross-city drive. Goal: eat well, stay local, sleep early.
 
 Why this version: after an international arrival, the failure mode is not boredom, it is friction. A nearby dinner protects the group’s energy.
@@ -55,9 +55,9 @@ Why this version: after an international arrival, the failure mode is not boredo
 
 ## Day 2 — July 15 · Great Wall + Summer Palace
 
-*Full day · strongest sightseeing day*
+_Full day · strongest sightseeing day_
 
-- **7:30am** Depart for [[mutianyu|Mutianyu Great Wall]].
+- **7:30am** Depart for [[beijing/mutianyu|Mutianyu Great Wall]].
 - **9:00am–1:00pm** Wall visit with cable car or shuttle as preferred.
 - **1:00pm** Lunch near Mutianyu or on the way back.
 - **3:00–6:00pm** Summer Palace (颐和园) on the return side of the city.
@@ -69,13 +69,13 @@ Why this version: Summer Palace is more distinctive and culturally stronger than
 
 ## Day 3 — July 16 · Imperial Beijing + Train
 
-*Departure day · protect the evening transfer*
+_Departure day · protect the evening transfer_
 
-- **8:00am** Arrive at [[tiananmen|Tiananmen]] area. Treat this mainly as the approach to the palace zone, not a long separate stop.
-- **9:00am–12:30pm** [[forbidden-city|Forbidden City]] with pre-booked entry.
-- **1:30pm** Late lunch at [[nanluoguxiang|Nanluoguxiang hutongs]].
+- **8:00am** Arrive at [[beijing/tiananmen|Tiananmen]] area. Treat this mainly as the approach to the palace zone, not a long separate stop.
+- **9:00am–12:30pm** [[beijing/forbidden-city|Forbidden City]] with pre-booked entry.
+- **1:30pm** Late lunch at [[beijing/nanluoguxiang|Nanluoguxiang hutongs]].
 - **2:30–4:30pm** Walk Nanluoguxiang and the side lanes rather than adding another separate food stop.
-- **4:30–5:30pm** Continue to [[yandaixiejie|Yandaixiejie (烟袋斜街)]] and the Shichahai / Drum Tower area for one more atmospheric old-Beijing walk.
+- **4:30–5:30pm** Continue to [[beijing/yandaixiejie|Yandaixiejie (烟袋斜街)]] and the Shichahai / Drum Tower area for one more atmospheric old-Beijing walk.
 - **No later than 7:00pm** Reach Beijing West Station area, return the car, and move inside with luggage.
 - **~9:00pm** Board the night train to Xi'an.
 
@@ -89,4 +89,4 @@ This Codex plan keeps the original priorities: 798, Mutianyu, Forbidden City, an
 
 ## Optional Swap
 
-- [[panjiayuan|Panjiayuan Antique Market]] is worth considering only if someone in the group strongly prefers flea markets and antique browsing. For this specific Beijing window, Tuesday, July 14, 2026 to Thursday, July 16, 2026, I would **not** add it to the main Codex plan: it fits best as an early-morning weekend stop and sits outside the clean flow of the current itinerary. If you want it, the best trade is to swap it in for 798 on Day 1 or for part of the Summer Palace block on Day 2.
+- [[beijing/panjiayuan|Panjiayuan Antique Market]] is worth considering only if someone in the group strongly prefers flea markets and antique browsing. For this specific Beijing window, Tuesday, July 14, 2026 to Thursday, July 16, 2026, I would **not** add it to the main Codex plan: it fits best as an early-morning weekend stop and sits outside the clean flow of the current itinerary. If you want it, the best trade is to swap it in for 798 on Day 1 or for part of the Summer Palace block on Day 2.

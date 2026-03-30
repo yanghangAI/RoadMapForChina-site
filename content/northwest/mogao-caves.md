@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/mogao-caves
+---
+
 # Mogao Caves · 莫高窟
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Mogao Caves](../photos/mogao-caves.jpg)
 
-| | |
-|--|--|
+|                                               |                                               |
+| --------------------------------------------- | --------------------------------------------- |
 | ![Mogao Caves 2](../photos/mogao-caves-2.jpg) | ![Mogao Caves 3](../photos/mogao-caves-3.jpg) |
 
 ## Videos

@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/panjiayuan
+---
+
 # Panjiayuan Antique Market · 潘家园旧货市场
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

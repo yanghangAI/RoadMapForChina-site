@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/chaka-salt-lake
+---
+
 # Chaka Salt Lake · 茶卡盐湖
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">

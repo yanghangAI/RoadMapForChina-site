@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/qicai-danxia
+---
+
 # Zhangye Qicai Danxia · 张掖七彩丹霞
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Qicai Danxia](../photos/qicai-danxia.jpg)
 
-| | |
-|--|--|
+|                                                 |                                                 |
+| ----------------------------------------------- | ----------------------------------------------- |
 | ![Qicai Danxia 2](../photos/qicai-danxia-2.jpg) | ![Qicai Danxia 3](../photos/qicai-danxia-3.jpg) |
 
 ## Videos

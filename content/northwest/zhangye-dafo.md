@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/zhangye-dafo
+---
+
 # Giant Buddha Temple · 张掖大佛寺
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Zhangye Dafo](../photos/zhangye-dafo.jpg)
 
-| | |
-|--|--|
+|                                                 |                                                 |
+| ----------------------------------------------- | ----------------------------------------------- |
 | ![Zhangye Dafo 2](../photos/zhangye-dafo-2.jpg) | ![Zhangye Dafo 3](../photos/zhangye-dafo-3.jpg) |
 
 ## Overview

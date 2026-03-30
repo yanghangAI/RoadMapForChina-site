@@ -1,3 +1,8 @@
+---
+aliases:
+  - places/dunhuang-night-market
+---
+
 # Dunhuang Shazhou Night Market · 沙州夜市
 
 <details style="display:inline-block; position:relative; cursor:pointer; margin-bottom:1rem;">
@@ -13,8 +18,8 @@
 
 ![Dunhuang Night Market](../photos/dunhuang-night-market.jpg)
 
-| | |
-|--|--|
+|                                                                   |                                                                   |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | ![Dunhuang Night Market 2](../photos/dunhuang-night-market-2.jpg) | ![Dunhuang Night Market 3](../photos/dunhuang-night-market-3.jpg) |
 
 ## Videos
