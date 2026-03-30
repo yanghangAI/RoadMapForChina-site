@@ -21,7 +21,7 @@ tags:
 - Keep Day 1 light after arrival.
 - Keep Mutianyu as the Great Wall day.
 - Reduce cross-city friction on departure day.
-- Treat Wangfujing as optional, not essential.
+- Use Nanluoguxiang as the lunch and hutong stop, then continue to Yandaixiejia.
 
 ---
 
@@ -59,18 +59,16 @@ Why this version: Summer Palace is more distinctive and culturally stronger than
 
 - **8:00am** Arrive at [[tiananmen|Tiananmen]] area. Treat this mainly as the approach to the palace zone, not a long separate stop.
 - **9:00am–12:30pm** [[forbidden-city|Forbidden City]] with pre-booked entry.
-- **1:00pm** Lunch nearby.
-- **2:30–5:00pm** [[nanluoguxiang|Nanluoguxiang hutongs]] and surrounding lanes.
-- **5:00pm** Optional branch:
-  - If the group still has energy, do a short Wangfujing stop.
-  - If not, skip it and move directly toward the station plan.
+- **1:30pm** Late lunch at [[nanluoguxiang|Nanluoguxiang hutongs]].
+- **2:30–4:30pm** Walk Nanluoguxiang and the side lanes rather than adding another separate food stop.
+- **4:30–5:30pm** Continue to Yandaixiejia (烟袋斜街) and the Shichahai / Drum Tower area for one more atmospheric old-Beijing walk.
 - **No later than 7:00pm** Reach Beijing West Station area, return the car, and move inside with luggage.
 - **~9:00pm** Board the night train to Xi'an.
 
-Why this version: the original departure day is workable, but it becomes fragile if one stop runs long. This version keeps the main sights and gives the train more breathing room.
+Why this version: the original departure day is workable, but it becomes fragile if one stop runs long. This version cuts the extra Wangfujing move, combines food with the hutong area, adds Yandaixiejia naturally, and still gives the train more breathing room.
 
 ---
 
 ## Bottom Line
 
-This Codex plan keeps the original priorities: 798, Mutianyu, Forbidden City, and hutongs. The main changes are a local first-night dinner, Summer Palace instead of Olympic Park, and a more defensive departure day.
+This Codex plan keeps the original priorities: 798, Mutianyu, Forbidden City, and hutongs. The main changes are a local first-night dinner, Summer Palace instead of Olympic Park, and a cleaner departure day built around Nanluoguxiang plus Yandaixiejia instead of Wangfujing.
