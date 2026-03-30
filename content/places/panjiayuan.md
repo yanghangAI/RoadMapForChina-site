@@ -11,6 +11,15 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Panjiayuan+Antique+Market+%E6%BD%98%E5%AE%B6%E5%9B%AD+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/kpxD_20MLUs" title="China's Largest Flea Market: Panjiayuan Antique Market Beijing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Recent walk-through of the antique market showing stall density, browsing style, and the overall atmosphere</div>
+</div>
+</div>
+
 ## Overview
 
 Panjiayuan is Beijing's best-known flea and antiques market: a sprawling, semi-chaotic complex in the southeast of the city where dealers sell everything from Cultural Revolution posters and old propaganda badges to porcelain, carved jade, prayer beads, calligraphy brushes, bronze reproductions, Mao memorabilia, Tibetan trinkets, furniture fragments, and outright junk. It is not a refined museum experience. It is a market in the older Beijing sense: noisy, opportunistic, visual, and full of objects whose stories are half true, half invented.

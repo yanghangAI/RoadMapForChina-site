@@ -25,6 +25,20 @@ tags:
 
 ---
 
+## Route Map
+
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/beijing-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+
+| | |
+|---|---|
+| 🔵 Blue | Home Base — Jiangtai Lu |
+| 🟢 Green | Day 1 — Arrival afternoon |
+| 🟠 Orange | Day 2 — Great Wall day |
+| 🟣 Purple | Day 3 — Imperial Beijing |
+| ◆ Grey | Optional stops |
+
+---
+
 ## Day 1 — July 14 · Arrival + Easy Evening
 
 *Arrive Daxing 12:10 · keep the first day close to home*

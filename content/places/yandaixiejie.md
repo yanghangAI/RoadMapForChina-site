@@ -11,6 +11,15 @@
 </div>
 </details> <a href="https://www.google.com/search?q=Yandaixiejie+%E7%83%9F%E8%A2%8B%E6%96%9C%E8%A1%97+Beijing&tbm=isch" target="_blank" style="text-decoration:none; font-size:1.2rem;" title="Search images">🖼</a>
 
+## Videos
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:1rem 0;">
+<div>
+<iframe width="100%" height="200" src="https://www.youtube-nocookie.com/embed/HV3Xx3nZFnQ" title="Beijing Hutong Walking Tour — Nanluoguxiang to Drum Tower" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+<div style="font-size:12px; color:#666; margin-top:4px;">Useful walking preview of the Nanluoguxiang to Drum Tower route that naturally leads into Yandaixiejie and Shichahai</div>
+</div>
+</div>
+
 ## Overview
 
 Yandaixiejie (烟袋斜街, literally "Tobacco Pouch Diagonal Street") is one of the oldest commercial hutong streets in Beijing, running diagonally between the Drum Tower area and Shichahai. Unlike the straight north-south geometry of Nanluoguxiang, this lane bends at an angle, which immediately makes it feel older and less formal. It dates back at least to the Yuan Dynasty, when this part of Beijing developed as a waterside commercial district serving canal traffic and local residents.
