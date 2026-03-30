@@ -61,14 +61,18 @@ Why this version: Summer Palace is more distinctive and culturally stronger than
 - **9:00am–12:30pm** [[forbidden-city|Forbidden City]] with pre-booked entry.
 - **1:30pm** Late lunch at [[nanluoguxiang|Nanluoguxiang hutongs]].
 - **2:30–4:30pm** Walk Nanluoguxiang and the side lanes rather than adding another separate food stop.
-- **4:30–5:30pm** Continue to Yandaixiejia (烟袋斜街) and the Shichahai / Drum Tower area for one more atmospheric old-Beijing walk.
+- **4:30–5:30pm** Continue to [[yandaixiejie|Yandaixiejie (烟袋斜街)]] and the Shichahai / Drum Tower area for one more atmospheric old-Beijing walk.
 - **No later than 7:00pm** Reach Beijing West Station area, return the car, and move inside with luggage.
 - **~9:00pm** Board the night train to Xi'an.
 
-Why this version: the original departure day is workable, but it becomes fragile if one stop runs long. This version cuts the extra Wangfujing move, combines food with the hutong area, adds Yandaixiejia naturally, and still gives the train more breathing room.
+Why this version: the original departure day is workable, but it becomes fragile if one stop runs long. This version cuts the extra Wangfujing move, combines food with the hutong area, adds Yandaixiejie naturally, and still gives the train more breathing room.
 
 ---
 
 ## Bottom Line
 
-This Codex plan keeps the original priorities: 798, Mutianyu, Forbidden City, and hutongs. The main changes are a local first-night dinner, Summer Palace instead of Olympic Park, and a cleaner departure day built around Nanluoguxiang plus Yandaixiejia instead of Wangfujing.
+This Codex plan keeps the original priorities: 798, Mutianyu, Forbidden City, and hutongs. The main changes are a local first-night dinner, Summer Palace instead of Olympic Park, and a cleaner departure day built around Nanluoguxiang plus Yandaixiejie instead of Wangfujing.
+
+## Optional Swap
+
+- [[panjiayuan|Panjiayuan Antique Market]] is worth considering only if someone in the group strongly prefers flea markets and antique browsing. For this specific Beijing window, Tuesday, July 14, 2026 to Thursday, July 16, 2026, I would **not** add it to the main Codex plan: it fits best as an early-morning weekend stop and sits outside the clean flow of the current itinerary. If you want it, the best trade is to swap it in for 798 on Day 1 or for part of the Summer Palace block on Day 2.
