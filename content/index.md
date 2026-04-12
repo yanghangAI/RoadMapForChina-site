@@ -95,7 +95,7 @@ Click a marker to see dates, transport, and a link to the detailed trip plan.
 ## Phase Details
 
 - [[beijing|Phase 1 · Beijing Plan →]]
-- Phase 2 · Xi'an → *(coming soon)*
+- [[xian|Phase 2 · Xi'an Plan →]]
 - [[northwest|Phase 3 · Northwest Road Trip →]]
 - Phase 4 · Chengdu → *(coming soon)*
 - Phase 5 · Yunnan → *(coming soon)*
