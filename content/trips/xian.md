@@ -4,7 +4,7 @@ title: Xi'an · 西安
 
 # Xi'an · 西安 · July 17, 2026
 
-**Group:** 7 people (5 Italians + 2 Chinese) · 1 full day
+**Group:** 8 people (5 Italians + 3 Chinese) · 1 full day
 **Base:** Xi'an city centre, near Bell Tower
 **Transport:** Train to Lintong for Terracotta Warriors · Didi + walking in old city
 
@@ -70,7 +70,7 @@ title: Xi'an · 西安
 > ⚠️ **Book in advance:**
 >
 > - **Terracotta Warriors tickets** — ¥120/person, sells out in peak July → book via official WeChat mini-program
-> - **High-speed train Xi'an → Xining (Jul 18)** — 7 people → [12306.cn](https://www.12306.cn)
+> - **High-speed train Xi'an → Xining (Jul 18)** — 8 people → [12306.cn](https://www.12306.cn)
 > - **Hotel** — near Bell Tower for walking access to City Wall and Muslim Quarter
 
 ---
@@ -82,7 +82,7 @@ title: Xi'an · 西安
 _Arrive Xi'an ~7:30am · train east to Lintong · 28–38°C_
 
 - **~7:30am** Arrive Xi'an Station by night train from Beijing
-- **8:00am** Meet 7th group member at station. Grab breakfast at a street stall near the station — **肉夹馍 (ròujiāmó)** and **胡辣汤 (húlàtāng, spicy pepper soup)** — the local morning combo.
+- **8:00am** Meet the 2 new group members at station. Grab breakfast at a street stall near the station — **肉夹馍 (ròujiāmó)** and **胡辣汤 (húlàtāng, spicy pepper soup)** — the local morning combo.
 - **~8:30am** Train from Xi'an Station to Lintong (临潼) — short ride east, buy tickets at the station or via 12306
 - **~9:30am–12:30pm** **[[xian/terracotta-warriors|Terracotta Warriors (秦始皇兵马俑博物馆)]]**<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=34.384,109.278&q=Terracotta+Warriors+Museum" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=34.384,109.278" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=109.278,34.384&name=秦始皇兵马俑博物馆" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=34.384,109.278&title=秦始皇兵马俑博物馆&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — Pit 1 first (the big one, ~6,000 warriors in formation), then Pit 2 and 3, then the Bronze Chariots Exhibition Hall. Hire an English-speaking guide at the entrance (¥150–200 for the group). Allow 3 hours.
 - **12:30pm** Train back to Xi'an city centre

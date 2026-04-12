@@ -30,7 +30,7 @@ aliases:
   <a href="trips/xian" style="font-weight:700; font-size:15px; text-decoration:none; color:inherit;">Phase 2 · Xi'an</a>
   <span style="font-size:12px; background:#fffbeb; color:#744210; padding:2px 8px; border-radius:12px;">Jul 17</span>
 </div>
-<div style="font-size:13px; color:#555; margin-bottom:6px;">🚄 Arrive by night train · 1 full day</div>
+<div style="font-size:13px; color:#555; margin-bottom:6px;">🚄 Arrive by night train · 8 people · 1 full day</div>
 <div style="font-size:13px; margin-bottom:4px;">📍 Terracotta Warriors · City Wall · Muslim Quarter</div>
 <div style="font-size:12px; color:#888;">🛏 Xi'an city center</div>
 </div>
