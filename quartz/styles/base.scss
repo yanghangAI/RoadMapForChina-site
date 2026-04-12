@@ -519,6 +519,7 @@ p {
 
 .table-container {
   overflow-x: auto;
+  overflow-anchor: none;
 
   & > table {
     margin: 1rem;
