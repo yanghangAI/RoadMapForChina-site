@@ -54,6 +54,19 @@ title: Xi'an · 西安
 
 ---
 
+## Route Map
+
+<iframe src="https://yanghangai.github.io/RoadMapForChina-site/static/xian-map.html" style="width:100%; height:560px; border:none; border-radius:12px; margin:1rem 0;" loading="lazy" allowfullscreen></iframe>
+
+|             |                                  |
+| ----------- | -------------------------------- |
+| 🟤 Brown    | Morning — Terracotta Warriors    |
+| 🔵 Blue     | Afternoon — City Wall & Towers   |
+| 🟠 Orange   | Evening — Muslim Quarter         |
+| ◆ Grey      | Optional stops                   |
+
+---
+
 > ⚠️ **Book in advance:**
 >
 > - **Terracotta Warriors tickets** — ¥120/person, sells out in peak July → book via official WeChat mini-program

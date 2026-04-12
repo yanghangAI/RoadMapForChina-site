@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xi'an Route Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #f5f5f5;
+      }
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+      .legend {
+        position: absolute;
+        bottom: 24px;
+        left: 12px;
+        z-index: 1000;
+        background: white;
+        border-radius: 8px;
+        padding: 10px 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+      .legend-dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="legend">
+      <div><span class="legend-dot" style="background: #744210"></span>Morning · Terracotta Warriors</div>
+      <div><span class="legend-dot" style="background: #2b6cb0"></span>Afternoon · City Wall & Towers</div>
+      <div><span class="legend-dot" style="background: #c05621"></span>Evening · Muslim Quarter</div>
+      <div style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #eee">
+        <span
+          style="
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #718096;
+            transform: rotate(45deg);
+            margin-right: 8px;
+          "
+        ></span
+        >Optional stops
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const map = L.map("map", { zoomControl: true }).setView([34.3, 108.98], 11)
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap contributors",
+          maxZoom: 18,
+        }).addTo(map)
+
+        const stops = [
+          {
+            name: "Xi'an Station · 西安站",
+            day: "Morning · Arrive ~7:30am",
+            coords: [34.274, 108.966],
+            slug: null,
+            color: "#744210",
+            num: 1,
+          },
+          {
+            name: "Terracotta Warriors · 秦始皇兵马俑博物馆",
+            day: "Morning · 9:30am–12:30pm",
+            coords: [34.384, 109.278],
+            slug: "xian/terracotta-warriors",
+            color: "#744210",
+            num: 2,
+          },
+          {
+            name: "Hotel · Bell Tower area",
+            day: "Afternoon · Check in ~1:30pm",
+            coords: [34.260, 108.943],
+            slug: null,
+            color: "#2b6cb0",
+            num: 3,
+          },
+          {
+            name: "City Wall South Gate · 永宁门",
+            day: "Afternoon · 3:00–5:00pm",
+            coords: [34.252, 108.946],
+            slug: "xian/city-wall",
+            color: "#2b6cb0",
+            num: 4,
+          },
+          {
+            name: "Bell Tower · 钟楼",
+            day: "Afternoon · 5:00pm",
+            coords: [34.260, 108.942],
+            slug: null,
+            color: "#2b6cb0",
+            num: 5,
+          },
+          {
+            name: "Drum Tower · 鼓楼",
+            day: "Afternoon · 5:15pm",
+            coords: [34.261, 108.938],
+            slug: null,
+            color: "#2b6cb0",
+            num: 6,
+          },
+          {
+            name: "Muslim Quarter · 回民街",
+            day: "Evening · 5:30–7:30pm",
+            coords: [34.265, 108.940],
+            slug: "xian/muslim-quarter",
+            color: "#c05621",
+            num: 7,
+          },
+          {
+            name: "Great Mosque · 大清真寺",
+            day: "Evening · ~6:30pm",
+            coords: [34.264, 108.937],
+            slug: null,
+            color: "#c05621",
+            num: 8,
+          },
+        ]
+
+        const optional = [
+          {
+            name: "Big Wild Goose Pagoda · 大雁塔",
+            day: "Optional · swap City Wall",
+            coords: [34.218, 108.959],
+            slug: null,
+            color: "#718096",
+          },
+          {
+            name: "Shaanxi History Museum · 陕西历史博物馆",
+            day: "Optional · near Pagoda",
+            coords: [34.222, 108.955],
+            slug: null,
+            color: "#718096",
+          },
+          {
+            name: "Tang Paradise · 大唐芙蓉园",
+            day: "Optional · evening alternative",
+            coords: [34.213, 108.967],
+            slug: null,
+            color: "#718096",
+          },
+        ]
+
+        // Route polyline
+        L.polyline(
+          stops.map((s) => s.coords),
+          {
+            color: "#e53e3e",
+            weight: 3,
+            opacity: 0.65,
+            dashArray: "8, 6",
+          },
+        ).addTo(map)
+
+        // Markers
+        stops.forEach((stop) => {
+          const icon = L.divIcon({
+            html: `<div style="
+        background:${stop.color}; color:white; width:28px; height:28px;
+        border-radius:50%; display:flex; align-items:center; justify-content:center;
+        font-size:11px; font-weight:bold; border:2px solid white;
+        box-shadow:0 2px 6px rgba(0,0,0,0.35); cursor:pointer;
+      ">${stop.num}</div>`,
+            className: "",
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+            popupAnchor: [0, -18],
+          })
+
+          const lat = stop.coords[0],
+            lng = stop.coords[1]
+          const name = encodeURIComponent(stop.name)
+          const mapLinks = `
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+        <a href="https://maps.apple.com/?ll=${lat},${lng}&q=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🍎 Apple Maps</a>
+        <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🌐 Google Maps</a>
+        <a href="https://uri.amap.com/marker?position=${lng},${lat}&name=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🗺 高德地图</a>
+        <a href="https://api.map.baidu.com/marker?location=${lat},${lng}&title=${name}&output=html" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🔵 百度地图</a>
+      </div>`
+
+          const detailLink = stop.slug
+            ? `<a href="../${stop.slug}" target="_top" style="font-size:12px; color:#2b6cb0; text-decoration:none;">View Details →</a>`
+            : ""
+
+          const popup = `
+      <div style="font-family:-apple-system,sans-serif; min-width:170px;">
+        <div style="font-weight:bold; font-size:14px; margin-bottom:2px;">${stop.name}</div>
+        <div style="color:#777; font-size:12px; margin-bottom:4px;">${stop.day}</div>
+        ${detailLink}
+        ${mapLinks}
+      </div>`
+
+          L.marker(stop.coords, { icon }).addTo(map).bindPopup(popup, { maxWidth: 240 })
+        })
+
+        // Optional destination markers (diamond shape)
+        optional.forEach((stop) => {
+          const icon = L.divIcon({
+            html: `<div style="
+        background:${stop.color}; color:white; width:24px; height:24px;
+        transform:rotate(45deg); display:flex; align-items:center; justify-content:center;
+        border:2px solid white; box-shadow:0 2px 6px rgba(0,0,0,0.3); cursor:pointer;
+      "></div>`,
+            className: "",
+            iconSize: [24, 24],
+            iconAnchor: [12, 12],
+            popupAnchor: [0, -16],
+          })
+
+          const lat = stop.coords[0],
+            lng = stop.coords[1]
+          const name = encodeURIComponent(stop.name)
+          const mapLinks = `
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+        <a href="https://maps.apple.com/?ll=${lat},${lng}&q=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🍎 Apple Maps</a>
+        <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🌐 Google Maps</a>
+        <a href="https://uri.amap.com/marker?position=${lng},${lat}&name=${name}" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🗺 高德地图</a>
+        <a href="https://api.map.baidu.com/marker?location=${lat},${lng}&title=${name}&output=html" target="_blank"
+           style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">🔵 百度地图</a>
+      </div>`
+
+          const popup = `
+      <div style="font-family:-apple-system,sans-serif; min-width:170px;">
+        <div style="font-weight:bold; font-size:14px; margin-bottom:2px;">${stop.name}</div>
+        <div style="color:#777; font-size:12px; margin-bottom:4px;">${stop.day}</div>
+        ${mapLinks}
+      </div>`
+
+          L.marker(stop.coords, { icon }).addTo(map).bindPopup(popup, { maxWidth: 240 })
+        })
+
+        setTimeout(() => map.invalidateSize(), 100)
+      })
+    </script>
+  </body>
+</html>
