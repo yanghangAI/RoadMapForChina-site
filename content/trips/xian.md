@@ -71,7 +71,7 @@ title: Xi'an · 西安
 >
 > - **Terracotta Warriors tickets** — ¥120/person, sells out in peak July → book via official WeChat mini-program
 > - **7006 Xi'an → Lintong (Jul 17 morning)** — 8 people, departs 8:12am → [12306.cn](https://www.12306.cn)
-> - **High-speed train Xi'an → Xining (Jul 18)** — 8 people → [12306.cn](https://www.12306.cn)
+> - **D2685 Xi'an North → Xining (Jul 18)** — 8 people, departs 9:00am → [12306.cn](https://www.12306.cn)
 > - **Hotel** — near Bell Tower for walking access to City Wall and Muslim Quarter
 
 ---
@@ -115,7 +115,7 @@ _The Drum Tower marks the entrance — walk straight in_
   - **Must-try:** 羊肉泡馍 (lamb & bread soup) · 肉夹馍 (meat in flatbread) · 烤羊肉串 (cumin lamb skewers) · 凉皮 (cold noodles) · 石榴汁 (pomegranate juice) · 镜糕 (mini rice cakes)
 - **6:30pm** Side trip: **Great Mosque (大清真寺)**<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=34.264,108.937&q=Great+Mosque+Xi%27an" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=34.264,108.937" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=108.937,34.264&name=大清真寺" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=34.264,108.937&title=大清真寺&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — ¥25 entry. One of China's oldest mosques, built in Chinese garden style with Islamic elements. A peaceful contrast to the street chaos. 20–30 minutes.
 - **8:00pm** Didi to **[[xian/tang-all-day-mall|大唐不夜城 (Great Tang All Day Mall)]]**<details style="display:inline-block;position:relative;cursor:pointer;vertical-align:middle;margin-left:4px;"><summary style="list-style:none;font-size:1rem;user-select:none;">📍</summary><div style="position:absolute;top:1.6rem;left:0;background:white;border:1px solid #ddd;border-radius:10px;padding:10px 14px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,0.15);min-width:180px;white-space:nowrap;"><div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#333;">Open in Maps</div><a href="https://maps.apple.com/?ll=34.220,108.961&q=Great+Tang+All+Day+Mall" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🍎 Apple Maps</a><a href="https://www.google.com/maps?q=34.220,108.961" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🌐 Google Maps</a><a href="https://uri.amap.com/marker?position=108.961,34.220&name=大唐不夜城" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🗺 高德地图</a><a href="https://api.map.baidu.com/marker?location=34.220,108.961&title=大唐不夜城&output=html" target="_blank" style="display:block;padding:4px 0;text-decoration:none;font-size:12px;color:#333;">🔵 百度地图</a></div></details> — ~15min taxi south. A 2km pedestrian boulevard lit up in full Tang Dynasty spectacle: golden light installations, costumed street performers, live music, and the famous roly-poly lady. Walk the boulevard from the Big Wild Goose Pagoda south. Best after dark — peak atmosphere by 8:30pm.
-- **9:30pm** Didi back to hotel. Rest up — the Xining train departs early tomorrow.
+- **9:30pm** Didi back to hotel. Rest up — D2685 to Xining departs Xi'an North at 9:00am tomorrow.
 
 ---
 
@@ -172,6 +172,6 @@ These sights are near the route but not in the main plan. Add them if you have e
 
 ## Onward
 
-**July 18 morning** → High-speed train Xi'an → Xining · ~4 hours · arrives ~midday
+**July 18 morning** → D2685 Xi'an North 9:00am → Xining 12:49pm
 
 [[northwest|Phase 3 · Northwest Road Trip →]] · [[index|← Full Trip Overview]]
