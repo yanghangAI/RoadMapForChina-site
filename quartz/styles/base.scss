@@ -518,7 +518,7 @@ p {
 }
 
 .table-container {
-  overflow-x: auto;
+  overflow-x: clip;
   overflow-anchor: none;
 
   & > table {
