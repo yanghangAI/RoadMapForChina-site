@@ -104,6 +104,7 @@ Click a marker to see dates, transport, and a link to the detailed trip plan.
 
 ## Resources
 
+- [[tips|💡 Travel Tips]]
 - [[packing-list|🎒 Packing List]]
 - [[useful-phrases|🗣 Useful Chinese Phrases]]
 - [[map|🗺 Interactive Route Map]]

@@ -9,7 +9,7 @@ title: Xi'an · 西安
 **Transport:** Train to Lintong for Terracotta Warriors · Didi + walking in old city
 
 > **Overview:** [[index|← Full Trip Overview]]
-> **Before you go:** [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
+> **Before you go:** [[tips|Travel Tips]] · [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
 > **Navigate:** [[map|🗺 Route Maps]]
 
 ---

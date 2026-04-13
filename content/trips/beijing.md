@@ -9,7 +9,7 @@ title: Beijing · 北京
 **Transport:** Rental car (Chinese friend drives) · pick up at Daxing Airport
 
 > **Overview:** [[index|← Full Trip Overview]]
-> **Before you go:** [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
+> **Before you go:** [[tips|Travel Tips]] · [[packing-list|Packing List]] · [[useful-phrases|Useful Chinese Phrases]]
 > **Navigate:** [[map|🗺 Route Maps]]
 
 ---

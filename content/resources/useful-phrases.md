@@ -73,6 +73,34 @@ The 2 Chinese members will handle most communication. These phrases are for when
 
 ---
 
+## Transport & Navigation
+
+| Situation | Chinese | Pinyin |
+|-----------|---------|--------|
+| Train station | 火车站 | Huǒchē zhàn |
+| Where is the platform? | 站台在哪里？ | Zhàntái zài nǎlǐ? |
+| Xi'an North Station | 西安北站 | Xī'ān Běi zhàn |
+| I want to go to... | 我要去... | Wǒ yào qù... |
+| Call a taxi (Didi) | 叫车 / 打车 | Jiào chē / Dǎ chē |
+| Stop here please | 在这里停 | Zài zhèlǐ tíng |
+| How long does it take? | 要多长时间？ | Yào duō cháng shíjiān? |
+| Left / Right / Straight | 左 / 右 / 直走 | Zuǒ / Yòu / Zhí zǒu |
+
+---
+
+## Shopping & Bargaining
+
+| Situation | Chinese | Pinyin |
+|-----------|---------|--------|
+| Too expensive | 太贵了 | Tài guì le |
+| Can it be cheaper? | 可以便宜一点吗？ | Kěyǐ piányi yīdiǎn ma? |
+| I don't want it | 我不要 | Wǒ bù yào |
+| I'll take this one | 我要这个 | Wǒ yào zhège |
+| Can I pay with WeChat? | 可以微信支付吗？ | Kěyǐ Wēixìn zhīfù ma? |
+| Cash | 现金 | Xiànjīn |
+
+---
+
 ## Numbers (for prices, quantities)
 
 | Number | Chinese | Pinyin |
@@ -82,19 +110,44 @@ The 2 Chinese members will handle most communication. These phrases are for when
 | 5 | 五 | wǔ |
 | 10 | 十 | shí |
 | 100 | 一百 | yī bǎi |
-| How many people: 7 | 七个人 | qī gè rén |
+| How many people: 8 | 八个人 | bā gè rén |
 
 ---
 
 ## Food Glossary for the Route
 
+### Beijing
+
+| Item | Chinese | What it is |
+|------|---------|------------|
+| 北京烤鸭 | Běijīng kǎoyā | Peking roast duck — the iconic Beijing dish |
+| 火锅 | Huǒguō | Hotpot — cook raw ingredients in boiling broth at the table |
+| 炸酱面 | Zhájiàng miàn | Noodles with thick soybean paste sauce |
+| 卤煮 | Lǔzhǔ | Stewed offal in broth — local street snack, not for everyone |
+| 豆汁 | Dòuzhī | Fermented mung bean drink — an acquired taste |
+
+### Xi'an
+
+| Item | Chinese | What it is |
+|------|---------|------------|
+| 肉夹馍 | Ròu jiā mó | Minced meat in crispy flatbread — "Chinese hamburger" |
+| 羊肉泡馍 | Yángròu pàomó | Crumbled flatbread soaked in rich lamb broth — Xi'an's signature |
+| 胡辣汤 | Húlàtāng | Spicy pepper soup — the local breakfast combo with ròujiāmó |
+| 凉皮 | Liáng pí | Cold wheat noodles with chili oil — essential summer food |
+| 石榴汁 | Shíliú zhī | Fresh pomegranate juice — pressed at stalls in the Muslim Quarter |
+| 镜糕 | Jìnggāo | Mini steamed rice cakes with various toppings |
+| 烤羊肉串 | Kǎo yángròu chuàn | Cumin lamb skewers — grilled over charcoal in the Muslim Quarter |
+| 酸梅汤 | Suānméi tāng | Sour plum drink — refreshing in summer heat |
+
+### Northwest Road Trip
+
 | Item | Chinese | What it is |
 |------|---------|------------|
 | 拉条子 | Lā tiáo zi | Hand-pulled noodles with lamb sauce — Dunhuang staple |
-| 烤羊肉串 | Kǎo yángròu chuàn | Lamb skewers, cumin-spiced |
-| 凉皮 | Liáng pí | Cold wheat noodles with chili oil — essential summer food |
 | 手抓羊肉 | Shǒu zhuā yángròu | Hand-grabbed lamb, boiled, eaten with hands |
 | 酸奶 | Suānnǎi | Yogurt — local Tibetan-style in Qilian is excellent |
 | 涮羊肉 | Shuàn yángròu | Lamb hotpot |
 | 烤馕 | Kǎo náng | Baked flatbread — Silk Road staple |
 | 哈密瓜 | Hāmì guā | Hami melon — sweet, from Xinjiang, sold everywhere |
+| 牦牛酸奶 | Máoniú suānnǎi | Yak yogurt — thick, tangy, found in Qinghai |
+| 青稞酒 | Qīngkē jiǔ | Highland barley wine — local Tibetan alcohol, strong |
