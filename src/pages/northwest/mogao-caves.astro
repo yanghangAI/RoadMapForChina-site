@@ -1,0 +1,69 @@
+---
+import Destination from '../../layouts/Destination.astro';
+
+const images = [
+  { src: 'photos/mogao-caves.jpg', alt: 'Mogao Caves' },
+  { src: 'photos/mogao-caves-2.jpg', alt: 'Mogao Caves 2' },
+  { src: 'photos/mogao-caves-3.jpg', alt: 'Mogao Caves 3' },
+];
+
+const videos = [
+  { id: 'hK4PxrQH8ok', title: 'Mogao Caves (UNESCO/NHK)', caption: 'UNESCO and NHK co-produced documentary on the caves and their history' },
+  { id: '-LbyuIi9BYI', title: 'What are the Mogao Caves and why are they special?', caption: 'accessible introduction to the site\'s significance' },
+  { id: 'zInyehUgriE', title: 'Exploring the Mogao Caves: Journey into the Ancient Splendor | China Travel Guide', caption: 'English-language visitor\'s guide and walkthrough' },
+  { id: 'J2ODpmJS_Dg', title: 'Cave Temples of Dunhuang: Buddhist Art on China\'s Silk Road', caption: 'Getty Research Institute lecture on the art and manuscripts' },
+];
+---
+
+<Destination
+  title="Mogao Caves"
+  titleCn="莫高窟"
+  lat={40.038}
+  lng={94.806}
+  imageQuery="Mogao Caves 莫高窟 Dunhuang"
+  images={images}
+  videos={videos}
+  backLink={{ href: 'trips/northwest', label: 'Northwest Road Trip' }}
+>
+  <h2>Overview</h2>
+  <p>
+    The Mogao Caves are one of the great artistic monuments of human civilization. Cut into a cliff face 25 kilometres southeast of Dunhuang over a period of roughly a thousand years — from the 4th century to the 14th century AD — 735 caves contain the world's largest surviving collection of Buddhist art: approximately 45,000 square metres of painted murals, 2,400 painted clay sculptures, and a library of manuscripts that, when rediscovered in 1900, comprised the oldest printed book in existence (the Diamond Sutra, dated 868 AD) and tens of thousands of documents in Chinese, Tibetan, Sanskrit, Sogdian, and other Silk Road languages.
+  </p>
+  <p>
+    The caves were commissioned by a long succession of patrons: Silk Road merchants who funded a cave as an act of piety before a dangerous desert crossing, imperial officials, monks, local rulers, and ordinary devotees over ten dynasties. Each donor commissioned an entire cave program — architecture, sculpture, and all four walls plus ceiling painted in a coherent iconographic scheme. The quality of patronage drove quality of execution, and the result is that cave after cave contains masterworks of a particular era: Northern Wei caves with their elongated, spiritually abstracted figures; Tang Dynasty caves with full, confident human forms in complex narrative scenes; Five Dynasties caves showing the beginning of a more decorative, schematic style.
+  </p>
+  <p>
+    The caves were effectively forgotten after the Silk Road trade routes were abandoned in the 15th century, and the cliff face was slowly being buried by drifting sand when a Taoist monk named Wang Yuanlu began clearing them in the 1890s. In 1900 he broke through a wall in Cave 17 to discover the sealed Library Cave (藏经洞) — a chamber stacked floor to ceiling with manuscript bundles, undisturbed for nearly 900 years. Much of this collection was subsequently acquired by foreign explorers including Aurel Stein and Paul Pelliot, and is now distributed across the British Library, the Bibliothèque nationale de France, and other institutions. The question of repatriation remains active.
+  </p>
+
+  <h2>What to See & Do</h2>
+  <ul>
+    <li>The standard ticket includes 8 caves selected on the day based on conditions and visitor numbers — the selection rotates, so there is no guarantee of specific caves, but all selections are significant</li>
+    <li>Cave 96: the 9-storey wooden facade containing the 34.5-metre seated Maitreya Buddha — the largest statue at Mogao</li>
+    <li>Cave 17 (if available): the famous Library Cave, now empty, but the exact room where thousands of manuscripts were sealed for 900 years</li>
+    <li>Cave 285: one of the best-preserved Northern Wei caves, with a ceiling depicting the vault of heaven</li>
+    <li>Cave 45: a Tang Dynasty cave with an extraordinarily lifelike group of painted clay sculptures</li>
+    <li>Watch the introductory film in the digital exhibition centre before entering the site — it provides context that makes the caves legible</li>
+  </ul>
+
+  <h2>Best Time to Visit</h2>
+  <p>
+    The caves are open year-round but July is the busiest month. Morning slots (starting 8:00am) have better light conditions in some caves and slightly smaller crowds than afternoon slots.
+  </p>
+
+  <h2>Practical Tips</h2>
+  <ul>
+    <li><strong>Tickets:</strong> Standard ticket ~¥238/person; must be purchased in advance at mgk.com.cn — peak season tickets (especially July) sell out weeks ahead. <strong>Book this immediately.</strong></li>
+    <li><strong>Special caves:</strong> A selection of higher-tier "special caves" can be booked for an additional fee (¥200–300/person per cave); these include Cave 285 and Cave 45 among others; also book in advance</li>
+    <li><strong>Opening hours:</strong> 8:00am–5:00pm (last entry earlier); the digital exhibition centre opens before site access</li>
+    <li><strong>Photography:</strong> Strictly prohibited inside the caves — no exceptions, including phone cameras. This is enforced by guides.</li>
+    <li><strong>Tours:</strong> Access is only via guided group tour in groups of ~25; English guides available but must be requested at time of booking; Chinese-speaking guides are the default</li>
+    <li><strong>Duration:</strong> Standard visit ~2.5 hours including film and 8 caves; allow 3 hours total</li>
+    <li><strong>Getting there:</strong> 25km southeast of Dunhuang city centre, approximately 30 minutes by taxi or shuttle bus</li>
+  </ul>
+
+  <h2>Why It's Worth It</h2>
+  <p>
+    To stand inside a cave that a Tang Dynasty merchant paid to decorate in 720 AD, surrounded by paintings that have not moved in 1,300 years, looking at Buddhist figures rendered with the full technical mastery of the greatest empire of the medieval world — there is no comparable experience in China, and very few comparable experiences anywhere on earth.
+  </p>
+</Destination>

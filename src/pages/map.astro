@@ -1,0 +1,172 @@
+---
+import Base from '../layouts/Base.astro';
+import InteractiveMap from '../components/InteractiveMap.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const beijingMarkers = [
+  { name: 'Home Base · 丽都饭店附近', coords: [39.972, 116.476] as [number, number], color: '#2b6cb0', label: 'H', phase: 'Base · All Days' },
+  { name: '798 Art District · 798艺术区', coords: [39.984, 116.497] as [number, number], color: '#2f855a', label: '1', phase: 'Day 1 · Afternoon', href: 'beijing/798-art-district' },
+  { name: 'Da Dong · 大董烤鸭', coords: [39.935, 116.442] as [number, number], color: '#2f855a', label: '2', phase: 'Day 1 · Dinner' },
+  { name: 'Mutianyu Great Wall · 慕田峪长城', coords: [40.433, 116.567] as [number, number], color: '#c05621', label: '3', phase: 'Day 2 · Morning', href: 'beijing/mutianyu' },
+  { name: 'Brickyard Restaurant · 砖窑餐厅', coords: [40.418, 116.561] as [number, number], color: '#c05621', label: '4', phase: 'Day 2 · Lunch' },
+  { name: 'Olympic Park · 奥林匹克公园', coords: [40.002, 116.392] as [number, number], color: '#c05621', label: '5', phase: 'Day 2 · Afternoon' },
+  { name: 'Haidilao · 海底捞三里屯', coords: [39.933, 116.453] as [number, number], color: '#c05621', label: '6', phase: 'Day 2 · Dinner' },
+  { name: 'Tiananmen Square · 天安门广场', coords: [39.905, 116.391] as [number, number], color: '#6b46c1', label: '7', phase: 'Day 3 · Morning', href: 'beijing/tiananmen' },
+  { name: 'Forbidden City · 故宫博物院', coords: [39.916, 116.390] as [number, number], color: '#6b46c1', label: '8', phase: 'Day 3 · Morning', href: 'beijing/forbidden-city' },
+  { name: 'Wangfujing · 王府井', coords: [39.915, 116.409] as [number, number], color: '#6b46c1', label: '9', phase: 'Day 3 · Lunch' },
+  { name: 'Nanluoguxiang · 南锣鼓巷', coords: [39.937, 116.399] as [number, number], color: '#6b46c1', label: '10', phase: 'Day 3 · Afternoon', href: 'beijing/nanluoguxiang' },
+  { name: 'Beijing West Station · 北京西站', coords: [39.895, 116.322] as [number, number], color: '#6b46c1', label: '11', phase: 'Day 3 · Evening' },
+  // Optional stops
+  { name: 'Summer Palace · 颐和园', coords: [39.999, 116.275] as [number, number], color: '#718096', label: '◆', phase: 'Optional · swap Olympic Park', optional: true },
+  { name: 'Temple of Heaven · 天坛', coords: [39.882, 116.407] as [number, number], color: '#718096', label: '◆', phase: 'Optional · Day 3 add-on', optional: true },
+  { name: 'Lama Temple · 雍和宫', coords: [39.947, 116.416] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Nanluoguxiang', optional: true },
+];
+
+const beijingLegend = [
+  { color: '#2b6cb0', label: 'Home Base · Jiangtai Lu' },
+  { color: '#2f855a', label: 'Day 1 · Arrival' },
+  { color: '#c05621', label: 'Day 2 · Great Wall' },
+  { color: '#6b46c1', label: 'Day 3 · Imperial Beijing' },
+  { color: '#718096', label: 'Optional stops', diamond: true },
+];
+
+const xianMarkers = [
+  { name: "Xi'an Station · 西安站", coords: [34.271, 108.952] as [number, number], color: '#744210', label: '🚄', phase: 'Arrival', dates: 'Jul 17', transport: '🚄 T231 arrives 7:35am' },
+  { name: 'Terracotta Warriors · 秦始皇兵马俑', coords: [34.384, 109.278] as [number, number], color: '#744210', label: '1', phase: 'Morning', dates: 'Jul 17', href: 'xian/terracotta-warriors' },
+  { name: 'City Wall South Gate · 永宁门', coords: [34.262, 108.946] as [number, number], color: '#2b6cb0', label: '2', phase: 'Afternoon', dates: 'Jul 17', href: 'xian/city-wall' },
+  { name: 'Bell Tower · 钟楼', coords: [34.260, 108.942] as [number, number], color: '#2b6cb0', label: '3', phase: 'Afternoon', dates: 'Jul 17' },
+  { name: 'Drum Tower · 鼓楼', coords: [34.261, 108.938] as [number, number], color: '#2b6cb0', label: '4', phase: 'Afternoon', dates: 'Jul 17' },
+  { name: 'Muslim Quarter · 回民街', coords: [34.265, 108.940] as [number, number], color: '#dd6b20', label: '5', phase: 'Evening', dates: 'Jul 17', href: 'xian/muslim-quarter' },
+  { name: 'Great Mosque · 大清真寺', coords: [34.264, 108.937] as [number, number], color: '#dd6b20', label: '6', phase: 'Evening', dates: 'Jul 17' },
+  { name: '大唐不夜城 · Great Tang All Day Mall', coords: [34.220, 108.961] as [number, number], color: '#dd6b20', label: '7', phase: 'Evening', dates: 'Jul 17', href: 'xian/tang-all-day-mall' },
+  // Optional stops
+  { name: 'Big Wild Goose Pagoda · 大雁塔', coords: [34.218, 108.959] as [number, number], color: '#718096', label: '◆', phase: 'Optional · swap City Wall', optional: true },
+  { name: 'Shaanxi History Museum · 陕西历史博物馆', coords: [34.224, 108.955] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Pagoda', optional: true },
+  { name: 'Tang Paradise · 大唐芙蓉园', coords: [34.210, 108.964] as [number, number], color: '#718096', label: '◆', phase: 'Optional · evening alternative', optional: true },
+];
+
+const xianLegend = [
+  { color: '#744210', label: 'Morning — Terracotta Warriors' },
+  { color: '#2b6cb0', label: 'Afternoon — City Wall & Towers' },
+  { color: '#dd6b20', label: 'Evening — Muslim Quarter & Tang' },
+  { color: '#718096', label: 'Optional stops', diamond: true },
+];
+
+const northwestMarkers = [
+  { name: 'Xining · 西宁', coords: [36.617, 101.778] as [number, number], color: '#2b6cb0', label: 'S', phase: 'Start / End' },
+  { name: 'Riyueshan Pass · 日月山', coords: [36.517, 101.083] as [number, number], color: '#2f855a', label: '1', phase: 'Day 1', href: 'northwest/riyueshan' },
+  { name: 'Qinghai Lake · 青海湖', coords: [36.900, 100.183] as [number, number], color: '#2f855a', label: '2', phase: 'Day 1', href: 'northwest/qinghai-lake' },
+  { name: 'Chaka Salt Lake · 茶卡盐湖', coords: [36.717, 99.083] as [number, number], color: '#2f855a', label: '3', phase: 'Day 1–2', href: 'northwest/chaka-salt-lake' },
+  { name: 'Delingha · 德令哈', coords: [37.367, 97.367] as [number, number], color: '#2f855a', label: '4', phase: 'Day 2', href: 'northwest/delingha' },
+  { name: 'Feicui Hu · 翡翠湖', coords: [37.850, 95.367] as [number, number], color: '#2f855a', label: '5', phase: 'Day 2', href: 'northwest/feicui-hu' },
+  { name: 'Dunhuang · 敦煌', coords: [40.142, 94.662] as [number, number], color: '#c05621', label: '6', phase: 'Day 3–4', href: 'northwest/dunhuang-night-market' },
+  { name: 'Mogao Caves · 莫高窟', coords: [40.038, 94.806] as [number, number], color: '#c05621', label: '7', phase: 'Day 4', href: 'northwest/mogao-caves' },
+  { name: 'Mingsha Dunes · 鸣沙山', coords: [40.085, 94.674] as [number, number], color: '#c05621', label: '8', phase: 'Day 4', href: 'northwest/mingsha-dunes' },
+  { name: 'Jiayuguan Fort · 嘉峪关', coords: [39.817, 98.300] as [number, number], color: '#6b46c1', label: '9', phase: 'Day 5', href: 'northwest/jiayuguan-fort' },
+  { name: 'Qicai Danxia · 七彩丹霞', coords: [38.937, 100.467] as [number, number], color: '#6b46c1', label: '10', phase: 'Day 6', href: 'northwest/qicai-danxia' },
+  { name: 'Qilian Grassland · 祁连草原', coords: [38.183, 100.250] as [number, number], color: '#6b46c1', label: '11', phase: 'Day 6–7', href: 'northwest/qilian-grassland' },
+  { name: 'Menyuan Flowers · 门源油菜花', coords: [37.383, 101.617] as [number, number], color: '#6b46c1', label: '12', phase: 'Day 7', href: 'northwest/menyuan-flowers' },
+  // Optional stops
+  { name: "Ta'er Monastery · 塔尔寺", coords: [36.486, 101.569] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Xining', href: 'northwest/taer-monastery', optional: true },
+  { name: 'Yardang Geopark · 雅丹魔鬼城', coords: [40.483, 93.100] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Dunhuang', href: 'northwest/yardang', optional: true },
+  { name: 'Giant Buddha · 张掖大佛寺', coords: [38.936, 100.452] as [number, number], color: '#718096', label: '◆', phase: 'Optional · in Zhangye', href: 'northwest/zhangye-dafo', optional: true },
+  { name: 'Shandan Horse Farm · 山丹军马场', coords: [38.733, 101.000] as [number, number], color: '#718096', label: '◆', phase: 'Optional · Day 6 route', href: 'northwest/shandan-horse-farm', optional: true },
+  { name: 'Zhuoer Mountain · 卓尔山', coords: [38.196, 100.244] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Qilian', href: 'northwest/zhuoer-mountain', optional: true },
+];
+
+const northwestLegend = [
+  { color: '#2b6cb0', label: 'Xining (Start/End)' },
+  { color: '#2f855a', label: 'Days 1–2 · Qinghai & Qaidam' },
+  { color: '#c05621', label: 'Days 3–4 · Dunhuang' },
+  { color: '#6b46c1', label: 'Days 5–7 · Hexi Corridor & Qilian' },
+  { color: '#718096', label: 'Optional stops', diamond: true },
+];
+---
+
+<Base title="Route Maps · 路线地图">
+  <h1 class="text-3xl font-bold mb-2">Route Maps · 路线地图</h1>
+  <p class="text-gray-600 dark:text-gray-400 mb-6">
+    Click any marker to open navigation options (Apple Maps, Google Maps, 高德, 百度). Click <strong>View Trip Plan →</strong> on a marker to open the destination page.
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Phase 1 · Beijing</h2>
+  <InteractiveMap
+    id="beijing-map"
+    markers={beijingMarkers}
+    legend={beijingLegend}
+    center={[40.05, 116.43]}
+    zoom={10}
+  />
+  <div class="overflow-x-auto my-4">
+    <table class="text-sm">
+      <tbody>
+        <tr><td class="pr-4 py-1">🔵 Blue</td><td>Home Base — Jiangtai Lu</td></tr>
+        <tr><td class="pr-4 py-1">🟢 Green</td><td>Day 1 — Arrival afternoon</td></tr>
+        <tr><td class="pr-4 py-1">🟠 Orange</td><td>Day 2 — Great Wall day</td></tr>
+        <tr><td class="pr-4 py-1">🟣 Purple</td><td>Day 3 — Imperial Beijing</td></tr>
+        <tr><td class="pr-4 py-1">◆ Grey</td><td>Optional stops</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-sm mb-6">
+    <a href={`${base}trips/beijing`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Beijing Trip Plan →</a>
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Phase 2 · Xi'an</h2>
+  <InteractiveMap
+    id="xian-map"
+    markers={xianMarkers}
+    legend={xianLegend}
+    center={[34.30, 108.98]}
+    zoom={12}
+  />
+  <div class="overflow-x-auto my-4">
+    <table class="text-sm">
+      <tbody>
+        <tr><td class="pr-4 py-1">🟤 Brown</td><td>Morning — Terracotta Warriors (40km east)</td></tr>
+        <tr><td class="pr-4 py-1">🔵 Blue</td><td>Afternoon — City Wall & Bell/Drum Towers</td></tr>
+        <tr><td class="pr-4 py-1">🟠 Orange</td><td>Evening — Muslim Quarter & Tang All Day Mall</td></tr>
+        <tr><td class="pr-4 py-1">◆ Grey</td><td>Optional stops</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-sm mb-6">
+    <a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Xi'an Trip Plan →</a>
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Phase 3 · Northwest Loop</h2>
+  <InteractiveMap
+    id="northwest-map"
+    markers={northwestMarkers}
+    legend={northwestLegend}
+    center={[38.5, 98.5]}
+    zoom={6}
+  />
+  <div class="overflow-x-auto my-4">
+    <table class="text-sm">
+      <tbody>
+        <tr><td class="pr-4 py-1">🔵 Blue</td><td>Start / End — Xining</td></tr>
+        <tr><td class="pr-4 py-1">🟢 Green</td><td>Days 1–2 — Qinghai & Qaidam</td></tr>
+        <tr><td class="pr-4 py-1">🟠 Orange</td><td>Days 3–4 — Dunhuang</td></tr>
+        <tr><td class="pr-4 py-1">🟣 Purple</td><td>Days 5–7 — Hexi Corridor & Qilian</td></tr>
+        <tr><td class="pr-4 py-1">◆ Grey</td><td>Optional stops</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-sm mb-6">
+    <a href={`${base}trips/northwest`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Northwest Road Trip Plan →</a>
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <p class="mt-8 text-sm text-gray-500">
+    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+  </p>
+</Base>

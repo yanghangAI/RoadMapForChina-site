@@ -1,0 +1,57 @@
+---
+import Destination from '../../layouts/Destination.astro';
+
+const videos = [
+  { id: 'k0WUjshZpxg', title: 'Beijing Travel Tips — Tiananmen Square', caption: 'Practical guide to visiting the square including security, monuments, and layout' },
+  { id: 'HYtNfndaatw', title: 'Is Tiananmen Square the Largest Square in the World?', caption: 'History and significance of the square and its place in Chinese political life' },
+];
+---
+
+<Destination
+  title="Tiananmen Square"
+  titleCn="天安门广场"
+  lat={39.905}
+  lng={116.391}
+  imageQuery="Tiananmen Square 天安门广场 Beijing"
+  videos={videos}
+  backLink={{ href: 'trips/beijing', label: 'Beijing Plan' }}
+>
+  <h2>Overview</h2>
+  <p>
+    Tiananmen Square is the symbolic centre of the People's Republic of China — the largest public square in the world at 440,000 square metres, capable of holding one million people. It sits on the same north-south imperial axis as the Forbidden City immediately to its north, and was designed in its current form in 1949 when Mao Zedong proclaimed the founding of the PRC from the Gate of Heavenly Peace.
+  </p>
+  <p>
+    The square is not merely a plaza — it is a carefully composed political landscape. The Gate of Heavenly Peace (天安门) on the north edge, with Mao's portrait hanging above the central arch, faces the Mausoleum of Mao Zedong on the south. Between them stands the Monument to the People's Heroes (人民英雄纪念碑), an obelisk inscribed with Mao's calligraphy listing the great revolutionary struggles. The Great Hall of the People flanks the west side; the National Museum of China flanks the east. Every element is intentional.
+  </p>
+  <p>
+    The square has been the stage for the defining moments of modern Chinese history: the proclamation of the republic in 1949, the mass celebrations of the Cultural Revolution, the 1989 pro-democracy protests, and the flag-raising ceremony that still takes place at dawn every day, timed precisely to sunrise, attended by crowds who arrive hours early.
+  </p>
+
+  <h2>What to See & Do</h2>
+  <ul>
+    <li><strong>Gate of Heavenly Peace (天安门)</strong> — the iconic gate with Mao's portrait. You can walk through the arch (separate ticket, ¥15) and climb to the upper level for a view back across the square and forward into the Forbidden City's first courtyard.</li>
+    <li><strong>Monument to the People's Heroes</strong> — walk around the base. The bas-relief panels depict eight key moments in Chinese revolutionary history from the Opium War to 1949. Finely carved, historically loaded.</li>
+    <li><strong>Flag-raising ceremony</strong> — happens at sunrise daily, timed to the exact minute. Crowds form hours before. Not on the main itinerary but worth knowing about for anyone staying nearby.</li>
+    <li><strong>National Museum of China (中国国家博物馆)</strong> — east side of the square. Free entry with passport registration. The permanent collection of Chinese history from prehistoric times to the present is one of the best in the world. Allow 3–4 hours minimum if you go.</li>
+    <li><strong>Mao's Mausoleum (毛主席纪念堂)</strong> — Mao's embalmed body is on display Tuesday–Sunday mornings (free, queue required, no bags, no cameras). A genuinely strange experience regardless of your politics.</li>
+  </ul>
+
+  <h2>Best Time to Visit</h2>
+  <p>
+    Early morning (before 9am) — the light is better, the crowds are smaller, and the heat is manageable. The square is open 24 hours but security screening at the entrances means queues form during peak hours. In July, midday temperatures exceed 35°C on the exposed concrete — bring water and sun protection.
+  </p>
+
+  <h2>Practical Tips</h2>
+  <ul>
+    <li><strong>Entry:</strong> The square itself is free. Security screening at all entrances — bags go through X-ray, ID required for foreign visitors. Allow 15–20 minutes to get through.</li>
+    <li><strong>Bags:</strong> Large bags can be stored at the bag check near the entrance. You cannot enter with large luggage.</li>
+    <li><strong>Photography:</strong> Allowed freely in the square. The portrait of Mao makes for an obvious focal point. Avoid photographing security personnel or military positions.</li>
+    <li><strong>Passport:</strong> Required for entry — carry it, not just a photo of it.</li>
+    <li><strong>Combine with:</strong> Walk straight through the Gate of Heavenly Peace into the Forbidden City — they share the same axis and the transition is seamless.</li>
+  </ul>
+
+  <h2>Why It's Worth It</h2>
+  <p>
+    Few places in the world are so explicitly designed to communicate political power at architectural scale. Whether you find it awe-inspiring, unsettling, or both, standing in Tiananmen Square puts you at the geographic and symbolic centre of a civilisation of 1.4 billion people. For first-time visitors to China, it is unavoidable and irreplaceable.
+  </p>
+</Destination>

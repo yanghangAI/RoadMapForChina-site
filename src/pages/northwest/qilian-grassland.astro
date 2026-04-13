@@ -1,0 +1,66 @@
+---
+import Destination from '../../layouts/Destination.astro';
+
+const images = [
+  { src: 'photos/qilian-grassland.jpg', alt: 'Qilian Grassland' },
+  { src: 'photos/qilian-grassland-2.jpg', alt: 'Qilian Grassland 2' },
+  { src: 'photos/qilian-grassland-3.jpg', alt: 'Qilian Grassland 3' },
+];
+
+const videos = [
+  { id: '2z805pWp93A', title: 'Qilian Mountains: nature\'s high-altitude treasure trove in NW China', caption: 'CGTN documentary on the ecology and landscape of the Qilian range' },
+  { id: 'MkzpAdWWzxQ', title: 'Driving Through China\'s Most Breathtaking Mountain Road | Qilian Mountains & Eboling Pass 4K', caption: '4K driving footage through the Qilian mountain passes' },
+  { id: 'wjtUPvldRLc', title: '3000m High Cliff Road in Qilian Mountains, China: The Only Route for Tibetan Herders 4K', caption: 'dramatic cliff road footage showing the high-altitude pastoral landscape' },
+];
+---
+
+<Destination
+  title="Qilian Grassland"
+  titleCn="祁连草原"
+  lat={38.183}
+  lng={100.25}
+  imageQuery="Qilian Grassland 祁连草原 China"
+  images={images}
+  videos={videos}
+  backLink={{ href: 'trips/northwest', label: 'Northwest Road Trip' }}
+>
+  <h2>Overview</h2>
+  <p>
+    Qilian County (祁连县) sits at 2,787 metres at the confluence of the Babao River valley and the Qilian Mountains — a county of roughly 50,000 people, predominantly Tibetan and Yugur, whose economy runs on herding, tourism, and small-scale mining. The grassland that surrounds and runs above the county town is among the most accessible and visually dramatic high-altitude pastoral landscapes in northwest China: rolling hills of alpine meadow grass interspersed with wildflowers, traversed by clear mountain streams, backed by the Qilian ridgeline that in July is still white-capped with winter snow.
+  </p>
+  <p>
+    The Yugur people (裕固族) are particularly notable here — a small Turkic-speaking ethnic group of approximately 14,000 people, found almost exclusively in this area, who maintain herding traditions and a distinctive material culture. Tibetan communities have been present in the Qilian range for over a millennium and the area's mountain passes are studded with Tibetan Buddhist cairns (ovoos) and prayer flags. The co-existence of these two distinct pastoral cultures — Yugur and Tibetan — with Han Chinese settlers in the valley towns gives Qilian County an ethnic and cultural texture that is unusual even in the diverse northwest.
+  </p>
+  <p>
+    The visual impact of arriving in Qilian after the preceding five days of the route is significant. The journey has traversed salt lakes, barren basins, scorching desert, and painted rock formations — all beautiful, all fundamentally arid. Qilian presents the opposite: green, wet, cool, alive. In late July the meadows are at peak color, with purple and yellow wildflowers in dense patches among the grass. Yaks graze on every hillside. The air smells of grass and river water. The temperature is 15–20°C. After the Dunhuang desert, it feels like a different planet — which in many ways it is.
+  </p>
+
+  <h2>What to See & Do</h2>
+  <ul>
+    <li>Horseback riding on the grassland: arrange through the hotel the night before (~¥120/person/hour); local Tibetan and Yugur guides lead rides across the rolling meadows above the valley</li>
+    <li>Walk the riverbank path along the Babao River at dusk — the light on the mountains is exceptional at 7:00–8:00pm in July</li>
+    <li>Drive or hike up the Babao Valley toward the mountain passes for higher-altitude meadow landscapes</li>
+    <li>Look for yaks: they are everywhere on the hillsides and the young calves are particularly photogenic in July</li>
+    <li>Visit a local herder family if your Chinese-speaking companions can arrange it — genuinely hospitable, selling fermented yak milk (酸奶) and other dairy products</li>
+    <li>Look for the distinctive Yugur embroidery patterns on clothing and tent furnishings at local markets</li>
+  </ul>
+
+  <h2>Best Time to Visit</h2>
+  <p>
+    Late June through early August is peak season for the grassland. July is ideal: all the wildflowers are in bloom, the grass is at maximum green, and the mountain snow is still present on the higher peaks for visual contrast. By September the grass begins to yellow and the nights drop below 5°C.
+  </p>
+
+  <h2>Practical Tips</h2>
+  <ul>
+    <li><strong>Horseback riding:</strong> ~¥120/person/hour; arrange the night before through hotel reception; confirm the number of horses for all 7 group members; rides typically depart 8:00–8:30am</li>
+    <li><strong>Clothing:</strong> July mornings at 2,800m are cold — bring a light down jacket or warm layer for the morning ride; afternoons warm to 18–22°C</li>
+    <li><strong>Getting there:</strong> Qilian County town is the endpoint of Day 6 (~230km from Zhangye via Menyuan, ~3 hours); the grassland begins immediately at the edge of town</li>
+    <li><strong>Overnight:</strong> Qilian has adequate hotels and guesthouses in the mid-range; book ahead in July as it is a popular weekend destination for Xining residents</li>
+    <li><strong>Food:</strong> Excellent lamb hotpot (涮羊肉) at local restaurants; Qilian lamb is considered some of the best in Qinghai</li>
+  </ul>
+
+  <h2>Why It's Worth It</h2>
+  <p>
+    After five days of salt, sand, and painted stone, arriving at a high-altitude green valley in the Qilian Mountains — cool air, wildflowers, snow peaks, yaks on every hill — is the best possible final note to a route built on landscape contrasts. The morning horseback ride is an hour that most first-time visitors to China would never find on their own.
+  </p>
+</Destination>

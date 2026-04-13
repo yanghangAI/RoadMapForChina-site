@@ -1,0 +1,336 @@
+---
+import Base from '../../layouts/Base.astro';
+import InteractiveMap from '../../components/InteractiveMap.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const mapMarkers = [
+  { name: 'Home Base · Jiangtai Lu', coords: [39.97, 116.48] as [number, number], color: '#2b6cb0', label: '🏠', phase: 'beijing', dates: 'Jul 14-16' },
+  { name: 'Panjiayuan Antique Market · 潘家园', coords: [39.876, 116.461] as [number, number], color: '#38a169', label: '1', phase: 'Day 1', dates: 'Jul 14', href: 'beijing/panjiayuan' },
+  { name: '798 Art District · 大山子艺术区', coords: [39.984, 116.497] as [number, number], color: '#38a169', label: '2', phase: 'Day 1', dates: 'Jul 14', href: 'beijing/798-art-district' },
+  { name: 'Da Dong Roast Duck · 大董', coords: [39.935, 116.442] as [number, number], color: '#38a169', label: '🍽', phase: 'Day 1', dates: 'Jul 14' },
+  { name: 'Mutianyu Great Wall · 慕田峪长城', coords: [40.433, 116.567] as [number, number], color: '#dd6b20', label: '3', phase: 'Day 2', dates: 'Jul 15', href: 'beijing/mutianyu' },
+  { name: 'Olympic Park · 奥林匹克公园', coords: [40.002, 116.392] as [number, number], color: '#dd6b20', label: '4', phase: 'Day 2', dates: 'Jul 15' },
+  { name: 'Tiananmen Square · 天安门广场', coords: [39.905, 116.391] as [number, number], color: '#805ad5', label: '5', phase: 'Day 3', dates: 'Jul 16', href: 'beijing/tiananmen' },
+  { name: 'Forbidden City · 故宫博物院', coords: [39.916, 116.390] as [number, number], color: '#805ad5', label: '6', phase: 'Day 3', dates: 'Jul 16', href: 'beijing/forbidden-city' },
+  { name: 'Nanluoguxiang · 南锣鼓巷', coords: [39.937, 116.399] as [number, number], color: '#805ad5', label: '7', phase: 'Day 3', dates: 'Jul 16', href: 'beijing/nanluoguxiang' },
+  { name: 'Beijing West Station · 北京西站', coords: [39.895, 116.322] as [number, number], color: '#718096', label: '🚄', phase: 'Day 3', dates: 'Jul 16', transport: '🚄 T231 → Xi\'an' },
+  // Optional stops
+  { name: 'Summer Palace · 颐和园', coords: [39.999, 116.275] as [number, number], color: '#718096', label: '◆', phase: 'Optional · swap Olympic Park', optional: true },
+  { name: 'Temple of Heaven · 天坛', coords: [39.882, 116.407] as [number, number], color: '#718096', label: '◆', phase: 'Optional · Day 3 add-on', optional: true },
+  { name: 'Lama Temple · 雍和宫', coords: [39.947, 116.416] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Nanluoguxiang', optional: true },
+];
+
+const mapLegend = [
+  { color: '#2b6cb0', label: 'Home Base — Jiangtai Lu' },
+  { color: '#38a169', label: 'Day 1 — Arrival afternoon' },
+  { color: '#dd6b20', label: 'Day 2 — Great Wall day' },
+  { color: '#805ad5', label: 'Day 3 — Imperial Beijing' },
+  { color: '#718096', label: 'Optional stops', diamond: true },
+];
+---
+
+<Base title="Beijing · 北京 · July 14–16">
+  <h1 class="text-3xl font-bold mb-2">Beijing · 北京 · July 14–16, 2026</h1>
+  <p class="text-gray-600 dark:text-gray-400 mb-1">
+    <strong>Group:</strong> 6 people (5 Italians + 1 Chinese friend) · 2.5 days<br />
+    <strong>Base:</strong> Near 丽都饭店, Jiangtai Lu, Chaoyang District<br />
+    <strong>Transport:</strong> Rental car (Chinese friend drives) · pick up at Daxing Airport
+  </p>
+  <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-2">
+    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+    <span>&middot;</span>
+    <a href={`${base}resources/tips`} class="text-blue-700 dark:text-blue-400 hover:underline">Travel Tips</a>
+    <span>&middot;</span>
+    <a href={`${base}resources/packing-list`} class="text-blue-700 dark:text-blue-400 hover:underline">Packing List</a>
+    <span>&middot;</span>
+    <a href={`${base}resources/useful-phrases`} class="text-blue-700 dark:text-blue-400 hover:underline">Useful Chinese Phrases</a>
+    <span>&middot;</span>
+    <a href={`${base}map`} class="text-blue-700 dark:text-blue-400 hover:underline">Route Maps</a>
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Trip Overview Grid -->
+  <h2 class="text-2xl font-bold mb-4">Trip Overview</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
+    <!-- Day 1 -->
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#2b6cb0] hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <a href="#day-1" class="font-bold text-[15px] no-underline text-inherit">Day 1 &middot; Jul 14</a>
+        <span class="text-xs bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded-full">30–36°C</span>
+      </div>
+      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#9992;&#65039; Arrive Daxing 12:10 · afternoon only</div>
+      <div class="text-[13px] mb-1">
+        <a href={`${base}beijing/panjiayuan`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Panjiayuan Market</a>
+        <a href="https://www.google.com/search?q=Panjiayuan+Antique+Market+潘家园+Beijing&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+        &middot;
+        <a href={`${base}beijing/798-art-district`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">798 Art District</a>
+        <a href="https://www.google.com/search?q=798+Art+District+Beijing+大山子艺术区&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+        &middot; Peking duck dinner
+      </div>
+      <div class="text-xs text-gray-400 dark:text-gray-500">&#128719; Jiangtai Lu</div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#2b6cb0] hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <a href="#day-2" class="font-bold text-[15px] no-underline text-inherit">Day 2 &middot; Jul 15</a>
+        <span class="text-xs bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded-full">30–36°C</span>
+      </div>
+      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#128663; Full day · ~150km round trip</div>
+      <div class="text-[13px] mb-1">
+        <a href={`${base}beijing/mutianyu`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Mutianyu Great Wall</a>
+        <a href="https://www.google.com/search?q=Mutianyu+Great+Wall+慕田峪长城&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+        &middot;
+        <span>Olympic Park</span>
+        <a href="https://www.google.com/search?q=Beijing+Olympic+Park+Bird%27s+Nest+鸟巢&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      </div>
+      <div class="text-xs text-gray-400 dark:text-gray-500">&#128719; Jiangtai Lu</div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#2b6cb0] hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <a href="#day-3" class="font-bold text-[15px] no-underline text-inherit">Day 3 &middot; Jul 16</a>
+        <span class="text-xs bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded-full">30–36°C</span>
+      </div>
+      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#127963; Imperial Beijing · T231 departs 6:26pm</div>
+      <div class="text-[13px] mb-1">
+        <a href={`${base}beijing/tiananmen`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Tiananmen</a>
+        <a href="https://www.google.com/search?q=Tiananmen+Square+天安门广场&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+        &middot;
+        <a href={`${base}beijing/forbidden-city`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Forbidden City</a>
+        <a href="https://www.google.com/search?q=Forbidden+City+故宫+Beijing&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+        &middot;
+        <a href={`${base}beijing/nanluoguxiang`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Hutongs</a>
+        <a href="https://www.google.com/search?q=Nanluoguxiang+Hutongs+南锣鼓巷+Beijing&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      </div>
+      <div class="text-xs text-gray-400 dark:text-gray-500">&#128644; T231 &rarr; Xi'an 7:35am</div>
+    </div>
+
+  </div>
+  <p class="text-[13px] text-gray-400 mt-2">Rental car throughout · Drop off Beijing West Station · Night train departs ~6:26pm Jul 16</p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Route Map -->
+  <h2 class="text-2xl font-bold mb-4">Route Map</h2>
+  <InteractiveMap
+    id="beijing-map"
+    markers={mapMarkers}
+    legend={mapLegend}
+    center={[39.95, 116.42]}
+    zoom={10}
+  />
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Book immediately -->
+  <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 my-4">
+    <p class="font-bold text-amber-800 dark:text-amber-300 mb-2">&#9888;&#65039; Book immediately:</p>
+    <ul class="list-disc ml-5 text-sm space-y-1 text-amber-900 dark:text-amber-200">
+      <li><strong>Forbidden City tickets</strong> — 40,000/day cap in July, sells out weeks ahead &rarr; <a href="https://gugong.dpm.org.cn" target="_blank" class="underline">gugong.dpm.org.cn</a></li>
+      <li><strong>T231 Beijing West &rarr; Xi'an (Jul 16)</strong> — 6 people, 2 soft sleeper compartments &rarr; <a href="https://www.12306.cn" target="_blank" class="underline">12306.cn</a></li>
+      <li><strong>Rental car</strong> — 6–7 seat MPV (Buick GL8 or similar), pick up at Daxing Airport</li>
+    </ul>
+  </div>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Day 1 -->
+  <span id="day-1"></span>
+  <h2 class="text-2xl font-bold mb-2">Day 1 — July 14 · Arrival Afternoon</h2>
+  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Arrive Daxing 12:10 · ~4 usable hours after landing · 30–36°C</p>
+
+  <ul class="space-y-3 text-[15px]">
+    <li>
+      <strong>12:10</strong> Land at Beijing Daxing International Airport (PKX)
+    </li>
+    <li>
+      <strong>~2:00pm</strong> Clear customs, collect luggage, pick up rental car at Daxing
+    </li>
+    <li>
+      <strong>~2:30–3:30pm</strong>
+      <a href={`${base}beijing/panjiayuan`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Panjiayuan Antique Market (潘家园旧货市场)</a>
+      — ~30min from Daxing, on the way to your hotel. Beijing's biggest flea market: antiques, Mao memorabilia, calligraphy, jade, and odds and ends. Free entry. Browse for 1 hour, buy something small and eccentric.
+    </li>
+    <li>
+      <strong>~4:00pm</strong> Arrive Jiangtai Lu — drop bags, freshen up
+    </li>
+    <li>
+      <strong>4:30–6:00pm</strong>
+      <a href={`${base}beijing/798-art-district`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">798 Art District (大山子艺术区)</a>
+      — 5min drive from home. Galleries, street art, industrial Bauhaus architecture, coffee. Easy jet-lag walk with no crowd pressure.
+    </li>
+    <li>
+      <strong>7:30pm</strong> &#127869; Peking duck dinner — <strong>Da Dong (大董)</strong>, Gongti Beilu branch — 10min drive. The best introduction to Beijing food for the Italian guests.
+    </li>
+  </ul>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Day 2 -->
+  <span id="day-2"></span>
+  <h2 class="text-2xl font-bold mb-2">Day 2 — July 15 · Great Wall</h2>
+  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Full day · ~75km each way · 30–36°C</p>
+
+  <ul class="space-y-3 text-[15px]">
+    <li>
+      <strong>7:30am</strong> Depart Jiangtai Lu — drive north to
+      <a href={`${base}beijing/mutianyu`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Mutianyu Great Wall (慕田峪长城)</a>, ~75km, ~1.5h
+    </li>
+    <li>
+      <strong>9:00am</strong> Arrive Mutianyu — buy cable car tickets at the booth (&yen;35 up, &yen;25 down, or &yen;55 combo with toboggan)
+    </li>
+    <li>
+      <strong>9:15am–12:30pm</strong> Walk the restored 3.5km wall section. Less crowded than Badaling, original Ming Dynasty stonework, forested ridgeline. Take the <strong>toboggan slide</strong> down — fastest 10 minutes of the trip.
+    </li>
+    <li>
+      <strong>1:00pm</strong> Lunch at <strong>Brickyard Restaurant</strong> — international-friendly menu, garden setting, shaded terrace
+    </li>
+    <li>
+      <strong>3:00pm</strong> Drive back south (~1.5h) — stop at <strong>Olympic Park (奥林匹克公园)</strong> on the way: Bird's Nest + Water Cube from the plaza, 30min photo stop, no tickets needed
+    </li>
+    <li>
+      <strong>6:00pm</strong> Back at Jiangtai Lu — rest, shower
+    </li>
+    <li>
+      <strong>7:30pm</strong> &#127869; Dinner: <strong>Haidilao hotpot (海底捞)</strong>, Sanlitun branch — excellent first hotpot experience, theatrical tableside service
+    </li>
+  </ul>
+
+  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
+    <p class="text-sm text-blue-900 dark:text-blue-200">
+      <strong>Mutianyu tip:</strong> Arrive before 9am to beat the tour buses that roll in at 10am. Buy the toboggan combo ticket — no one regrets it.
+    </p>
+  </div>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Day 3 -->
+  <span id="day-3"></span>
+  <h2 class="text-2xl font-bold mb-2">Day 3 — July 16 · Imperial Beijing + Night Train</h2>
+  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Morning + afternoon · T231 departs 6:26pm from Beijing West · 30–36°C</p>
+
+  <ul class="space-y-3 text-[15px]">
+    <li>
+      <strong>8:00am</strong> Drive to Tiananmen — park at Jingshan Park lot
+    </li>
+    <li>
+      <strong>8:30–10:00am</strong>
+      <a href={`${base}beijing/tiananmen`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Tiananmen Square (天安门广场)</a>
+      — arrive early before the heat and crowd peak. Portrait of Mao, Monument to the People's Heroes, Gate of Heavenly Peace.
+    </li>
+    <li>
+      <strong>10:00am–1:00pm</strong>
+      <a href={`${base}beijing/forbidden-city`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Forbidden City (故宫博物院)</a>
+      — pre-booked tickets only. 3 hours: main south-north axis (Meridian Gate &rarr; Hall of Supreme Harmony &rarr; Palace of Heavenly Purity &rarr; Imperial Garden) + one side courtyard. Store large bags at south gate cloakroom (&yen;10).
+    </li>
+    <li>
+      <strong>1:30pm</strong> Lunch: <strong>Wangfujing (王府井)</strong> pedestrian street — street snacks, egg waffles, scorpion-on-a-stick (optional for the brave Italians)
+    </li>
+    <li>
+      <strong>3:00–4:00pm</strong>
+      <a href={`${base}beijing/nanluoguxiang`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Nanluoguxiang hutongs (南锣鼓巷)</a>
+      — historic alleyways, courtyard homes, local ice cream. Walk or take a rickshaw tour through the lanes.
+    </li>
+    <li>
+      <strong>4:30pm</strong> Drop rental car near <strong>Beijing West Station (北京西站)</strong>, get to station
+    </li>
+    <li>
+      <strong>6:26pm</strong> Board <strong>T231</strong> night train to Xi'an · 2 soft sleeper compartments
+    </li>
+    <li class="text-gray-500 dark:text-gray-400 italic">
+      Arrives Xi'an Station ~7:35am July 17
+    </li>
+  </ul>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Optional Additions -->
+  <h2 class="text-2xl font-bold mb-4">Optional Additions</h2>
+  <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">These places are near the route but not in the main plan. Add them if you want to swap or extend.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <span class="font-bold text-[15px]">Summer Palace &#39056;&#21644;&#22253;</span>
+        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">2.5 hrs</span>
+      </div>
+      <div class="text-xs text-gray-400 mb-1.5">Northwest Beijing · swap for Olympic Park</div>
+      <div class="text-[13px] text-gray-600 dark:text-gray-300">Imperial garden + lake. More scenic than Olympic Park. Add to Day 2 return route or swap Olympic Park entirely.</div>
+    </div>
+
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <span class="font-bold text-[15px]">Temple of Heaven 天坛</span>
+        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">1.5 hrs</span>
+      </div>
+      <div class="text-xs text-gray-400 mb-1.5">South of Tiananmen · Day 3</div>
+      <div class="text-[13px] text-gray-600 dark:text-gray-300">Ming Dynasty ceremonial complex. 2km south of Tiananmen — add after Forbidden City if energy allows, before Wangfujing.</div>
+    </div>
+
+    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
+      <div class="flex justify-between items-center mb-1.5">
+        <span class="font-bold text-[15px]">Lama Temple 雍和宫</span>
+        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">1 hr</span>
+      </div>
+      <div class="text-xs text-gray-400 mb-1.5">Near Nanluoguxiang · Day 3</div>
+      <div class="text-[13px] text-gray-600 dark:text-gray-300">Active Tibetan Buddhist temple, 10min walk from hutongs. The 18m sandalwood Buddha is extraordinary. Zero extra driving.</div>
+    </div>
+  </div>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Practical Notes -->
+  <h2 class="text-2xl font-bold mb-4">Practical Notes</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm">
+      <tbody>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Weather</td>
+          <td class="py-2">July: 30–36°C, humid, afternoon thunderstorms possible. Sunscreen + light rain jacket essential.</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Driving</td>
+          <td class="py-2">Foreign licenses not valid — only your Chinese friend can drive. Central Beijing has paid lots at all sights (&yen;30–50/stop).</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Payment</td>
+          <td class="py-2">WeChat Pay / Alipay everywhere. Set up one Chinese friend's account for group payments. Cards rarely accepted.</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Language</td>
+          <td class="py-2">Your Chinese friend handles communication. Almost no English outside tourist sites.</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Great Wall</td>
+          <td class="py-2">Arrive Mutianyu by 9am to beat tour buses arriving 10–11am.</td>
+        </tr>
+        <tr class="border-b border-gray-200 dark:border-gray-700">
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Forbidden City</td>
+          <td class="py-2">No large bags inside. Photography allowed in courtyards, not inside halls. Tickets are timed entry — arrive punctually.</td>
+        </tr>
+        <tr>
+          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Night train</td>
+          <td class="py-2">2 soft sleeper compartments (4 berths each) = 6 berths total. Each compartment has a lockable door. Bring earplugs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <!-- Onward -->
+  <h2 class="text-2xl font-bold mb-2">Onward</h2>
+  <p class="text-[15px]">
+    <strong>July 16 evening</strong> &rarr; T231 Beijing West 6:26pm &rarr; Xi'an 7:35am July 17
+  </p>
+  <p class="text-sm mt-2 space-x-2">
+    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+    <span>&middot;</span>
+    <a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 2 · Xi'an &rarr;</a>
+  </p>
+</Base>

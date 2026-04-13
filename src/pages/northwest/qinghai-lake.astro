@@ -1,0 +1,65 @@
+---
+import Destination from '../../layouts/Destination.astro';
+
+const images = [
+  { src: 'photos/qinghai-lake.jpg', alt: 'Qinghai Lake' },
+  { src: 'photos/qinghai-lake-2.jpg', alt: 'Qinghai Lake 2' },
+  { src: 'photos/qinghai-lake-3.jpg', alt: 'Qinghai Lake 3' },
+];
+
+const videos = [
+  { id: '2tc4tt9WqO4', title: 'Cycling Around Qinghai Lake: A Ride Like No Other', caption: 'solo cyclist circumnavigates China\'s largest lake' },
+  { id: 'g8iLyRb8eGs', title: 'I was riding solo the Qinghai Lake', caption: 'personal cycling vlog around the lake shore' },
+  { id: 'G8GDylFCDpU', title: 'Bicycle touring around Qinghai Lake, China', caption: 'touring cyclist perspective of the full circuit' },
+];
+---
+
+<Destination
+  title="Qinghai Lake"
+  titleCn="青海湖"
+  lat={36.9}
+  lng={100.183}
+  imageQuery="Qinghai Lake 青海湖 China"
+  images={images}
+  videos={videos}
+  backLink={{ href: 'trips/northwest', label: 'Northwest Road Trip' }}
+>
+  <h2>Overview</h2>
+  <p>
+    Qinghai Lake is the largest lake in China and the largest saltwater lake in Central Asia, covering 4,583 square kilometres at an altitude of 3,196 metres. Its scale is difficult to convey in photographs: standing on the north shore, the far edge simply disappears into the horizon, more like a sea than a lake. The water is a deep, saturated blue — the kind of blue that seems artificially vivid in person, the result of the altitude, the mineral content, and the clarity of the high-plateau atmosphere.
+  </p>
+  <p>
+    The lake is sacred in Tibetan Buddhism. It is called Tso Ngonpo (ཚོ་སྔོན་པོ) in Tibetan, meaning "Blue Lake," and features prominently in the spiritual geography of the plateau. Several small islands in the lake have historically been sites of meditation retreat. The island of Bird Island (鸟岛, Niǎo Dǎo) on the western shore hosts one of China's most important migratory bird sanctuaries: each spring and summer, bar-headed geese, black-necked cranes, and brown-headed gulls arrive in vast numbers. The bar-headed goose in particular is remarkable — it migrates directly over the Himalayas at altitudes above 7,000 metres.
+  </p>
+  <p>
+    The lake has also become famous for cycling. The annual Qinghai Lake International Road Cycling Race (环青海湖国际公路自行车赛) draws professional teams from around the world for a multi-stage race circumnavigating the lake — a circuit of roughly 360 kilometres. In summer, recreational cyclists and tourists on rented bikes fill the north shore roads, and the visual — cyclist silhouettes against that blue expanse — is one of the iconic images of modern western China.
+  </p>
+
+  <h2>What to See & Do</h2>
+  <ul>
+    <li>Walk the north shore at Erlangjian Scenic Area (二郎剑景区): long wooden boardwalks out over the shallow edge of the lake, with the best photography angles</li>
+    <li>Watch for bar-headed geese along the shoreline — these are the birds that fly over Everest</li>
+    <li>Rent a bicycle from vendors near Erlangjian and ride a few km along the lakeshore road</li>
+    <li>Photograph the prayer flag poles and small Tibetan stupas on the hillsides above the shore</li>
+    <li>If time allows, drive a short distance west to find emptier, unmanicured sections of shore for a quieter experience</li>
+  </ul>
+
+  <h2>Best Time to Visit</h2>
+  <p>
+    July is ideal: water levels are at their highest, surrounding hills are green, and the rapeseed fields on the western shore are in full bloom. The lake freezes solid in winter (December–March). Spring and autumn can be beautiful but cold and windy.
+  </p>
+
+  <h2>Practical Tips</h2>
+  <ul>
+    <li><strong>Tickets:</strong> Erlangjian Scenic Area ~¥100/person; includes access to the boardwalks and lakeshore area</li>
+    <li><strong>Opening hours:</strong> Approximately 8:00am–6:00pm; ticket office may close earlier</li>
+    <li><strong>Getting there:</strong> ~110km west of Xining on G109/S101, approximately 1.5–2 hours. From Riyueshan Pass, it's a further 30 minutes northwest.</li>
+    <li><strong>Crowds:</strong> July is peak season — arrive by 4:00pm to beat the worst crowds at the main viewpoints</li>
+    <li><strong>Facilities:</strong> Full tourist infrastructure at Erlangjian — parking, toilets, souvenir shops, basic restaurants</li>
+  </ul>
+
+  <h2>Why It's Worth It</h2>
+  <p>
+    There are large lakes elsewhere in the world, but there is nothing quite like standing beside 4,500 square kilometres of intensely blue water at altitude, with Tibetan prayer flags snapping in the plateau wind — it is one of those landscapes that physically recalibrates your sense of scale.
+  </p>
+</Destination>

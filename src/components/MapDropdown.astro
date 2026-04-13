@@ -1,0 +1,29 @@
+---
+interface Props {
+  lat: number;
+  lng: number;
+  name: string;
+  nameCn?: string;
+  imageQuery?: string;
+}
+
+const { lat, lng, name, nameCn, imageQuery } = Astro.props;
+const displayName = nameCn || name;
+---
+
+<div class="inline-flex items-center gap-1 mb-4">
+  <details class="map-dropdown">
+    <summary>📍</summary>
+    <div class="map-links">
+      <div class="font-bold text-[13px] mb-2 text-gray-800 dark:text-gray-200">Open in Maps</div>
+      <a href={`https://maps.apple.com/?ll=${lat},${lng}&q=${encodeURIComponent(name)}`} target="_blank">🍎 Apple Maps</a>
+      <a href={`https://www.google.com/maps?q=${lat},${lng}`} target="_blank">🌐 Google Maps</a>
+      <a href={`https://uri.amap.com/marker?position=${lng},${lat}&name=${encodeURIComponent(displayName)}`} target="_blank">🗺 高德地图 (Amap)</a>
+      <a href={`https://api.map.baidu.com/marker?location=${lat},${lng}&title=${encodeURIComponent(displayName)}&output=html`} target="_blank">🔵 百度地图 (Baidu)</a>
+    </div>
+  </details>
+  {imageQuery && (
+    <a href={`https://www.google.com/search?q=${encodeURIComponent(imageQuery)}&tbm=isch`}
+       target="_blank" class="no-underline text-xl" title="Search images">🖼</a>
+  )}
+</div>

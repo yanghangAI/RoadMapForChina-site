@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import TripCard from '../components/TripCard.astro';
+import TransportTable from '../components/TransportTable.astro';
+import InteractiveMap from '../components/InteractiveMap.astro';
+import { tripPhases } from '../data/locations';
+
+const base = import.meta.env.BASE_URL;
+
+const mainMarkers = tripPhases.map(p => ({
+  name: `${p.name} · ${p.nameCn}`,
+  coords: p.coords,
+  color: p.color,
+  label: p.num,
+  phase: p.phase,
+  dates: p.dates,
+  transport: `${p.num <= 1 ? '✈️' : '🚄'} ${p.transport}`,
+  href: p.slug || undefined,
+}));
+
+const optionalMarkers = [
+  // Beijing optional
+  { name: 'Great Wall · 慕田峪长城', coords: [40.433, 116.567] as [number, number], color: '#2b6cb0', label: '◆', phase: 'Beijing · Day 2', href: 'beijing/mutianyu', optional: true },
+  { name: 'Forbidden City · 故宫博物院', coords: [39.916, 116.390] as [number, number], color: '#2b6cb0', label: '◆', phase: 'Beijing · Day 3', href: 'beijing/forbidden-city', optional: true },
+  // Xi'an optional
+  { name: 'Terracotta Warriors · 兵马俑', coords: [34.384, 109.278] as [number, number], color: '#c07a10', label: '◆', phase: "Xi'an · Day 1", href: 'xian/terracotta-warriors', optional: true },
+  // Northwest key stops
+  { name: 'Qinghai Lake · 青海湖', coords: [36.900, 100.183] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 1', href: 'northwest/qinghai-lake', optional: true },
+  { name: 'Chaka Salt Lake · 茶卡盐湖', coords: [36.717, 99.083] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 1-2', href: 'northwest/chaka-salt-lake', optional: true },
+  { name: 'Dunhuang · 敦煌', coords: [40.142, 94.662] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 3-4', href: 'northwest/mogao-caves', optional: true },
+  { name: 'Jiayuguan Fort · 嘉峪关', coords: [39.817, 98.300] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 5', href: 'northwest/jiayuguan-fort', optional: true },
+  { name: 'Qicai Danxia · 七彩丹霞', coords: [38.937, 100.467] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 6', href: 'northwest/qicai-danxia', optional: true },
+];
+
+const mapMarkers = [...mainMarkers, ...optionalMarkers];
+
+const mapLegend = [
+  { color: '#2b6cb0', label: 'Phase 1 · Beijing' },
+  { color: '#c07a10', label: "Phase 2 · Xi'an" },
+  { color: '#2f855a', label: 'Phase 3 · Northwest' },
+  { color: '#c05621', label: 'Phase 4 · Chengdu' },
+  { color: '#6b46c1', label: 'Phase 5 · Yunnan' },
+  { color: '#718096', label: 'Key destinations', diamond: true },
+];
+
+const transportLegs = [
+  { from: 'Beijing', to: "Xi'an", mode: 'T231 night train', modeEmoji: '🚄', duration: '~13h overnight', notes: 'Departs Beijing West 6:26pm · Jul 16' },
+  { from: "Xi'an", to: 'Xining', mode: "D2685 from Xi'an North", modeEmoji: '🚄', duration: '~4h', notes: 'Departs 9:00am · arrives 12:49pm · Jul 18' },
+  { from: 'Xining', to: 'Chengdu', mode: 'Fly', modeEmoji: '✈️', duration: '~2h', notes: 'Evening flight · Jul 24' },
+  { from: 'Chengdu', to: 'Kunming', mode: 'High-speed (if direct G train)', modeEmoji: '🚄', duration: '~4-5h', notes: 'Jul 27 · verify on 12306' },
+];
+---
+
+<Base title="Full Trip Overview">
+  <h1 class="text-3xl font-bold mb-2">Full Trip · July 14 – August 4, 2026</h1>
+  <p class="text-gray-600 dark:text-gray-400 mb-6">
+    <strong>Group:</strong> 7 people (5 Italians, 2 Chinese) · 22 days<br />
+    <strong>Route:</strong> Beijing → Xi'an → Xining → Northwest Loop → Chengdu → Kunming
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Trip at a Glance</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    <TripCard
+      title="Phase 1 · Beijing"
+      href="trips/beijing"
+      dates="Jul 14-16"
+      transport="✈️ Arrive Daxing 12:10 · 6 people"
+      highlights="📍 Great Wall · Forbidden City · Tiananmen · 798 · Hutongs"
+      accommodation="🛏 Jiangtai Lu (friend's home) · 🚗 Rental car"
+      phase="beijing"
+    />
+    <TripCard
+      title="Phase 2 · Xi'an"
+      href="trips/xian"
+      dates="Jul 17"
+      transport="🚄 Arrive by night train · 8 people · 1 full day"
+      highlights="📍 Terracotta Warriors · City Wall · Muslim Quarter"
+      accommodation="🛏 Xi'an city center"
+      phase="xian"
+    />
+    <TripCard
+      title="Phase 3 · Northwest Loop"
+      href="trips/northwest"
+      dates="Jul 18-24"
+      transport="🚄 Arrive Xining midday · 7 people · 1 car"
+      highlights="📍 Qinghai Lake · Dunhuang · Jiayuguan · Danxia · Qilian"
+      accommodation="🛏 Moving · ~2,220km loop"
+      phase="northwest"
+    />
+    <TripCard
+      title="Phase 4 · Chengdu"
+      href="trips/chengdu"
+      dates="Jul 25-26"
+      transport="✈️ Fly from Xining · 2 days"
+      highlights="📍 Giant Panda Base · Jinli Old Street · Sichuan cuisine"
+      accommodation="🛏 Chengdu city center"
+      phase="chengdu"
+    />
+    <TripCard
+      title="Phase 5 · Yunnan"
+      href="trips/yunnan"
+      dates="Jul 27 – Aug 3"
+      transport="🚄 High-speed from Chengdu · 8 days"
+      highlights="📍 Kunming · Stone Forest · Dali · Lijiang · Tiger Leaping Gorge"
+      accommodation="🛏 Kunming base + overnight Dali & Lijiang"
+      phase="yunnan"
+    />
+  </div>
+  <p class="text-[13px] text-gray-400 mt-2">
+    Total 22 days · <a href={`${base}map`} class="text-blue-600 hover:underline">🗺 All Route Maps</a>
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Route Map</h2>
+  <InteractiveMap
+    markers={mapMarkers}
+    legend={mapLegend}
+    center={[33, 108]}
+    zoom={5}
+  />
+  <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+    Click a marker to see dates, transport, and a link to the detailed trip plan.
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Transport Connections</h2>
+  <TransportTable legs={transportLegs} />
+  <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-2">
+    Book early — July is peak domestic travel season. 6-7 tickets together requires advance planning.
+  </p>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Phase Details</h2>
+  <ul class="space-y-2 text-[15px]">
+    <li><a href={`${base}trips/beijing`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 1 · Beijing Plan →</a></li>
+    <li><a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 2 · Xi'an Plan →</a></li>
+    <li><a href={`${base}trips/northwest`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 3 · Northwest Road Trip →</a></li>
+    <li class="text-gray-400">Phase 4 · Chengdu → <em>(coming soon)</em></li>
+    <li class="text-gray-400">Phase 5 · Yunnan → <em>(coming soon)</em></li>
+  </ul>
+
+  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+  <h2 class="text-2xl font-bold mb-4">Resources</h2>
+  <ul class="space-y-2 text-[15px]">
+    <li><a href={`${base}resources/tips`} class="text-blue-700 dark:text-blue-400 hover:underline">💡 Travel Tips</a></li>
+    <li><a href={`${base}resources/packing-list`} class="text-blue-700 dark:text-blue-400 hover:underline">🎒 Packing List</a></li>
+    <li><a href={`${base}resources/useful-phrases`} class="text-blue-700 dark:text-blue-400 hover:underline">🗣 Useful Chinese Phrases</a></li>
+    <li><a href={`${base}map`} class="text-blue-700 dark:text-blue-400 hover:underline">🗺 Interactive Route Map</a></li>
+  </ul>
+</Base>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  images: Array<{ src: string; alt: string }>;
+}
+
+const { images } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+{images.length === 1 ? (
+  <img src={`${base}${images[0].src}`} alt={images[0].alt} class="w-full rounded-xl my-4 shadow-sm" loading="lazy" />
+) : (
+  <div class={`grid gap-3 my-4 ${images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'}`}>
+    {images.map((img) => (
+      <img src={`${base}${img.src}`} alt={img.alt} class="w-full h-48 object-cover rounded-xl shadow-sm" loading="lazy" />
+    ))}
+  </div>
+)}

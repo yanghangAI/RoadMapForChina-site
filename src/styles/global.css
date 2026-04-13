@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-phase-beijing: #2b6cb0;
+  --color-phase-xian: #744210;
+  --color-phase-northwest: #2f855a;
+  --color-phase-chengdu: #c05621;
+  --color-phase-yunnan: #6b46c1;
+
+  --color-badge-beijing-bg: #ebf8ff;
+  --color-badge-beijing-text: #2c5282;
+  --color-badge-xian-bg: #fffbeb;
+  --color-badge-xian-text: #744210;
+  --color-badge-northwest-bg: #f0fdf4;
+  --color-badge-northwest-text: #276749;
+  --color-badge-chengdu-bg: #fff7ed;
+  --color-badge-chengdu-text: #9c4221;
+  --color-badge-yunnan-bg: #faf5ff;
+  --color-badge-yunnan-text: #553c9a;
+
+  --font-sans: 'Source Sans Pro', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Cascadia Code', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply text-gray-800 bg-stone-50 antialiased;
+}
+
+:is(h1, h2, h3, h4) {
+  font-family: var(--font-heading);
+}
+
+.dark body {
+  @apply text-gray-200 bg-gray-950;
+}
+
+/* Prose content styling for markdown body text */
+.prose h2 {
+  @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-gray-200;
+}
+.dark .prose h2 { @apply border-gray-700; }
+
+.prose h3 { @apply text-xl font-semibold mt-8 mb-3; }
+.prose p { @apply mb-4 leading-relaxed; }
+.prose ul { @apply list-disc pl-6 mb-4 space-y-1; }
+.prose ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+.prose li { @apply leading-relaxed; }
+
+.prose a {
+  @apply text-blue-700 underline decoration-blue-300 underline-offset-2 hover:decoration-blue-500 transition-colors;
+}
+.dark .prose a { @apply text-blue-400 decoration-blue-700 hover:decoration-blue-400; }
+
+.prose strong { @apply font-semibold; }
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+}
+.dark .prose blockquote { @apply border-gray-600 text-gray-400; }
+
+.prose table { @apply w-full text-sm border-collapse my-4; }
+.prose th { @apply text-left font-semibold p-2 border-b-2 border-gray-300 bg-gray-100; }
+.dark .prose th { @apply border-gray-600 bg-gray-800; }
+.prose td { @apply p-2 border-b border-gray-200; }
+.dark .prose td { @apply border-gray-700; }
+.prose hr { @apply my-8 border-gray-200; }
+.dark .prose hr { @apply border-gray-700; }
+
+/* Map dropdown */
+.map-dropdown { @apply inline-block relative; }
+.map-dropdown summary { @apply list-none cursor-pointer text-xl select-none; }
+.map-dropdown .map-links {
+  @apply absolute top-8 left-0 bg-white border border-gray-200 rounded-xl p-3 z-50 shadow-lg min-w-[180px] whitespace-nowrap;
+}
+.dark .map-dropdown .map-links { @apply bg-gray-800 border-gray-700; }
+.map-dropdown .map-links a {
+  @apply block py-1 text-sm text-gray-700 no-underline hover:text-blue-600;
+}
+.dark .map-dropdown .map-links a { @apply text-gray-300 hover:text-blue-400; }

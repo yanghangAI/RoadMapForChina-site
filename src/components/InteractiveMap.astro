@@ -1,0 +1,140 @@
+---
+interface Marker {
+  name: string;
+  coords: [number, number];
+  color: string;
+  label: string | number;
+  phase?: string;
+  dates?: string;
+  transport?: string;
+  href?: string;
+  optional?: boolean;
+}
+
+interface Props {
+  id?: string;
+  markers: Marker[];
+  center?: [number, number];
+  zoom?: number;
+  showRoute?: boolean;
+  height?: string;
+  legend?: Array<{ color: string; label: string; diamond?: boolean }>;
+}
+
+const {
+  id = 'map',
+  markers,
+  center = [33, 108],
+  zoom = 5,
+  showRoute = true,
+  height = '500px',
+  legend
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="relative my-4 rounded-xl overflow-hidden shadow-sm" style={`height:${height}`}>
+  <div id={id} class="w-full h-full"></div>
+  {legend && (
+    <div class="absolute bottom-6 left-3 z-[1000] bg-white dark:bg-gray-800 rounded-lg px-3 py-2 shadow-md text-xs leading-loose">
+      {legend.map((l) => (
+        <div class="flex items-center gap-1.5">
+          {l.diamond ? (
+            <span class="inline-block w-2.5 h-2.5 rotate-45" style={`background:${l.color}`}></span>
+          ) : (
+            <span class="inline-block w-2.5 h-2.5 rounded-full" style={`background:${l.color}`}></span>
+          )}
+          {l.label}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script is:inline define:vars={{ id, markers, center, zoom, showRoute, base }}>
+  function initMap() {
+    if (typeof L === 'undefined') {
+      setTimeout(initMap, 100);
+      return;
+    }
+
+    var existingMap = document.getElementById(id);
+    if (existingMap && existingMap._leaflet_id) return;
+
+    var map = L.map(id, { zoomControl: true }).setView(center, zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '\u00A9 OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Only draw route through non-optional markers
+    var routeMarkers = markers.filter(function(m) { return !m.optional; });
+    if (showRoute && routeMarkers.length > 1) {
+      L.polyline(routeMarkers.map(function(m) { return m.coords; }), {
+        color: '#e53e3e', weight: 3, opacity: 0.6, dashArray: '10, 7'
+      }).addTo(map);
+    }
+
+    markers.forEach(function(m) {
+      var icon;
+      if (m.optional) {
+        // Diamond shape for optional stops
+        icon = L.divIcon({
+          html: '<div style="background:' + m.color + '; color:white; width:22px; height:22px; transform:rotate(45deg); display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 2px 6px rgba(0,0,0,0.3); cursor:pointer;"></div>',
+          className: '', iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -16]
+        });
+      } else {
+        // Circle for main stops
+        icon = L.divIcon({
+          html: '<div style="background:' + m.color + '; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:bold; border:2px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.4); cursor:pointer;">' + m.label + '</div>',
+          className: '', iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
+        });
+      }
+
+      var lat = m.coords[0], lng = m.coords[1];
+      var name = encodeURIComponent(m.name);
+      var mapLinks =
+        '<div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">' +
+        '<a href="https://maps.apple.com/?ll=' + lat + ',' + lng + '&q=' + name + '" target="_blank" style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">\uD83C\uDF4E Apple Maps</a>' +
+        '<a href="https://www.google.com/maps?q=' + lat + ',' + lng + '" target="_blank" style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">\uD83C\uDF10 Google Maps</a>' +
+        '<a href="https://uri.amap.com/marker?position=' + lng + ',' + lat + '&name=' + name + '" target="_blank" style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">\uD83D\uDDFA 高德地图</a>' +
+        '<a href="https://api.map.baidu.com/marker?location=' + lat + ',' + lng + '&title=' + name + '&output=html" target="_blank" style="font-size:12px; padding:3px 8px; background:#f0f0f0; border-radius:4px; text-decoration:none; color:#333;">\uD83D\uDD35 百度地图</a>' +
+        '</div>';
+
+      var planLink = m.href
+        ? '<a href="' + base + m.href + '" style="display:inline-block; margin-top:6px; font-size:12px; color:#2b6cb0; text-decoration:none;">View Details \u2192</a>'
+        : (m.optional ? '' : '<span style="display:inline-block; margin-top:6px; font-size:12px; color:#aaa;">Trip plan coming soon</span>');
+
+      var optionalBadge = m.optional
+        ? '<span style="display:inline-block; margin-top:4px; font-size:10px; background:#f7fafc; color:#718096; padding:1px 6px; border-radius:4px; border:1px solid #e2e8f0;">Optional</span>'
+        : '';
+
+      var popup =
+        '<div style="font-family:-apple-system,sans-serif; min-width:180px;">' +
+        '<div style="font-weight:bold; font-size:15px; margin-bottom:2px;">' + m.name + '</div>' +
+        (m.phase ? '<div style="color:#555; font-size:12px; margin-bottom:2px;">' + m.phase + (m.dates ? ' \u00B7 ' + m.dates : '') + '</div>' : '') +
+        (m.transport ? '<div style="color:#888; font-size:12px; margin-bottom:4px;">' + m.transport + '</div>' : '') +
+        optionalBadge +
+        planLink +
+        mapLinks +
+        '</div>';
+
+      L.marker(m.coords, { icon: icon }).addTo(map).bindPopup(popup, { maxWidth: 260 });
+    });
+
+    setTimeout(function() { map.invalidateSize(); }, 100);
+  }
+
+  // Load Leaflet script dynamically
+  if (typeof L === 'undefined') {
+    var s = document.createElement('script');
+    s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.onload = initMap;
+    document.head.appendChild(s);
+  } else {
+    initMap();
+  }
+</script>

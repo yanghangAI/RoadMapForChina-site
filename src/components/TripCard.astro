@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  dates: string;
+  transport: string;
+  highlights: string;
+  accommodation: string;
+  phase: 'beijing' | 'xian' | 'northwest' | 'chengdu' | 'yunnan';
+}
+
+const { title, href, dates, transport, highlights, accommodation, phase } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const phaseStyles = {
+  beijing:   { border: 'border-l-phase-beijing',   bg: 'bg-badge-beijing-bg',   text: 'text-badge-beijing-text' },
+  xian:      { border: 'border-l-phase-xian',      bg: 'bg-badge-xian-bg',      text: 'text-badge-xian-text' },
+  northwest: { border: 'border-l-phase-northwest',  bg: 'bg-badge-northwest-bg',  text: 'text-badge-northwest-text' },
+  chengdu:   { border: 'border-l-phase-chengdu',   bg: 'bg-badge-chengdu-bg',   text: 'text-badge-chengdu-text' },
+  yunnan:    { border: 'border-l-phase-yunnan',     bg: 'bg-badge-yunnan-bg',     text: 'text-badge-yunnan-text' },
+};
+
+const s = phaseStyles[phase];
+---
+
+<div class={`border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 ${s.border} hover:shadow-md transition-shadow`}>
+  <div class="flex justify-between items-center mb-1.5">
+    <a href={`${base}${href}`} class="font-bold text-[15px] no-underline text-inherit hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
+      {title}
+    </a>
+    <span class={`text-xs ${s.bg} ${s.text} px-2 py-0.5 rounded-full`}>{dates}</span>
+  </div>
+  <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">{transport}</div>
+  <div class="text-[13px] mb-1">{highlights}</div>
+  <div class="text-xs text-gray-400 dark:text-gray-500">{accommodation}</div>
+</div>

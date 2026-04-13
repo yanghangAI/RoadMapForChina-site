@@ -1,0 +1,65 @@
+---
+import Destination from '../../layouts/Destination.astro';
+
+const images = [
+  { src: 'photos/mingsha-dunes.jpg', alt: 'Mingsha Dunes' },
+  { src: 'photos/mingsha-dunes-2.jpg', alt: 'Mingsha Dunes 2' },
+  { src: 'photos/mingsha-dunes-3.jpg', alt: 'Mingsha Dunes 3' },
+];
+
+const videos = [
+  { id: 'ze73Eec2Nts', title: 'Gansu @ Dunhuang — Mingsha Mountain & Crescent Lake — Sand Dunes & Yueya Spring', caption: 'covers both the dunes and the Crescent Moon Spring' },
+  { id: 'l880-PjP5dY', title: 'China\'s GOBI DESERT — Dunhuang, the oasis where CAMELS have their own TRAFFIC LIGHTS', caption: 'entertaining travel vlog covering Dunhuang including the Mingsha dunes' },
+];
+---
+
+<Destination
+  title="Mingsha Sand Dunes & Crescent Moon Spring"
+  titleCn="鸣沙山·月牙泉"
+  lat={40.085}
+  lng={94.674}
+  imageQuery="Mingsha Dunes Crescent Moon Spring 鸣沙山 月牙泉 Dunhuang"
+  images={images}
+  videos={videos}
+  backLink={{ href: 'trips/northwest', label: 'Northwest Road Trip' }}
+>
+  <h2>Overview</h2>
+  <p>
+    Mingsha Shan (鸣沙山), "Singing Sand Mountain," is a range of sand dunes rising up to 250 metres directly adjacent to Dunhuang city — you can see them from the hotel window. The "singing" refers to the deep, resonant humming sound the dunes emit when wind blows across the dry sand grains or when large volumes of sand slide down a dune face: a low, sustained tone that can be felt as much as heard, variously described over the centuries as music, the sound of drums, or the voices of the dead.
+  </p>
+  <p>
+    These are not small dunes. The main ridge runs for roughly 40 kilometres and the highest dunes tower over the city like a frozen wave. The sand is remarkably fine and a particular reddish-gold color in the afternoon light. Climbing to the ridge crest takes 30–40 minutes on foot (steep and difficult in loose sand) or 10–15 minutes by camel. The view from the top at sunset — the ancient oasis city of Dunhuang laid out below, the Gobi Desert stretching to every horizon — is one of the defining experiences of northwest China.
+  </p>
+  <p>
+    At the base of the dunes, in a hollow that has been there for over 2,000 years, sits Crescent Moon Spring (月牙泉) — a small, jade-green lake shaped exactly like a crescent moon. The spring has persisted despite being surrounded by some of the most active dunes in Central Asia: scientists still debate the precise hydrological mechanism that prevents the dunes from swallowing it. Ancient Chinese writers marveled at it; it appears in records dating back to the Han Dynasty. Today it is ringed by a small pavilion complex with elegant Song-Dynasty-style wooden buildings reflected in the green water — a composition so perfectly incongruous in its desert setting that it looks like a film set.
+  </p>
+
+  <h2>What to See & Do</h2>
+  <ul>
+    <li>Camel ride at sunset: join the caravan lines and ride to the dune base at golden hour — the light on the sand is extraordinary at 6:00–7:00pm in July (~¥150/person, ~45 minutes)</li>
+    <li>Climb the main dune ridge on foot for the full sunset view from the top — bring sand shoes or use the foot covers sold at the entrance</li>
+    <li>Watch for the singing: slide a large volume of sand rapidly with your hand on a steep face; on a still day you may hear the resonance</li>
+    <li>Visit Crescent Moon Spring in the late afternoon when the light hits the pavilion buildings and the reflections are sharpest</li>
+    <li>Photograph the dune-spring juxtaposition from the elevated viewpoints on the eastern side of the spring</li>
+  </ul>
+
+  <h2>Best Time to Visit</h2>
+  <p>
+    Late afternoon and sunset (5:30–8:00pm) in July is the optimal window. The dunes are too hot to visit at midday (sand surface temperatures exceed 70°C). The camel rides are most atmospheric at golden hour. Early morning is the cooler alternative with good light and fewer crowds.
+  </p>
+
+  <h2>Practical Tips</h2>
+  <ul>
+    <li><strong>Tickets:</strong> ~¥110/person, includes entry to both Mingsha Dunes and Crescent Moon Spring</li>
+    <li><strong>Opening hours:</strong> 5:00am–9:00pm in summer; the site is lit at night for evening visits</li>
+    <li><strong>Camel rides:</strong> ~¥150/person, arranged inside the park gate; negotiate price before mounting</li>
+    <li><strong>Footwear:</strong> Sand gets inside all shoes; buy the plastic oversocks sold at the entrance (¥10–15) or wear sandals you can empty</li>
+    <li><strong>Getting there:</strong> 5km south of Dunhuang city centre; ~15 minutes by taxi or e-bike rental; the dunes are visible from the road</li>
+    <li><strong>Crowds:</strong> This is Dunhuang's most popular attraction — afternoon crowds at the Spring can be dense; move toward the dune face for more space</li>
+  </ul>
+
+  <h2>Why It's Worth It</h2>
+  <p>
+    There is a lake of jade-green water that has existed for 2,000 years in the heart of a desert, not three hundred metres from a dune the size of a small mountain. No photograph — however good — conveys what it feels like to stand between the two at sunset.
+  </p>
+</Destination>

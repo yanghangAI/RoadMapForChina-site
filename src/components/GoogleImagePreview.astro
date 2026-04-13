@@ -1,0 +1,155 @@
+---
+interface Props {
+  query: string;
+  title?: string;
+  images?: Array<{ src: string; alt: string }>;
+}
+
+const { query, title, images = [] } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=isch`;
+const wikiQuery = query.replace(/\s+China$/i, '');
+---
+
+<div class="my-6">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-2xl font-bold">Photos</h2>
+    <a
+      href={searchUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 text-xs text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+    >
+      More on Google Images
+      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+    </a>
+  </div>
+
+  <!-- Local photos -->
+  {images.length > 0 && (
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
+      {images.map((img) => (
+        <img
+          src={`${base}${img.src}`}
+          alt={img.alt}
+          class="w-full h-44 object-cover rounded-lg shadow-sm cursor-zoom-in photo-thumb"
+          loading="lazy"
+        />
+      ))}
+    </div>
+  )}
+
+  <!-- Wikimedia Commons images loaded inline -->
+  <div
+    class="wiki-photo-grid grid grid-cols-2 sm:grid-cols-3 gap-2"
+    data-query={wikiQuery}
+    data-has-local={images.length > 0 ? 'true' : 'false'}
+  >
+    <!-- Skeleton placeholders -->
+    {images.length === 0 && [1,2,3,4,5,6].map(() => (
+      <div class="wiki-skeleton h-44 rounded-lg bg-gray-100 dark:bg-gray-800 animate-pulse"></div>
+    ))}
+  </div>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="photo-lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center cursor-zoom-out" style="display:none;">
+  <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[95vw] object-contain rounded-lg" />
+  <button id="lightbox-close" class="absolute top-4 right-4 text-white/70 hover:text-white text-3xl leading-none">&times;</button>
+</div>
+
+<script is:inline>
+(function() {
+  // Fetch Wikimedia Commons images
+  document.querySelectorAll('.wiki-photo-grid').forEach(function(grid) {
+    var query = grid.dataset.query;
+    var hasLocal = grid.dataset.hasLocal === 'true';
+    var limit = hasLocal ? 3 : 6;
+
+    var url = 'https://commons.wikimedia.org/w/api.php'
+      + '?action=query&generator=search'
+      + '&gsrsearch=' + encodeURIComponent(query)
+      + '&gsrnamespace=6'
+      + '&gsrlimit=' + limit
+      + '&prop=imageinfo'
+      + '&iiprop=url|extmetadata'
+      + '&iiurlwidth=600'
+      + '&format=json&origin=*';
+
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var pages = data.query && data.query.pages;
+        if (!pages) { grid.innerHTML = ''; return; }
+
+        // Sort by page id to get consistent order
+        var items = Object.values(pages).sort(function(a, b) { return a.index - b.index; });
+
+        grid.innerHTML = '';
+        items.forEach(function(page) {
+          var info = page.imageinfo && page.imageinfo[0];
+          if (!info || !info.thumburl) return;
+
+          var desc = '';
+          if (info.extmetadata && info.extmetadata.ImageDescription) {
+            desc = info.extmetadata.ImageDescription.value.replace(/<[^>]*>/g, '').slice(0, 100);
+          }
+
+          var img = document.createElement('img');
+          img.src = info.thumburl;
+          img.alt = desc || page.title;
+          img.loading = 'lazy';
+          img.className = 'w-full h-44 object-cover rounded-lg shadow-sm cursor-zoom-in photo-thumb';
+          img.dataset.full = info.thumburl.replace('/thumb/', '/').replace(/\/[^/]+$/, '');
+
+          var container = document.createElement('div');
+          container.className = 'relative group';
+          container.appendChild(img);
+
+          // Attribution overlay
+          var attr = document.createElement('div');
+          attr.className = 'absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-2 py-1.5 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity';
+          attr.innerHTML = '<span style="font-size:10px;color:rgba(255,255,255,0.8);">Wikimedia Commons</span>';
+          container.appendChild(attr);
+
+          grid.appendChild(container);
+        });
+
+        if (grid.children.length === 0) {
+          grid.remove();
+        }
+      })
+      .catch(function() {
+        grid.innerHTML = '';
+      });
+  });
+
+  // Lightbox
+  var lightbox = document.getElementById('photo-lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxClose = document.getElementById('lightbox-close');
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('photo-thumb')) {
+      lightboxImg.src = e.target.dataset.full || e.target.src;
+      lightboxImg.alt = e.target.alt;
+      lightbox.style.display = 'flex';
+    }
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox || e.target === lightboxClose) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
