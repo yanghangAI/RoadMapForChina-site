@@ -83,7 +83,7 @@ Click a marker to see dates, transport, and a link to the detailed trip plan.
 
 | Leg | Mode | Duration | Notes |
 |---|---|---|---|
-| Beijing → Xi'an | 🚄 Night train (Z-series) | ~11h overnight | Departs Beijing West ~9pm · Jul 16 |
+| Beijing → Xi'an | 🚄 T231 night train | ~13h overnight | Departs Beijing West 6:26pm · Jul 16 |
 | Xi'an → Xining | 🚄 High-speed (G-series) | ~4h | Morning departure · Jul 18 |
 | Xining → Chengdu | ✈️ Fly | ~2h | Evening flight · Jul 24 |
 | Chengdu → Kunming | 🚄 High-speed (if direct G train) | ~4–5h | Jul 27 · verify on 12306 |
