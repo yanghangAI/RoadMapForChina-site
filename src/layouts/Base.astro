@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'China Road Trip 2026 — 22 days across Beijing, Xi\'an, Northwest Loop, Chengdu & Yunnan' } = Astro.props;
+const { title, description = 'China Road Trip 2026 — 22 days across Beijing, Xi\'an, Northwest Loop, Chengdu &amp; Yunnan' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -20,54 +20,43 @@ const base = import.meta.env.BASE_URL;
   <link rel="icon" type="image/png" href={`${base}static/icon.png`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,800;1,400;1,600&amp;family=Inter:wght@400;500;600&amp;display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,800;1,400;1,600&amp;family=Inter:wght@400;500;600&amp;display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap"
+  />
 </head>
-<body class="min-h-screen flex flex-col">
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-40 bg-stone-50/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<body class="paper min-h-screen flex flex-col text-ink">
+  <nav class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-border-dash">
     <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-      <a href={base} class="font-heading font-bold text-lg tracking-tight hover:text-blue-700 transition-colors">
-        China Road Trip 2026
+      <a href={base} class="font-display italic font-semibold text-lg tracking-tight hover:text-vermillion-soft transition-colors">
+        China, <span class="text-vermillion">2026</span>
       </a>
       <div class="flex items-center gap-4 text-sm">
-        <a href={`${base}trips/beijing`} class="hidden sm:inline text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Beijing</a>
-        <a href={`${base}trips/xian`} class="hidden sm:inline text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Xi'an</a>
-        <a href={`${base}trips/northwest`} class="hidden sm:inline text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Northwest</a>
-        <a href={`${base}map`} class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Map</a>
-        <a href={`${base}resources/tips`} class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Resources</a>
-        <button id="theme-toggle" class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
-          <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-          <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-        </button>
+        <a href={`${base}trips/beijing`} class="hidden sm:inline text-ink-soft hover:text-ink transition-colors">Beijing</a>
+        <a href={`${base}trips/xian`} class="hidden sm:inline text-ink-soft hover:text-ink transition-colors">Xi'an</a>
+        <a href={`${base}trips/northwest`} class="hidden sm:inline text-ink-soft hover:text-ink transition-colors">Northwest</a>
+        <a href={`${base}map`} class="text-ink-soft hover:text-ink transition-colors">Map</a>
+        <a href={`${base}resources/tips`} class="text-ink-soft hover:text-ink transition-colors">Resources</a>
       </div>
     </div>
   </nav>
 
-  <!-- Main content -->
   <main class="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
     <slot />
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-200 dark:border-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-500">
-    <div class="max-w-5xl mx-auto px-4">
-      China Road Trip 2026 · 7 travellers · 22 days
+  <footer class="border-t border-border-dash py-6 text-center text-sm text-muted">
+    <div class="max-w-5xl mx-auto px-4 font-hand text-base">
+      China Road Trip 2026 · 7 of us · 22 days
     </div>
   </footer>
-
-  <script is:inline>
-    // Dark mode toggle
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    }
-
-    toggle?.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    });
-  </script>
 </body>
 </html>
