@@ -37,7 +37,7 @@ const base = import.meta.env.BASE_URL;
 <div class="relative my-4 rounded-xl overflow-hidden shadow-sm" style={`height:${height}`}>
   <div id={id} class="w-full h-full"></div>
   {legend && (
-    <div class="absolute bottom-6 left-3 z-[1000] bg-white dark:bg-gray-800 rounded-lg px-3 py-2 shadow-md text-xs leading-loose">
+    <div class="absolute bottom-3 left-3 z-[1000] bg-paper-card border border-border paper-card-shadow px-3 py-2 text-[11px] leading-loose">
       {legend.map((l) => (
         <div class="flex items-center gap-1.5">
           {l.diamond ? (
@@ -45,7 +45,7 @@ const base = import.meta.env.BASE_URL;
           ) : (
             <span class="inline-block w-2.5 h-2.5 rounded-full" style={`background:${l.color}`}></span>
           )}
-          {l.label}
+          <span class="text-ink-soft">{l.label}</span>
         </div>
       ))}
     </div>
@@ -87,14 +87,14 @@ const base = import.meta.env.BASE_URL;
       if (m.optional) {
         // Diamond shape for optional stops
         icon = L.divIcon({
-          html: '<div style="background:' + m.color + '; color:white; width:22px; height:22px; transform:rotate(45deg); display:flex; align-items:center; justify-content:center; border:2px solid white; box-shadow:0 2px 6px rgba(0,0,0,0.3); cursor:pointer;"></div>',
-          className: '', iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -16]
+          html: '<div style="background:' + m.color + '; width:14px; height:14px; transform:rotate(45deg); border:2px solid #fffbef; box-shadow:0 1px 3px rgba(0,0,0,0.25); cursor:pointer;"></div>',
+          className: '', iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -10]
         });
       } else {
         // Circle for main stops
         icon = L.divIcon({
-          html: '<div style="background:' + m.color + '; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:bold; border:2px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.4); cursor:pointer;">' + m.label + '</div>',
-          className: '', iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -20]
+          html: '<div style="background:' + m.color + '; color:#fffbef; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:Caveat,cursive; font-size:18px; font-weight:700; border:2px solid #fffbef; box-shadow:1px 2px 0 rgba(43,33,24,0.25); cursor:pointer; transform:rotate(-4deg);">' + m.label + '</div>',
+          className: '', iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -18]
         });
       }
 
@@ -117,10 +117,10 @@ const base = import.meta.env.BASE_URL;
         : '';
 
       var popup =
-        '<div style="font-family:-apple-system,sans-serif; min-width:180px;">' +
-        '<div style="font-weight:bold; font-size:15px; margin-bottom:2px;">' + m.name + '</div>' +
-        (m.phase ? '<div style="color:#555; font-size:12px; margin-bottom:2px;">' + m.phase + (m.dates ? ' \u00B7 ' + m.dates : '') + '</div>' : '') +
-        (m.transport ? '<div style="color:#888; font-size:12px; margin-bottom:4px;">' + m.transport + '</div>' : '') +
+        '<div style="font-family:Inter,system-ui,sans-serif; min-width:180px; color:#2a2118;">' +
+        '<div style="font-family:Fraunces,Georgia,serif; font-weight:600; font-size:15px; margin-bottom:2px;">' + m.name + '</div>' +
+        (m.phase ? '<div style="font-family:JetBrains Mono,monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#8a7050; margin-bottom:2px;">' + m.phase + (m.dates ? ' \u00B7 ' + m.dates : '') + '</div>' : '') +
+        (m.transport ? '<div style="color:#5a4830; font-size:12px; margin-bottom:4px;">' + m.transport + '</div>' : '') +
         optionalBadge +
         planLink +
         mapLinks +
@@ -155,3 +155,17 @@ const base = import.meta.env.BASE_URL;
     initMap();
   }
 </script>
+
+<style>
+  :global(.leaflet-tile-pane) {
+    filter: sepia(.35) saturate(.85) hue-rotate(-12deg) brightness(.97);
+  }
+  :global(.leaflet-popup-content-wrapper) {
+    background: var(--color-paper-card) !important;
+    color: var(--color-ink) !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--color-border) !important;
+    box-shadow: 2px 3px 0 rgba(43,33,24,.15) !important;
+  }
+  :global(.leaflet-popup-tip) { background: var(--color-paper-card) !important; }
+</style>
