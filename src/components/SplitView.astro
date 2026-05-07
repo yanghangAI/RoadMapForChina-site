@@ -72,5 +72,24 @@ const stateKey = `splitview:${phaseKey}`;
         setState(null);
       }
     });
+
+    // Day-card → map coordination
+    view.querySelectorAll('.day-card[id^="day-"]').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        // Don't hijack clicks on links inside the card
+        if (e.target.closest('a, button')) return;
+        const dayId = card.id;
+        const maps = window.__maps || {};
+        Object.keys(maps).forEach(mapId => {
+          const m = maps[mapId];
+          const marker = m.markers && m.markers[dayId];
+          if (marker && m.map) {
+            m.map.panTo(marker.getLatLng(), { animate: true });
+            marker.openPopup();
+          }
+        });
+      });
+    });
   })();
 </script>

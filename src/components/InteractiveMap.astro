@@ -78,6 +78,10 @@ const base = import.meta.env.BASE_URL;
       }).addTo(map);
     }
 
+    // Expose for SplitView coordination
+    window.__maps = window.__maps || {};
+    window.__maps[id] = { map: map, markers: {} };
+
     markers.forEach(function(m) {
       var icon;
       if (m.optional) {
@@ -122,7 +126,20 @@ const base = import.meta.env.BASE_URL;
         mapLinks +
         '</div>';
 
-      L.marker(m.coords, { icon: icon }).addTo(map).bindPopup(popup, { maxWidth: 260 });
+      var ml = L.marker(m.coords, { icon: icon }).addTo(map).bindPopup(popup, { maxWidth: 260 });
+      var dayKey = (m.phase || '').match(/Day (\d+)/);
+      if (dayKey) {
+        if (!window.__maps[id].markers) window.__maps[id].markers = {};
+        window.__maps[id].markers['day-' + dayKey[1]] = ml;
+        ml.on('click', function() {
+          var anchor = document.getElementById('day-' + dayKey[1]);
+          if (anchor) {
+            anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            anchor.classList.add('day-card-flash');
+            setTimeout(function(){ anchor.classList.remove('day-card-flash'); }, 1200);
+          }
+        });
+      }
     });
 
     setTimeout(function() { map.invalidateSize(); }, 100);

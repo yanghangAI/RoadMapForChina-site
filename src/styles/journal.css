@@ -34,3 +34,5 @@
   text-decoration: none;
 }
 .map-dropdown .map-links a:hover { color: var(--color-vermillion-soft); }
+
+.day-card-flash { box-shadow: 0 0 0 3px var(--color-vermillion); transition: box-shadow .25s; }
