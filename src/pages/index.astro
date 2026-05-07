@@ -1,16 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import TripCard from '../components/TripCard.astro';
-import TransportTable from '../components/TransportTable.astro';
 import InteractiveMap from '../components/InteractiveMap.astro';
-import { tripPhases } from '../data/locations';
+import TicketStub from '../components/TicketStub.astro';
+import PaperCard from '../components/primitives/PaperCard.astro';
+import MiniMap from '../components/primitives/MiniMap.astro';
+import Tape from '../components/primitives/Tape.astro';
+import Stamp from '../components/primitives/Stamp.astro';
+import DashedRoute from '../components/primitives/DashedRoute.astro';
+import DayBadge from '../components/primitives/DayBadge.astro';
+import Marginalia from '../components/primitives/Marginalia.astro';
+import { tripPhases, tripDays, dayPins } from '../data/locations';
 
 const base = import.meta.env.BASE_URL;
 
 const mainMarkers = tripPhases.map(p => ({
   name: `${p.name} · ${p.nameCn}`,
   coords: p.coords,
-  color: p.color,
+  color: `var(--color-phase-${['', 'beijing','xian','northwest','chengdu','yunnan'][p.num]})`,
   label: p.num,
   phase: p.phase,
   dates: p.dates,
@@ -18,29 +25,12 @@ const mainMarkers = tripPhases.map(p => ({
   href: p.slug || undefined,
 }));
 
-const optionalMarkers = [
-  // Beijing optional
-  { name: 'Great Wall · 慕田峪长城', coords: [40.433, 116.567] as [number, number], color: '#2b6cb0', label: '◆', phase: 'Beijing · Day 2', href: 'beijing/mutianyu', optional: true },
-  { name: 'Forbidden City · 故宫博物院', coords: [39.916, 116.390] as [number, number], color: '#2b6cb0', label: '◆', phase: 'Beijing · Day 3', href: 'beijing/forbidden-city', optional: true },
-  // Xi'an optional
-  { name: 'Terracotta Warriors · 兵马俑', coords: [34.384, 109.278] as [number, number], color: '#c07a10', label: '◆', phase: "Xi'an · Day 1", href: 'xian/terracotta-warriors', optional: true },
-  // Northwest key stops
-  { name: 'Qinghai Lake · 青海湖', coords: [36.900, 100.183] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 1', href: 'northwest/qinghai-lake', optional: true },
-  { name: 'Chaka Salt Lake · 茶卡盐湖', coords: [36.717, 99.083] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 1-2', href: 'northwest/chaka-salt-lake', optional: true },
-  { name: 'Dunhuang · 敦煌', coords: [40.142, 94.662] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 3-4', href: 'northwest/mogao-caves', optional: true },
-  { name: 'Jiayuguan Fort · 嘉峪关', coords: [39.817, 98.300] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 5', href: 'northwest/jiayuguan-fort', optional: true },
-  { name: 'Qicai Danxia · 七彩丹霞', coords: [38.937, 100.467] as [number, number], color: '#2f855a', label: '◆', phase: 'Northwest · Day 6', href: 'northwest/qicai-danxia', optional: true },
-];
-
-const mapMarkers = [...mainMarkers, ...optionalMarkers];
-
-const mapLegend = [
-  { color: '#2b6cb0', label: 'Phase 1 · Beijing' },
-  { color: '#c07a10', label: "Phase 2 · Xi'an" },
-  { color: '#2f855a', label: 'Phase 3 · Northwest' },
-  { color: '#c05621', label: 'Phase 4 · Chengdu' },
-  { color: '#6b46c1', label: 'Phase 5 · Yunnan' },
-  { color: '#718096', label: 'Key destinations', diamond: true },
+const heroRoutePoints = [
+  { x: 6,  y: 70, label: 'Beijing', labelPos: 'below' as const },
+  { x: 28, y: 50, label: "Xi'an" },
+  { x: 50, y: 30, label: 'Northwest!', labelPos: 'above' as const },
+  { x: 76, y: 60, label: 'Chengdu' },
+  { x: 95, y: 80, label: 'Yunnan', labelPos: 'below' as const },
 ];
 
 const transportLegs = [
@@ -49,108 +39,129 @@ const transportLegs = [
   { from: 'Xining', to: 'Chengdu', mode: 'Fly', modeEmoji: '✈️', duration: '~2h', notes: 'Evening flight · Jul 24' },
   { from: 'Chengdu', to: 'Kunming', mode: 'High-speed (if direct G train)', modeEmoji: '🚄', duration: '~4-5h', notes: 'Jul 27 · verify on 12306' },
 ];
+
+// "Today" detection (server-render time; client-side script in Task 32 will refine).
+const tripStart = new Date('2026-07-14');
+const tripEnd = new Date('2026-08-04');
+const today = new Date();
+let highlightDay = null as null | (typeof tripDays)[number];
+if (today >= tripStart && today <= tripEnd) {
+  highlightDay = tripDays.find(d => d.date === today.toISOString().slice(0, 10)) || null;
+} else if (today < tripStart) {
+  highlightDay = tripDays[0];
+}
+const highlightPins = highlightDay ? dayPins(highlightDay) : [];
+
+const phaseSlugs: Record<number, string[]> = {
+  1: ['panjiayuan','798-art','great-wall','tiananmen','forbidden-city','hutongs'],
+  2: ['terracotta-warriors','city-wall','muslim-quarter','tang-mall'],
+  3: ['qinghai-lake','chaka-salt-lake','mogao-caves','jiayuguan-fort','qicai-danxia'],
+  4: [],
+  5: [],
+};
+
+const phaseHighlights: Record<number, { en: string; it: string }> = {
+  1: { en: 'Great Wall · Forbidden City · Tiananmen · 798 · Hutongs', it: 'Grande Muraglia · Città Proibita · Tiananmen · 798 · Hutong' },
+  2: { en: "Terracotta Warriors · City Wall · Muslim Quarter", it: "Esercito di Terracotta · Mura · Quartiere Musulmano" },
+  3: { en: 'Qinghai Lake · Dunhuang · Jiayuguan · Danxia · Qilian', it: 'Lago Qinghai · Dunhuang · Jiayuguan · Danxia · Qilian' },
+  4: { en: 'Giant Panda Base · Jinli Old Street · Sichuan cuisine', it: 'Base dei Panda Giganti · Antica strada Jinli · cucina del Sichuan' },
+  5: { en: 'Kunming · Stone Forest · Dali · Lijiang · Tiger Leaping Gorge', it: 'Kunming · Foresta di Pietra · Dali · Lijiang · Gola del Salto della Tigre' },
+};
 ---
-
 <Base title="Full Trip Overview">
-  <h1 class="text-3xl font-bold mb-2">Full Trip · July 14 – August 4, 2026</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-6">
-    <strong>Group:</strong> 7 people (5 Italians, 2 Chinese) · 22 days<br />
-    <strong>Route:</strong> Beijing → Xi'an → Xining → Northwest Loop → Chengdu → Kunming
-  </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <section class="relative pt-4 pb-2">
+    <Tape class="absolute -top-1 left-[28%]" rotate={-3} color="sage" />
+    <Tape class="absolute -top-1 right-[18%]" rotate={2} color="gold" />
+    <Stamp class="absolute top-2 right-2" rotate={6}>22 days</Stamp>
 
-  <h2 class="text-2xl font-bold mb-4">Trip at a Glance</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    <TripCard
-      title="Phase 1 · Beijing"
-      href="trips/beijing"
-      dates="Jul 14-16"
-      transport="✈️ Arrive Daxing 12:10 · 6 people"
-      highlights="📍 Great Wall · Forbidden City · Tiananmen · 798 · Hutongs"
-      accommodation="🛏 Jiangtai Lu (friend's home) · 🚗 Rental car"
-      phase="beijing"
-    />
-    <TripCard
-      title="Phase 2 · Xi'an"
-      href="trips/xian"
-      dates="Jul 17"
-      transport="🚄 Arrive by night train · 8 people · 1 full day"
-      highlights="📍 Terracotta Warriors · City Wall · Muslim Quarter"
-      accommodation="🛏 Xi'an city center"
-      phase="xian"
-    />
-    <TripCard
-      title="Phase 3 · Northwest Loop"
-      href="trips/northwest"
-      dates="Jul 18-24"
-      transport="🚄 Arrive Xining midday · 7 people · 1 car"
-      highlights="📍 Qinghai Lake · Dunhuang · Jiayuguan · Danxia · Qilian"
-      accommodation="🛏 Moving · ~2,220km loop"
-      phase="northwest"
-    />
-    <TripCard
-      title="Phase 4 · Chengdu"
-      href="trips/chengdu"
-      dates="Jul 25-26"
-      transport="✈️ Fly from Xining · 2 days"
-      highlights="📍 Giant Panda Base · Jinli Old Street · Sichuan cuisine"
-      accommodation="🛏 Chengdu city center"
-      phase="chengdu"
-    />
-    <TripCard
-      title="Phase 5 · Yunnan"
-      href="trips/yunnan"
-      dates="Jul 27 – Aug 3"
-      transport="🚄 High-speed from Chengdu · 8 days"
-      highlights="📍 Kunming · Stone Forest · Dali · Lijiang · Tiger Leaping Gorge"
-      accommodation="🛏 Kunming base + overnight Dali & Lijiang"
-      phase="yunnan"
-    />
+    <span class="font-hand text-[18px] text-vermillion-soft inline-block -rotate-1">a trip across ~</span>
+    <h1 class="font-display italic font-semibold text-[44px] sm:text-[52px] leading-none tracking-tight mt-1">
+      China, <span class="font-hand not-italic text-vermillion text-[56px] sm:text-[64px]">2026</span>
+    </h1>
+    <p class="mt-2 max-w-prose text-ink-soft text-[14px] leading-relaxed">
+      <strong class="text-ink">Jul 14 – Aug 4</strong> · 7 of us, one big loop<br />
+      <span class="font-mono uppercase text-[10px] tracking-[.06em]">BJ → XI'AN → XINING → NW LOOP → CHENGDU → KUNMING</span>
+    </p>
+
+    <div class="mt-6">
+      <DashedRoute points={heroRoutePoints} height={70} />
+    </div>
+  </section>
+
+  <hr class="my-6 dashed-divider" />
+
+  {highlightDay && (
+    <section class="mb-6">
+      <span class="font-hand text-[18px] text-vermillion-soft inline-block -rotate-1">today ~</span>
+      <PaperCard padded={false} class="mt-1 overflow-hidden">
+        {highlightPins.length > 0 && (
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr]">
+            <div class="h-[120px] sm:h-auto">
+              <MiniMap id="today-mini" pins={highlightPins.map(p => ({ lat: p.lat, lng: p.lng, color: 'var(--color-vermillion)' }))} height={120} />
+            </div>
+            <div class="relative p-4">
+              <DayBadge number={highlightDay.dayInTrip} bleed />
+              <div class="ml-7">
+                <div class="font-mono uppercase tracking-[.14em] text-[10px] text-muted">{highlightDay.date} · day {highlightDay.dayInTrip} of 22</div>
+                <h3 class="font-display text-[20px] font-semibold leading-tight mt-0.5">{highlightDay.headline}</h3>
+                <div class="font-display italic text-[13px] text-ink-soft">{highlightDay.headlineIt}</div>
+              </div>
+              <Marginalia position="br" rotate={-2}>have a great day!</Marginalia>
+            </div>
+          </div>
+        )}
+      </PaperCard>
+    </section>
+  )}
+
+  <h2 class="font-display text-2xl font-bold mb-4">Trip at a glance</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {tripPhases.map((p) => {
+      const phaseKey = ['', 'beijing','xian','northwest','chengdu','yunnan'][p.num] as 'beijing'|'xian'|'northwest'|'chengdu'|'yunnan';
+      const slugs = phaseSlugs[p.num] || [];
+      const hl = phaseHighlights[p.num];
+      return (
+        <TripCard
+          num={p.num}
+          title={`${p.name} · ${p.nameCn}`}
+          href={p.slug ?? '#'}
+          dates={p.dates}
+          transport={`${p.num <= 1 ? '✈️' : '🚄'} ${p.transport}`}
+          highlights={hl.en}
+          titleIt={hl.it}
+          accommodation=""
+          phase={phaseKey}
+          pinSlugs={slugs}
+          fallbackCoords={p.coords}
+        />
+      );
+    })}
   </div>
-  <p class="text-[13px] text-gray-400 mt-2">
-    Total 22 days · <a href={`${base}map`} class="text-blue-600 hover:underline">🗺 All Route Maps</a>
-  </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <h2 class="text-2xl font-bold mb-4">Route Map</h2>
-  <InteractiveMap
-    markers={mapMarkers}
-    legend={mapLegend}
-    center={[33, 108]}
-    zoom={5}
-  />
-  <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-    Click a marker to see dates, transport, and a link to the detailed trip plan.
-  </p>
+  <h2 class="font-display text-2xl font-bold mb-4">Full route</h2>
+  <PaperCard padded={false} class="overflow-hidden">
+    <InteractiveMap markers={mainMarkers} center={[33, 108]} zoom={5} height="460px" />
+  </PaperCard>
+  <p class="text-sm text-muted mt-2 font-hand text-[15px]">click any marker for dates, transport, and the day plan ~</p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <h2 class="text-2xl font-bold mb-4">Transport Connections</h2>
-  <TransportTable legs={transportLegs} />
-  <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mt-2">
-    Book early — July is peak domestic travel season. 6-7 tickets together requires advance planning.
-  </p>
+  <h2 class="font-display text-2xl font-bold mb-4">Transport connections</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {transportLegs.map(l => <TicketStub leg={l} />)}
+  </div>
+  <p class="mt-3 font-hand text-vermillion-soft text-[16px] -rotate-1 inline-block">book early! July is peak ~</p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <h2 class="text-2xl font-bold mb-4">Phase Details</h2>
-  <ul class="space-y-2 text-[15px]">
-    <li><a href={`${base}trips/beijing`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 1 · Beijing Plan →</a></li>
-    <li><a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 2 · Xi'an Plan →</a></li>
-    <li><a href={`${base}trips/northwest`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 3 · Northwest Road Trip →</a></li>
-    <li class="text-gray-400">Phase 4 · Chengdu → <em>(coming soon)</em></li>
-    <li class="text-gray-400">Phase 5 · Yunnan → <em>(coming soon)</em></li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Resources</h2>
-  <ul class="space-y-2 text-[15px]">
-    <li><a href={`${base}resources/tips`} class="text-blue-700 dark:text-blue-400 hover:underline">💡 Travel Tips</a></li>
-    <li><a href={`${base}resources/packing-list`} class="text-blue-700 dark:text-blue-400 hover:underline">🎒 Packing List</a></li>
-    <li><a href={`${base}resources/useful-phrases`} class="text-blue-700 dark:text-blue-400 hover:underline">🗣 Useful Chinese Phrases</a></li>
-    <li><a href={`${base}map`} class="text-blue-700 dark:text-blue-400 hover:underline">🗺 Interactive Route Map</a></li>
+  <h2 class="font-display text-2xl font-bold mb-4">Resources</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[15px]">
+    <li><a href={`${base}resources/tips`} class="text-vermillion-soft hover:underline">💡 Travel tips</a></li>
+    <li><a href={`${base}resources/packing-list`} class="text-vermillion-soft hover:underline">🎒 Packing list</a></li>
+    <li><a href={`${base}resources/useful-phrases`} class="text-vermillion-soft hover:underline">🗣 Useful phrases (EN · 中文 · IT)</a></li>
+    <li><a href={`${base}map`} class="text-vermillion-soft hover:underline">🗺 Interactive route map</a></li>
   </ul>
 </Base>
