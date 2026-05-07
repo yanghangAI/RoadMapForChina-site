@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import InteractiveMap from '../components/InteractiveMap.astro';
+import Stamp from '../components/primitives/Stamp.astro';
 
 const base = import.meta.env.BASE_URL;
 
@@ -85,14 +86,21 @@ const northwestLegend = [
 ---
 
 <Base title="Route Maps · 路线地图">
-  <h1 class="text-3xl font-bold mb-2">Route Maps · 路线地图</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-6">
+  <div class="mb-4"><a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a></div>
+
+  <header class="relative">
+    <Stamp rotate={-2}>atlas</Stamp>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">Route Maps · 路线地图</h1>
+    <p class="font-mono uppercase text-[10px] tracking-[.14em] text-muted mt-1">22 days · 5 phases · ~4,200km</p>
+  </header>
+
+  <p class="mt-6 text-[14px] leading-relaxed">
     Click any marker to open navigation options (Apple Maps, Google Maps, 高德, 百度). Click <strong>View Trip Plan →</strong> on a marker to open the destination page.
   </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-6 border-border" />
 
-  <h2 class="text-2xl font-bold mb-4">Phase 1 · Beijing</h2>
+  <h2 class="font-display text-2xl font-bold mb-4">Phase 1 · Beijing</h2>
   <InteractiveMap
     id="beijing-map"
     markers={beijingMarkers}
@@ -100,8 +108,8 @@ const northwestLegend = [
     center={[40.05, 116.43]}
     zoom={10}
   />
-  <div class="overflow-x-auto my-4">
-    <table class="text-sm">
+  <div class="my-4 bg-paper-card border border-border paper-card-shadow p-4">
+    <table class="text-[13px] text-ink-soft">
       <tbody>
         <tr><td class="pr-4 py-1">🔵 Blue</td><td>Home Base — Jiangtai Lu</td></tr>
         <tr><td class="pr-4 py-1">🟢 Green</td><td>Day 1 — Arrival afternoon</td></tr>
@@ -112,12 +120,12 @@ const northwestLegend = [
     </table>
   </div>
   <p class="text-sm mb-6">
-    <a href={`${base}trips/beijing`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Beijing Trip Plan →</a>
+    <a href={`${base}trips/beijing`} class="text-vermillion-soft underline">Full Beijing Trip Plan →</a>
   </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-6 border-border" />
 
-  <h2 class="text-2xl font-bold mb-4">Phase 2 · Xi'an</h2>
+  <h2 class="font-display text-2xl font-bold mb-4">Phase 2 · Xi'an</h2>
   <InteractiveMap
     id="xian-map"
     markers={xianMarkers}
@@ -125,8 +133,8 @@ const northwestLegend = [
     center={[34.30, 108.98]}
     zoom={12}
   />
-  <div class="overflow-x-auto my-4">
-    <table class="text-sm">
+  <div class="my-4 bg-paper-card border border-border paper-card-shadow p-4">
+    <table class="text-[13px] text-ink-soft">
       <tbody>
         <tr><td class="pr-4 py-1">🟤 Brown</td><td>Morning — Terracotta Warriors (40km east)</td></tr>
         <tr><td class="pr-4 py-1">🔵 Blue</td><td>Afternoon — City Wall & Bell/Drum Towers</td></tr>
@@ -136,12 +144,12 @@ const northwestLegend = [
     </table>
   </div>
   <p class="text-sm mb-6">
-    <a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Xi'an Trip Plan →</a>
+    <a href={`${base}trips/xian`} class="text-vermillion-soft underline">Full Xi'an Trip Plan →</a>
   </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-6 border-border" />
 
-  <h2 class="text-2xl font-bold mb-4">Phase 3 · Northwest Loop</h2>
+  <h2 class="font-display text-2xl font-bold mb-4">Phase 3 · Northwest Loop</h2>
   <InteractiveMap
     id="northwest-map"
     markers={northwestMarkers}
@@ -149,8 +157,8 @@ const northwestLegend = [
     center={[38.5, 98.5]}
     zoom={6}
   />
-  <div class="overflow-x-auto my-4">
-    <table class="text-sm">
+  <div class="my-4 bg-paper-card border border-border paper-card-shadow p-4">
+    <table class="text-[13px] text-ink-soft">
       <tbody>
         <tr><td class="pr-4 py-1">🔵 Blue</td><td>Start / End — Xining</td></tr>
         <tr><td class="pr-4 py-1">🟢 Green</td><td>Days 1–2 — Qinghai & Qaidam</td></tr>
@@ -161,12 +169,6 @@ const northwestLegend = [
     </table>
   </div>
   <p class="text-sm mb-6">
-    <a href={`${base}trips/northwest`} class="text-blue-700 dark:text-blue-400 hover:underline">Full Northwest Road Trip Plan →</a>
-  </p>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <p class="mt-8 text-sm text-gray-500">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+    <a href={`${base}trips/northwest`} class="text-vermillion-soft underline">Full Northwest Road Trip Plan →</a>
   </p>
 </Base>
