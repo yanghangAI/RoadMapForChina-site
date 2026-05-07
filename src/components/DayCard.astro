@@ -1,52 +1,45 @@
 ---
+import PaperCard from './primitives/PaperCard.astro';
+import DayBadge from './primitives/DayBadge.astro';
+import Marginalia from './primitives/Marginalia.astro';
+
 interface Props {
   day: number;
+  dayInPhase?: number;
   date: string;
-  temp?: string;
-  route: string;
-  highlights: Array<{ name: string; href?: string; imageQuery?: string }>;
-  accommodation: string;
-  phase?: 'green' | 'orange' | 'purple';
+  headline: string;
+  headlineIt?: string;
+  route?: string;
+  highlights: Array<{ name: string; href?: string }>;
+  accommodation?: string;
+  note?: string;
+  /** Used by SplitView to scroll/highlight this card when its pin is tapped */
+  anchorId?: string;
 }
-
-const { day, date, temp, route, highlights, accommodation, phase = 'green' } = Astro.props;
+const { day, dayInPhase, date, headline, headlineIt, route, highlights, accommodation, note, anchorId } = Astro.props;
 const base = import.meta.env.BASE_URL;
-
-const borderColor = {
-  green: 'border-l-phase-northwest',
-  orange: 'border-l-phase-chengdu',
-  purple: 'border-l-phase-yunnan',
-}[phase];
-
-const badgeStyles = {
-  green: 'bg-badge-northwest-bg text-badge-northwest-text',
-  orange: 'bg-badge-chengdu-bg text-badge-chengdu-text',
-  purple: 'bg-badge-yunnan-bg text-badge-yunnan-text',
-}[phase];
 ---
+<PaperCard class="mb-4 day-card" {...(anchorId ? { id: anchorId } : {})} data-trip-day={date}>
+  <DayBadge number={dayInPhase ?? day} bleed />
+  <div class="ml-7">
+    <div class="font-mono uppercase tracking-[.14em] text-[10px] text-muted">
+      {date} · day {day}{dayInPhase ? ` · phase day ${dayInPhase}` : ''}
+    </div>
+    <h3 class="font-display text-[18px] font-semibold leading-tight mt-0.5">{headline}</h3>
+    {headlineIt && <div class="font-display italic text-[13px] text-ink-soft">{headlineIt}</div>}
+    {route && <div class="font-hand text-[15px] text-vermillion-soft mt-2 -rotate-[.5deg] inline-block">{route}</div>}
 
-<div class={`border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 ${borderColor} hover:shadow-md transition-shadow`}>
-  <div class="flex justify-between items-center mb-1.5">
-    <a href={`#day-${day}`} class="font-bold text-[15px] no-underline text-inherit">
-      Day {day} &middot; {date}
-    </a>
-    {temp && <span class={`text-xs ${badgeStyles} px-2 py-0.5 rounded-full`}>{temp}</span>}
+    <ul class="mt-2 text-[13px] leading-relaxed space-y-1">
+      {highlights.map(h => (
+        <li>
+          {h.href
+            ? <a href={`${base}${h.href}`} class="text-ink hover:text-vermillion-soft no-underline">{h.name}</a>
+            : <span>{h.name}</span>}
+        </li>
+      ))}
+    </ul>
+
+    {accommodation && <div class="mt-2 font-mono text-[10px] uppercase tracking-[.14em] text-muted">🛏 {accommodation}</div>}
   </div>
-  <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">{route}</div>
-  <div class="text-[13px] mb-1">
-    {highlights.map((h, i) => (
-      <>
-        {i > 0 && ' \u00B7 '}
-        {h.href
-          ? <a href={`${base}${h.href}`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">{h.name}</a>
-          : <span>{h.name}</span>
-        }
-        {h.imageQuery && (
-          <a href={`https://www.google.com/search?q=${encodeURIComponent(h.imageQuery)}&tbm=isch`}
-             target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">🖼</a>
-        )}
-      </>
-    ))}
-  </div>
-  <div class="text-xs text-gray-400 dark:text-gray-500">{accommodation}</div>
-</div>
+  {note && <Marginalia position="br" rotate={-2}>{note}</Marginalia>}
+</PaperCard>
