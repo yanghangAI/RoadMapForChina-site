@@ -27,14 +27,11 @@ const wikiQuery = query.replace(/\s+China$/i, '');
 
   <!-- Local photos -->
   {images.length > 0 && (
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
-      {images.map((img) => (
-        <img
-          src={`${base}${img.src}`}
-          alt={img.alt}
-          class="w-full h-44 object-cover rounded-lg shadow-sm cursor-zoom-in photo-thumb"
-          loading="lazy"
-        />
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+      {images.map((img, i) => (
+        <figure class="bg-paper-card p-2 paper-card-shadow border border-border" style={`transform:rotate(${[-1.5, 0.8, -0.6, 1.2, -0.4, 0.9][i % 6]}deg)`}>
+          <img src={`${base}${img.src}`} alt={img.alt} class="w-full h-44 object-cover block cursor-zoom-in photo-thumb" loading="lazy" />
+        </figure>
       ))}
     </div>
   )}
