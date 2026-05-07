@@ -11,7 +11,7 @@ const stateKey = `splitview:${phaseKey}`;
   data-state-key={stateKey}
 >
   <div class="split-map-wrap sticky top-14 z-20 lg:top-16 lg:self-start lg:max-h-[calc(100vh-5rem)] bg-paper">
-    <div class="split-map relative h-[42vh] lg:h-[calc(100vh-5rem-2.25rem)]">
+    <div class="split-map relative h-[34vh] lg:h-[calc(100vh-5rem-2.25rem)]">
       <div class="absolute inset-0">
         <slot name="map" />
       </div>
@@ -49,6 +49,12 @@ const stateKey = `splitview:${phaseKey}`;
   .split-view.list-hidden .split-list { display: none; }
   .split-view.list-hidden .split-map { height: calc(100vh - 5rem - 2.25rem); }
   .split-view.list-hidden .split-toolbar .hide-list { display: none; }
+
+  /* Day cards keep clear of the sticky map+toolbar when the page jumps to them */
+  .split-view .day-card { scroll-margin-top: calc(3.5rem + 34vh + 2.5rem); }
+  @media (min-width: 1024px) {
+    .split-view .day-card { scroll-margin-top: 5rem; }
+  }
 </style>
 
 <script is:inline define:vars={{ stateKey }}>

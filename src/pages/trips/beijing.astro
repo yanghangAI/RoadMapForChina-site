@@ -76,49 +76,47 @@ function highlightsForDay(slugs: string[]) {
         </ul>
         <Marginalia position="br" rotate={-2}>do this first!!</Marginalia>
       </PaperCard>
+
+      <h2 class="font-display text-2xl font-bold mt-10 mb-4">Day-by-day detail</h2>
+
+      <article class="prose">
+        <h3 id="day-1-detail">Day 1 · July 14 · Arrival afternoon</h3>
+        <p class="italic text-muted">Arrive Daxing 12:10 · ~4 usable hours · 30–36°C</p>
+        <ul>
+          <li><strong>12:10</strong> Land at Daxing International (PKX)</li>
+          <li><strong>~14:00</strong> Customs, luggage, pick up rental car</li>
+          <li><strong>~14:30–15:30</strong> <a href={`${base}beijing/panjiayuan`}>Panjiayuan Antique Market</a> — Beijing's biggest flea market. Buy something small and eccentric.</li>
+          <li><strong>~16:00</strong> Drop bags at Jiangtai Lu</li>
+          <li><strong>16:30–18:00</strong> <a href={`${base}beijing/798-art-district`}>798 Art District</a> — easy jet-lag walk through galleries and Bauhaus warehouses.</li>
+          <li><strong>19:30</strong> Peking duck at <strong>Da Dong (大董)</strong>, Gongti Beilu branch.</li>
+        </ul>
+
+        <h3 id="day-2-detail">Day 2 · July 15 · Great Wall</h3>
+        <p class="italic text-muted">Full day · ~75km each way · 30–36°C</p>
+        <ul>
+          <li><strong>07:30</strong> Depart Jiangtai Lu → <a href={`${base}beijing/mutianyu`}>Mutianyu Great Wall</a> (~1.5h)</li>
+          <li><strong>09:00</strong> Buy cable car tickets at the booth (¥35 up, ¥25 down, ¥55 combo with toboggan)</li>
+          <li><strong>09:15–12:30</strong> Walk the restored 3.5km section. Take the toboggan down — fastest 10 minutes of the trip.</li>
+          <li><strong>13:00</strong> Lunch at <strong>Brickyard Restaurant</strong> — international-friendly, garden setting.</li>
+          <li><strong>15:00</strong> Drive south, stop at <strong>Olympic Park</strong>: Bird's Nest + Water Cube from the plaza, 30min photo stop.</li>
+          <li><strong>19:30</strong> Hotpot at <strong>Haidilao (海底捞)</strong>, Sanlitun branch.</li>
+        </ul>
+
+        <h3 id="day-3-detail">Day 3 · July 16 · Imperial Beijing & night train</h3>
+        <p class="italic text-muted">Morning + afternoon · T231 departs 18:26 · 30–36°C</p>
+        <ul>
+          <li><strong>08:00</strong> Drive to Tiananmen — park at Jingshan Park lot.</li>
+          <li><strong>08:30–10:00</strong> <a href={`${base}beijing/tiananmen`}>Tiananmen Square</a> before heat and crowd peak.</li>
+          <li><strong>10:00–13:00</strong> <a href={`${base}beijing/forbidden-city`}>Forbidden City</a> — pre-booked tickets only. South–north axis + one side courtyard. Cloakroom at south gate (¥10).</li>
+          <li><strong>13:30</strong> Lunch on Wangfujing pedestrian street.</li>
+          <li><strong>15:00–16:00</strong> <a href={`${base}beijing/nanluoguxiang`}>Nanluoguxiang hutongs</a> — courtyard homes, ice cream, optional rickshaw.</li>
+          <li><strong>16:30</strong> Drop rental car near Beijing West (北京西站).</li>
+          <li><strong>18:26</strong> Board T231 night train · 2 soft-sleeper compartments.</li>
+          <li class="italic text-muted">Arrives Xi'an Station ~07:35 July 17.</li>
+        </ul>
+      </article>
     </div>
   </SplitView>
-
-  <hr class="my-8 dashed-divider" />
-
-  <h2 class="font-display text-2xl font-bold mb-4">Day-by-day detail</h2>
-
-  <article class="prose">
-    <h3 id="day-1-detail">Day 1 · July 14 · Arrival afternoon</h3>
-    <p class="italic text-muted">Arrive Daxing 12:10 · ~4 usable hours · 30–36°C</p>
-    <ul>
-      <li><strong>12:10</strong> Land at Daxing International (PKX)</li>
-      <li><strong>~14:00</strong> Customs, luggage, pick up rental car</li>
-      <li><strong>~14:30–15:30</strong> <a href={`${base}beijing/panjiayuan`}>Panjiayuan Antique Market</a> — Beijing's biggest flea market. Buy something small and eccentric.</li>
-      <li><strong>~16:00</strong> Drop bags at Jiangtai Lu</li>
-      <li><strong>16:30–18:00</strong> <a href={`${base}beijing/798-art-district`}>798 Art District</a> — easy jet-lag walk through galleries and Bauhaus warehouses.</li>
-      <li><strong>19:30</strong> Peking duck at <strong>Da Dong (大董)</strong>, Gongti Beilu branch.</li>
-    </ul>
-
-    <h3 id="day-2-detail">Day 2 · July 15 · Great Wall</h3>
-    <p class="italic text-muted">Full day · ~75km each way · 30–36°C</p>
-    <ul>
-      <li><strong>07:30</strong> Depart Jiangtai Lu → <a href={`${base}beijing/mutianyu`}>Mutianyu Great Wall</a> (~1.5h)</li>
-      <li><strong>09:00</strong> Buy cable car tickets at the booth (¥35 up, ¥25 down, ¥55 combo with toboggan)</li>
-      <li><strong>09:15–12:30</strong> Walk the restored 3.5km section. Take the toboggan down — fastest 10 minutes of the trip.</li>
-      <li><strong>13:00</strong> Lunch at <strong>Brickyard Restaurant</strong> — international-friendly, garden setting.</li>
-      <li><strong>15:00</strong> Drive south, stop at <strong>Olympic Park</strong>: Bird's Nest + Water Cube from the plaza, 30min photo stop.</li>
-      <li><strong>19:30</strong> Hotpot at <strong>Haidilao (海底捞)</strong>, Sanlitun branch.</li>
-    </ul>
-
-    <h3 id="day-3-detail">Day 3 · July 16 · Imperial Beijing & night train</h3>
-    <p class="italic text-muted">Morning + afternoon · T231 departs 18:26 · 30–36°C</p>
-    <ul>
-      <li><strong>08:00</strong> Drive to Tiananmen — park at Jingshan Park lot.</li>
-      <li><strong>08:30–10:00</strong> <a href={`${base}beijing/tiananmen`}>Tiananmen Square</a> before heat and crowd peak.</li>
-      <li><strong>10:00–13:00</strong> <a href={`${base}beijing/forbidden-city`}>Forbidden City</a> — pre-booked tickets only. South–north axis + one side courtyard. Cloakroom at south gate (¥10).</li>
-      <li><strong>13:30</strong> Lunch on Wangfujing pedestrian street.</li>
-      <li><strong>15:00–16:00</strong> <a href={`${base}beijing/nanluoguxiang`}>Nanluoguxiang hutongs</a> — courtyard homes, ice cream, optional rickshaw.</li>
-      <li><strong>16:30</strong> Drop rental car near Beijing West (北京西站).</li>
-      <li><strong>18:26</strong> Board T231 night train · 2 soft-sleeper compartments.</li>
-      <li class="italic text-muted">Arrives Xi'an Station ~07:35 July 17.</li>
-    </ul>
-  </article>
 
   <hr class="my-8 dashed-divider" />
 

@@ -134,7 +134,7 @@ const base = import.meta.env.BASE_URL;
         ml.on('click', function() {
           var anchor = document.getElementById('day-' + dayKey[1]);
           if (anchor) {
-            anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
             anchor.classList.add('day-card-flash');
             setTimeout(function(){ anchor.classList.remove('day-card-flash'); }, 1200);
           }

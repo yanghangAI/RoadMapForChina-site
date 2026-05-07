@@ -79,49 +79,47 @@ function highlightsForDay(slugs: string[]) {
         </ul>
         <Marginalia position="br" rotate={-2}>do this first!!</Marginalia>
       </PaperCard>
+
+      <h2 class="font-display text-2xl font-bold mt-10 mb-4">Day-by-day detail</h2>
+
+      <article class="prose">
+        <h3 id="morning">Morning · Terracotta Warriors</h3>
+        <p class="italic text-muted">Arrive Xi'an 7:35am · 7006 train to Lintong at 8:12am · 28–38°C</p>
+        <ul>
+          <li><strong>7:35am</strong> Arrive Xi'an Station by <strong>T231</strong> night train from Beijing.</li>
+          <li><strong>7:35–8:00am</strong> Meet the 2 new group members at the station. Grab breakfast at a street stall near the station — <strong>肉夹馍 (roujiamo)</strong> and <strong>胡辣汤 (hulatang, spicy pepper soup)</strong> — the local morning combo.</li>
+          <li><strong>8:12am</strong> Board <strong>7006</strong> train from Xi'an Station to Lintong (临潼) — short ride east.</li>
+          <li><strong>~9:30am–12:30pm</strong> <a href={`${base}xian/terracotta-warriors`}>Terracotta Warriors (秦始皇兵马俑博物馆)</a> — Pit 1 first (the big one, ~6,000 warriors in formation), then Pit 2 and 3, then the Bronze Chariots Exhibition Hall. Hire an English-speaking guide at the entrance (¥150–200 for the group). Allow 3 hours.</li>
+          <li><strong>12:30pm</strong> Train back to Xi'an city centre.</li>
+        </ul>
+        <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
+          Tip: Arrive before 10am to beat the tour bus crowds. Skip the "factory" shops on the approach road — they are tourist traps.
+        </p>
+
+        <h3 id="afternoon">Afternoon · City Wall & Landmarks</h3>
+        <p class="italic text-muted">Back in the old city · hot — bring water</p>
+        <ul>
+          <li><strong>1:30pm</strong> Check into hotel near Bell Tower. Drop bags, freshen up.</li>
+          <li><strong>2:00pm</strong> Lunch: <strong>魏家凉皮 (Weijia Liangpi)</strong> — fast, cheap, excellent cold noodles (凉皮) and roujiamo. A local chain, no frills.</li>
+          <li><strong>3:00–5:00pm</strong> <a href={`${base}xian/city-wall`}>Xi'an City Wall (西安城墙)</a> — enter at South Gate (永宁门). Rent bikes (¥45/3h single, ¥90/3h tandem). Ride the full 13.7km loop — flat, paved, panoramic views of the old city. Return bikes at any gate. ~1.5–2 hours.</li>
+          <li><strong>5:00–5:30pm</strong> Walk to <strong>Bell Tower (钟楼)</strong> and <strong>Drum Tower (鼓楼)</strong> — photo stop from the plaza. The Drum Tower sits right at the entrance to the Muslim Quarter. No need to go inside unless the group is keen (¥30 combo ticket for both towers).</li>
+        </ul>
+
+        <h3 id="evening">Evening · Muslim Quarter & Tang Mall</h3>
+        <p class="italic text-muted">The Drum Tower marks the entrance — walk straight in</p>
+        <ul>
+          <li><strong>5:30–7:30pm</strong> <a href={`${base}xian/muslim-quarter`}>Muslim Quarter (回民街)</a> — street food dinner crawl. This is not a sit-down meal: graze from stall to stall.
+            <ul>
+              <li><strong>Must-try:</strong> 羊肉泡馍 (lamb &amp; bread soup) · 肉夹馍 (meat in flatbread) · 烤羊肉串 (cumin lamb skewers) · 凉皮 (cold noodles) · 石榴汁 (pomegranate juice) · 镜糕 (mini rice cakes)</li>
+            </ul>
+          </li>
+          <li><strong>6:30pm</strong> Side trip: <strong>Great Mosque (大清真寺)</strong> — ¥25 entry. One of China's oldest mosques, built in Chinese garden style with Islamic elements. A peaceful contrast to the street chaos. 20–30 minutes.</li>
+          <li><strong>8:00pm</strong> Didi to <a href={`${base}xian/tang-all-day-mall`}>大唐不夜城 (Great Tang All Day Mall)</a> — ~15min taxi south. A 2km pedestrian boulevard lit up in full Tang Dynasty spectacle: golden light installations, costumed street performers, live music, and the famous roly-poly lady. Walk the boulevard from the Big Wild Goose Pagoda south. Best after dark — peak atmosphere by 8:30pm.</li>
+          <li><strong>9:30pm</strong> Didi back to hotel. Rest up — D2685 to Xining departs Xi'an North at 9:00am tomorrow.</li>
+        </ul>
+      </article>
     </div>
   </SplitView>
-
-  <hr class="my-8 dashed-divider" />
-
-  <h2 class="font-display text-2xl font-bold mb-4">Day-by-day detail</h2>
-
-  <article class="prose">
-    <h3 id="morning">Morning · Terracotta Warriors</h3>
-    <p class="italic text-muted">Arrive Xi'an 7:35am · 7006 train to Lintong at 8:12am · 28–38°C</p>
-    <ul>
-      <li><strong>7:35am</strong> Arrive Xi'an Station by <strong>T231</strong> night train from Beijing.</li>
-      <li><strong>7:35–8:00am</strong> Meet the 2 new group members at the station. Grab breakfast at a street stall near the station — <strong>肉夹馍 (roujiamo)</strong> and <strong>胡辣汤 (hulatang, spicy pepper soup)</strong> — the local morning combo.</li>
-      <li><strong>8:12am</strong> Board <strong>7006</strong> train from Xi'an Station to Lintong (临潼) — short ride east.</li>
-      <li><strong>~9:30am–12:30pm</strong> <a href={`${base}xian/terracotta-warriors`}>Terracotta Warriors (秦始皇兵马俑博物馆)</a> — Pit 1 first (the big one, ~6,000 warriors in formation), then Pit 2 and 3, then the Bronze Chariots Exhibition Hall. Hire an English-speaking guide at the entrance (¥150–200 for the group). Allow 3 hours.</li>
-      <li><strong>12:30pm</strong> Train back to Xi'an city centre.</li>
-    </ul>
-    <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
-      Tip: Arrive before 10am to beat the tour bus crowds. Skip the "factory" shops on the approach road — they are tourist traps.
-    </p>
-
-    <h3 id="afternoon">Afternoon · City Wall & Landmarks</h3>
-    <p class="italic text-muted">Back in the old city · hot — bring water</p>
-    <ul>
-      <li><strong>1:30pm</strong> Check into hotel near Bell Tower. Drop bags, freshen up.</li>
-      <li><strong>2:00pm</strong> Lunch: <strong>魏家凉皮 (Weijia Liangpi)</strong> — fast, cheap, excellent cold noodles (凉皮) and roujiamo. A local chain, no frills.</li>
-      <li><strong>3:00–5:00pm</strong> <a href={`${base}xian/city-wall`}>Xi'an City Wall (西安城墙)</a> — enter at South Gate (永宁门). Rent bikes (¥45/3h single, ¥90/3h tandem). Ride the full 13.7km loop — flat, paved, panoramic views of the old city. Return bikes at any gate. ~1.5–2 hours.</li>
-      <li><strong>5:00–5:30pm</strong> Walk to <strong>Bell Tower (钟楼)</strong> and <strong>Drum Tower (鼓楼)</strong> — photo stop from the plaza. The Drum Tower sits right at the entrance to the Muslim Quarter. No need to go inside unless the group is keen (¥30 combo ticket for both towers).</li>
-    </ul>
-
-    <h3 id="evening">Evening · Muslim Quarter & Tang Mall</h3>
-    <p class="italic text-muted">The Drum Tower marks the entrance — walk straight in</p>
-    <ul>
-      <li><strong>5:30–7:30pm</strong> <a href={`${base}xian/muslim-quarter`}>Muslim Quarter (回民街)</a> — street food dinner crawl. This is not a sit-down meal: graze from stall to stall.
-        <ul>
-          <li><strong>Must-try:</strong> 羊肉泡馍 (lamb &amp; bread soup) · 肉夹馍 (meat in flatbread) · 烤羊肉串 (cumin lamb skewers) · 凉皮 (cold noodles) · 石榴汁 (pomegranate juice) · 镜糕 (mini rice cakes)</li>
-        </ul>
-      </li>
-      <li><strong>6:30pm</strong> Side trip: <strong>Great Mosque (大清真寺)</strong> — ¥25 entry. One of China's oldest mosques, built in Chinese garden style with Islamic elements. A peaceful contrast to the street chaos. 20–30 minutes.</li>
-      <li><strong>8:00pm</strong> Didi to <a href={`${base}xian/tang-all-day-mall`}>大唐不夜城 (Great Tang All Day Mall)</a> — ~15min taxi south. A 2km pedestrian boulevard lit up in full Tang Dynasty spectacle: golden light installations, costumed street performers, live music, and the famous roly-poly lady. Walk the boulevard from the Big Wild Goose Pagoda south. Best after dark — peak atmosphere by 8:30pm.</li>
-      <li><strong>9:30pm</strong> Didi back to hotel. Rest up — D2685 to Xining departs Xi'an North at 9:00am tomorrow.</li>
-    </ul>
-  </article>
 
   <hr class="my-8 dashed-divider" />
 
