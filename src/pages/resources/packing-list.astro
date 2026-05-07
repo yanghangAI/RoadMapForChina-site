@@ -1,173 +1,145 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Tape from '../../components/primitives/Tape.astro';
+import Stamp from '../../components/primitives/Stamp.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
+<Base title="Packing list · kit list">
+  <div class="mb-4"><a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a></div>
 
-<Base title="Packing List · China Trip July 2026">
-  <h1 class="text-3xl font-bold mb-2">Packing List · China Trip July 2026</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-6">
+  <header class="relative">
+    <Stamp rotate={-2}>kit list</Stamp>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">Packing list</h1>
+    <p class="font-mono uppercase text-[10px] tracking-[.14em] text-muted mt-1">22 days · 30–36°C lowlands · 5–15°C grasslands</p>
+  </header>
+
+  <p class="mt-6 text-[14px] leading-relaxed">
     This 22-day trip crosses multiple climate zones: humid urban heat in Beijing and Xi'an (30–38°C), high-altitude lakeside (15°C), Qaidam desert basin (28°C), Gobi desert (42°C), and alpine grassland (10–22°C). Pack for all of them.
   </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <!-- Clothing -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="sage" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Clothing</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Light down jacket or fleece — Qinghai Lake, Chaka, Qilian mornings are cold (8–15°C)</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>3–4 lightweight shirts — quick-dry preferred</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>1 pair long trousers — sun protection in desert; required in Mogao Caves</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>2 pairs shorts — for hot days</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Warm socks — for Qilian morning horseback ride</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Comfortable walking shoes — for dunes, fort walls, cave paths</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Sandals or flip-flops — hotel evenings; salt lake wading (Chaka)</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Old shoes you don't mind ruining — salt brine at Chaka and Feicui Hu destroys leather</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Light rain jacket — Beijing July has afternoon thunderstorms</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Sun hat with full brim — Dunhuang sun is severe; Xi'an City Wall has no shade</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Sunglasses — essential, Chaka salt flat reflection is blinding</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Light scarf or buff — desert dust, sun protection on neck</span></li>
+    </ul>
+  </section>
 
-  <h2 class="text-2xl font-bold mb-4">Clothing</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Light down jacket or fleece</td><td class="p-3">Qinghai Lake, Chaka, Qilian mornings are cold (8–15°C)</td></tr>
-        <tr><td class="p-3">3–4 lightweight shirts</td><td class="p-3">Quick-dry preferred</td></tr>
-        <tr><td class="p-3">1 pair long trousers</td><td class="p-3">Sun protection in desert; required in Mogao Caves</td></tr>
-        <tr><td class="p-3">2 pairs shorts</td><td class="p-3">For hot days</td></tr>
-        <tr><td class="p-3">Warm socks</td><td class="p-3">For Qilian morning horseback ride</td></tr>
-        <tr><td class="p-3">Comfortable walking shoes</td><td class="p-3">For dunes, fort walls, cave paths</td></tr>
-        <tr><td class="p-3">Sandals or flip-flops</td><td class="p-3">Hotel evenings; salt lake wading (Chaka)</td></tr>
-        <tr><td class="p-3">Old shoes you don't mind ruining</td><td class="p-3">Salt brine at Chaka and Feicui Hu destroys leather</td></tr>
-        <tr><td class="p-3">Light rain jacket</td><td class="p-3">Beijing July has afternoon thunderstorms</td></tr>
-        <tr><td class="p-3">Sun hat with full brim</td><td class="p-3">Dunhuang sun is severe; Xi'an City Wall has no shade</td></tr>
-        <tr><td class="p-3">Sunglasses</td><td class="p-3">Essential — Chaka salt flat reflection is blinding</td></tr>
-        <tr><td class="p-3">Light scarf or buff</td><td class="p-3">Desert dust, sun protection on neck</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <!-- Sun & Health -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="gold" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Sun &amp; Health</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Sunscreen SPF 50+ — reapply every 2hrs in Dunhuang</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Lip balm with SPF — desert air is extremely dry</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Moisturiser — Qaidam Basin humidity is near zero</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Altitude sickness tablets (高原反应药) — optional but useful for Day 1–2 at 3,200m</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Paracetamol / ibuprofen — headaches are common at altitude</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Electrolyte sachets or sports drink tablets — critical for Dunhuang heat days and Xi'an City Wall cycling</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Insect repellent — Beijing hutongs and evening markets attract mosquitoes in July</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Personal medications — nearest major hospital is Xining on the northwest loop</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Basic first aid: plasters, antiseptic</span></li>
+    </ul>
+  </section>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <!-- Documents & Money -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="sage" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Documents &amp; Money</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Passport (originals) — required for hotel check-in in China, every night</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Passport copies (photo + digital) — keep a photocopy separate from original; photo on phone as backup</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Printed hotel bookings — some rural hotels don't accept digital</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Forbidden City booking confirmation — print or screenshot, timed entry</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Mogao Caves booking confirmation — print or screenshot, needed at gate</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Terracotta Warriors booking confirmation — print or screenshot</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Train tickets / 12306 confirmations — T231, 7006, D2685, screenshot or print</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Cash RMB (¥2,000–3,000 per person) — rural areas often cash-only</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Bank card (Visa/Mastercard) — works at ATMs in cities; carry as backup</span></li>
+    </ul>
+    <div class="mt-4 bg-paper-card border border-border paper-card-shadow p-4 text-[13px] leading-relaxed">
+      <strong class="font-display">Italian note:</strong> Chinese ATMs in Beijing, Xi'an, Xining, Dunhuang, and Jiayuguan accept foreign Visa/Mastercard. In Chaka, Dachaidan, and Qilian, ATM availability is limited. Withdraw cash in Xining before the northwest loop.
+    </div>
+  </section>
 
-  <h2 class="text-2xl font-bold mb-4">Sun & Health</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Sunscreen SPF 50+</td><td class="p-3">Reapply every 2hrs in Dunhuang</td></tr>
-        <tr><td class="p-3">Lip balm with SPF</td><td class="p-3">Desert air is extremely dry</td></tr>
-        <tr><td class="p-3">Moisturiser</td><td class="p-3">Qaidam Basin humidity is near zero</td></tr>
-        <tr><td class="p-3">Altitude sickness tablets (高原反应药)</td><td class="p-3">Optional but useful for Day 1–2 at 3,200m</td></tr>
-        <tr><td class="p-3">Paracetamol / ibuprofen</td><td class="p-3">Headaches are common at altitude</td></tr>
-        <tr><td class="p-3">Electrolyte sachets or sports drink tablets</td><td class="p-3">Critical for Dunhuang heat days and Xi'an City Wall cycling</td></tr>
-        <tr><td class="p-3">Insect repellent</td><td class="p-3">Beijing hutongs and evening markets attract mosquitoes in July</td></tr>
-        <tr><td class="p-3">Personal medications</td><td class="p-3">Nearest major hospital is Xining on the northwest loop</td></tr>
-        <tr><td class="p-3">Basic first aid: plasters, antiseptic</td><td class="p-3"></td></tr>
-      </tbody>
-    </table>
-  </div>
+  <!-- Tech & Navigation -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="gold" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Tech &amp; Navigation</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Phone charger + power bank — long driving days with navigation drain battery fast</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Car phone mount — for navigation, essential</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Offline maps downloaded — Amap (高德地图) or Baidu Maps work in China; Google Maps does not</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>VPN installed and tested before entering China — cannot be downloaded inside China</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Camera / extra memory cards — Chaka and Danxia especially</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Universal power adapter — China uses Type A and Type I, most European plugs need adapter</span></li>
+    </ul>
+  </section>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <!-- Car Kit -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="sage" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Car Kit</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Reusable water bottles (1.5L+ per person) — fill up in every town; no water sources in Qaidam Basin</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Snacks for Day 3 — 500km with no towns, bring lunch and snacks</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Wet wipes and hand sanitiser — bathrooms are basic at some scenic areas</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Small day bag per person — for leaving main luggage in car during sightseeing</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Plastic bags for rubbish — no bins on desert highways</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Car phone charger cable</span></li>
+    </ul>
+  </section>
 
-  <h2 class="text-2xl font-bold mb-4">Documents & Money</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Passport (originals)</td><td class="p-3">Required for hotel check-in in China — every night</td></tr>
-        <tr><td class="p-3">Passport copies (photo + digital)</td><td class="p-3">Keep a photocopy separate from original; photo on phone as backup</td></tr>
-        <tr><td class="p-3">Printed hotel bookings</td><td class="p-3">Some rural hotels don't accept digital</td></tr>
-        <tr><td class="p-3">Forbidden City booking confirmation</td><td class="p-3">Print or screenshot — timed entry</td></tr>
-        <tr><td class="p-3">Mogao Caves booking confirmation</td><td class="p-3">Print or screenshot — needed at gate</td></tr>
-        <tr><td class="p-3">Terracotta Warriors booking confirmation</td><td class="p-3">Print or screenshot</td></tr>
-        <tr><td class="p-3">Train tickets / 12306 confirmations</td><td class="p-3">T231, 7006, D2685 — screenshot or print</td></tr>
-        <tr><td class="p-3">Cash RMB (¥2,000–3,000 per person)</td><td class="p-3">Rural areas often cash-only</td></tr>
-        <tr><td class="p-3">Bank card (Visa/Mastercard)</td><td class="p-3">Works at ATMs in cities; carry as backup</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 text-sm mb-6">
-    <strong>Italian note:</strong> Chinese ATMs in Beijing, Xi'an, Xining, Dunhuang, and Jiayuguan accept foreign Visa/Mastercard. In Chaka, Dachaidan, and Qilian, ATM availability is limited. Withdraw cash in Xining before the northwest loop.
-  </div>
+  <!-- Night Train Essentials -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="gold" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">Night Train Essentials (T231 Beijing → Xi'an)</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Earplugs + sleep mask — train corridors have noise and light all night</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Slippers — for walking to the toilet car, don't go barefoot</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Snacks and water — the dining car closes early; bring enough for the evening</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Small towel — sleeper compartments have no towels</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Entertainment (phone/book) — no reliable WiFi on the train</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">☐</span><span>Padlock or cable lock — optional, soft sleeper doors lock but peace of mind</span></li>
+    </ul>
+  </section>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Tech & Navigation</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Phone charger + power bank</td><td class="p-3">Long driving days with navigation drain battery fast</td></tr>
-        <tr><td class="p-3">Car phone mount</td><td class="p-3">For navigation — essential</td></tr>
-        <tr><td class="p-3">Offline maps downloaded</td><td class="p-3">Amap (高德地图) or Baidu Maps work in China; Google Maps does not</td></tr>
-        <tr><td class="p-3">VPN installed and tested before entering China</td><td class="p-3">Cannot be downloaded inside China</td></tr>
-        <tr><td class="p-3">Camera / extra memory cards</td><td class="p-3">Chaka and Danxia especially</td></tr>
-        <tr><td class="p-3">Universal power adapter</td><td class="p-3">China uses Type A and Type I — most European plugs need adapter</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Car Kit</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Reusable water bottles (1.5L+ per person)</td><td class="p-3">Fill up in every town; no water sources in Qaidam Basin</td></tr>
-        <tr><td class="p-3">Snacks for Day 3</td><td class="p-3">500km with no towns — bring lunch and snacks</td></tr>
-        <tr><td class="p-3">Wet wipes and hand sanitiser</td><td class="p-3">Bathrooms are basic at some scenic areas</td></tr>
-        <tr><td class="p-3">Small day bag per person</td><td class="p-3">For leaving main luggage in car during sightseeing</td></tr>
-        <tr><td class="p-3">Plastic bags for rubbish</td><td class="p-3">No bins on desert highways</td></tr>
-        <tr><td class="p-3">Car phone charger cable</td><td class="p-3"></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Night Train Essentials (T231 Beijing → Xi'an)</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-2/5">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Notes</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Earplugs + sleep mask</td><td class="p-3">Train corridors have noise and light all night</td></tr>
-        <tr><td class="p-3">Slippers</td><td class="p-3">For walking to the toilet car — don't go barefoot</td></tr>
-        <tr><td class="p-3">Snacks and water</td><td class="p-3">The dining car closes early; bring enough for the evening</td></tr>
-        <tr><td class="p-3">Small towel</td><td class="p-3">Sleeper compartments have no towels</td></tr>
-        <tr><td class="p-3">Entertainment (phone/book)</td><td class="p-3">No reliable WiFi on the train</td></tr>
-        <tr><td class="p-3">Padlock or cable lock</td><td class="p-3">Optional — soft sleeper doors lock, but peace of mind</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">What to Leave Behind</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Heavy luggage</strong> — you have one 7-seater for 7+ people on the northwest loop, space is genuinely tight</li>
-    <li><strong>Valuables beyond what's needed</strong> — Chaka, Qilian, Dachaidan are remote with limited security</li>
-    <li><strong>White or pale clothing</strong> — Danxia and desert dust will stain it immediately</li>
-    <li><strong>Too many formal clothes</strong> — nowhere on this trip requires anything beyond casual</li>
-  </ul>
-
-  <p class="mt-8 text-sm text-gray-500">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
-  </p>
+  <!-- What to Leave Behind -->
+  <section class="mt-8">
+    <div class="relative inline-block">
+      <Tape class="absolute -top-1 -left-2 z-10" rotate={-3} color="sage" />
+      <h2 class="font-display text-2xl font-bold pl-3 pr-2">What to Leave Behind</h2>
+    </div>
+    <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">✗</span><span><strong>Heavy luggage</strong> — you have one 7-seater for 7+ people on the northwest loop, space is genuinely tight</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">✗</span><span><strong>Valuables beyond what's needed</strong> — Chaka, Qilian, Dachaidan are remote with limited security</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">✗</span><span><strong>White or pale clothing</strong> — Danxia and desert dust will stain it immediately</span></li>
+      <li class="flex gap-2 items-start text-[14px]"><span class="font-mono text-muted text-[10px] mt-1.5">✗</span><span><strong>Too many formal clothes</strong> — nowhere on this trip requires anything beyond casual</span></li>
+    </ul>
+  </section>
 </Base>
