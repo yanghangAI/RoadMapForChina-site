@@ -18,6 +18,7 @@ interface Props {
 }
 const { day, dayInPhase, date, headline, headlineIt, route, highlights, accommodation, note, anchorId } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const hasDetail = Astro.slots.has('default');
 ---
 <PaperCard class="mb-4 day-card" {...(anchorId ? { id: anchorId } : {})} data-trip-day={date}>
   <DayBadge number={dayInPhase ?? day} bleed />
@@ -29,17 +30,86 @@ const base = import.meta.env.BASE_URL;
     {headlineIt && <div class="font-display italic text-[13px] text-ink-soft">{headlineIt}</div>}
     {route && <div class="font-hand text-[15px] text-vermillion-soft mt-2 -rotate-[.5deg] inline-block">{route}</div>}
 
-    <ul class="mt-2 text-[13px] leading-relaxed space-y-1">
-      {highlights.map(h => (
-        <li>
-          {h.href
-            ? <a href={`${base}${h.href}`} class="text-ink hover:text-vermillion-soft no-underline">{h.name}</a>
-            : <span>{h.name}</span>}
-        </li>
-      ))}
-    </ul>
+    {highlights.length > 0 && (
+      <ul class="mt-2 text-[13px] leading-relaxed space-y-1">
+        {highlights.map(h => (
+          <li>
+            {h.href
+              ? <a href={`${base}${h.href}`} class="text-ink hover:text-vermillion-soft no-underline">{h.name}</a>
+              : <span>{h.name}</span>}
+          </li>
+        ))}
+      </ul>
+    )}
 
     {accommodation && <div class="mt-2 font-mono text-[10px] uppercase tracking-[.14em] text-muted">🛏 {accommodation}</div>}
+
+    {hasDetail && (
+      <>
+        <hr class="mt-4 mb-3 border-t border-dashed border-border-dash" />
+        <div class="day-detail prose-day text-[13px] leading-relaxed">
+          <slot />
+        </div>
+      </>
+    )}
   </div>
   {note && <Marginalia position="br" rotate={-2}>{note}</Marginalia>}
 </PaperCard>
+
+<style is:global>
+  .prose-day h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .prose-day p {
+    margin-bottom: 6px;
+  }
+  .prose-day p.intro {
+    font-style: italic;
+    color: var(--color-muted);
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .prose-day ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 4px 0;
+  }
+  .prose-day ul ul {
+    margin-top: 4px;
+    padding-left: 12px;
+    border-left: 1px solid var(--color-border-dash);
+  }
+  .prose-day li {
+    padding-left: 0;
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+  .prose-day li time, .prose-day li strong:first-child {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-vermillion-soft);
+    font-weight: 500;
+    margin-right: 6px;
+    letter-spacing: .02em;
+  }
+  .prose-day a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-vermillion-soft);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .prose-day a:hover { color: var(--color-vermillion-soft); }
+  .prose-day blockquote, .prose-day .tip {
+    margin: 8px 0;
+    padding: 6px 10px;
+    border-left: 2px solid var(--color-border-dash);
+    color: var(--color-ink-soft);
+    font-style: italic;
+    font-size: 12px;
+  }
+</style>

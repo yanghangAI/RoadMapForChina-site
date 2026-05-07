@@ -6,10 +6,9 @@ import DayCard from '../../components/DayCard.astro';
 import PaperCard from '../../components/primitives/PaperCard.astro';
 import Stamp from '../../components/primitives/Stamp.astro';
 import Marginalia from '../../components/primitives/Marginalia.astro';
-import { tripDays, locations } from '../../data/locations';
+import { locations } from '../../data/locations';
 
 const base = import.meta.env.BASE_URL;
-const phaseDays = tripDays.filter(d => d.phaseNum === 3);
 
 const mapMarkers = [
   { name: 'Xining · 西宁', coords: [36.617, 101.767] as [number, number], color: 'var(--color-muted)', label: '🚄', phase: 'Start/End', dates: 'Jul 18 & 24', transport: '🚄 D2685 arrives 12:49pm' },
@@ -32,33 +31,6 @@ const mapMarkers = [
   { name: 'Shandan Horse Farm · 山丹军马场', coords: [38.560, 100.850] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · Day 6 route', href: 'northwest/shandan-horse-farm', optional: true },
   { name: 'Zhuoer Mountain · 卓尔山', coords: [38.204, 100.217] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · near Qilian', href: 'northwest/zhuoer-mountain', optional: true },
 ];
-
-const dayRoutes: Record<number, string> = {
-  1: '🚄 D2685 to Xining 12:49 · 🚗 Xining → Chaka · 300km / 4h',
-  2: '🚗 Chaka → Dachaidan · 330km / 4h',
-  3: '🚗 Dachaidan → Dunhuang · 500km / 6h',
-  4: '🥾 Dunhuang full day',
-  5: '🚗 Dunhuang → Jiayuguan · 400km / 4.5h',
-  6: '🚗 Jiayuguan → Qilian · 460km / 6h',
-  7: '🚗 Qilian → Xining · 280km / 3.5h · ✈️ fly XNN → CTU evening',
-};
-
-const dayAccommodation: Record<number, string> = {
-  1: 'Chaka',
-  2: 'Dachaidan',
-  3: 'Dunhuang',
-  4: 'Dunhuang',
-  5: 'Jiayuguan',
-  6: 'Qilian',
-  7: 'Back to Xining',
-};
-
-const dayNotes: Record<number, string> = {
-  1: 'set 6am alarm — Chaka mirror at sunrise',
-  2: 'fill tank in Dachaidan!',
-  3: 'confirm Mogao booking tonight',
-  6: 'ask hotel to arrange 7 horses for 8am',
-};
 
 // Build highlight items per day from destination slugs, using locations.name for display.
 function highlightsForDay(slugs: string[]) {
@@ -88,20 +60,149 @@ function highlightsForDay(slugs: string[]) {
     </div>
 
     <div slot="list">
-      {phaseDays.map(d => (
-        <DayCard
-          day={d.dayInTrip}
-          dayInPhase={d.dayInPhase}
-          date={d.date}
-          headline={d.headline}
-          headlineIt={d.headlineIt}
-          route={dayRoutes[d.dayInPhase]}
-          highlights={highlightsForDay(d.destinationSlugs)}
-          accommodation={dayAccommodation[d.dayInPhase]}
-          note={dayNotes[d.dayInPhase]}
-          anchorId={`day-${d.dayInTrip}`}
-        />
-      ))}
+      <DayCard
+        day={5} dayInPhase={1} date="2026-07-18"
+        headline="Train to Xining, Riyueshan, Qinghai Lake"
+        headlineIt="Treno per Xining, Riyueshan, Lago Qinghai"
+        route="🚄 D2685 to Xining 12:49 · 🚗 Xining → Chaka · 300km / 4h"
+        highlights={highlightsForDay(['riyueshan', 'qinghai-lake'])}
+        accommodation="Chaka"
+        note="set 6am alarm — Chaka mirror at sunrise"
+        anchorId="day-5"
+      >
+        <p class="intro">300km · 4h driving · Sleep: Chaka · 15–20°C</p>
+        <ul>
+          <li><strong>12:49pm</strong> Arrive Xining by D2685 from Xi'an North. Lunch near station.</li>
+          <li><strong>2:00pm</strong> Pick up car, depart Xining.</li>
+          <li><strong>3:30pm</strong> <a href={`${base}northwest/riyueshan`}>Riyueshan Pass (日月山)</a> (3,520m) — 20-min stop, photo, move on.</li>
+          <li><strong>4:15pm</strong> <a href={`${base}northwest/qinghai-lake`}>Qinghai Lake (青海湖)</a> north shore (Erlangjian) — 1.5hrs, walk the shore.</li>
+          <li><strong>6:00pm</strong> Drive to Chaka (~170km, 2hrs).</li>
+          <li><strong>8:00pm</strong> Arrive Chaka, dinner, overnight.</li>
+        </ul>
+        <div class="tip">Tonight: Set alarm for 6am. Chaka mirror reflection only works at sunrise when the wind is still.</div>
+      </DayCard>
+
+      <DayCard
+        day={6} dayInPhase={2} date="2026-07-19"
+        headline="Chaka Salt Lake & on to Delingha"
+        headlineIt="Lago Salato di Chaka e Delingha"
+        route="🚗 Chaka → Dachaidan · 330km / 4h"
+        highlights={highlightsForDay(['chaka-salt-lake', 'delingha'])}
+        accommodation="Dachaidan"
+        note="fill tank in Dachaidan!"
+        anchorId="day-6"
+      >
+        <p class="intro">330km · 4h driving · Sleep: Dachaidan · 20–28°C</p>
+        <ul>
+          <li><strong>6:00am</strong> <a href={`${base}northwest/chaka-salt-lake`}>Chaka Salt Lake (茶卡盐湖)</a> at sunrise — the mirror reflection. 1.5hrs.</li>
+          <li><strong>8:00am</strong> Breakfast, pack up.</li>
+          <li><strong>8:30am</strong> Drive to Delingha (~230km, 2.5hrs).</li>
+          <li><strong>11:00am</strong> Delingha — lunch, 30min walk at <a href={`${base}northwest/delingha`}>Haizi Poetry Park</a>.</li>
+          <li><strong>1:00pm</strong> Drive to Feicui Hu / Dachaidan (~100km, 1hr).</li>
+          <li><strong>2:00pm</strong> <a href={`${base}northwest/feicui-hu`}>Feicui Hu (翡翠湖)</a> colored lakes — 2hrs wandering.</li>
+          <li><strong>4:30pm</strong> Check in Dachaidan, rest, early dinner.</li>
+        </ul>
+        <div class="tip">Tonight: Driver fills tank completely before sleeping — the Qaidam Basin to Dunhuang has sparse fuel stations.</div>
+      </DayCard>
+
+      <DayCard
+        day={7} dayInPhase={3} date="2026-07-20"
+        headline="Feicui Hu emerald lake, drive to Dunhuang"
+        headlineIt="Lago smeraldo Feicui Hu, viaggio a Dunhuang"
+        route="🚗 Dachaidan → Dunhuang · 500km / 6h"
+        highlights={highlightsForDay(['feicui-hu'])}
+        accommodation="Dunhuang"
+        note="confirm Mogao booking tonight"
+        anchorId="day-7"
+      >
+        <p class="intro">500km · 6h driving · Sleep: Dunhuang · 38–42°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Dachaidan, full tank.</li>
+          <li><strong>8:00am–2:00pm</strong> Qaidam Basin highway — one of the great desert drives in China. Flat salt pans stretching to the horizon, distant mountain ranges floating above the heat shimmer, almost no traffic. Stop anywhere for photos — the emptiness is the point.</li>
+          <li><strong>2:30pm</strong> Arrive Dunhuang, check in (2 nights), rest — it's 40°C outside.</li>
+          <li><strong>7:00pm</strong> <a href={`${base}northwest/dunhuang-night-market`}>沙州夜市 (Shazhou Night Market)</a> — first real taste of Silk Road street food. Allow 1.5hrs.</li>
+        </ul>
+        <div class="tip">Tonight: Confirm Mogao Caves booking for tomorrow morning. Tickets at <a href="https://mgk.com.cn" target="_blank">mgk.com.cn</a>.</div>
+      </DayCard>
+
+      <DayCard
+        day={8} dayInPhase={4} date="2026-07-21"
+        headline="Mogao Caves, Mingsha dunes, night market"
+        headlineIt="Grotte di Mogao, dune di Mingsha, mercato notturno"
+        route="🥾 Dunhuang full day"
+        highlights={highlightsForDay(['mogao-caves', 'mingsha-dunes', 'dunhuang-night-market'])}
+        accommodation="Dunhuang"
+        anchorId="day-8"
+      >
+        <p class="intro">Sleep: Dunhuang · 38–42°C</p>
+        <ul>
+          <li><strong>8:00am</strong> <a href={`${base}northwest/mogao-caves`}>Mogao Caves (莫高窟)</a> — pre-booked morning slot, guided tour ~3hrs. Finish by 11am.</li>
+          <li><strong>12:00pm</strong> Lunch, long rest indoors — do not be outside between noon and 5pm.</li>
+          <li><strong>5:30pm</strong> <a href={`${base}northwest/mingsha-dunes`}>Crescent Moon Spring (月牙泉)</a> — walk to the spring first while light is still high.</li>
+          <li><strong>6:30pm</strong> Mingsha Sand Dunes — camel ride at golden hour (~¥150/person), watch sunset from the ridge.</li>
+          <li><strong>8:30pm</strong> Dinner, night market.</li>
+        </ul>
+      </DayCard>
+
+      <DayCard
+        day={9} dayInPhase={5} date="2026-07-22"
+        headline="Yardang geopark & Jiayuguan Fort"
+        headlineIt="Geoparco di Yardang e Forte di Jiayuguan"
+        route="🚗 Dunhuang → Jiayuguan · 400km / 4.5h"
+        highlights={highlightsForDay(['yardang', 'jiayuguan-fort'])}
+        accommodation="Jiayuguan"
+        anchorId="day-9"
+      >
+        <p class="intro">400km · 4.5h driving · Sleep: Jiayuguan · 30–35°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Dunhuang.</li>
+          <li><strong>12:30pm</strong> Arrive Jiayuguan, lunch.</li>
+          <li><strong>2:00pm</strong> <a href={`${base}northwest/jiayuguan-fort`}>Jiayuguan Fort (嘉峪关)</a> — western end of the Great Wall, "Greatest Pass Under Heaven." Walk the full wall circuit. 2hrs.</li>
+          <li><strong>4:30pm</strong> Overhanging Great Wall (悬壁长城) — 10km north of the fort, a section of wall that climbs vertically up a mountain face. Different in character from the fort. 45min. <em>(Optional but strongly recommended — fits the afternoon easily.)</em></li>
+          <li><strong>Evening</strong> Dinner, overnight Jiayuguan.</li>
+        </ul>
+      </DayCard>
+
+      <DayCard
+        day={10} dayInPhase={6} date="2026-07-23"
+        headline="Qicai Danxia rainbow mountains"
+        headlineIt="Montagne arcobaleno di Qicai Danxia"
+        route="🚗 Jiayuguan → Qilian · 460km / 6h"
+        highlights={highlightsForDay(['qicai-danxia', 'shandan-horse-farm'])}
+        accommodation="Qilian"
+        note="ask hotel to arrange 7 horses for 8am"
+        anchorId="day-10"
+      >
+        <p class="intro">460km · 6h driving · Sleep: Qilian · 20–25°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Jiayuguan.</li>
+          <li><strong>10:30am</strong> Arrive <a href={`${base}northwest/qicai-danxia`}>Zhangye Qicai Danxia (七彩丹霞)</a> — morning light is ideal for the colors. Take the shuttle buses between platforms. 2.5hrs.</li>
+          <li><strong>1:30pm</strong> Lunch in Zhangye.</li>
+          <li><strong>2:30pm</strong> Drive south to Qilian County via G227 (~180km, 2.5hrs) — direct mountain route, no backtracking.</li>
+          <li><strong>5:00pm</strong> Arrive <a href={`${base}northwest/qilian-grassland`}>Qilian County</a>, check in, riverside walk at dusk.</li>
+          <li><strong>Evening</strong> Lamb hotpot dinner — Qilian lamb is among the best in Qinghai.</li>
+        </ul>
+        <div class="tip">Tonight: Ask hotel to arrange 7 horses for 8:00am tomorrow.</div>
+      </DayCard>
+
+      <DayCard
+        day={11} dayInPhase={7} date="2026-07-24"
+        headline="Qilian grasslands, Zhuoer mountain, fly to Chengdu"
+        headlineIt="Praterie di Qilian, monte Zhuoer, volo a Chengdu"
+        route="🚗 Qilian → Xining · 280km / 3.5h · ✈️ fly XNN → CTU evening"
+        highlights={highlightsForDay(['qilian-grassland', 'zhuoer-mountain', 'menyuan-flowers'])}
+        accommodation="Back to Xining"
+        anchorId="day-11"
+      >
+        <p class="intro">280km · 3.5h driving</p>
+        <ul>
+          <li><strong>8:00am</strong> 1hr horseback ride on the grassland (~¥120/person). Bring a warm layer — 2,800m at 8am is cold.</li>
+          <li><strong>9:30am</strong> Depart Qilian east on S302.</li>
+          <li><strong>11:00am</strong> <a href={`${base}northwest/menyuan-flowers`}>Menyuan rapeseed flower fields (门源油菜花)</a> — 30min stop if in bloom. The yellow fields with snow peaks behind are the perfect farewell image.</li>
+          <li><strong>12:00pm</strong> Continue north on G227 to Xining (~160km, 2hrs).</li>
+          <li><strong>2:00pm</strong> Arrive Xining — lunch, return car, fly out to Chengdu.</li>
+        </ul>
+      </DayCard>
 
       <PaperCard class="mt-6 bg-paper">
         <Stamp rotate={-3}>book now</Stamp>
@@ -114,95 +215,6 @@ function highlightsForDay(slugs: string[]) {
         </ul>
         <Marginalia position="br" rotate={-2}>do this first!!</Marginalia>
       </PaperCard>
-
-      <h2 class="font-display text-2xl font-bold mt-10 mb-4">Day-by-day detail</h2>
-
-      <article class="prose">
-    <h3 id="day-5-detail">Day 1 · July 18 · Xining → Qinghai Lake → Chaka</h3>
-    <p class="italic text-muted">300km · 4h driving · Sleep: Chaka · 15–20°C</p>
-    <ul>
-      <li><strong>12:49pm</strong> Arrive Xining by D2685 from Xi'an North. Lunch near station.</li>
-      <li><strong>2:00pm</strong> Pick up car, depart Xining.</li>
-      <li><strong>3:30pm</strong> <a href={`${base}northwest/riyueshan`}>Riyueshan Pass (日月山)</a> (3,520m) — 20-min stop, photo, move on.</li>
-      <li><strong>4:15pm</strong> <a href={`${base}northwest/qinghai-lake`}>Qinghai Lake (青海湖)</a> north shore (Erlangjian) — 1.5hrs, walk the shore.</li>
-      <li><strong>6:00pm</strong> Drive to Chaka (~170km, 2hrs).</li>
-      <li><strong>8:00pm</strong> Arrive Chaka, dinner, overnight.</li>
-    </ul>
-    <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
-      Tonight: Set alarm for 6am. Chaka mirror reflection only works at sunrise when the wind is still.
-    </p>
-
-    <h3 id="day-6-detail">Day 2 · July 19 · Chaka → Delingha → Feicui Hu</h3>
-    <p class="italic text-muted">330km · 4h driving · Sleep: Dachaidan · 20–28°C</p>
-    <ul>
-      <li><strong>6:00am</strong> <a href={`${base}northwest/chaka-salt-lake`}>Chaka Salt Lake (茶卡盐湖)</a> at sunrise — the mirror reflection. 1.5hrs.</li>
-      <li><strong>8:00am</strong> Breakfast, pack up.</li>
-      <li><strong>8:30am</strong> Drive to Delingha (~230km, 2.5hrs).</li>
-      <li><strong>11:00am</strong> Delingha — lunch, 30min walk at <a href={`${base}northwest/delingha`}>Haizi Poetry Park</a>.</li>
-      <li><strong>1:00pm</strong> Drive to Feicui Hu / Dachaidan (~100km, 1hr).</li>
-      <li><strong>2:00pm</strong> <a href={`${base}northwest/feicui-hu`}>Feicui Hu (翡翠湖)</a> colored lakes — 2hrs wandering.</li>
-      <li><strong>4:30pm</strong> Check in Dachaidan, rest, early dinner.</li>
-    </ul>
-    <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
-      Tonight: Driver fills tank completely before sleeping — the Qaidam Basin to Dunhuang has sparse fuel stations.
-    </p>
-
-    <h3 id="day-7-detail">Day 3 · July 20 · Dachaidan → Dunhuang · The Desert Highway</h3>
-    <p class="italic text-muted">500km · 6h driving · Sleep: Dunhuang · 38–42°C</p>
-    <ul>
-      <li><strong>8:00am</strong> Depart Dachaidan, full tank.</li>
-      <li><strong>8:00am–2:00pm</strong> Qaidam Basin highway — one of the great desert drives in China. Flat salt pans stretching to the horizon, distant mountain ranges floating above the heat shimmer, almost no traffic. Stop anywhere for photos — the emptiness is the point.</li>
-      <li><strong>2:30pm</strong> Arrive Dunhuang, check in (2 nights), rest — it's 40°C outside.</li>
-      <li><strong>7:00pm</strong> <a href={`${base}northwest/dunhuang-night-market`}>沙州夜市 (Shazhou Night Market)</a> — first real taste of Silk Road street food. Allow 1.5hrs.</li>
-    </ul>
-    <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
-      Tonight: Confirm Mogao Caves booking for tomorrow morning. Tickets at <a href="https://mgk.com.cn" target="_blank">mgk.com.cn</a>.
-    </p>
-
-    <h3 id="day-8-detail">Day 4 · July 21 · Dunhuang Full Day</h3>
-    <p class="italic text-muted">Sleep: Dunhuang · 38–42°C</p>
-    <ul>
-      <li><strong>8:00am</strong> <a href={`${base}northwest/mogao-caves`}>Mogao Caves (莫高窟)</a> — pre-booked morning slot, guided tour ~3hrs. Finish by 11am.</li>
-      <li><strong>12:00pm</strong> Lunch, long rest indoors — do not be outside between noon and 5pm.</li>
-      <li><strong>5:30pm</strong> <a href={`${base}northwest/mingsha-dunes`}>Crescent Moon Spring (月牙泉)</a> — walk to the spring first while light is still high.</li>
-      <li><strong>6:30pm</strong> Mingsha Sand Dunes — camel ride at golden hour (~¥150/person), watch sunset from the ridge.</li>
-      <li><strong>8:30pm</strong> Dinner, night market.</li>
-    </ul>
-
-    <h3 id="day-9-detail">Day 5 · July 22 · Dunhuang → Jiayuguan</h3>
-    <p class="italic text-muted">400km · 4.5h driving · Sleep: Jiayuguan · 30–35°C</p>
-    <ul>
-      <li><strong>8:00am</strong> Depart Dunhuang.</li>
-      <li><strong>12:30pm</strong> Arrive Jiayuguan, lunch.</li>
-      <li><strong>2:00pm</strong> <a href={`${base}northwest/jiayuguan-fort`}>Jiayuguan Fort (嘉峪关)</a> — western end of the Great Wall, "Greatest Pass Under Heaven." Walk the full wall circuit. 2hrs.</li>
-      <li><strong>4:30pm</strong> Overhanging Great Wall (悬壁长城) — 10km north of the fort, a section of wall that climbs vertically up a mountain face. Different in character from the fort. 45min. <em>(Optional but strongly recommended — fits the afternoon easily.)</em></li>
-      <li><strong>Evening</strong> Dinner, overnight Jiayuguan.</li>
-    </ul>
-
-    <h3 id="day-10-detail">Day 6 · July 23 · Jiayuguan → Qicai Danxia → Qilian</h3>
-    <p class="italic text-muted">460km · 6h driving · Sleep: Qilian · 20–25°C</p>
-    <ul>
-      <li><strong>8:00am</strong> Depart Jiayuguan.</li>
-      <li><strong>10:30am</strong> Arrive <a href={`${base}northwest/qicai-danxia`}>Zhangye Qicai Danxia (七彩丹霞)</a> — morning light is ideal for the colors. Take the shuttle buses between platforms. 2.5hrs.</li>
-      <li><strong>1:30pm</strong> Lunch in Zhangye.</li>
-      <li><strong>2:30pm</strong> Drive south to Qilian County via G227 (~180km, 2.5hrs) — direct mountain route, no backtracking.</li>
-      <li><strong>5:00pm</strong> Arrive <a href={`${base}northwest/qilian-grassland`}>Qilian County</a>, check in, riverside walk at dusk.</li>
-      <li><strong>Evening</strong> Lamb hotpot dinner — Qilian lamb is among the best in Qinghai.</li>
-    </ul>
-    <p class="text-[13px] text-ink-soft border-l-2 border-border-dash pl-3 italic">
-      Tonight: Ask hotel to arrange 7 horses for 8:00am tomorrow.
-    </p>
-
-    <h3 id="day-11-detail">Day 7 · July 24 · Qilian → Menyuan → Xining</h3>
-    <p class="italic text-muted">280km · 3.5h driving</p>
-    <ul>
-      <li><strong>8:00am</strong> 1hr horseback ride on the grassland (~¥120/person). Bring a warm layer — 2,800m at 8am is cold.</li>
-      <li><strong>9:30am</strong> Depart Qilian east on S302.</li>
-      <li><strong>11:00am</strong> <a href={`${base}northwest/menyuan-flowers`}>Menyuan rapeseed flower fields (门源油菜花)</a> — 30min stop if in bloom. The yellow fields with snow peaks behind are the perfect farewell image.</li>
-      <li><strong>12:00pm</strong> Continue north on G227 to Xining (~160km, 2hrs).</li>
-      <li><strong>2:00pm</strong> Arrive Xining — lunch, return car, fly out to Chengdu.</li>
-    </ul>
-  </article>
     </div>
   </SplitView>
 
