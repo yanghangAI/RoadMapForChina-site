@@ -40,3 +40,11 @@
 /* Hide the default disclosure triangle on the resources nav dropdown */
 .resources-dropdown summary::-webkit-details-marker { display: none; }
 .resources-dropdown summary::marker { content: ''; }
+
+/* Auto-hide nav on scroll-down */
+nav.sticky { transition: transform .25s ease; }
+.nav-collapsed nav.sticky { transform: translateY(-100%); }
+
+/* When nav hides, the sticky split-map glides up to the viewport top so no gap appears */
+.split-map-wrap { transition: top .25s ease; }
+.nav-collapsed .split-map-wrap { top: 0; }

@@ -66,5 +66,37 @@ const base = import.meta.env.BASE_URL;
       China Road Trip 2026 · 7 of us · 22 days
     </div>
   </footer>
+
+  <script is:inline>
+    // Auto-hide top nav on scroll down, show on scroll up
+    (function() {
+      var html = document.documentElement;
+      var lastY = window.scrollY;
+      var ticking = false;
+      var threshold = 6;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function() {
+          var y = window.scrollY;
+          var delta = y - lastY;
+          if (y < 10) {
+            html.classList.remove('nav-collapsed');
+          } else if (delta > threshold) {
+            if (!html.classList.contains('nav-collapsed')) {
+              html.classList.add('nav-collapsed');
+              // Close any open Resources dropdown when nav slides up
+              document.querySelectorAll('nav details[open]').forEach(function(d) { d.removeAttribute('open'); });
+            }
+          } else if (delta < -threshold) {
+            html.classList.remove('nav-collapsed');
+          }
+          lastY = y;
+          ticking = false;
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
 </body>
 </html>
