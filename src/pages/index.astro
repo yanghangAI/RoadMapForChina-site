@@ -164,4 +164,19 @@ const phaseHighlights: Record<number, { en: string; it: string }> = {
     <li><a href={`${base}resources/useful-phrases`} class="text-vermillion-soft hover:underline">🗣 Useful phrases (EN · 中文 · IT)</a></li>
     <li><a href={`${base}map`} class="text-vermillion-soft hover:underline">🗺 Interactive route map</a></li>
   </ul>
+
+  <script is:inline>
+    (function() {
+      const tripStart = new Date('2026-07-14');
+      const tripEnd = new Date('2026-08-04');
+      const today = new Date();
+      if (today < tripStart || today > tripEnd) return;
+      const iso = today.toISOString().slice(0, 10);
+      document.querySelectorAll('[data-trip-day]').forEach(el => {
+        if (el.getAttribute('data-trip-day') === iso) {
+          el.classList.add('day-card-flash');
+        }
+      });
+    })();
+  </script>
 </Base>
