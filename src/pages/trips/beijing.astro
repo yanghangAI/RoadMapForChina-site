@@ -122,6 +122,75 @@ function highlightsForDay(slugs: string[]) {
 
   <hr class="my-8 dashed-divider" />
 
+  <h2 class="font-display text-2xl font-bold mb-2">Optional swaps & add-ons</h2>
+  <p class="text-sm text-muted mb-4">Near the route but not in the main plan. Slot them in if energy/time allow.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Summer Palace <span class="font-zh font-normal text-[13px] text-ink-soft">颐和园</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">2.5 hrs</span>
+      </div>
+      <div class="text-[12px] text-muted mb-1">Northwest Beijing · swap for Olympic Park</div>
+      <div class="text-[13px] text-ink-soft">Imperial garden + lake. More scenic than Olympic Park. Add to Day 2 return route or swap entirely.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Temple of Heaven <span class="font-zh font-normal text-[13px] text-ink-soft">天坛</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">1.5 hrs</span>
+      </div>
+      <div class="text-[12px] text-muted mb-1">South of Tiananmen · Day 3</div>
+      <div class="text-[13px] text-ink-soft">Ming Dynasty ceremonial complex. 2km south of Tiananmen — slot in after Forbidden City if energy allows.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Lama Temple <span class="font-zh font-normal text-[13px] text-ink-soft">雍和宫</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">1 hr</span>
+      </div>
+      <div class="text-[12px] text-muted mb-1">Near Nanluoguxiang · Day 3</div>
+      <div class="text-[13px] text-ink-soft">Active Tibetan Buddhist temple, 10min walk from the hutongs. The 18m sandalwood Buddha is extraordinary.</div>
+    </PaperCard>
+  </div>
+
+  <hr class="my-8 dashed-divider" />
+
+  <h2 class="font-display text-2xl font-bold mb-4">Practical notes</h2>
+  <PaperCard padded={false}>
+    <table class="w-full text-sm">
+      <tbody>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top w-32">Weather</td>
+          <td class="py-2 px-3">July: 30–36°C, humid, afternoon thunderstorms possible. Sunscreen + light rain jacket essential.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Driving</td>
+          <td class="py-2 px-3">Foreign licenses not valid — only the Chinese friend can drive. Central Beijing has paid lots at every sight (¥30–50/stop).</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Payment</td>
+          <td class="py-2 px-3">WeChat Pay / Alipay everywhere. Set up one Chinese friend's account for group payments. Cards rarely accepted.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Language</td>
+          <td class="py-2 px-3">Chinese friends handle communication. Almost no English outside tourist sites.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Great Wall</td>
+          <td class="py-2 px-3">Arrive Mutianyu by 9am to beat the tour buses arriving 10–11am.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Forbidden City</td>
+          <td class="py-2 px-3">No large bags inside. Photography allowed in courtyards, not inside halls. Tickets are timed entry — arrive punctually.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Night train</td>
+          <td class="py-2 px-3">2 soft-sleeper compartments (4 berths each) = 6 berths total. Each compartment has a lockable door. Bring earplugs.</td>
+        </tr>
+      </tbody>
+    </table>
+  </PaperCard>
+
+  <hr class="my-8 dashed-divider" />
+
   <p class="text-sm space-x-2">
     <a href={base} class="text-vermillion-soft hover:underline">← Full trip overview</a>
     <span class="text-muted">·</span>
