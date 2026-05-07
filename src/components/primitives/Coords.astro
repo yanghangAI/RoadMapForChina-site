@@ -1,0 +1,14 @@
+---
+interface Props {
+  lat: number;
+  lng: number;
+  class?: string;
+}
+const { lat, lng, class: className = '' } = Astro.props;
+const ns = lat >= 0 ? 'N' : 'S';
+const ew = lng >= 0 ? 'E' : 'W';
+const fmt = (v: number) => Math.abs(v).toFixed(2);
+---
+<span class={`font-mono text-[10px] tracking-[.18em] uppercase text-vermillion-soft ${className}`}>
+  {ns} {fmt(lat)}° / {ew} {fmt(lng)}°
+</span>

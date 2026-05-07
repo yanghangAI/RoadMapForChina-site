@@ -1,303 +1,195 @@
 ---
 import Base from '../../layouts/Base.astro';
 import InteractiveMap from '../../components/InteractiveMap.astro';
+import SplitView from '../../components/SplitView.astro';
+import DayCard from '../../components/DayCard.astro';
+import PaperCard from '../../components/primitives/PaperCard.astro';
+import Stamp from '../../components/primitives/Stamp.astro';
+import Marginalia from '../../components/primitives/Marginalia.astro';
+import { locations } from '../../data/locations';
 
 const base = import.meta.env.BASE_URL;
 
 const mapMarkers = [
-  { name: 'Xi\'an Station · 西安站', coords: [34.271, 108.952] as [number, number], color: '#744210', label: '🚄', phase: 'Arrival', dates: 'Jul 17', transport: '🚄 T231 arrives 7:35am' },
-  { name: 'Terracotta Warriors · 秦始皇兵马俑', coords: [34.384, 109.278] as [number, number], color: '#744210', label: '1', phase: 'Morning', dates: 'Jul 17', href: 'xian/terracotta-warriors' },
-  { name: 'City Wall South Gate · 永宁门', coords: [34.262, 108.946] as [number, number], color: '#2b6cb0', label: '2', phase: 'Afternoon', dates: 'Jul 17', href: 'xian/city-wall' },
-  { name: 'Bell Tower · 钟楼', coords: [34.260, 108.942] as [number, number], color: '#2b6cb0', label: '3', phase: 'Afternoon', dates: 'Jul 17' },
-  { name: 'Drum Tower · 鼓楼', coords: [34.261, 108.938] as [number, number], color: '#2b6cb0', label: '4', phase: 'Afternoon', dates: 'Jul 17' },
-  { name: 'Muslim Quarter · 回民街', coords: [34.265, 108.940] as [number, number], color: '#dd6b20', label: '5', phase: 'Evening', dates: 'Jul 17', href: 'xian/muslim-quarter' },
-  { name: 'Great Mosque · 大清真寺', coords: [34.264, 108.937] as [number, number], color: '#dd6b20', label: '6', phase: 'Evening', dates: 'Jul 17' },
-  { name: '大唐不夜城 · Great Tang All Day Mall', coords: [34.220, 108.961] as [number, number], color: '#dd6b20', label: '7', phase: 'Evening', dates: 'Jul 17', href: 'xian/tang-all-day-mall' },
+  { name: "Xi'an Station · 西安站", coords: [34.271, 108.952] as [number, number], color: 'var(--color-muted)', label: '🚄', phase: 'Arrival', dates: 'Jul 17', transport: '🚄 T231 arrives 7:35am' },
+  { name: 'Terracotta Warriors · 秦始皇兵马俑', coords: [34.384, 109.278] as [number, number], color: 'var(--color-phase-xian)', label: '1', phase: 'Day 1', dates: 'Jul 17', href: 'xian/terracotta-warriors' },
+  { name: 'City Wall South Gate · 永宁门', coords: [34.262, 108.946] as [number, number], color: 'var(--color-vermillion-soft)', label: '2', phase: 'Day 1', dates: 'Jul 17', href: 'xian/city-wall' },
+  { name: 'Bell Tower · 钟楼', coords: [34.260, 108.942] as [number, number], color: 'var(--color-vermillion-soft)', label: '3', phase: 'Day 1', dates: 'Jul 17' },
+  { name: 'Drum Tower · 鼓楼', coords: [34.261, 108.938] as [number, number], color: 'var(--color-vermillion-soft)', label: '4', phase: 'Day 1', dates: 'Jul 17' },
+  { name: 'Muslim Quarter · 回民街', coords: [34.265, 108.940] as [number, number], color: 'var(--color-phase-xian)', label: '5', phase: 'Day 1', dates: 'Jul 17', href: 'xian/muslim-quarter' },
+  { name: 'Great Mosque · 大清真寺', coords: [34.264, 108.937] as [number, number], color: 'var(--color-phase-xian)', label: '6', phase: 'Day 1', dates: 'Jul 17' },
+  { name: '大唐不夜城 · Great Tang All Day Mall', coords: [34.220, 108.961] as [number, number], color: 'var(--color-phase-xian)', label: '7', phase: 'Day 1', dates: 'Jul 17', href: 'xian/tang-all-day-mall' },
   // Optional stops
-  { name: 'Big Wild Goose Pagoda · 大雁塔', coords: [34.218, 108.959] as [number, number], color: '#718096', label: '◆', phase: 'Optional · swap City Wall', optional: true },
-  { name: 'Shaanxi History Museum · 陕西历史博物馆', coords: [34.224, 108.955] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Pagoda', optional: true },
-  { name: 'Tang Paradise · 大唐芙蓉园', coords: [34.210, 108.964] as [number, number], color: '#718096', label: '◆', phase: 'Optional · evening alternative', optional: true },
+  { name: 'Big Wild Goose Pagoda · 大雁塔', coords: [34.218, 108.959] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · swap City Wall', optional: true },
+  { name: 'Shaanxi History Museum · 陕西历史博物馆', coords: [34.224, 108.955] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · near Pagoda', optional: true },
+  { name: 'Tang Paradise · 大唐芙蓉园', coords: [34.210, 108.964] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · evening alternative', optional: true },
 ];
 
-const mapLegend = [
-  { color: '#744210', label: 'Morning — Terracotta Warriors' },
-  { color: '#2b6cb0', label: 'Afternoon — City Wall & Towers' },
-  { color: '#dd6b20', label: 'Evening — Muslim Quarter' },
-  { color: '#718096', label: 'Optional stops', diamond: true },
-];
+// Build highlight items per day from destination slugs, using locations.name for display.
+function highlightsForDay(slugs: string[]) {
+  return slugs
+    .map(s => locations[s])
+    .filter(Boolean)
+    .map(l => ({ name: l.name, href: l.slug }));
+}
 ---
 
 <Base title="Xi'an · 西安 · July 17">
-  <h1 class="text-3xl font-bold mb-2">Xi'an · 西安 · July 17, 2026</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-1">
-    <strong>Group:</strong> 8 people (5 Italians + 3 Chinese) · 1 full day<br />
-    <strong>Base:</strong> Xi'an city centre, near Bell Tower<br />
-    <strong>Transport:</strong> Train to Lintong for Terracotta Warriors · Didi + walking in old city
-  </p>
-  <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-2">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/tips`} class="text-blue-700 dark:text-blue-400 hover:underline">Travel Tips</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/packing-list`} class="text-blue-700 dark:text-blue-400 hover:underline">Packing List</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/useful-phrases`} class="text-blue-700 dark:text-blue-400 hover:underline">Useful Chinese Phrases</a>
-    <span>&middot;</span>
-    <a href={`${base}map`} class="text-blue-700 dark:text-blue-400 hover:underline">Route Maps</a>
-  </p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Trip Overview Grid -->
-  <h2 class="text-2xl font-bold mb-4">Trip Overview</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-
-    <!-- Morning -->
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#744210] hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <a href="#morning" class="font-bold text-[15px] no-underline text-inherit">Morning &middot; Jul 17</a>
-        <span class="text-xs bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 px-2 py-0.5 rounded-full">28–38°C</span>
-      </div>
-      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#128644; T231 arrives 7:35am · 7006 to Lintong 8:12am</div>
-      <div class="text-[13px] mb-1">
-        <a href={`${base}xian/terracotta-warriors`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Terracotta Warriors</a>
-        <a href="https://www.google.com/search?q=Terracotta+Warriors+秦始皇兵马俑+Xi%27an&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
-      </div>
-      <div class="text-xs text-gray-400 dark:text-gray-500">&#128663; ~40km east · ~1h each way</div>
-    </div>
-
-    <!-- Afternoon -->
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#744210] hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <a href="#afternoon" class="font-bold text-[15px] no-underline text-inherit">Afternoon &middot; Jul 17</a>
-        <span class="text-xs bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 px-2 py-0.5 rounded-full">28–38°C</span>
-      </div>
-      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#128690; Back in the old city</div>
-      <div class="text-[13px] mb-1">
-        <a href={`${base}xian/city-wall`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">City Wall cycling</a>
-        <a href="https://www.google.com/search?q=Xi%27an+City+Wall+西安城墙+cycling&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
-        &middot; Bell &amp; Drum Tower
-      </div>
-      <div class="text-xs text-gray-400 dark:text-gray-500">&#127976; Check in · rest before evening</div>
-    </div>
-
-    <!-- Evening -->
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-[#744210] hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <a href="#evening" class="font-bold text-[15px] no-underline text-inherit">Evening &middot; Jul 17</a>
-        <span class="text-xs bg-amber-50 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 px-2 py-0.5 rounded-full">28–38°C</span>
-      </div>
-      <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">&#127842; Street food · &#127747; Night lights</div>
-      <div class="text-[13px] mb-1">
-        <a href={`${base}xian/muslim-quarter`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Muslim Quarter</a>
-        <a href="https://www.google.com/search?q=Muslim+Quarter+回民街+Xi%27an+food&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
-        &middot;
-        <a href={`${base}xian/tang-all-day-mall`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">大唐不夜城</a>
-        <a href="https://www.google.com/search?q=大唐不夜城+Xi%27an+night&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
-      </div>
-      <div class="text-xs text-gray-400 dark:text-gray-500">&#128716; Xi'an city centre</div>
-    </div>
-
-  </div>
-  <p class="text-[13px] text-gray-400 mt-2">1 full day · Train to Lintong for Terracotta Warriors, Didi + walking + cycling in old city</p>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Route Map -->
-  <h2 class="text-2xl font-bold mb-4">Route Map</h2>
-  <InteractiveMap
-    id="xian-map"
-    markers={mapMarkers}
-    legend={mapLegend}
-    center={[34.28, 108.96]}
-    zoom={11}
-  />
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Book in advance -->
-  <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 my-4">
-    <p class="font-bold text-amber-800 dark:text-amber-300 mb-2">&#9888;&#65039; Book in advance:</p>
-    <ul class="list-disc ml-5 text-sm space-y-1 text-amber-900 dark:text-amber-200">
-      <li><strong>Terracotta Warriors tickets</strong> — &yen;120/person, sells out in peak July &rarr; book via official WeChat mini-program</li>
-      <li><strong>7006 Xi'an &rarr; Lintong (Jul 17 morning)</strong> — 8 people, departs 8:12am &rarr; <a href="https://www.12306.cn" target="_blank" class="underline">12306.cn</a></li>
-      <li><strong>D2685 Xi'an North &rarr; Xining (Jul 18)</strong> — 8 people, departs 9:00am &rarr; <a href="https://www.12306.cn" target="_blank" class="underline">12306.cn</a></li>
-      <li><strong>Hotel</strong> — near Bell Tower for walking access to City Wall and Muslim Quarter</li>
-    </ul>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Morning -->
-  <span id="morning"></span>
-  <h2 class="text-2xl font-bold mb-2">Morning — Terracotta Warriors</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Arrive Xi'an 7:35am · 7006 train to Lintong at 8:12am · 28–38°C</p>
-
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>7:35am</strong> Arrive Xi'an Station by <strong>T231</strong> night train from Beijing
-    </li>
-    <li>
-      <strong>7:35–8:00am</strong> Meet the 2 new group members at station. Grab breakfast at a street stall near the station — <strong>肉夹馍 (roujiamo)</strong> and <strong>胡辣汤 (hulatang, spicy pepper soup)</strong> — the local morning combo.
-    </li>
-    <li>
-      <strong>8:12am</strong> Board <strong>7006</strong> train from Xi'an Station to Lintong (临潼) — short ride east
-    </li>
-    <li>
-      <strong>~9:30am–12:30pm</strong>
-      <a href={`${base}xian/terracotta-warriors`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Terracotta Warriors (秦始皇兵马俑博物馆)</a>
-      — Pit 1 first (the big one, ~6,000 warriors in formation), then Pit 2 and 3, then the Bronze Chariots Exhibition Hall. Hire an English-speaking guide at the entrance (&yen;150–200 for the group). Allow 3 hours.
-    </li>
-    <li>
-      <strong>12:30pm</strong> Train back to Xi'an city centre
-    </li>
-  </ul>
-
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
-    <p class="text-sm text-blue-900 dark:text-blue-200">
-      <strong>Tip:</strong> Arrive before 10am to beat the tour bus crowds. Skip the "factory" shops on the approach road — they are tourist traps.
+  <header class="mb-4">
+    <a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">
+      Xi'an <span class="font-zh not-italic text-[28px] text-ink-soft">西安</span>
+    </h1>
+    <div class="font-mono uppercase text-[11px] tracking-[.14em] text-muted mt-1">PHASE 2 · JUL 17 · 8 PEOPLE</div>
+    <p class="mt-3 max-w-prose text-[14px] text-ink-soft">
+      Base in Xi'an city centre near the Bell Tower. The 2 new group members join here. Train to Lintong for Terracotta Warriors in the morning; Didi + walking + cycling in the old city the rest of the day.
     </p>
-  </div>
+  </header>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <SplitView phaseKey="xian">
+    <div slot="map" class="h-full">
+      <InteractiveMap id="xian-map" markers={mapMarkers} center={[34.28, 108.96]} zoom={11} height="100%" />
+    </div>
 
-  <!-- Afternoon -->
-  <span id="afternoon"></span>
-  <h2 class="text-2xl font-bold mb-2">Afternoon — City Wall &amp; Landmarks</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Back in the old city · hot — bring water</p>
+    <div slot="list">
+      <DayCard
+        day={4} dayInPhase={1} date="2026-07-17"
+        headline="Terracotta Warriors, City Wall, Muslim Quarter"
+        headlineIt="Esercito di Terracotta, Mura, Quartiere Musulmano"
+        route="🚄 arrive 07:35 · 1 full day · D2685 dep 09:00 next morning"
+        highlights={highlightsForDay(['terracotta-warriors', 'city-wall', 'muslim-quarter', 'tang-mall'])}
+        accommodation="Bell Tower area"
+        note="meet 2 new members at Xi'an Station"
+        anchorId="day-4"
+      >
+        <h4>Morning · Terracotta Warriors</h4>
+        <p class="intro">Arrive Xi'an 7:35am · 7006 train to Lintong at 8:12am · 28–38°C</p>
+        <ul>
+          <li><strong>7:35am</strong> Arrive Xi'an Station by <strong>T231</strong> night train from Beijing.</li>
+          <li><strong>7:35–8:00am</strong> Meet the 2 new group members at the station. Grab breakfast at a street stall — <strong>肉夹馍 (roujiamo)</strong> and <strong>胡辣汤 (hulatang, spicy pepper soup)</strong> — the local morning combo.</li>
+          <li><strong>8:12am</strong> Board <strong>7006</strong> train from Xi'an Station to Lintong (临潼) — short ride east.</li>
+          <li><strong>~9:30am–12:30pm</strong> <a href={`${base}xian/terracotta-warriors`}>Terracotta Warriors (秦始皇兵马俑博物馆)</a> — Pit 1 first (the big one, ~6,000 warriors in formation), then Pit 2 and 3, then the Bronze Chariots Exhibition Hall. Hire an English-speaking guide at the entrance (¥150–200 for the group). Allow 3 hours.</li>
+          <li><strong>12:30pm</strong> Train back to Xi'an city centre.</li>
+        </ul>
+        <div class="tip">Tip: Arrive before 10am to beat the tour bus crowds. Skip the "factory" shops on the approach road — they are tourist traps.</div>
 
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>1:30pm</strong> Check into hotel near Bell Tower. Drop bags, freshen up.
-    </li>
-    <li>
-      <strong>2:00pm</strong> Lunch: <strong>魏家凉皮 (Weijia Liangpi)</strong> — fast, cheap, excellent cold noodles (凉皮) and roujiamo. A local chain, no frills.
-    </li>
-    <li>
-      <strong>3:00–5:00pm</strong>
-      <a href={`${base}xian/city-wall`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Xi'an City Wall (西安城墙)</a>
-      — enter at South Gate (永宁门). Rent bikes (&yen;45/3h single, &yen;90/3h tandem). Ride the full 13.7km loop — flat, paved, panoramic views of the old city. Return bikes at any gate. ~1.5–2 hours.
-    </li>
-    <li>
-      <strong>5:00–5:30pm</strong> Walk to <strong>Bell Tower (钟楼)</strong> and <strong>Drum Tower (鼓楼)</strong> — photo stop from the plaza. The Drum Tower sits right at the entrance to the Muslim Quarter. No need to go inside unless the group is keen (&yen;30 combo ticket for both towers).
-    </li>
-  </ul>
+        <h4>Afternoon · City Wall &amp; Landmarks</h4>
+        <p class="intro">Back in the old city · hot — bring water</p>
+        <ul>
+          <li><strong>1:30pm</strong> Check into hotel near Bell Tower. Drop bags, freshen up.</li>
+          <li><strong>2:00pm</strong> Lunch: <strong>魏家凉皮 (Weijia Liangpi)</strong> — fast, cheap, excellent cold noodles (凉皮) and roujiamo. A local chain, no frills.</li>
+          <li><strong>3:00–5:00pm</strong> <a href={`${base}xian/city-wall`}>Xi'an City Wall (西安城墙)</a> — enter at South Gate (永宁门). Rent bikes (¥45/3h single, ¥90/3h tandem). Ride the full 13.7km loop. ~1.5–2 hours.</li>
+          <li><strong>5:00–5:30pm</strong> Walk to <strong>Bell Tower (钟楼)</strong> and <strong>Drum Tower (鼓楼)</strong> — photo stop from the plaza. The Drum Tower sits right at the entrance to the Muslim Quarter.</li>
+        </ul>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+        <h4>Evening · Muslim Quarter &amp; Tang Mall</h4>
+        <p class="intro">The Drum Tower marks the entrance — walk straight in</p>
+        <ul>
+          <li><strong>5:30–7:30pm</strong> <a href={`${base}xian/muslim-quarter`}>Muslim Quarter (回民街)</a> — street food dinner crawl, stall to stall.
+            <ul>
+              <li><strong>Must-try:</strong> 羊肉泡馍 · 肉夹馍 · 烤羊肉串 · 凉皮 · 石榴汁 · 镜糕</li>
+            </ul>
+          </li>
+          <li><strong>6:30pm</strong> Side trip: <strong>Great Mosque (大清真寺)</strong> — ¥25 entry. Chinese garden style with Islamic elements. 20–30 minutes.</li>
+          <li><strong>8:00pm</strong> Didi to <a href={`${base}xian/tang-all-day-mall`}>大唐不夜城 (Great Tang All Day Mall)</a> — ~15min south. 2km pedestrian boulevard with Tang Dynasty light installations, performers, live music. Best after dark.</li>
+          <li><strong>9:30pm</strong> Didi back to hotel. Rest up — D2685 to Xining departs Xi'an North at 9:00am tomorrow.</li>
+        </ul>
+      </DayCard>
 
-  <!-- Evening -->
-  <span id="evening"></span>
-  <h2 class="text-2xl font-bold mb-2">Evening — Muslim Quarter</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">The Drum Tower marks the entrance — walk straight in</p>
+      <PaperCard class="mt-6 bg-paper">
+        <Stamp rotate={-3}>book now</Stamp>
+        <ul class="list-disc pl-5 mt-3 text-[13px] space-y-1">
+          <li><strong>Terracotta Warriors tickets</strong> — ¥120/person, sells out in peak July → book via official WeChat mini-program</li>
+          <li><strong>7006 Xi'an → Lintong (Jul 17 morning)</strong> — 8 people, departs 8:12am → <a href="https://www.12306.cn" target="_blank" class="text-vermillion-soft underline">12306.cn</a></li>
+          <li><strong>D2685 Xi'an North → Xining (Jul 18)</strong> — 8 people, departs 9:00am → <a href="https://www.12306.cn" target="_blank" class="text-vermillion-soft underline">12306.cn</a></li>
+          <li><strong>Hotel</strong> — near Bell Tower for walking access to City Wall and Muslim Quarter</li>
+        </ul>
+        <Marginalia position="br" rotate={-2}>do this first!!</Marginalia>
+      </PaperCard>
+    </div>
+  </SplitView>
 
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>5:30–7:30pm</strong>
-      <a href={`${base}xian/muslim-quarter`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Muslim Quarter (回民街)</a>
-      — street food dinner crawl. This is not a sit-down meal: graze from stall to stall.
-      <ul class="list-disc ml-5 mt-1 text-sm text-gray-600 dark:text-gray-300 space-y-0.5">
-        <li><strong>Must-try:</strong> 羊肉泡馍 (lamb &amp; bread soup) · 肉夹馍 (meat in flatbread) · 烤羊肉串 (cumin lamb skewers) · 凉皮 (cold noodles) · 石榴汁 (pomegranate juice) · 镜糕 (mini rice cakes)</li>
-      </ul>
-    </li>
-    <li>
-      <strong>6:30pm</strong> Side trip: <strong>Great Mosque (大清真寺)</strong> — &yen;25 entry. One of China's oldest mosques, built in Chinese garden style with Islamic elements. A peaceful contrast to the street chaos. 20–30 minutes.
-    </li>
-    <li>
-      <strong>8:00pm</strong> Didi to
-      <a href={`${base}xian/tang-all-day-mall`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">大唐不夜城 (Great Tang All Day Mall)</a>
-      — ~15min taxi south. A 2km pedestrian boulevard lit up in full Tang Dynasty spectacle: golden light installations, costumed street performers, live music, and the famous roly-poly lady. Walk the boulevard from the Big Wild Goose Pagoda south. Best after dark — peak atmosphere by 8:30pm.
-    </li>
-    <li>
-      <strong>9:30pm</strong> Didi back to hotel. Rest up — D2685 to Xining departs Xi'an North at 9:00am tomorrow.
-    </li>
-  </ul>
+  <hr class="my-8 dashed-divider" />
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Optional Additions -->
-  <h2 class="text-2xl font-bold mb-4">Optional Additions</h2>
-  <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">These sights are near the route but not in the main plan. Add them if you have energy or want to swap something.</p>
-
+  <h2 class="font-display text-2xl font-bold mb-2">Optional swaps & add-ons</h2>
+  <p class="text-sm text-muted mb-4">Near the route but not in the main plan. Slot them in if energy/time allow.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">Big Wild Goose Pagoda 大雁塔</span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">1 hr</span>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Big Wild Goose Pagoda <span class="font-zh font-normal text-[13px] text-ink-soft">大雁塔</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">1 hr</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">South of old city · swap for City Wall</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">Tang Dynasty Buddhist pagoda. The fountain plaza in front has Asia's largest musical fountain show (8:30pm in summer). Worth a detour if the group prefers temples to cycling.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">Shaanxi History Museum 陕西历史博物馆</span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">2 hrs</span>
+      <div class="text-[12px] text-muted mb-1">South of old city · swap for City Wall</div>
+      <div class="text-[13px] text-ink-soft">Tang Dynasty Buddhist pagoda. The fountain plaza in front has Asia's largest musical fountain show (8:30pm in summer). Worth a detour if the group prefers temples to cycling.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Shaanxi History Museum <span class="font-zh font-normal text-[13px] text-ink-soft">陕西历史博物馆</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">2 hrs</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Near Big Wild Goose Pagoda · add to afternoon</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">One of China's best museums: 370,000+ artefacts spanning 1 million years. Free entry (book online). Pair with the Pagoda if you skip the City Wall.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">Tang Paradise 大唐芙蓉园</span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">1.5 hrs</span>
+      <div class="text-[12px] text-muted mb-1">Near Big Wild Goose Pagoda · add to afternoon</div>
+      <div class="text-[13px] text-ink-soft">One of China's best museums: 370,000+ artefacts spanning 1 million years. Free entry (book online). Pair with the Pagoda if you skip the City Wall.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">Tang Paradise <span class="font-zh font-normal text-[13px] text-ink-soft">大唐芙蓉园</span></span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">1.5 hrs</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Near Big Wild Goose Pagoda · evening</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">Reconstructed Tang Dynasty theme park with evening light shows. More impressive at night. Free entry (book online). An alternative evening if the Muslim Quarter doesn't appeal.</div>
-    </div>
+      <div class="text-[12px] text-muted mb-1">Near Big Wild Goose Pagoda · evening</div>
+      <div class="text-[13px] text-ink-soft">Reconstructed Tang Dynasty theme park with evening light shows. More impressive at night. Free entry (book online). An alternative evening if the Muslim Quarter doesn't appeal.</div>
+    </PaperCard>
   </div>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <!-- Practical Notes -->
-  <h2 class="text-2xl font-bold mb-4">Practical Notes</h2>
-  <div class="overflow-x-auto">
+  <h2 class="font-display text-2xl font-bold mb-4">Practical notes</h2>
+  <PaperCard padded={false}>
     <table class="w-full text-sm">
       <tbody>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Weather</td>
-          <td class="py-2">July: 28–38°C, dry heat. Hotter than Beijing. Sunscreen, hat, and water bottle essential — especially at the Terracotta Warriors and on the City Wall.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top w-32">Weather</td>
+          <td class="py-2 px-3">July: 28–38°C, dry heat. Hotter than Beijing. Sunscreen, hat, and water bottle essential — especially at the Terracotta Warriors and on the City Wall.</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Transport</td>
-          <td class="py-2">Train from Xi'an Station to Lintong for the Terracotta Warriors. Didi and metro for getting around the old city.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Transport</td>
+          <td class="py-2 px-3">Train from Xi'an Station to Lintong for the Terracotta Warriors. Didi and metro for getting around the old city.</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Payment</td>
-          <td class="py-2">WeChat Pay / Alipay everywhere. Same setup as Beijing.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Payment</td>
+          <td class="py-2 px-3">WeChat Pay / Alipay everywhere. Same setup as Beijing.</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Language</td>
-          <td class="py-2">Less English than Beijing outside major sights. Your Chinese friends handle logistics.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Language</td>
+          <td class="py-2 px-3">Less English than Beijing outside major sights. Your Chinese friends handle logistics.</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Terracotta Warriors</td>
-          <td class="py-2">40km east — take the train from Xi'an Station to Lintong, then a short taxi to the museum. Book museum tickets online in advance.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Terracotta Warriors</td>
+          <td class="py-2 px-3">40km east — take the train from Xi'an Station to Lintong, then a short taxi to the museum. Book museum tickets online in advance.</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">City Wall</td>
-          <td class="py-2">Closes 7pm (last entry 6:30pm). Bikes must be returned by closing. Bring water — no shade on much of the wall.</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">City Wall</td>
+          <td class="py-2 px-3">Closes 7pm (last entry 6:30pm). Bikes must be returned by closing. Bring water — no shade on much of the wall.</td>
         </tr>
         <tr>
-          <td class="py-2 pr-4 font-semibold whitespace-nowrap align-top">Muslim Quarter</td>
-          <td class="py-2">All food is halal (no pork). Busiest after 5pm. Keep the group together — the lanes are narrow and crowded.</td>
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Muslim Quarter</td>
+          <td class="py-2 px-3">All food is halal (no pork). Busiest after 5pm. Keep the group together — the lanes are narrow and crowded.</td>
         </tr>
       </tbody>
     </table>
-  </div>
+  </PaperCard>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <!-- Onward -->
-  <h2 class="text-2xl font-bold mb-2">Onward</h2>
+  <h2 class="font-display text-2xl font-bold mb-2">Onward</h2>
   <p class="text-[15px]">
-    <strong>July 18 morning</strong> &rarr; D2685 Xi'an North 9:00am &rarr; Xining 12:49pm
+    <strong>July 18 morning</strong> → D2685 Xi'an North 9:00am → Xining 12:49pm
   </p>
-  <p class="text-sm mt-2 space-x-2">
-    <a href={`${base}trips/beijing`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Phase 1 · Beijing</a>
-    <span>&middot;</span>
-    <a href={`${base}trips/northwest`} class="text-blue-700 dark:text-blue-400 hover:underline">Phase 3 · Northwest Road Trip &rarr;</a>
-    <span>&middot;</span>
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+  <p class="text-sm mt-3 space-x-2">
+    <a href={`${base}trips/beijing`} class="text-vermillion-soft hover:underline">← Phase 1 · Beijing</a>
+    <span class="text-muted">·</span>
+    <a href={base} class="text-vermillion-soft hover:underline">Full trip overview</a>
+    <span class="text-muted">·</span>
+    <a href={`${base}trips/northwest`} class="text-vermillion-soft hover:underline">Phase 3 · Northwest →</a>
   </p>
 </Base>

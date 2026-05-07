@@ -275,3 +275,135 @@ export const tripPhases = [
     slug: null,
   },
 ];
+
+export interface TripDay {
+  /** ISO date, YYYY-MM-DD */
+  date: string;
+  /** Phase number, 1–5, matches tripPhases.num */
+  phaseNum: number;
+  /** Day index within the whole trip, 1-based */
+  dayInTrip: number;
+  /** Day index within the phase, 1-based */
+  dayInPhase: number;
+  /** English headline shown on day cards */
+  headline: string;
+  /** Italian headline (draft — user verifies) */
+  headlineIt: string;
+  /** Slugs of destinations that make up this day. Used for map bounding box. */
+  destinationSlugs: string[];
+  /** Optional fallback coordinates when destinationSlugs is empty (e.g. transit days) */
+  fallbackCoords?: [number, number];
+}
+
+export const tripDays: TripDay[] = [
+  // ===== Beijing =====
+  { date: '2026-07-14', phaseNum: 1, dayInTrip: 1, dayInPhase: 1,
+    headline: 'Arrival, Panjiayuan & 798',
+    headlineIt: 'Arrivo, Panjiayuan e 798',
+    destinationSlugs: ['panjiayuan', '798-art'] },
+  { date: '2026-07-15', phaseNum: 1, dayInTrip: 2, dayInPhase: 2,
+    headline: 'Great Wall at Mutianyu',
+    headlineIt: 'La Grande Muraglia a Mutianyu',
+    destinationSlugs: ['great-wall'] },
+  { date: '2026-07-16', phaseNum: 1, dayInTrip: 3, dayInPhase: 3,
+    headline: 'Forbidden City, Hutongs & night train',
+    headlineIt: 'Città Proibita, Hutong e treno notturno',
+    destinationSlugs: ['tiananmen', 'forbidden-city', 'hutongs'] },
+
+  // ===== Xi'an =====
+  { date: '2026-07-17', phaseNum: 2, dayInTrip: 4, dayInPhase: 1,
+    headline: 'Terracotta Warriors, City Wall, Muslim Quarter',
+    headlineIt: 'Esercito di Terracotta, Mura, Quartiere Musulmano',
+    destinationSlugs: ['terracotta-warriors', 'city-wall', 'muslim-quarter', 'tang-mall'] },
+
+  // ===== Northwest Loop =====
+  { date: '2026-07-18', phaseNum: 3, dayInTrip: 5, dayInPhase: 1,
+    headline: "Train to Xining, Riyueshan, Qinghai Lake",
+    headlineIt: 'Treno per Xining, Riyueshan, Lago Qinghai',
+    destinationSlugs: ['riyueshan', 'qinghai-lake'] },
+  { date: '2026-07-19', phaseNum: 3, dayInTrip: 6, dayInPhase: 2,
+    headline: 'Chaka Salt Lake & on to Delingha',
+    headlineIt: 'Lago Salato di Chaka e Delingha',
+    destinationSlugs: ['chaka-salt-lake', 'delingha'] },
+  { date: '2026-07-20', phaseNum: 3, dayInTrip: 7, dayInPhase: 3,
+    headline: 'Feicui Hu emerald lake, drive to Dunhuang',
+    headlineIt: 'Lago smeraldo Feicui Hu, viaggio a Dunhuang',
+    destinationSlugs: ['feicui-hu'],
+    fallbackCoords: [39.5, 95.5] },
+  { date: '2026-07-21', phaseNum: 3, dayInTrip: 8, dayInPhase: 4,
+    headline: 'Mogao Caves, Mingsha dunes, night market',
+    headlineIt: 'Grotte di Mogao, dune di Mingsha, mercato notturno',
+    destinationSlugs: ['mogao-caves', 'mingsha-dunes', 'dunhuang-night-market'] },
+  { date: '2026-07-22', phaseNum: 3, dayInTrip: 9, dayInPhase: 5,
+    headline: 'Yardang geopark & Jiayuguan Fort',
+    headlineIt: 'Geoparco di Yardang e Forte di Jiayuguan',
+    destinationSlugs: ['yardang', 'jiayuguan-fort'] },
+  { date: '2026-07-23', phaseNum: 3, dayInTrip: 10, dayInPhase: 6,
+    headline: 'Qicai Danxia rainbow mountains',
+    headlineIt: 'Montagne arcobaleno di Qicai Danxia',
+    destinationSlugs: ['qicai-danxia', 'shandan-horse-farm'] },
+  { date: '2026-07-24', phaseNum: 3, dayInTrip: 11, dayInPhase: 7,
+    headline: 'Qilian grasslands, Zhuoer mountain, fly to Chengdu',
+    headlineIt: 'Praterie di Qilian, monte Zhuoer, volo a Chengdu',
+    destinationSlugs: ['qilian-grassland', 'zhuoer-mountain', 'menyuan-flowers'] },
+
+  // ===== Chengdu (placeholder days; pages don't exist yet) =====
+  { date: '2026-07-25', phaseNum: 4, dayInTrip: 12, dayInPhase: 1,
+    headline: 'Pandas at the Giant Panda Base',
+    headlineIt: 'Panda alla Base dei Panda Giganti',
+    destinationSlugs: [], fallbackCoords: [30.733, 104.143] },
+  { date: '2026-07-26', phaseNum: 4, dayInTrip: 13, dayInPhase: 2,
+    headline: 'Jinli Old Street & Sichuan cuisine',
+    headlineIt: 'Antica strada Jinli e cucina del Sichuan',
+    destinationSlugs: [], fallbackCoords: [30.642, 104.046] },
+
+  // ===== Yunnan (placeholder days) =====
+  { date: '2026-07-27', phaseNum: 5, dayInTrip: 14, dayInPhase: 1,
+    headline: 'High-speed train to Kunming',
+    headlineIt: 'Treno ad alta velocità per Kunming',
+    destinationSlugs: [], fallbackCoords: [25.046, 102.706] },
+  { date: '2026-07-28', phaseNum: 5, dayInTrip: 15, dayInPhase: 2,
+    headline: 'Stone Forest day trip',
+    headlineIt: 'Gita alla Foresta di Pietra',
+    destinationSlugs: [], fallbackCoords: [24.816, 103.327] },
+  { date: '2026-07-29', phaseNum: 5, dayInTrip: 16, dayInPhase: 3,
+    headline: 'Train to Dali',
+    headlineIt: 'Treno per Dali',
+    destinationSlugs: [], fallbackCoords: [25.611, 100.232] },
+  { date: '2026-07-30', phaseNum: 5, dayInTrip: 17, dayInPhase: 4,
+    headline: 'Dali old town & Erhai Lake',
+    headlineIt: 'Centro storico di Dali e lago Erhai',
+    destinationSlugs: [], fallbackCoords: [25.694, 100.181] },
+  { date: '2026-07-31', phaseNum: 5, dayInTrip: 18, dayInPhase: 5,
+    headline: 'Train to Lijiang',
+    headlineIt: 'Treno per Lijiang',
+    destinationSlugs: [], fallbackCoords: [26.872, 100.225] },
+  { date: '2026-08-01', phaseNum: 5, dayInTrip: 19, dayInPhase: 6,
+    headline: 'Lijiang old town',
+    headlineIt: 'Centro storico di Lijiang',
+    destinationSlugs: [], fallbackCoords: [26.872, 100.225] },
+  { date: '2026-08-02', phaseNum: 5, dayInTrip: 20, dayInPhase: 7,
+    headline: 'Tiger Leaping Gorge',
+    headlineIt: 'Gola del Salto della Tigre',
+    destinationSlugs: [], fallbackCoords: [27.196, 100.073] },
+  { date: '2026-08-03', phaseNum: 5, dayInTrip: 21, dayInPhase: 8,
+    headline: 'Return to Kunming',
+    headlineIt: 'Ritorno a Kunming',
+    destinationSlugs: [], fallbackCoords: [25.046, 102.706] },
+  { date: '2026-08-04', phaseNum: 5, dayInTrip: 22, dayInPhase: 9,
+    headline: 'Departure',
+    headlineIt: 'Partenza',
+    destinationSlugs: [], fallbackCoords: [25.046, 102.706] },
+];
+
+/** Helper: get pins (lat/lng) for a given TripDay using locations + fallback */
+export function dayPins(day: TripDay): Array<{ lat: number; lng: number; slug: string }> {
+  const pins = day.destinationSlugs
+    .map((s) => locations[s])
+    .filter(Boolean)
+    .map((l) => ({ lat: l.lat, lng: l.lng, slug: l.slug }));
+  if (pins.length === 0 && day.fallbackCoords) {
+    return [{ lat: day.fallbackCoords[0], lng: day.fallbackCoords[1], slug: '' }];
+  }
+  return pins;
+}

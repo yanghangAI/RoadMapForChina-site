@@ -1,0 +1,102 @@
+---
+interface Props {
+  /** Used as the localStorage key suffix */
+  phaseKey: string;
+}
+const { phaseKey } = Astro.props;
+const stateKey = `splitview:${phaseKey}`;
+---
+<div
+  class="split-view grid lg:grid-cols-[45%_1fr] gap-0 lg:gap-4"
+  data-state-key={stateKey}
+>
+  <div class="split-map-wrap sticky top-14 z-20 lg:top-16 lg:self-start lg:max-h-[calc(100vh-5rem)] bg-paper">
+    <div class="split-map relative h-[34vh] lg:h-[calc(100vh-5rem-2.25rem)]">
+      <div class="absolute inset-0">
+        <slot name="map" />
+      </div>
+    </div>
+
+    <div class="split-toolbar flex items-center justify-between text-[11px] uppercase tracking-[.14em] font-mono text-muted py-2 px-2 bg-paper border-t border-dashed border-border-dash">
+      <span class="font-hand text-[15px] text-ink normal-case tracking-normal">days ~</span>
+      <div class="flex gap-2">
+        <button type="button" class="hide-map px-2 py-1 border border-border rounded-none hover:bg-paper-card transition-colors">[hide map]</button>
+        <button type="button" class="hide-list px-2 py-1 border border-border rounded-none hover:bg-paper-card transition-colors">[hide list]</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="split-list">
+    <slot name="list" />
+  </div>
+</div>
+
+<style>
+  /* Map hidden: collapse the map area, keep a "show map" handle in the sticky toolbar */
+  .split-view.map-hidden .split-map { display: none; }
+  .split-view.map-hidden .split-toolbar .hide-map { display: none; }
+  .split-view.map-hidden .split-toolbar::before {
+    content: 'show map ↑';
+    font-family: var(--font-hand);
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 15px;
+    color: var(--color-vermillion-soft);
+    cursor: pointer;
+  }
+
+  /* List hidden: list collapses, map fills the viewport */
+  .split-view.list-hidden .split-list { display: none; }
+  .split-view.list-hidden .split-map { height: calc(100vh - 5rem - 2.25rem); }
+  .split-view.list-hidden .split-toolbar .hide-list { display: none; }
+
+  /* Day cards keep clear of the sticky map+toolbar when the page jumps to them */
+  .split-view .day-card { scroll-margin-top: calc(3.5rem + 34vh + 2.5rem); }
+  @media (min-width: 1024px) {
+    .split-view .day-card { scroll-margin-top: 5rem; }
+  }
+</style>
+
+<script is:inline define:vars={{ stateKey }}>
+  (function() {
+    const view = document.querySelector(`[data-state-key="${stateKey}"]`);
+    if (!view) return;
+    const saved = localStorage.getItem(stateKey);
+    if (saved === 'map-hidden') view.classList.add('map-hidden');
+    if (saved === 'list-hidden') view.classList.add('list-hidden');
+
+    function setState(s) {
+      view.classList.remove('map-hidden', 'list-hidden');
+      if (s) view.classList.add(s);
+      if (s) localStorage.setItem(stateKey, s); else localStorage.removeItem(stateKey);
+      window.dispatchEvent(new Event('resize'));
+    }
+
+    view.querySelector('.hide-map')?.addEventListener('click', () => setState('map-hidden'));
+    view.querySelector('.hide-list')?.addEventListener('click', () => setState('list-hidden'));
+
+    view.querySelector('.split-toolbar')?.addEventListener('click', (e) => {
+      if (view.classList.contains('map-hidden') && e.target.classList.contains('split-toolbar')) {
+        setState(null);
+      }
+    });
+
+    // Day-card → map coordination
+    view.querySelectorAll('.day-card[id^="day-"]').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        const dayId = card.id;
+        const maps = window.__maps || {};
+        Object.keys(maps).forEach(mapId => {
+          const m = maps[mapId];
+          const marker = m.markers && m.markers[dayId];
+          if (marker && m.map) {
+            m.map.panTo(marker.getLatLng(), { animate: true });
+            marker.openPopup();
+          }
+        });
+      });
+    });
+  })();
+</script>

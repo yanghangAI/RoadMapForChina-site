@@ -1,156 +1,212 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PaperCard from '../../components/primitives/PaperCard.astro';
+import Stamp from '../../components/primitives/Stamp.astro';
+import Marginalia from '../../components/primitives/Marginalia.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
+<Base title="Travel tips · suggerimenti">
+  <div class="mb-4"><a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a></div>
 
-<Base title="Travel Tips · First Time in China">
-  <h1 class="text-3xl font-bold mb-2">Travel Tips · First Time in China</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-6">
+  <header class="relative">
+    <Stamp rotate={-2}>field tips</Stamp>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">Travel tips</h1>
+    <p class="font-mono uppercase text-[10px] tracking-[.14em] text-muted mt-1">things we wish we'd known · first time in china</p>
+  </header>
+
+  <p class="mt-6 text-[14px] leading-relaxed">
     Practical advice for the 5 Italian group members visiting China for the first time. Your Chinese friends will handle most logistics, but knowing these things makes everything smoother.
   </p>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Before You Go</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700 w-1/5">Topic</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Details</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr>
-          <td class="p-3 font-bold align-top">VPN</td>
-          <td class="p-3">Install and test a VPN before entering China. Google, WhatsApp, Instagram, and most Western social media are blocked. Download it at home — you cannot install one inside China.</td>
-        </tr>
-        <tr>
-          <td class="p-3 font-bold align-top">WeChat</td>
-          <td class="p-3">Download WeChat (微信) and set it up before the trip. It's used for messaging, payments, restaurant menus, booking tickets, and calling taxis. Your Chinese friends can help you link a payment method.</td>
-        </tr>
-        <tr>
-          <td class="p-3 font-bold align-top">Alipay</td>
-          <td class="p-3">International visitors can now link foreign credit cards to Alipay. Set this up before departure — it's accepted everywhere.</td>
-        </tr>
-        <tr>
-          <td class="p-3 font-bold align-top">Offline maps</td>
-          <td class="p-3">Download Amap (高德地图) or Baidu Maps. Google Maps works poorly in China even with a VPN — location data is offset.</td>
-        </tr>
-        <tr>
-          <td class="p-3 font-bold align-top">12306 app</td>
-          <td class="p-3">The official train booking app. Your Chinese friends will likely handle bookings, but having it installed helps.</td>
-        </tr>
-        <tr>
-          <td class="p-3 font-bold align-top">Travel insurance</td>
-          <td class="p-3">Get comprehensive coverage including medical evacuation. Hospital visits require upfront payment in China.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Money & Payments</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Cash is king in rural areas.</strong> Withdraw ¥2,000–3,000 per person in Beijing or Xi'an. ATMs are scarce on the northwest loop.</li>
-    <li><strong>WeChat Pay / Alipay</strong> is accepted almost everywhere in cities — even tiny street food stalls.</li>
-    <li><strong>Credit cards</strong> (Visa/Mastercard) are rarely accepted at shops or restaurants. Only useful at ATMs and some hotels.</li>
-    <li><strong>Tipping is not expected</strong> anywhere in China. Don't tip at restaurants, hotels, or taxis.</li>
-    <li><strong>Bargaining</strong> is expected at markets like Panjiayuan (Beijing) and parts of the Muslim Quarter (Xi'an). Not appropriate at shops with price tags.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Food & Drink</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Tap water is not drinkable.</strong> Always use bottled water, even for brushing teeth in rural areas.</li>
-    <li><strong>Hot water is everywhere.</strong> Hotels, trains, and restaurants all provide free hot/boiled water (开水, kaishuǐ). Carry a reusable bottle.</li>
-    <li><strong>Spice levels</strong> vary by region. Xi'an and the northwest are moderately spicy. Say 不辣 (bu la, "not spicy") or 微辣 (wei la, "mild spicy") when ordering.</li>
-    <li><strong>Breakfast is savory</strong> in China. Expect noodles, dumplings, congee, and flatbread — not pastries and coffee. Embrace it.</li>
-    <li><strong>Group dining</strong> is the norm. Dishes are shared from the centre of the table. Order many dishes and share everything.</li>
-    <li><strong>Chopsticks</strong> are standard. Forks are available at tourist-friendly restaurants but not everywhere. Practice before the trip.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Transport</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Didi</strong> (滴滴) is China's Uber. Works well in Beijing and Xi'an. The app has an English interface. Your Chinese friend can also call one via their WeChat.</li>
-    <li><strong>Trains</strong> are excellent. Book on 12306.cn. Arrive 30+ minutes early — stations have airport-style security screening. Bring your passport — you need it to enter.</li>
-    <li><strong>Driving</strong> — foreigners cannot drive in China. Only your Chinese friends can drive the rental car.</li>
-    <li><strong>Traffic</strong> is aggressive by European standards. Pedestrians do not have automatic right-of-way. Look both ways, always.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Health & Safety</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Altitude sickness</strong> affects some people at Qinghai Lake and Chaka (3,200m). Symptoms: headache, shortness of breath, dizziness. Take it easy on Day 1 of the northwest loop. Drink water, avoid alcohol.</li>
-    <li><strong>Heat exhaustion</strong> is a real risk in Dunhuang (38–42°C) and Xi'an (38°C). Stay indoors noon–5pm in Dunhuang. Carry water everywhere.</li>
-    <li><strong>Sunburn</strong> happens fast at altitude and in the desert. SPF 50+, reapply every 2 hours.</li>
-    <li><strong>Pharmacies</strong> (药店, yaodiàn) are on every main street. Most common medicines are available without prescription.</li>
-    <li><strong>Hospitals</strong> require upfront payment. Carry your insurance details and enough cash/card for emergency treatment.</li>
-    <li><strong>Emergency numbers:</strong> 120 (ambulance), 110 (police), 119 (fire).</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Cultural Notes</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Toilet etiquette</strong> — carry tissue paper. Many public toilets outside cities are squat-style and don't provide paper. Some charge ¥1.</li>
-    <li><strong>Queuing</strong> is less strict than in Italy. People may cut in line — don't take it personally, just hold your ground politely.</li>
-    <li><strong>Photography</strong> — always ask before photographing people, especially monks, ethnic minorities, or children. No cameras inside Mogao Caves (strictly enforced).</li>
-    <li><strong>Smoking</strong> is common in China, especially among men. Non-smoking areas in restaurants are not always enforced.</li>
-    <li><strong>"Laowai"</strong> (老外) means "foreigner" — you'll hear it often. It's neutral, not rude.</li>
-    <li><strong>Gift culture</strong> — if someone offers you food, tea, or a small gift, accept it graciously. Refusing can be seen as impolite.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Connectivity</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Buy a local SIM</strong> at Beijing Daxing Airport on arrival. China Mobile or China Unicom — ~¥100–200 for a tourist SIM with 10–20GB data. Much more reliable than relying on a VPN + foreign SIM.</li>
-    <li><strong>WiFi</strong> is available at all hotels and most restaurants. Quality varies in rural areas.</li>
-    <li><strong>WhatsApp/Signal</strong> won't work without a VPN. Use WeChat to message within the group.</li>
-    <li><strong>Calling home</strong> — use VPN + WhatsApp or FaceTime, or WeChat video call (works without VPN).</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Beijing-Specific Tips</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Forbidden City</strong> — book weeks ahead in July (40,000/day cap). No large bags allowed. Wear comfortable shoes — it's a lot of walking.</li>
-    <li><strong>Great Wall (Mutianyu)</strong> — arrive before 9am. Take the toboggan down. Bring water.</li>
-    <li><strong>Panjiayuan Market</strong> — assume everything is a reproduction. Buy what you like, not what you think is "real."</li>
-    <li><strong>Peking duck</strong> — book Da Dong or another top restaurant in advance for a group of 6+.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Xi'an-Specific Tips</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Terracotta Warriors</strong> — book tickets online. Hire a guide at the entrance (¥150–200 for the group). Skip the "factory" shops.</li>
-    <li><strong>City Wall cycling</strong> — rent bikes at the South Gate. Bring water — there's almost no shade on the wall. Return bikes at any gate.</li>
-    <li><strong>Muslim Quarter</strong> — all food is halal (no pork). Best after 5pm. The side alleys have better food than the main tourist street.</li>
-    <li><strong>大唐不夜城</strong> — go after 8pm when it's fully dark. Charge your phone fully — you'll take hundreds of photos.</li>
-    <li><strong>Xi'an North Station</strong> is different from Xi'an Station. The D2685 to Xining departs from Xi'an North (北站). Allow time for the taxi between them.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <h2 class="text-2xl font-bold mb-4">Northwest-Specific Tips</h2>
-  <ul class="space-y-2 text-[15px] mb-6 list-disc list-inside">
-    <li><strong>Fuel up</strong> completely in Dachaidan before the Qaidam Basin crossing — no stations for ~300km.</li>
-    <li><strong>Dunhuang heat</strong> — do not be outside noon–5pm. All sightseeing before 11am or after 5pm.</li>
-    <li><strong>Mogao Caves</strong> — no cameras, no phones, no bags inside the caves. Strictly enforced.</li>
-    <li><strong>Chaka Salt Lake</strong> — go at sunrise for the mirror reflection. Wear old shoes, salt brine ruins everything.</li>
-    <li><strong>Altitude</strong> — Qinghai Lake and Chaka are at 3,200m. Take it easy, drink water, avoid running.</li>
-    <li><strong>Qilian morning</strong> — bring a warm layer. 2,800m at 8am in July is ~10°C.</li>
-  </ul>
-
-  <p class="mt-8 text-sm text-gray-500">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+  <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+    Consigli pratici per noi cinque italiani al primo viaggio in Cina. Gli amici cinesi si occuperanno della maggior parte della logistica, ma conoscere in anticipo alcune accortezze ci semplifica tutto. Qui sotto raccogliamo le cose che avremmo voluto sapere prima di partire.
   </p>
+
+  <!-- Before You Go -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ before you go ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Before you go</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>VPN:</strong> Install and test a VPN before entering China. Google, WhatsApp, Instagram, and most Western social media are blocked. Download it at home — you cannot install one inside China.</li>
+        <li><strong>WeChat:</strong> Download WeChat (微信) and set it up before the trip. It's used for messaging, payments, restaurant menus, booking tickets, and calling taxis. Your Chinese friends can help you link a payment method.</li>
+        <li><strong>Alipay:</strong> International visitors can now link foreign credit cards to Alipay. Set this up before departure — it's accepted everywhere.</li>
+        <li><strong>Offline maps:</strong> Download Amap (高德地图) or Baidu Maps. Google Maps works poorly in China even with a VPN — location data is offset.</li>
+        <li><strong>12306 app:</strong> The official train booking app. Your Chinese friends will likely handle bookings, but having it installed helps.</li>
+        <li><strong>Travel insurance:</strong> Get comprehensive coverage including medical evacuation. Hospital visits require upfront payment in China.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Prima di partire installiamo e proviamo una VPN affidabile: in Cina Google, WhatsApp, Instagram e quasi tutti i social occidentali sono bloccati e una volta dentro non possiamo più scaricarla. Scarichiamo anche WeChat (微信) e Alipay collegando una carta straniera — ci serviranno per pagamenti, messaggi, menù e taxi. Per la navigazione usiamo Amap (高德地图) o Baidu Maps: Google Maps è sfasato e poco affidabile. Mettiamo sul telefono anche l'app 12306 per i biglietti del treno e sottoscriviamo un'assicurazione di viaggio completa con evacuazione sanitaria, perché gli ospedali cinesi richiedono il pagamento anticipato.
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
+
+  <!-- Money & Payments -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ money &amp; payments ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Money &amp; Payments</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Cash is king in rural areas.</strong> Withdraw ¥2,000–3,000 per person in Beijing or Xi'an. ATMs are scarce on the northwest loop.</li>
+        <li><strong>WeChat Pay / Alipay</strong> is accepted almost everywhere in cities — even tiny street food stalls.</li>
+        <li><strong>Credit cards</strong> (Visa/Mastercard) are rarely accepted at shops or restaurants. Only useful at ATMs and some hotels.</li>
+        <li><strong>Tipping is not expected</strong> anywhere in China. Don't tip at restaurants, hotels, or taxis.</li>
+        <li><strong>Bargaining</strong> is expected at markets like Panjiayuan (Beijing) and parts of the Muslim Quarter (Xi'an). Not appropriate at shops with price tags.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Nelle zone rurali il contante resta indispensabile: preleviamo ¥2.000–3.000 a testa già a Pechino o Xi'an, perché lungo il giro del nord-ovest i bancomat sono rari. In città WeChat Pay e Alipay sono accettati ovunque, anche dai piccoli chioschi di strada, mentre Visa o Mastercard funzionano quasi solo agli ATM e in alcuni hotel. In Cina non si lascia mancia in ristoranti, alberghi o taxi. La trattativa sul prezzo è invece consuetudine nei mercati come Panjiayuan a Pechino o nei vicoli del quartiere musulmano di Xi'an, ma non nei negozi con prezzi esposti.
+      </p>
+    </PaperCard>
+  </section>
+
+  <!-- Food & Drink -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ food &amp; drink ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Food &amp; Drink</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Tap water is not drinkable.</strong> Always use bottled water, even for brushing teeth in rural areas.</li>
+        <li><strong>Hot water is everywhere.</strong> Hotels, trains, and restaurants all provide free hot/boiled water (开水, kaishuǐ). Carry a reusable bottle.</li>
+        <li><strong>Spice levels</strong> vary by region. Xi'an and the northwest are moderately spicy. Say 不辣 (bu la, "not spicy") or 微辣 (wei la, "mild spicy") when ordering.</li>
+        <li><strong>Breakfast is savory</strong> in China. Expect noodles, dumplings, congee, and flatbread — not pastries and coffee. Embrace it.</li>
+        <li><strong>Group dining</strong> is the norm. Dishes are shared from the centre of the table. Order many dishes and share everything.</li>
+        <li><strong>Chopsticks</strong> are standard. Forks are available at tourist-friendly restaurants but not everywhere. Practice before the trip.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        L'acqua del rubinetto non è potabile: usiamo sempre acqua in bottiglia, anche per lavarci i denti nelle aree rurali. L'acqua bollita (开水, kaishuǐ) è invece offerta gratuitamente in hotel, treni e ristoranti, quindi conviene portare una borraccia. Nello Shaanxi e nel nord-ovest la cucina è moderatamente piccante: per regolare il piccante chiediamo 不辣 (bu la, "non piccante") o 微辣 (wei la, "leggermente piccante"). La colazione cinese è salata — spaghetti, ravioli, congee, focacce — quindi prepariamoci psicologicamente. Si mangia in gruppo, condividendo molte portate al centro del tavolo, e si usano le bacchette: forchette si trovano solo in alcuni locali turistici.
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
+
+  <!-- Transport -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ transport ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Transport</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Didi</strong> (滴滴) is China's Uber. Works well in Beijing and Xi'an. The app has an English interface. Your Chinese friend can also call one via their WeChat.</li>
+        <li><strong>Trains</strong> are excellent. Book on 12306.cn. Arrive 30+ minutes early — stations have airport-style security screening. Bring your passport — you need it to enter.</li>
+        <li><strong>Driving</strong> — foreigners cannot drive in China. Only your Chinese friends can drive the rental car.</li>
+        <li><strong>Traffic</strong> is aggressive by European standards. Pedestrians do not have automatic right-of-way. Look both ways, always.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Per gli spostamenti in città Didi (滴滴) è l'equivalente cinese di Uber, funziona benissimo a Pechino e a Xi'an e ha l'interfaccia in inglese; in alternativa l'amico cinese può chiamarne uno via WeChat. La rete ferroviaria è eccellente: i biglietti si prenotano su 12306.cn e arriviamo in stazione almeno trenta minuti prima — i controlli sono di tipo aeroportuale e il passaporto è obbligatorio per l'accesso. Ricordiamoci che noi stranieri non possiamo guidare in Cina: solo gli amici cinesi useranno l'auto a noleggio. Il traffico è più aggressivo degli standard europei e i pedoni non hanno la precedenza automatica: prima di attraversare guardiamo sempre con attenzione.
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
+
+  <!-- Health & Safety -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ health &amp; safety ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Health &amp; Safety</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Altitude sickness</strong> affects some people at Qinghai Lake and Chaka (3,200m). Symptoms: headache, shortness of breath, dizziness. Take it easy on Day 1 of the northwest loop. Drink water, avoid alcohol.</li>
+        <li><strong>Heat exhaustion</strong> is a real risk in Dunhuang (38–42°C) and Xi'an (38°C). Stay indoors noon–5pm in Dunhuang. Carry water everywhere.</li>
+        <li><strong>Sunburn</strong> happens fast at altitude and in the desert. SPF 50+, reapply every 2 hours.</li>
+        <li><strong>Pharmacies</strong> (药店, yaodiàn) are on every main street. Most common medicines are available without prescription.</li>
+        <li><strong>Hospitals</strong> require upfront payment. Carry your insurance details and enough cash/card for emergency treatment.</li>
+        <li><strong>Emergency numbers:</strong> 120 (ambulance), 110 (police), 119 (fire).</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Il mal di montagna può colpirci al lago Qinghai e a Chaka (circa 3.200 metri) con cefalea, fiato corto e capogiri: il primo giorno del giro nord-occidentale andiamoci piano, beviamo molta acqua ed evitiamo gli alcolici. Il colpo di calore è un rischio concreto a Dunhuang (38–42 °C) e a Xi'an (38 °C): a Dunhuang restiamo al chiuso fra le 12 e le 17 e portiamo sempre acqua con noi. In quota e nel deserto le scottature sono rapide, quindi mettiamo crema SPF 50+ ogni due ore. Le farmacie (药店, yaodiàn) sono diffuse e molti farmaci si comprano senza ricetta, ma gli ospedali richiedono il pagamento anticipato: teniamo a portata di mano i dati dell'assicurazione e contante o carta sufficienti. I numeri d'emergenza sono 120 (ambulanza), 110 (polizia) e 119 (vigili del fuoco).
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
+
+  <!-- Cultural Notes -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ cultural notes ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Cultural Notes</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Toilet etiquette</strong> — carry tissue paper. Many public toilets outside cities are squat-style and don't provide paper. Some charge ¥1.</li>
+        <li><strong>Queuing</strong> is less strict than in Italy. People may cut in line — don't take it personally, just hold your ground politely.</li>
+        <li><strong>Photography</strong> — always ask before photographing people, especially monks, ethnic minorities, or children. No cameras inside Mogao Caves (strictly enforced).</li>
+        <li><strong>Smoking</strong> is common in China, especially among men. Non-smoking areas in restaurants are not always enforced.</li>
+        <li><strong>"Laowai"</strong> (老外) means "foreigner" — you'll hear it often. It's neutral, not rude.</li>
+        <li><strong>Gift culture</strong> — if someone offers you food, tea, or a small gift, accept it graciously. Refusing can be seen as impolite.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Portiamo sempre con noi fazzoletti di carta: molti bagni pubblici fuori dalle città sono alla turca, senza carta e a volte a pagamento (¥1). Le code sono meno rigide che in Italia e qualcuno potrebbe passarci davanti: non prendiamocela, ma manteniamo educatamente il nostro posto. Chiediamo sempre il permesso prima di fotografare persone, soprattutto monaci, minoranze etniche o bambini, e ricordiamo che alle Grotte di Mogao è vietato l'uso di macchine fotografiche. Il fumo è ancora diffuso, soprattutto fra gli uomini, e nei ristoranti le aree non fumatori non sempre vengono rispettate. Se sentiamo la parola "laowai" (老外) significa semplicemente "straniero" e non è offensiva. Quando ci viene offerto cibo, tè o un piccolo dono, accettiamo con cortesia: rifiutare può essere considerato scortese.
+      </p>
+    </PaperCard>
+  </section>
+
+  <!-- Connectivity -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ connectivity ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Connectivity</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Buy a local SIM</strong> at Beijing Daxing Airport on arrival. China Mobile or China Unicom — ~¥100–200 for a tourist SIM with 10–20GB data. Much more reliable than relying on a VPN + foreign SIM.</li>
+        <li><strong>WiFi</strong> is available at all hotels and most restaurants. Quality varies in rural areas.</li>
+        <li><strong>WhatsApp/Signal</strong> won't work without a VPN. Use WeChat to message within the group.</li>
+        <li><strong>Calling home</strong> — use VPN + WhatsApp or FaceTime, or WeChat video call (works without VPN).</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        All'arrivo all'aeroporto di Pechino Daxing compriamo una SIM locale di China Mobile o China Unicom: una SIM turistica costa circa ¥100–200 per 10–20 GB ed è molto più affidabile della combinazione VPN + SIM straniera. Il WiFi è disponibile in tutti gli hotel e nella maggior parte dei ristoranti, anche se nelle zone rurali la qualità varia. WhatsApp e Signal non funzionano senza VPN, quindi all'interno del gruppo conviene usare WeChat. Per le chiamate verso casa possiamo usare WhatsApp o FaceTime con la VPN attiva, oppure le videochiamate WeChat che funzionano anche senza VPN.
+      </p>
+    </PaperCard>
+  </section>
+
+  <!-- Beijing-Specific -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ beijing-specific ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Beijing-Specific Tips</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Forbidden City</strong> — book weeks ahead in July (40,000/day cap). No large bags allowed. Wear comfortable shoes — it's a lot of walking.</li>
+        <li><strong>Great Wall (Mutianyu)</strong> — arrive before 9am. Take the toboggan down. Bring water.</li>
+        <li><strong>Panjiayuan Market</strong> — assume everything is a reproduction. Buy what you like, not what you think is "real."</li>
+        <li><strong>Peking duck</strong> — book Da Dong or another top restaurant in advance for a group of 6+.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        A Pechino prenotiamo la Città Proibita con settimane di anticipo, perché a luglio il limite giornaliero è di 40.000 visitatori; non sono ammesse borse grandi e si cammina molto, quindi mettiamoci scarpe comode. Per la Grande Muraglia a Mutianyu conviene arrivare prima delle 9, scendere con la pista per slittino e portare acqua. Al mercato di Panjiayuan diamo per scontato che ogni oggetto sia una riproduzione: compriamo ciò che ci piace, non ciò che crediamo "autentico". Per l'anatra alla pechinese prenotiamo per tempo Da Dong o un altro ristorante rinomato, dato che siamo in sei.
+      </p>
+    </PaperCard>
+  </section>
+
+  <!-- Xi'an-Specific -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ xi'an-specific ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Xi'an-Specific Tips</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Terracotta Warriors</strong> — book tickets online. Hire a guide at the entrance (¥150–200 for the group). Skip the "factory" shops.</li>
+        <li><strong>City Wall cycling</strong> — rent bikes at the South Gate. Bring water — there's almost no shade on the wall. Return bikes at any gate.</li>
+        <li><strong>Muslim Quarter</strong> — all food is halal (no pork). Best after 5pm. The side alleys have better food than the main tourist street.</li>
+        <li><strong>大唐不夜城</strong> — go after 8pm when it's fully dark. Charge your phone fully — you'll take hundreds of photos.</li>
+        <li><strong>Xi'an North Station</strong> is different from Xi'an Station. The D2685 to Xining departs from Xi'an North (北站). Allow time for the taxi between them.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        A Xi'an prenotiamo online i biglietti per i Guerrieri di Terracotta e prendiamo una guida all'ingresso (¥150–200 per l'intero gruppo), evitando le soste nelle "fabbriche" turistiche. Per pedalare sulle Mura noleggiamo le biciclette a Porta Sud, portiamo acqua perché sopra le mura non c'è quasi ombra, e possiamo restituirle a una qualsiasi delle porte. Nel Quartiere Musulmano tutto il cibo è halal (niente maiale): è migliore dopo le 17 e nei vicoli laterali si mangia meglio che sulla via turistica principale. La 大唐不夜城 va visitata dopo le 20, quando l'illuminazione è al massimo: ricarichiamo bene il telefono perché faremo moltissime foto. Attenzione: Xi'an North Station (北站) non è la stessa di Xi'an Station, e il D2685 per Xining parte dalla prima — calcoliamo il tempo per il taxi.
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
+
+  <!-- Northwest-Specific -->
+  <section class="mt-8">
+    <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">~ northwest-specific ~</span>
+    <PaperCard class="mt-2 relative">
+      <h3 class="font-display text-lg font-semibold mb-2">Northwest-Specific Tips</h3>
+      <ul class="list-disc pl-5 text-[14px] space-y-1">
+        <li><strong>Fuel up</strong> completely in Dachaidan before the Qaidam Basin crossing — no stations for ~300km.</li>
+        <li><strong>Dunhuang heat</strong> — do not be outside noon–5pm. All sightseeing before 11am or after 5pm.</li>
+        <li><strong>Mogao Caves</strong> — no cameras, no phones, no bags inside the caves. Strictly enforced.</li>
+        <li><strong>Chaka Salt Lake</strong> — go at sunrise for the mirror reflection. Wear old shoes, salt brine ruins everything.</li>
+        <li><strong>Altitude</strong> — Qinghai Lake and Chaka are at 3,200m. Take it easy, drink water, avoid running.</li>
+        <li><strong>Qilian morning</strong> — bring a warm layer. 2,800m at 8am in July is ~10°C.</li>
+      </ul>
+      <p data-it-draft class="font-display italic text-[13px] text-ink-soft mt-3">
+        Nel giro del nord-ovest facciamo il pieno completo a Dachaidan prima di attraversare il bacino del Qaidam: per circa 300 km non ci sono stazioni di servizio. A Dunhuang evitiamo di uscire fra le 12 e le 17 e concentriamo le visite al mattino presto o dopo le 17. Alle Grotte di Mogao è vietato introdurre macchine fotografiche, telefoni e borse: il controllo è severo. Al Lago di Sale di Chaka andiamo all'alba per vedere il celebre effetto specchio e mettiamo scarpe vecchie, perché la salamoia rovina tutto. Ricordiamo che Qinghai e Chaka sono a 3.200 m: prendiamo le cose con calma, beviamo molta acqua ed evitiamo di correre. La mattina a Qilian, a 2.800 m, può scendere a circa 10 °C anche a luglio: portiamo uno strato caldo.
+      </p>
+      <Marginalia position="br" rotate={-2} color="red">careful!</Marginalia>
+    </PaperCard>
+  </section>
 </Base>

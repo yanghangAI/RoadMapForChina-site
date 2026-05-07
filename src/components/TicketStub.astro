@@ -1,0 +1,26 @@
+---
+interface Leg {
+  from: string;
+  to: string;
+  mode: string;
+  modeEmoji: string;
+  duration: string;
+  notes: string;
+}
+interface Props { leg: Leg }
+const { leg } = Astro.props;
+---
+<div class="relative bg-paper-card border border-border paper-card-shadow flex">
+  <div class="w-3 border-r border-dashed border-border-dash"
+       style="background-image:radial-gradient(circle,#f5ecd7 2px,transparent 2.5px);background-size:8px 8px;background-position:center;"></div>
+  <div class="flex-1 p-3">
+    <div class="flex items-center gap-2 font-mono uppercase text-[10px] tracking-[.16em] text-muted">
+      <span>{leg.modeEmoji}</span><span>{leg.mode}</span>
+    </div>
+    <div class="font-display text-[18px] font-semibold leading-tight mt-1">
+      {leg.from} <span class="text-vermillion-soft">→</span> {leg.to}
+    </div>
+    <div class="font-mono text-[11px] text-muted mt-1">{leg.duration}</div>
+    <div class="text-[12px] text-ink-soft mt-1">{leg.notes}</div>
+  </div>
+</div>

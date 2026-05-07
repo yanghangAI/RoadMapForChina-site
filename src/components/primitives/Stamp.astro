@@ -1,0 +1,15 @@
+---
+interface Props {
+  rotate?: number;
+  color?: 'vermillion' | 'ink';
+  class?: string;
+}
+const { rotate = 8, color = 'vermillion', class: className = '' } = Astro.props;
+const tone = color === 'ink' ? 'var(--color-ink)' : 'var(--color-vermillion)';
+---
+<span
+  class={`inline-block font-display font-extrabold uppercase tracking-[.15em] text-[10px] px-2 py-1 ${className}`}
+  style={`border:2px solid ${tone};color:${tone};transform:rotate(${rotate}deg);opacity:.88;`}
+>
+  <slot />
+</span>

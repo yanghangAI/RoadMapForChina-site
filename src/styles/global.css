@@ -1,85 +1,59 @@
 @import "tailwindcss";
+@import "./journal.css";
 
 @theme {
-  --color-phase-beijing: #2b6cb0;
-  --color-phase-xian: #744210;
-  --color-phase-northwest: #2f855a;
-  --color-phase-chengdu: #c05621;
-  --color-phase-yunnan: #6b46c1;
+  /* paper / ink */
+  --color-paper:        #f5ecd7;
+  --color-paper-card:   #fffbef;
+  --color-ink:          #2a2118;
+  --color-ink-soft:     #5a4830;
+  --color-muted:        #8a7050;
+  --color-border:       #c8b690;
+  --color-border-dash:  #b8a878;
 
-  --color-badge-beijing-bg: #ebf8ff;
-  --color-badge-beijing-text: #2c5282;
-  --color-badge-xian-bg: #fffbeb;
-  --color-badge-xian-text: #744210;
-  --color-badge-northwest-bg: #f0fdf4;
-  --color-badge-northwest-text: #276749;
-  --color-badge-chengdu-bg: #fff7ed;
-  --color-badge-chengdu-text: #9c4221;
-  --color-badge-yunnan-bg: #faf5ff;
-  --color-badge-yunnan-text: #553c9a;
+  /* accents */
+  --color-vermillion:      #c0392b;
+  --color-vermillion-soft: #b8541a;
+  --color-sage:            #b8c4a8;
+  --color-gold:            #d4b078;
 
-  --font-sans: 'Source Sans Pro', 'Segoe UI', system-ui, sans-serif;
-  --font-heading: 'Schibsted Grotesk', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Cascadia Code', monospace;
+  /* phase colors — warm-shifted */
+  --color-phase-beijing:   #1f5b8e;
+  --color-phase-xian:      #b8541a;
+  --color-phase-northwest: #2f8550;
+  --color-phase-chengdu:   #c0392b;
+  --color-phase-yunnan:    #6b5b8e;
+
+  /* fonts */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'IBM Plex Mono', monospace;
+  --font-hand:    'Caveat', 'Bradley Hand', cursive;
+  --font-zh:      'Noto Serif SC', 'Songti SC', 'STSong', serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-sans);
-  @apply text-gray-800 bg-stone-50 antialiased;
+  @apply text-ink bg-paper antialiased;
 }
 
 :is(h1, h2, h3, h4) {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
 }
 
-.dark body {
-  @apply text-gray-200 bg-gray-950;
-}
-
-/* Prose content styling for markdown body text */
-.prose h2 {
-  @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-gray-200;
-}
-.dark .prose h2 { @apply border-gray-700; }
-
-.prose h3 { @apply text-xl font-semibold mt-8 mb-3; }
-.prose p { @apply mb-4 leading-relaxed; }
+/* Prose styling for destination markdown bodies */
+.prose h2 { @apply text-2xl font-semibold mt-10 mb-4 pb-2 border-b border-border-dash; font-family: var(--font-display); }
+.prose h3 { @apply text-xl font-semibold mt-8 mb-3; font-family: var(--font-display); }
+.prose p  { @apply mb-4 leading-relaxed; }
 .prose ul { @apply list-disc pl-6 mb-4 space-y-1; }
 .prose ol { @apply list-decimal pl-6 mb-4 space-y-1; }
 .prose li { @apply leading-relaxed; }
-
-.prose a {
-  @apply text-blue-700 underline decoration-blue-300 underline-offset-2 hover:decoration-blue-500 transition-colors;
-}
-.dark .prose a { @apply text-blue-400 decoration-blue-700 hover:decoration-blue-400; }
-
+.prose a  { @apply text-vermillion-soft underline decoration-vermillion-soft/40 underline-offset-2 hover:decoration-vermillion-soft transition-colors; }
 .prose strong { @apply font-semibold; }
-
-.prose blockquote {
-  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
-}
-.dark .prose blockquote { @apply border-gray-600 text-gray-400; }
-
+.prose blockquote { @apply border-l-4 border-border pl-4 italic text-ink-soft my-4; }
 .prose table { @apply w-full text-sm border-collapse my-4; }
-.prose th { @apply text-left font-semibold p-2 border-b-2 border-gray-300 bg-gray-100; }
-.dark .prose th { @apply border-gray-600 bg-gray-800; }
-.prose td { @apply p-2 border-b border-gray-200; }
-.dark .prose td { @apply border-gray-700; }
-.prose hr { @apply my-8 border-gray-200; }
-.dark .prose hr { @apply border-gray-700; }
-
-/* Map dropdown */
-.map-dropdown { @apply inline-block relative; }
-.map-dropdown summary { @apply list-none cursor-pointer text-xl select-none; }
-.map-dropdown .map-links {
-  @apply absolute top-8 left-0 bg-white border border-gray-200 rounded-xl p-3 z-50 shadow-lg min-w-[180px] whitespace-nowrap;
-}
-.dark .map-dropdown .map-links { @apply bg-gray-800 border-gray-700; }
-.map-dropdown .map-links a {
-  @apply block py-1 text-sm text-gray-700 no-underline hover:text-blue-600;
-}
-.dark .map-dropdown .map-links a { @apply text-gray-300 hover:text-blue-400; }
+.prose th { @apply text-left font-semibold p-2 border-b-2 border-border bg-paper-card; }
+.prose td { @apply p-2 border-b border-border-dash; }
+.prose hr { @apply my-8 border-border-dash; }

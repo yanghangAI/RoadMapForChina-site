@@ -1,0 +1,23 @@
+---
+interface Props {
+  intent: string;
+  zh: string;
+  pinyin: string;
+  en: string;
+  it: string;
+}
+const { intent, zh, pinyin, en, it } = Astro.props;
+---
+<div class="relative bg-paper-card border border-border paper-card-shadow p-4 pr-14">
+  <span class="font-hand text-[16px] text-vermillion-soft inline-block -rotate-1">{intent}</span>
+  <div class="font-zh text-[26px] font-semibold text-ink mt-1 leading-tight">{zh}</div>
+  <div class="font-display italic text-[13px] text-ink-soft mt-0.5">{pinyin}</div>
+  <div class="text-[14px] text-ink mt-1">{en}</div>
+  <div class="text-[12px] italic text-muted mt-0.5">{it}</div>
+  <button
+    type="button"
+    aria-label={`Speak: ${zh}`}
+    class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 grid place-items-center bg-vermillion text-paper-card rounded-full paper-card-shadow"
+    data-speak={zh}
+  >▶</button>
+</div>

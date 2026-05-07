@@ -1,592 +1,426 @@
 ---
 import Base from '../../layouts/Base.astro';
-import DayCard from '../../components/DayCard.astro';
 import InteractiveMap from '../../components/InteractiveMap.astro';
+import SplitView from '../../components/SplitView.astro';
+import DayCard from '../../components/DayCard.astro';
+import PaperCard from '../../components/primitives/PaperCard.astro';
+import Stamp from '../../components/primitives/Stamp.astro';
+import Marginalia from '../../components/primitives/Marginalia.astro';
+import { locations } from '../../data/locations';
 
 const base = import.meta.env.BASE_URL;
 
 const mapMarkers = [
-  { name: 'Xining · 西宁', coords: [36.617, 101.767] as [number, number], color: '#2b6cb0', label: '🚄', phase: 'Start/End', dates: 'Jul 18 & 24', transport: '🚄 D2685 arrives 12:49pm' },
-  { name: 'Riyueshan Pass · 日月山', coords: [36.517, 101.083] as [number, number], color: '#38a169', label: '1', phase: 'Day 1', dates: 'Jul 18', href: 'northwest/riyueshan' },
-  { name: 'Qinghai Lake · 青海湖', coords: [36.9, 100.183] as [number, number], color: '#38a169', label: '2', phase: 'Day 1', dates: 'Jul 18', href: 'northwest/qinghai-lake' },
-  { name: 'Chaka Salt Lake · 茶卡盐湖', coords: [36.717, 99.083] as [number, number], color: '#38a169', label: '3', phase: 'Days 1-2', dates: 'Jul 18-19', href: 'northwest/chaka-salt-lake' },
-  { name: 'Delingha · 德令哈', coords: [37.367, 97.367] as [number, number], color: '#38a169', label: '4', phase: 'Day 2', dates: 'Jul 19', href: 'northwest/delingha' },
-  { name: 'Feicui Hu · 翡翠湖', coords: [37.85, 95.367] as [number, number], color: '#38a169', label: '5', phase: 'Day 2', dates: 'Jul 19', href: 'northwest/feicui-hu' },
-  { name: 'Dunhuang Night Market · 沙州夜市', coords: [40.142, 94.662] as [number, number], color: '#dd6b20', label: '6', phase: 'Day 3', dates: 'Jul 20', href: 'northwest/dunhuang-night-market' },
-  { name: 'Mogao Caves · 莫高窟', coords: [40.038, 94.806] as [number, number], color: '#dd6b20', label: '7', phase: 'Day 4', dates: 'Jul 21', href: 'northwest/mogao-caves' },
-  { name: 'Mingsha Dunes · 鸣沙山月牙泉', coords: [40.085, 94.674] as [number, number], color: '#dd6b20', label: '8', phase: 'Day 4', dates: 'Jul 21', href: 'northwest/mingsha-dunes' },
-  { name: 'Jiayuguan Fort · 嘉峪关', coords: [39.817, 98.3] as [number, number], color: '#805ad5', label: '9', phase: 'Day 5', dates: 'Jul 22', href: 'northwest/jiayuguan-fort' },
-  { name: 'Qicai Danxia · 七彩丹霞', coords: [38.937, 100.467] as [number, number], color: '#805ad5', label: '10', phase: 'Day 6', dates: 'Jul 23', href: 'northwest/qicai-danxia' },
-  { name: 'Qilian Grassland · 祁连草原', coords: [38.183, 100.25] as [number, number], color: '#805ad5', label: '11', phase: 'Days 6-7', dates: 'Jul 23-24', href: 'northwest/qilian-grassland' },
-  { name: 'Menyuan Flowers · 门源油菜花', coords: [37.383, 101.617] as [number, number], color: '#805ad5', label: '12', phase: 'Day 7', dates: 'Jul 24', href: 'northwest/menyuan-flowers' },
+  { name: 'Xining · 西宁', coords: [36.617, 101.767] as [number, number], color: 'var(--color-muted)', label: '🚄', phase: 'Start/End', dates: 'Jul 18 & 24', transport: '🚄 D2685 arrives 12:49pm' },
+  { name: 'Riyueshan Pass · 日月山', coords: [36.517, 101.083] as [number, number], color: 'var(--color-phase-northwest)', label: '1', phase: 'Day 1', dates: 'Jul 18', href: 'northwest/riyueshan' },
+  { name: 'Qinghai Lake · 青海湖', coords: [36.9, 100.183] as [number, number], color: 'var(--color-phase-northwest)', label: '1', phase: 'Day 1', dates: 'Jul 18', href: 'northwest/qinghai-lake' },
+  { name: 'Chaka Salt Lake · 茶卡盐湖', coords: [36.717, 99.083] as [number, number], color: 'var(--color-phase-northwest)', label: '2', phase: 'Day 2', dates: 'Jul 18-19', href: 'northwest/chaka-salt-lake' },
+  { name: 'Delingha · 德令哈', coords: [37.367, 97.367] as [number, number], color: 'var(--color-phase-northwest)', label: '2', phase: 'Day 2', dates: 'Jul 19', href: 'northwest/delingha' },
+  { name: 'Feicui Hu · 翡翠湖', coords: [37.85, 95.367] as [number, number], color: 'var(--color-phase-northwest)', label: '3', phase: 'Day 3', dates: 'Jul 19-20', href: 'northwest/feicui-hu' },
+  { name: 'Dunhuang Night Market · 沙州夜市', coords: [40.142, 94.662] as [number, number], color: 'var(--color-vermillion-soft)', label: '3', phase: 'Day 3', dates: 'Jul 20', href: 'northwest/dunhuang-night-market' },
+  { name: 'Mogao Caves · 莫高窟', coords: [40.038, 94.806] as [number, number], color: 'var(--color-vermillion-soft)', label: '4', phase: 'Day 4', dates: 'Jul 21', href: 'northwest/mogao-caves' },
+  { name: 'Mingsha Dunes · 鸣沙山月牙泉', coords: [40.085, 94.674] as [number, number], color: 'var(--color-vermillion-soft)', label: '4', phase: 'Day 4', dates: 'Jul 21', href: 'northwest/mingsha-dunes' },
+  { name: 'Jiayuguan Fort · 嘉峪关', coords: [39.817, 98.3] as [number, number], color: 'var(--color-phase-northwest)', label: '5', phase: 'Day 5', dates: 'Jul 22', href: 'northwest/jiayuguan-fort' },
+  { name: 'Qicai Danxia · 七彩丹霞', coords: [38.937, 100.467] as [number, number], color: 'var(--color-phase-northwest)', label: '6', phase: 'Day 6', dates: 'Jul 23', href: 'northwest/qicai-danxia' },
+  { name: 'Qilian Grassland · 祁连草原', coords: [38.183, 100.25] as [number, number], color: 'var(--color-phase-northwest)', label: '6', phase: 'Day 6', dates: 'Jul 23-24', href: 'northwest/qilian-grassland' },
+  { name: 'Menyuan Flowers · 门源油菜花', coords: [37.383, 101.617] as [number, number], color: 'var(--color-phase-northwest)', label: '7', phase: 'Day 7', dates: 'Jul 24', href: 'northwest/menyuan-flowers' },
   // Optional stops
-  { name: "Ta'er Monastery · 塔尔寺", coords: [36.479, 101.578] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Xining', href: 'northwest/taer-monastery', optional: true },
-  { name: 'Yardang Geopark · 雅丹魔鬼城', coords: [40.525, 93.303] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Dunhuang', href: 'northwest/yardang', optional: true },
-  { name: 'Giant Buddha Temple · 张掖大佛寺', coords: [38.936, 100.452] as [number, number], color: '#718096', label: '◆', phase: 'Optional · in Zhangye', href: 'northwest/zhangye-dafo', optional: true },
-  { name: 'Shandan Horse Farm · 山丹军马场', coords: [38.560, 100.850] as [number, number], color: '#718096', label: '◆', phase: 'Optional · Day 6 route', href: 'northwest/shandan-horse-farm', optional: true },
-  { name: 'Zhuoer Mountain · 卓尔山', coords: [38.204, 100.217] as [number, number], color: '#718096', label: '◆', phase: 'Optional · near Qilian', href: 'northwest/zhuoer-mountain', optional: true },
+  { name: "Ta'er Monastery · 塔尔寺", coords: [36.479, 101.578] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · near Xining', href: 'northwest/taer-monastery', optional: true },
+  { name: 'Yardang Geopark · 雅丹魔鬼城', coords: [40.525, 93.303] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · near Dunhuang', href: 'northwest/yardang', optional: true },
+  { name: 'Giant Buddha Temple · 张掖大佛寺', coords: [38.936, 100.452] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · in Zhangye', href: 'northwest/zhangye-dafo', optional: true },
+  { name: 'Shandan Horse Farm · 山丹军马场', coords: [38.560, 100.850] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · Day 6 route', href: 'northwest/shandan-horse-farm', optional: true },
+  { name: 'Zhuoer Mountain · 卓尔山', coords: [38.204, 100.217] as [number, number], color: 'var(--color-muted)', label: '◆', phase: 'Optional · near Qilian', href: 'northwest/zhuoer-mountain', optional: true },
 ];
 
-const mapLegend = [
-  { color: '#2b6cb0', label: 'Start / End — Xining' },
-  { color: '#38a169', label: 'Days 1–2 — Qinghai & Qaidam' },
-  { color: '#dd6b20', label: 'Days 3–4 — Dunhuang' },
-  { color: '#805ad5', label: 'Days 5–7 — Hexi Corridor & Qilian' },
-  { color: '#718096', label: 'Optional stops', diamond: true },
-];
+// Build highlight items per day from destination slugs, using locations.name for display.
+function highlightsForDay(slugs: string[]) {
+  return slugs
+    .map(s => locations[s])
+    .filter(Boolean)
+    .map(l => ({ name: l.name, href: l.slug }));
+}
 ---
 
-<Base title="Northwest Road Trip · July 18–24">
-  <h1 class="text-3xl font-bold mb-2">大西北 Road Trip · July 18–24, 2026</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-1">
-    <strong>Group:</strong> 7 people (5 Italians, 2 Chinese) · 1 car (7-seater) · Budget–midrange<br />
-    <strong>Loop:</strong> Xining &rarr; Qinghai Lake &rarr; Chaka &rarr; Feicui Hu &rarr; Dunhuang &rarr; Jiayuguan &rarr; Danxia &rarr; Qilian &rarr; Xining
-  </p>
-  <p class="text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-2">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/tips`} class="text-blue-700 dark:text-blue-400 hover:underline">Travel Tips</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/packing-list`} class="text-blue-700 dark:text-blue-400 hover:underline">Packing List</a>
-    <span>&middot;</span>
-    <a href={`${base}resources/useful-phrases`} class="text-blue-700 dark:text-blue-400 hover:underline">Useful Chinese Phrases</a>
-    <span>&middot;</span>
-    <a href={`${base}map`} class="text-blue-700 dark:text-blue-400 hover:underline">Route Maps</a>
-  </p>
+<Base title="Northwest Road Trip · 大西北 · July 18–24">
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Trip Overview Grid -->
-  <h2 class="text-2xl font-bold mb-4">Trip Overview</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    <DayCard
-      day={1}
-      date="Jul 18"
-      temp="15–20°C"
-      route="&#128663; Xining → Chaka · 300km / 4h"
-      highlights={[
-        { name: 'Riyueshan', href: 'northwest/riyueshan', imageQuery: 'Riyueshan Pass 日月山 Qinghai' },
-        { name: 'Qinghai Lake', href: 'northwest/qinghai-lake', imageQuery: 'Qinghai Lake 青海湖' },
-        { name: 'Chaka', href: 'northwest/chaka-salt-lake', imageQuery: 'Chaka Salt Lake 茶卡盐湖' },
-      ]}
-      accommodation="&#128719; Chaka"
-      phase="green"
-    />
-    <DayCard
-      day={2}
-      date="Jul 19"
-      temp="20–28°C"
-      route="&#128663; Chaka → Dachaidan · 330km / 4h"
-      highlights={[
-        { name: 'Chaka sunrise', href: 'northwest/chaka-salt-lake', imageQuery: 'Chaka Salt Lake 茶卡盐湖' },
-        { name: 'Delingha', href: 'northwest/delingha', imageQuery: 'Delingha 德令哈 Qinghai' },
-        { name: 'Feicui Hu', href: 'northwest/feicui-hu', imageQuery: 'Feicui Hu 翡翠湖 Dachaidan' },
-      ]}
-      accommodation="&#128719; Dachaidan"
-      phase="green"
-    />
-    <DayCard
-      day={3}
-      date="Jul 20"
-      temp="38–42°C"
-      route="&#128663; Dachaidan → Dunhuang · 500km / 6h"
-      highlights={[
-        { name: 'Qaidam Basin desert highway' },
-        { name: 'Night Market', href: 'northwest/dunhuang-night-market', imageQuery: 'Dunhuang Night Market 敦煌夜市' },
-      ]}
-      accommodation="&#128719; Dunhuang"
-      phase="orange"
-    />
-    <DayCard
-      day={4}
-      date="Jul 21"
-      temp="38–42°C"
-      route="&#127957; Dunhuang full day"
-      highlights={[
-        { name: 'Mogao Caves', href: 'northwest/mogao-caves', imageQuery: 'Mogao Caves 莫高窟 Dunhuang' },
-        { name: 'Mingsha Dunes', href: 'northwest/mingsha-dunes', imageQuery: 'Mingsha Dunes 鸣沙山 Dunhuang' },
-      ]}
-      accommodation="&#128719; Dunhuang"
-      phase="orange"
-    />
-    <DayCard
-      day={5}
-      date="Jul 22"
-      temp="30–35°C"
-      route="&#128663; Dunhuang → Jiayuguan · 400km / 4.5h"
-      highlights={[
-        { name: 'Jiayuguan Fort', href: 'northwest/jiayuguan-fort', imageQuery: 'Jiayuguan Fort 嘉峪关' },
-        { name: 'Overhanging Wall' },
-      ]}
-      accommodation="&#128719; Jiayuguan"
-      phase="purple"
-    />
-    <DayCard
-      day={6}
-      date="Jul 23"
-      temp="20–25°C"
-      route="&#128663; Jiayuguan → Qilian · 410km / 5.5h"
-      highlights={[
-        { name: 'Qicai Danxia', href: 'northwest/qicai-danxia', imageQuery: 'Qicai Danxia 七彩丹霞 Zhangye' },
-        { name: 'Qilian grassland', href: 'northwest/qilian-grassland', imageQuery: 'Qilian Grassland 祁连草原' },
-      ]}
-      accommodation="&#128719; Qilian"
-      phase="purple"
-    />
-    <DayCard
-      day={7}
-      date="Jul 24"
-      temp="20–25°C"
-      route="&#128663; Qilian → Xining · 280km / 3.5h"
-      highlights={[
-        { name: 'Horseback riding', href: 'northwest/qilian-grassland', imageQuery: 'Qilian Grassland 祁连草原' },
-        { name: 'Menyuan flowers', href: 'northwest/menyuan-flowers', imageQuery: 'Menyuan Rapeseed Flowers 门源油菜花' },
-      ]}
-      accommodation="&#127968; Back to Xining"
-      phase="purple"
-    />
-  </div>
-  <p class="text-[13px] text-gray-400 mt-2">Total ~2,220km · <a href="#route-map" class="text-blue-600 hover:underline">View Route Map</a></p>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Route Map -->
-  <span id="route-map"></span>
-  <h2 class="text-2xl font-bold mb-4">Route Map</h2>
-  <InteractiveMap
-    id="northwest-map"
-    markers={mapMarkers}
-    legend={mapLegend}
-    center={[38.5, 98]}
-    zoom={6}
-  />
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Day 1 -->
-  <span id="day-1"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 1 — July 18 · Xining &rarr; Qinghai Lake &rarr; Chaka</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">300km · 4h driving · Sleep: Chaka · 15–20°C</p>
-
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>12:49pm</strong> Arrive Xining by D2685 from Xi'an North. Lunch near station.
-    </li>
-    <li>
-      <strong>2:00pm</strong> Pick up car, depart Xining
-    </li>
-    <li>
-      <strong>3:30pm</strong>
-      <a href={`${base}northwest/riyueshan`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Riyueshan Pass (日月山)</a>
-      (3,520m) — 20-min stop, photo, move on
-    </li>
-    <li>
-      <strong>4:15pm</strong>
-      <a href={`${base}northwest/qinghai-lake`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Qinghai Lake (青海湖)</a>
-      north shore (Erlangjian) — 1.5hrs, walk the shore
-    </li>
-    <li>
-      <strong>6:00pm</strong> Drive to Chaka (~170km, 2hrs)
-    </li>
-    <li>
-      <strong>8:00pm</strong> Arrive Chaka, dinner, overnight
-    </li>
-  </ul>
-
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
-    <p class="text-sm text-blue-900 dark:text-blue-200">
-      <strong>Tonight:</strong> Set alarm for 6am. Chaka mirror reflection only works at sunrise when the wind is still.
+  <header class="mb-4">
+    <a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">
+      Northwest <span class="font-zh not-italic text-[28px] text-ink-soft">大西北</span>
+    </h1>
+    <div class="font-mono uppercase text-[11px] tracking-[.14em] text-muted mt-1">PHASE 3 · JUL 18 – JUL 24 · 7 PEOPLE · 1 CAR</div>
+    <p class="mt-3 max-w-prose text-[14px] text-ink-soft">
+      Loop from Xining: Qinghai Lake → Chaka → Feicui Hu → Dunhuang → Jiayuguan → Danxia → Qilian → Xining. ~2,220km in a 7-seater. Budget–midrange. Fly out to Chengdu on the last evening.
     </p>
-  </div>
+  </header>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <SplitView phaseKey="northwest">
+    <div slot="map" class="h-full">
+      <InteractiveMap id="northwest-map" markers={mapMarkers} center={[38.5, 98]} zoom={6} height="100%" />
+    </div>
 
-  <!-- Day 2 -->
-  <span id="day-2"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 2 — July 19 · Chaka &rarr; Delingha &rarr; Feicui Hu</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">330km · 4h driving · Sleep: Dachaidan · 20–28°C</p>
+    <div slot="list">
+      <DayCard
+        day={5} dayInPhase={1} date="2026-07-18"
+        headline="Train to Xining, Riyueshan, Qinghai Lake"
+        headlineIt="Treno per Xining, Riyueshan, Lago Qinghai"
+        route="🚄 D2685 to Xining 12:49 · 🚗 Xining → Chaka · 300km / 4h"
+        highlights={highlightsForDay(['riyueshan', 'qinghai-lake'])}
+        accommodation="Chaka"
+        note="set 6am alarm — Chaka mirror at sunrise"
+        anchorId="day-5"
+      >
+        <p class="intro">300km · 4h driving · Sleep: Chaka · 15–20°C</p>
+        <ul>
+          <li><strong>12:49pm</strong> Arrive Xining by D2685 from Xi'an North. Lunch near station.</li>
+          <li><strong>2:00pm</strong> Pick up car, depart Xining.</li>
+          <li><strong>3:30pm</strong> <a href={`${base}northwest/riyueshan`}>Riyueshan Pass (日月山)</a> (3,520m) — 20-min stop, photo, move on.</li>
+          <li><strong>4:15pm</strong> <a href={`${base}northwest/qinghai-lake`}>Qinghai Lake (青海湖)</a> north shore (Erlangjian) — 1.5hrs, walk the shore.</li>
+          <li><strong>6:00pm</strong> Drive to Chaka (~170km, 2hrs).</li>
+          <li><strong>8:00pm</strong> Arrive Chaka, dinner, overnight.</li>
+        </ul>
+        <div class="tip">Tonight: Set alarm for 6am. Chaka mirror reflection only works at sunrise when the wind is still.</div>
+      </DayCard>
 
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>6:00am</strong>
-      <a href={`${base}northwest/chaka-salt-lake`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Chaka Salt Lake (茶卡盐湖)</a>
-      at sunrise — the mirror reflection. 1.5hrs
-    </li>
-    <li>
-      <strong>8:00am</strong> Breakfast, pack up
-    </li>
-    <li>
-      <strong>8:30am</strong> Drive to Delingha (~230km, 2.5hrs)
-    </li>
-    <li>
-      <strong>11:00am</strong> Delingha — lunch, 30min walk at
-      <a href={`${base}northwest/delingha`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Haizi Poetry Park</a>
-    </li>
-    <li>
-      <strong>1:00pm</strong> Drive to Feicui Hu / Dachaidan (~100km, 1hr)
-    </li>
-    <li>
-      <strong>2:00pm</strong>
-      <a href={`${base}northwest/feicui-hu`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Feicui Hu (翡翠湖)</a>
-      colored lakes — 2hrs wandering
-    </li>
-    <li>
-      <strong>4:30pm</strong> Check in Dachaidan, rest, early dinner
-    </li>
-  </ul>
+      <DayCard
+        day={6} dayInPhase={2} date="2026-07-19"
+        headline="Chaka Salt Lake & on to Delingha"
+        headlineIt="Lago Salato di Chaka e Delingha"
+        route="🚗 Chaka → Dachaidan · 330km / 4h"
+        highlights={highlightsForDay(['chaka-salt-lake', 'delingha'])}
+        accommodation="Dachaidan"
+        note="fill tank in Dachaidan!"
+        anchorId="day-6"
+      >
+        <p class="intro">330km · 4h driving · Sleep: Dachaidan · 20–28°C</p>
+        <ul>
+          <li><strong>6:00am</strong> <a href={`${base}northwest/chaka-salt-lake`}>Chaka Salt Lake (茶卡盐湖)</a> at sunrise — the mirror reflection. 1.5hrs.</li>
+          <li><strong>8:00am</strong> Breakfast, pack up.</li>
+          <li><strong>8:30am</strong> Drive to Delingha (~230km, 2.5hrs).</li>
+          <li><strong>11:00am</strong> Delingha — lunch, 30min walk at <a href={`${base}northwest/delingha`}>Haizi Poetry Park</a>.</li>
+          <li><strong>1:00pm</strong> Drive to Feicui Hu / Dachaidan (~100km, 1hr).</li>
+          <li><strong>2:00pm</strong> <a href={`${base}northwest/feicui-hu`}>Feicui Hu (翡翠湖)</a> colored lakes — 2hrs wandering.</li>
+          <li><strong>4:30pm</strong> Check in Dachaidan, rest, early dinner.</li>
+        </ul>
+        <div class="tip">Tonight: Driver fills tank completely before sleeping — the Qaidam Basin to Dunhuang has sparse fuel stations.</div>
+      </DayCard>
 
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
-    <p class="text-sm text-blue-900 dark:text-blue-200">
-      <strong>Tonight:</strong> Driver fills tank completely before sleeping — the Qaidam Basin to Dunhuang has sparse fuel stations.
-    </p>
-  </div>
+      <DayCard
+        day={7} dayInPhase={3} date="2026-07-20"
+        headline="Feicui Hu emerald lake, drive to Dunhuang"
+        headlineIt="Lago smeraldo Feicui Hu, viaggio a Dunhuang"
+        route="🚗 Dachaidan → Dunhuang · 500km / 6h"
+        highlights={highlightsForDay(['feicui-hu'])}
+        accommodation="Dunhuang"
+        note="confirm Mogao booking tonight"
+        anchorId="day-7"
+      >
+        <p class="intro">500km · 6h driving · Sleep: Dunhuang · 38–42°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Dachaidan, full tank.</li>
+          <li><strong>8:00am–2:00pm</strong> Qaidam Basin highway — one of the great desert drives in China. Flat salt pans stretching to the horizon, distant mountain ranges floating above the heat shimmer, almost no traffic. Stop anywhere for photos — the emptiness is the point.</li>
+          <li><strong>2:30pm</strong> Arrive Dunhuang, check in (2 nights), rest — it's 40°C outside.</li>
+          <li><strong>7:00pm</strong> <a href={`${base}northwest/dunhuang-night-market`}>沙州夜市 (Shazhou Night Market)</a> — first real taste of Silk Road street food. Allow 1.5hrs.</li>
+        </ul>
+        <div class="tip">Tonight: Confirm Mogao Caves booking for tomorrow morning. Tickets at <a href="https://mgk.com.cn" target="_blank">mgk.com.cn</a>.</div>
+      </DayCard>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+      <DayCard
+        day={8} dayInPhase={4} date="2026-07-21"
+        headline="Mogao Caves, Mingsha dunes, night market"
+        headlineIt="Grotte di Mogao, dune di Mingsha, mercato notturno"
+        route="🥾 Dunhuang full day"
+        highlights={highlightsForDay(['mogao-caves', 'mingsha-dunes', 'dunhuang-night-market'])}
+        accommodation="Dunhuang"
+        anchorId="day-8"
+      >
+        <p class="intro">Sleep: Dunhuang · 38–42°C</p>
+        <ul>
+          <li><strong>8:00am</strong> <a href={`${base}northwest/mogao-caves`}>Mogao Caves (莫高窟)</a> — pre-booked morning slot, guided tour ~3hrs. Finish by 11am.</li>
+          <li><strong>12:00pm</strong> Lunch, long rest indoors — do not be outside between noon and 5pm.</li>
+          <li><strong>5:30pm</strong> <a href={`${base}northwest/mingsha-dunes`}>Crescent Moon Spring (月牙泉)</a> — walk to the spring first while light is still high.</li>
+          <li><strong>6:30pm</strong> Mingsha Sand Dunes — camel ride at golden hour (~¥150/person), watch sunset from the ridge.</li>
+          <li><strong>8:30pm</strong> Dinner, night market.</li>
+        </ul>
+      </DayCard>
 
-  <!-- Day 3 -->
-  <span id="day-3"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 3 — July 20 · Dachaidan &rarr; Dunhuang · The Desert Highway</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">500km · 6h driving · Sleep: Dunhuang · 38–42°C</p>
+      <DayCard
+        day={9} dayInPhase={5} date="2026-07-22"
+        headline="Yardang geopark & Jiayuguan Fort"
+        headlineIt="Geoparco di Yardang e Forte di Jiayuguan"
+        route="🚗 Dunhuang → Jiayuguan · 400km / 4.5h"
+        highlights={highlightsForDay(['yardang', 'jiayuguan-fort'])}
+        accommodation="Jiayuguan"
+        anchorId="day-9"
+      >
+        <p class="intro">400km · 4.5h driving · Sleep: Jiayuguan · 30–35°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Dunhuang.</li>
+          <li><strong>12:30pm</strong> Arrive Jiayuguan, lunch.</li>
+          <li><strong>2:00pm</strong> <a href={`${base}northwest/jiayuguan-fort`}>Jiayuguan Fort (嘉峪关)</a> — western end of the Great Wall, "Greatest Pass Under Heaven." Walk the full wall circuit. 2hrs.</li>
+          <li><strong>4:30pm</strong> Overhanging Great Wall (悬壁长城) — 10km north of the fort, a section of wall that climbs vertically up a mountain face. Different in character from the fort. 45min. <em>(Optional but strongly recommended — fits the afternoon easily.)</em></li>
+          <li><strong>Evening</strong> Dinner, overnight Jiayuguan.</li>
+        </ul>
+      </DayCard>
 
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>8:00am</strong> Depart Dachaidan, full tank
-    </li>
-    <li>
-      <strong>8:00am–2:00pm</strong> Qaidam Basin highway — one of the great desert drives in China. Flat salt pans stretching to the horizon, distant mountain ranges floating above the heat shimmer, almost no traffic. Stop anywhere for photos — the emptiness is the point.
-    </li>
-    <li>
-      <strong>2:30pm</strong> Arrive Dunhuang, check in (2 nights), rest — it's 40°C outside
-    </li>
-    <li>
-      <strong>7:00pm</strong>
-      <a href={`${base}northwest/dunhuang-night-market`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">沙州夜市 (Shazhou Night Market)</a>
-      — first real taste of Silk Road street food. Allow 1.5hrs.
-    </li>
-  </ul>
+      <DayCard
+        day={10} dayInPhase={6} date="2026-07-23"
+        headline="Qicai Danxia rainbow mountains"
+        headlineIt="Montagne arcobaleno di Qicai Danxia"
+        route="🚗 Jiayuguan → Qilian · 460km / 6h"
+        highlights={highlightsForDay(['qicai-danxia', 'shandan-horse-farm'])}
+        accommodation="Qilian"
+        note="ask hotel to arrange 7 horses for 8am"
+        anchorId="day-10"
+      >
+        <p class="intro">460km · 6h driving · Sleep: Qilian · 20–25°C</p>
+        <ul>
+          <li><strong>8:00am</strong> Depart Jiayuguan.</li>
+          <li><strong>10:30am</strong> Arrive <a href={`${base}northwest/qicai-danxia`}>Zhangye Qicai Danxia (七彩丹霞)</a> — morning light is ideal for the colors. Take the shuttle buses between platforms. 2.5hrs.</li>
+          <li><strong>1:30pm</strong> Lunch in Zhangye.</li>
+          <li><strong>2:30pm</strong> Drive south to Qilian County via G227 (~180km, 2.5hrs) — direct mountain route, no backtracking.</li>
+          <li><strong>5:00pm</strong> Arrive <a href={`${base}northwest/qilian-grassland`}>Qilian County</a>, check in, riverside walk at dusk.</li>
+          <li><strong>Evening</strong> Lamb hotpot dinner — Qilian lamb is among the best in Qinghai.</li>
+        </ul>
+        <div class="tip">Tonight: Ask hotel to arrange 7 horses for 8:00am tomorrow.</div>
+      </DayCard>
 
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
-    <p class="text-sm text-blue-900 dark:text-blue-200">
-      <strong>Tonight:</strong> Confirm Mogao Caves booking for tomorrow morning. Tickets at <a href="https://mgk.com.cn" target="_blank" class="underline">mgk.com.cn</a>.
-    </p>
-  </div>
+      <DayCard
+        day={11} dayInPhase={7} date="2026-07-24"
+        headline="Qilian grasslands, Zhuoer mountain, fly to Chengdu"
+        headlineIt="Praterie di Qilian, monte Zhuoer, volo a Chengdu"
+        route="🚗 Qilian → Xining · 280km / 3.5h · ✈️ fly XNN → CTU evening"
+        highlights={highlightsForDay(['qilian-grassland', 'zhuoer-mountain', 'menyuan-flowers'])}
+        accommodation="Back to Xining"
+        anchorId="day-11"
+      >
+        <p class="intro">280km · 3.5h driving</p>
+        <ul>
+          <li><strong>8:00am</strong> 1hr horseback ride on the grassland (~¥120/person). Bring a warm layer — 2,800m at 8am is cold.</li>
+          <li><strong>9:30am</strong> Depart Qilian east on S302.</li>
+          <li><strong>11:00am</strong> <a href={`${base}northwest/menyuan-flowers`}>Menyuan rapeseed flower fields (门源油菜花)</a> — 30min stop if in bloom. The yellow fields with snow peaks behind are the perfect farewell image.</li>
+          <li><strong>12:00pm</strong> Continue north on G227 to Xining (~160km, 2hrs).</li>
+          <li><strong>2:00pm</strong> Arrive Xining — lunch, return car, fly out to Chengdu.</li>
+        </ul>
+      </DayCard>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+      <PaperCard class="mt-6 bg-paper">
+        <Stamp rotate={-3}>book now</Stamp>
+        <ul class="list-disc pl-5 mt-3 text-[13px] space-y-1">
+          <li><strong>Mogao Caves</strong> — 7 tickets for Jul 21 morning, before April 18 → <a href="https://mgk.com.cn" target="_blank" class="text-vermillion-soft underline">mgk.com.cn</a></li>
+          <li><strong>Chaka Salt Lake tickets</strong> — book online before June</li>
+          <li><strong>Dunhuang hotel</strong> — 2 nights Jul 20–22, before May</li>
+          <li><strong>Other hotels</strong> — Chaka, Dachaidan, Jiayuguan, Qilian, before June</li>
+          <li><strong>7-seater rental</strong> — confirm car + luggage solution in Xining, before June</li>
+        </ul>
+        <Marginalia position="br" rotate={-2}>do this first!!</Marginalia>
+      </PaperCard>
+    </div>
+  </SplitView>
 
-  <!-- Day 4 -->
-  <span id="day-4"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 4 — July 21 · Dunhuang Full Day</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">Sleep: Dunhuang · 38–42°C</p>
+  <hr class="my-8 dashed-divider" />
 
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>8:00am</strong>
-      <a href={`${base}northwest/mogao-caves`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Mogao Caves (莫高窟)</a>
-      — pre-booked morning slot, guided tour ~3hrs. Finish by 11am.
-    </li>
-    <li>
-      <strong>12:00pm</strong> Lunch, long rest indoors — do not be outside between noon and 5pm
-    </li>
-    <li>
-      <strong>5:30pm</strong>
-      <a href={`${base}northwest/mingsha-dunes`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Crescent Moon Spring (月牙泉)</a>
-      — walk to the spring first while light is still high
-    </li>
-    <li>
-      <strong>6:30pm</strong> Mingsha Sand Dunes — camel ride at golden hour (~&yen;150/person), watch sunset from the ridge
-    </li>
-    <li>
-      <strong>8:30pm</strong> Dinner, night market
-    </li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Day 5 -->
-  <span id="day-5"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 5 — July 22 · Dunhuang &rarr; Jiayuguan</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">400km · 4.5h driving · Sleep: Jiayuguan · 30–35°C</p>
-
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>8:00am</strong> Depart Dunhuang
-    </li>
-    <li>
-      <strong>12:30pm</strong> Arrive Jiayuguan, lunch
-    </li>
-    <li>
-      <strong>2:00pm</strong>
-      <a href={`${base}northwest/jiayuguan-fort`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Jiayuguan Fort (嘉峪关)</a>
-      — western end of the Great Wall, "Greatest Pass Under Heaven." Walk the full wall circuit. 2hrs.
-    </li>
-    <li>
-      <strong>4:30pm</strong> Overhanging Great Wall (悬壁长城) — 10km north of the fort, a section of wall that climbs vertically up a mountain face. Different in character from the fort. 45min. <em>(Optional but strongly recommended — fits the afternoon easily)</em>
-    </li>
-    <li>
-      <strong>Evening</strong> Dinner, overnight Jiayuguan
-    </li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Day 6 -->
-  <span id="day-6"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 6 — July 23 · Jiayuguan &rarr; Qicai Danxia &rarr; Qilian</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">460km · 6h driving · Sleep: Qilian · 20–25°C</p>
-
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>8:00am</strong> Depart Jiayuguan
-    </li>
-    <li>
-      <strong>10:30am</strong> Arrive
-      <a href={`${base}northwest/qicai-danxia`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Zhangye Qicai Danxia (七彩丹霞)</a>
-      — morning light is ideal for the colors. Take the shuttle buses between platforms. 2.5hrs.
-    </li>
-    <li>
-      <strong>1:30pm</strong> Lunch in Zhangye
-    </li>
-    <li>
-      <strong>2:30pm</strong> Drive south to Qilian County via G227 (~180km, 2.5hrs) — direct mountain route, no backtracking
-    </li>
-    <li>
-      <strong>5:00pm</strong> Arrive
-      <a href={`${base}northwest/qilian-grassland`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Qilian County</a>, check in, riverside walk at dusk
-    </li>
-    <li>
-      <strong>Evening</strong> Lamb hotpot dinner — Qilian lamb is among the best in Qinghai
-    </li>
-  </ul>
-
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 my-4">
-    <p class="text-sm text-blue-900 dark:text-blue-200">
-      <strong>Tonight:</strong> Ask hotel to arrange 7 horses for 8:00am tomorrow.
-    </p>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Day 7 -->
-  <span id="day-7"></span>
-  <h2 class="text-2xl font-bold mb-2">Day 7 — July 24 · Qilian &rarr; Menyuan &rarr; Xining</h2>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mb-4">280km · 3.5h driving</p>
-
-  <ul class="space-y-3 text-[15px]">
-    <li>
-      <strong>8:00am</strong> 1hr horseback ride on the grassland (~&yen;120/person). Bring a warm layer — 2,800m at 8am is cold.
-    </li>
-    <li>
-      <strong>9:30am</strong> Depart Qilian east on S302
-    </li>
-    <li>
-      <strong>11:00am</strong>
-      <a href={`${base}northwest/menyuan-flowers`} class="text-blue-700 dark:text-blue-400 hover:underline font-semibold">Menyuan rapeseed flower fields (门源油菜花)</a>
-      — 30min stop if in bloom. The yellow fields with snow peaks behind are the perfect farewell image.
-    </li>
-    <li>
-      <strong>12:00pm</strong> Continue north on G227 to Xining (~160km, 2hrs)
-    </li>
-    <li>
-      <strong>2:00pm</strong> Arrive Xining — lunch, return car, train home
-    </li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Pre-Trip Checklist -->
-  <h2 class="text-2xl font-bold mb-4">Pre-Trip Checklist</h2>
-  <div class="overflow-x-auto">
+  <h2 class="font-display text-2xl font-bold mb-4">Pre-trip checklist</h2>
+  <PaperCard padded={false}>
     <table class="w-full text-sm">
       <thead>
-        <tr class="border-b border-gray-300 dark:border-gray-600">
-          <th class="py-2 pr-4 text-left font-semibold">Task</th>
-          <th class="py-2 pr-4 text-left font-semibold">Deadline</th>
-          <th class="py-2 text-left font-semibold">Who</th>
+        <tr class="border-b border-border-dash">
+          <th class="py-2 px-3 text-left font-display font-semibold">Task</th>
+          <th class="py-2 px-3 text-left font-display font-semibold whitespace-nowrap">Deadline</th>
+          <th class="py-2 px-3 text-left font-display font-semibold">Who</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4">Book Mogao Caves (7 tickets, Jul 21 morning) at <a href="https://mgk.com.cn" target="_blank" class="text-blue-700 dark:text-blue-400 underline">mgk.com.cn</a></td>
-          <td class="py-2 pr-4 font-semibold">Before April 18</td>
-          <td class="py-2">Chinese members</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3">Book Mogao Caves (7 tickets, Jul 21 morning) at <a href="https://mgk.com.cn" target="_blank" class="text-vermillion-soft underline">mgk.com.cn</a></td>
+          <td class="py-2 px-3 font-semibold whitespace-nowrap">Before April 18</td>
+          <td class="py-2 px-3">Chinese members</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4">Book Chaka Salt Lake tickets online</td>
-          <td class="py-2 pr-4">Before June</td>
-          <td class="py-2">Chinese members</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3">Book Chaka Salt Lake tickets online</td>
+          <td class="py-2 px-3 whitespace-nowrap">Before June</td>
+          <td class="py-2 px-3">Chinese members</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4">Book Dunhuang hotel (2 nights, Jul 20–22)</td>
-          <td class="py-2 pr-4">Before May</td>
-          <td class="py-2">Anyone</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3">Book Dunhuang hotel (2 nights, Jul 20–22)</td>
+          <td class="py-2 px-3 whitespace-nowrap">Before May</td>
+          <td class="py-2 px-3">Anyone</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-2 pr-4">Book all other hotels (Chaka, Dachaidan, Jiayuguan, Qilian)</td>
-          <td class="py-2 pr-4">Before June</td>
-          <td class="py-2">Anyone</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3">Book all other hotels (Chaka, Dachaidan, Jiayuguan, Qilian)</td>
+          <td class="py-2 px-3 whitespace-nowrap">Before June</td>
+          <td class="py-2 px-3">Anyone</td>
         </tr>
         <tr>
-          <td class="py-2 pr-4">Confirm 7-seater rental + luggage solution in Xining</td>
-          <td class="py-2 pr-4">Before June</td>
-          <td class="py-2">Anyone</td>
+          <td class="py-2 px-3">Confirm 7-seater rental + luggage solution in Xining</td>
+          <td class="py-2 px-3 whitespace-nowrap">Before June</td>
+          <td class="py-2 px-3">Anyone</td>
         </tr>
       </tbody>
     </table>
-  </div>
+  </PaperCard>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <!-- Budget Per Person -->
-  <h2 class="text-2xl font-bold mb-4">Budget Per Person</h2>
-  <div class="overflow-x-auto">
+  <h2 class="font-display text-2xl font-bold mb-4">Budget per person</h2>
+  <PaperCard padded={false}>
     <table class="w-full text-sm">
       <thead>
-        <tr class="border-b border-gray-300 dark:border-gray-600">
-          <th class="py-2 pr-4 text-left font-semibold">Item</th>
-          <th class="py-2 text-left font-semibold">Cost (&yen;)</th>
+        <tr class="border-b border-border-dash">
+          <th class="py-2 px-3 text-left font-display font-semibold">Item</th>
+          <th class="py-2 px-3 text-left font-display font-semibold whitespace-nowrap">Cost (¥)</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Chaka Salt Lake entry</td>
-          <td class="py-1.5">~100</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Chaka Salt Lake entry</td>
+          <td class="py-1.5 px-3">~100</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Mogao Caves entry</td>
-          <td class="py-1.5">~238</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Mogao Caves entry</td>
+          <td class="py-1.5 px-3">~238</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Jiayuguan Fort + Overhanging Wall</td>
-          <td class="py-1.5">~120</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Jiayuguan Fort + Overhanging Wall</td>
+          <td class="py-1.5 px-3">~120</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Qicai Danxia entry</td>
-          <td class="py-1.5">~75</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Qicai Danxia entry</td>
+          <td class="py-1.5 px-3">~75</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Mingsha Dunes + Crescent Moon Spring</td>
-          <td class="py-1.5">~110</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Mingsha Dunes + Crescent Moon Spring</td>
+          <td class="py-1.5 px-3">~110</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Camel ride (Mingsha)</td>
-          <td class="py-1.5">~150</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Camel ride (Mingsha)</td>
+          <td class="py-1.5 px-3">~150</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Horseback riding (Qilian)</td>
-          <td class="py-1.5">~120</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Horseback riding (Qilian)</td>
+          <td class="py-1.5 px-3">~120</td>
         </tr>
-        <tr class="border-b-2 border-gray-300 dark:border-gray-600 font-semibold">
-          <td class="py-1.5 pr-4">Tickets + activities total</td>
-          <td class="py-1.5">~&yen;913</td>
+        <tr class="border-b border-border-dash font-semibold">
+          <td class="py-1.5 px-3">Tickets + activities total</td>
+          <td class="py-1.5 px-3">~¥913</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Accommodation (6 nights, budget–midrange)</td>
-          <td class="py-1.5">~&yen;900–1,500</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Accommodation (6 nights, budget–midrange)</td>
+          <td class="py-1.5 px-3">~¥900–1,500</td>
         </tr>
-        <tr class="border-b border-gray-200 dark:border-gray-700">
-          <td class="py-1.5 pr-4">Food (7 days)</td>
-          <td class="py-1.5">~&yen;700–1,000</td>
+        <tr class="border-b border-border-dash">
+          <td class="py-1.5 px-3">Food (7 days)</td>
+          <td class="py-1.5 px-3">~¥700–1,000</td>
         </tr>
         <tr class="font-bold">
-          <td class="py-1.5 pr-4">Full trip estimate</td>
-          <td class="py-1.5">&yen;2,500–3,400/person</td>
+          <td class="py-1.5 px-3">Full trip estimate</td>
+          <td class="py-1.5 px-3">¥2,500–3,400/person</td>
         </tr>
       </tbody>
     </table>
-  </div>
-  <p class="text-sm italic text-gray-500 dark:text-gray-400 mt-2">Car rental and fuel split 7 ways adds approximately &yen;400–600/person depending on vehicle.</p>
+  </PaperCard>
+  <p class="text-sm italic text-muted mt-2">Car rental and fuel split 7 ways adds approximately ¥400–600/person depending on vehicle.</p>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <!-- Key Notes -->
-  <h2 class="text-2xl font-bold mb-4">Key Notes</h2>
-  <ul class="space-y-2 text-[15px]">
-    <li><strong>Fuel:</strong> Fill up completely in Dachaidan before Day 3. No major stations for ~300km.</li>
-    <li><strong>Heat:</strong> Dunhuang Days 3–4 hits 38–42°C. Stay indoors noon–5pm. All outdoor activity before 11am or after 5pm.</li>
-    <li><strong>Altitude:</strong> Qinghai Lake and Chaka are at ~3,200m. Some may feel mild breathlessness — normal. Take it easy on Day 1.</li>
-    <li><strong>Qilian morning cold:</strong> Bring one warm layer. 2,800m at 8am in July is ~10°C.</li>
-    <li><strong>Menyuan flowers:</strong> Rapeseed peak is mid-to-late July — timing is excellent.</li>
-    <li><strong>Mogao photography:</strong> No cameras or phones inside the caves. Strictly enforced.</li>
-  </ul>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Optional Destinations -->
-  <h2 class="text-2xl font-bold mb-4">Optional Destinations</h2>
-  <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">These places are near the route but not in the main plan. Add them if you have flexibility or want to extend specific days.</p>
-
+  <h2 class="font-display text-2xl font-bold mb-2">Optional swaps & add-ons</h2>
+  <p class="text-sm text-muted mb-4">Near the route but not in the main plan. Slot them in if energy/time/flexibility allow.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">
-          <a href={`${base}northwest/taer-monastery`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Ta'er Monastery 塔尔寺</a>
-          <a href="https://www.google.com/search?q=Ta%27er+Monastery+塔尔寺+Xining&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">
+          <a href={`${base}northwest/taer-monastery`} class="no-underline text-inherit hover:text-vermillion-soft">Ta'er Monastery <span class="font-zh font-normal text-[13px] text-ink-soft">塔尔寺</span></a>
         </span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">2–3 hrs</span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">2–3 hrs</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Near Xining</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">26km from Xining. Visit the morning of Day 1 before departure, or as a pre-trip standalone activity.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">
-          <a href={`${base}northwest/yardang`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Yardang Geopark 雅丹魔鬼城</a>
-          <a href="https://www.google.com/search?q=Yardang+Geopark+雅丹魔鬼城+Dunhuang&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      <div class="text-[12px] text-muted mb-1">Near Xining</div>
+      <div class="text-[13px] text-ink-soft">26km from Xining. Visit the morning of Day 1 before departure, or as a pre-trip standalone activity.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">
+          <a href={`${base}northwest/yardang`} class="no-underline text-inherit hover:text-vermillion-soft">Yardang Geopark <span class="font-zh font-normal text-[13px] text-ink-soft">雅丹魔鬼城</span></a>
         </span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">Half day</span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">Half day</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Near Dunhuang</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">180km west of Dunhuang. Best at sunset. Requires an early start on Day 4 or a 3rd night in Dunhuang.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">
-          <a href={`${base}northwest/zhangye-dafo`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Giant Buddha Temple 大佛寺</a>
-          <a href="https://www.google.com/search?q=Zhangye+Giant+Buddha+Temple+大佛寺&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      <div class="text-[12px] text-muted mb-1">Near Dunhuang</div>
+      <div class="text-[13px] text-ink-soft">180km west of Dunhuang. Best at sunset. Requires an early start on Day 4 or a 3rd night in Dunhuang.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">
+          <a href={`${base}northwest/zhangye-dafo`} class="no-underline text-inherit hover:text-vermillion-soft">Giant Buddha Temple <span class="font-zh font-normal text-[13px] text-ink-soft">大佛寺</span></a>
         </span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">30 min</span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">30 min</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">In Zhangye · Day 6 lunch stop</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">Right in Zhangye city. Tack on during the Day 6 lunch break — zero extra driving.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">
-          <a href={`${base}northwest/shandan-horse-farm`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Shandan Horse Farm 山丹军马场</a>
-          <a href="https://www.google.com/search?q=Shandan+Horse+Farm+山丹军马场&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      <div class="text-[12px] text-muted mb-1">In Zhangye · Day 6 lunch stop</div>
+      <div class="text-[13px] text-ink-soft">Right in Zhangye city. Tack on during the Day 6 lunch break — zero extra driving.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">
+          <a href={`${base}northwest/shandan-horse-farm`} class="no-underline text-inherit hover:text-vermillion-soft">Shandan Horse Farm <span class="font-zh font-normal text-[13px] text-ink-soft">山丹军马场</span></a>
         </span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">45 min</span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">45 min</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Day 6 route · Zhangye &rarr; Qilian</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">On the road between Zhangye and Qilian. Stop to see free-roaming horses in the open grassland.</div>
-    </div>
-
-    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 border-l-gray-400 hover:shadow-md transition-shadow">
-      <div class="flex justify-between items-center mb-1.5">
-        <span class="font-bold text-[15px]">
-          <a href={`${base}northwest/zhuoer-mountain`} class="text-inherit hover:text-blue-700 dark:hover:text-blue-400 no-underline">Zhuoer Mountain 卓尔山</a>
-          <a href="https://www.google.com/search?q=Zhuoer+Mountain+卓尔山+Qilian&tbm=isch" target="_blank" class="no-underline text-[11px] ml-0.5" title="Search images">&#128444;</a>
+      <div class="text-[12px] text-muted mb-1">Day 6 route · Zhangye → Qilian</div>
+      <div class="text-[13px] text-ink-soft">On the road between Zhangye and Qilian. Stop to see free-roaming horses in the open grassland.</div>
+    </PaperCard>
+    <PaperCard>
+      <div class="flex items-baseline justify-between gap-2 mb-1">
+        <span class="font-display font-semibold text-[15px]">
+          <a href={`${base}northwest/zhuoer-mountain`} class="no-underline text-inherit hover:text-vermillion-soft">Zhuoer Mountain <span class="font-zh font-normal text-[13px] text-ink-soft">卓尔山</span></a>
         </span>
-        <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full">2 hrs</span>
+        <span class="font-mono text-[10px] uppercase tracking-[.14em] text-muted whitespace-nowrap">2 hrs</span>
       </div>
-      <div class="text-xs text-gray-400 mb-1.5">Near Qilian town</div>
-      <div class="text-[13px] text-gray-600 dark:text-gray-300">Adjacent to Qilian town with a cable car. Add on Day 6 evening or Day 7 morning before horseback riding.</div>
-    </div>
+      <div class="text-[12px] text-muted mb-1">Near Qilian town</div>
+      <div class="text-[13px] text-ink-soft">Adjacent to Qilian town with a cable car. Add on Day 6 evening or Day 7 morning before horseback riding.</div>
+    </PaperCard>
   </div>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  <hr class="my-8 dashed-divider" />
 
-  <!-- Onward -->
-  <h2 class="text-2xl font-bold mb-2">Onward</h2>
+  <h2 class="font-display text-2xl font-bold mb-4">Practical notes</h2>
+  <PaperCard padded={false}>
+    <table class="w-full text-sm">
+      <tbody>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top w-40">Fuel</td>
+          <td class="py-2 px-3">Fill up completely in Dachaidan before Day 3. No major stations for ~300km.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Heat</td>
+          <td class="py-2 px-3">Dunhuang Days 3–4 hits 38–42°C. Stay indoors noon–5pm. All outdoor activity before 11am or after 5pm.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Altitude</td>
+          <td class="py-2 px-3">Qinghai Lake and Chaka are at ~3,200m. Some may feel mild breathlessness — normal. Take it easy on Day 1.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Qilian morning cold</td>
+          <td class="py-2 px-3">Bring one warm layer. 2,800m at 8am in July is ~10°C.</td>
+        </tr>
+        <tr class="border-b border-border-dash">
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Menyuan flowers</td>
+          <td class="py-2 px-3">Rapeseed peak is mid-to-late July — timing is excellent.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-display font-semibold whitespace-nowrap align-top">Mogao photography</td>
+          <td class="py-2 px-3">No cameras or phones inside the caves. Strictly enforced.</td>
+        </tr>
+      </tbody>
+    </table>
+  </PaperCard>
+
+  <hr class="my-8 dashed-divider" />
+
+  <h2 class="font-display text-2xl font-bold mb-2">Onward</h2>
   <p class="text-[15px]">
-    <strong>July 24 evening</strong> &rarr; Fly Xining to Chengdu (~2h)
+    <strong>July 24 evening</strong> → Fly Xining to Chengdu (~2h)
   </p>
-  <p class="text-sm mt-2 space-x-2">
-    <a href={`${base}trips/xian`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Phase 2 · Xi'an</a>
-    <span>&middot;</span>
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
+  <p class="text-sm mt-3 space-x-2">
+    <a href={`${base}trips/xian`} class="text-vermillion-soft hover:underline">← Phase 2 · Xi'an</a>
+    <span class="text-muted">·</span>
+    <a href={base} class="text-vermillion-soft hover:underline">Full trip overview</a>
   </p>
 </Base>

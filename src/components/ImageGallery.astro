@@ -2,17 +2,22 @@
 interface Props {
   images: Array<{ src: string; alt: string }>;
 }
-
 const { images } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const rotates = [-1.5, 0.8, -0.6, 1.2, -0.4, 0.9];
 ---
-
 {images.length === 1 ? (
-  <img src={`${base}${images[0].src}`} alt={images[0].alt} class="w-full rounded-xl my-4 shadow-sm" loading="lazy" />
+  <figure class="my-4 inline-block bg-paper-card p-2 paper-card-shadow border border-border max-w-full">
+    <img src={`${base}${images[0].src}`} alt={images[0].alt} class="w-full block" loading="lazy" />
+    {images[0].alt && <figcaption class="font-hand text-[15px] text-ink-soft mt-1 px-1">{images[0].alt}</figcaption>}
+  </figure>
 ) : (
   <div class={`grid gap-3 my-4 ${images.length === 2 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'}`}>
-    {images.map((img) => (
-      <img src={`${base}${img.src}`} alt={img.alt} class="w-full h-48 object-cover rounded-xl shadow-sm" loading="lazy" />
+    {images.map((img, i) => (
+      <figure class="bg-paper-card p-2 paper-card-shadow border border-border" style={`transform:rotate(${rotates[i % rotates.length]}deg)`}>
+        <img src={`${base}${img.src}`} alt={img.alt} class="w-full h-44 object-cover block" loading="lazy" />
+        {img.alt && <figcaption class="font-hand text-[14px] text-ink-soft mt-1 px-1 truncate">{img.alt}</figcaption>}
+      </figure>
     ))}
   </div>
 )}
