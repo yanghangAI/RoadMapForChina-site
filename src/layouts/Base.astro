@@ -44,7 +44,15 @@ const base = import.meta.env.BASE_URL;
         <a href={`${base}trips/xian`} class="hidden sm:inline text-ink-soft hover:text-ink transition-colors">Xi'an</a>
         <a href={`${base}trips/northwest`} class="hidden sm:inline text-ink-soft hover:text-ink transition-colors">Northwest</a>
         <a href={`${base}map`} class="text-ink-soft hover:text-ink transition-colors">Map</a>
-        <a href={`${base}resources/tips`} class="text-ink-soft hover:text-ink transition-colors">Resources</a>
+        <details class="resources-dropdown relative">
+          <summary class="cursor-pointer text-ink-soft hover:text-ink transition-colors list-none select-none">Resources</summary>
+          <div class="absolute top-8 right-0 bg-paper-card border border-border paper-card-shadow z-50 min-w-[170px] py-2 whitespace-nowrap">
+            <a href={`${base}resources/tips`} class="block px-4 py-1.5 text-sm text-ink-soft hover:text-vermillion-soft hover:bg-paper">💡 Travel tips</a>
+            <a href={`${base}resources/packing-list`} class="block px-4 py-1.5 text-sm text-ink-soft hover:text-vermillion-soft hover:bg-paper">🎒 Packing list</a>
+            <a href={`${base}resources/useful-phrases`} class="block px-4 py-1.5 text-sm text-ink-soft hover:text-vermillion-soft hover:bg-paper">🗣 Useful phrases</a>
+            <a href={`${base}map`} class="block px-4 py-1.5 text-sm text-ink-soft hover:text-vermillion-soft hover:bg-paper">🗺 Route map</a>
+          </div>
+        </details>
       </div>
     </div>
   </nav>

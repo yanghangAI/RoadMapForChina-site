@@ -36,3 +36,7 @@
 .map-dropdown .map-links a:hover { color: var(--color-vermillion-soft); }
 
 .day-card-flash { box-shadow: 0 0 0 3px var(--color-vermillion); transition: box-shadow .25s; }
+
+/* Hide the default disclosure triangle on the resources nav dropdown */
+.resources-dropdown summary::-webkit-details-marker { display: none; }
+.resources-dropdown summary::marker { content: ''; }
