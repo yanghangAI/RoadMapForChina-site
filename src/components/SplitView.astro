@@ -11,22 +11,20 @@ const stateKey = `splitview:${phaseKey}`;
   data-state-key={stateKey}
 >
   <div class="split-map-wrap sticky top-14 z-20 lg:top-16 lg:self-start lg:max-h-[calc(100vh-5rem)] bg-paper">
-    <div class="split-map relative h-[34vh] lg:h-[calc(100vh-5rem-2.25rem)]">
-      <div class="absolute inset-0">
+    <div class="split-map relative h-[34vh] lg:h-[calc(100vh-5rem)]">
+      <div class="map-slot absolute inset-0">
         <slot name="map" />
       </div>
     </div>
 
-    <div class="split-toolbar flex items-center justify-between text-[11px] uppercase tracking-[.14em] font-mono text-muted py-2 px-2 bg-paper border-t border-dashed border-border-dash">
-      <span class="font-hand text-[15px] text-ink normal-case tracking-normal">days ~</span>
-      <div class="flex gap-1">
-        <button type="button" class="map-shrink w-7 h-7 grid place-items-center border border-border bg-paper-card hover:bg-paper transition-colors text-ink leading-none" aria-label="Smaller map">
-          <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 4 L6 8 L10 4 Z"/></svg>
-        </button>
-        <button type="button" class="map-grow w-7 h-7 grid place-items-center border border-border bg-paper-card hover:bg-paper transition-colors text-ink leading-none" aria-label="Bigger map">
-          <svg viewBox="0 0 12 12" width="10" height="10" fill="currentColor"><path d="M2 8 L6 4 L10 8 Z"/></svg>
-        </button>
-      </div>
+    <!-- Floating size cycler — lives inside the map's top-right corner -->
+    <div class="map-cycler absolute top-2 right-2 z-[1100] flex flex-col gap-1">
+      <button type="button" class="map-shrink w-8 h-8 grid place-items-center bg-paper-card/95 border border-border paper-card-shadow hover:bg-paper transition-colors text-ink" aria-label="Smaller map">
+        <svg viewBox="0 0 12 12" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M2 8 L6 4 L10 8 Z"/></svg>
+      </button>
+      <button type="button" class="map-grow w-8 h-8 grid place-items-center bg-paper-card/95 border border-border paper-card-shadow hover:bg-paper transition-colors text-ink" aria-label="Bigger map">
+        <svg viewBox="0 0 12 12" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M2 4 L6 8 L10 4 Z"/></svg>
+      </button>
     </div>
   </div>
 
@@ -36,17 +34,21 @@ const stateKey = `splitview:${phaseKey}`;
 </div>
 
 <style>
-  /* Map hidden: collapse the map area, only the grow arrow is offered */
-  .split-view.map-hidden .split-map { display: none; }
-  .split-view.map-hidden .split-toolbar .map-shrink { visibility: hidden; }
+  /* Map hidden: collapse the map area to a thin paper strip; cycler still visible */
+  .split-view.map-hidden .split-map {
+    height: 40px;
+    border-bottom: 1px dashed var(--color-border-dash);
+  }
+  .split-view.map-hidden .split-map .map-slot { display: none; }
+  .split-view.map-hidden .map-shrink { display: none; }
 
-  /* List hidden: list collapses, map fills the viewport, only shrink arrow offered */
+  /* List hidden: list collapses, map fills the viewport, only shrink is offered */
   .split-view.list-hidden .split-list { display: none; }
-  .split-view.list-hidden .split-map { height: calc(100vh - 5rem - 2.25rem); }
-  .split-view.list-hidden .split-toolbar .map-grow { visibility: hidden; }
+  .split-view.list-hidden .split-map { height: calc(100vh - 5rem); }
+  .split-view.list-hidden .map-grow { display: none; }
 
-  /* Day cards keep clear of the sticky map+toolbar when the page jumps to them */
-  .split-view .day-card { scroll-margin-top: calc(3.5rem + 34vh + 2.5rem); }
+  /* Day cards keep clear of the sticky map when the page jumps to them */
+  .split-view .day-card { scroll-margin-top: calc(3.5rem + 34vh + 1rem); }
   @media (min-width: 1024px) {
     .split-view .day-card { scroll-margin-top: 5rem; }
   }
@@ -67,14 +69,15 @@ const stateKey = `splitview:${phaseKey}`;
       window.dispatchEvent(new Event('resize'));
     }
 
-    // Map size cycle: hide ← normal → full
+    // ▲ shrink: full → normal → hide
     function shrink() {
-      if (view.classList.contains('list-hidden')) setState(null);          // full → normal
-      else if (!view.classList.contains('map-hidden')) setState('map-hidden'); // normal → hide
+      if (view.classList.contains('list-hidden')) setState(null);
+      else if (!view.classList.contains('map-hidden')) setState('map-hidden');
     }
+    // ▼ grow: hide → normal → full
     function grow() {
-      if (view.classList.contains('map-hidden')) setState(null);            // hide → normal
-      else if (!view.classList.contains('list-hidden')) setState('list-hidden'); // normal → full
+      if (view.classList.contains('map-hidden')) setState(null);
+      else if (!view.classList.contains('list-hidden')) setState('list-hidden');
     }
 
     view.querySelector('.map-shrink')?.addEventListener('click', shrink);
