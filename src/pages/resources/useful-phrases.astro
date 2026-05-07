@@ -1,304 +1,175 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PhraseCard from '../../components/PhraseCard.astro';
+import Stamp from '../../components/primitives/Stamp.astro';
 
 const base = import.meta.env.BASE_URL;
+
+const sections = [
+  {
+    label: 'essentials ~',
+    items: [
+      { intent: 'thank you', zh: '谢谢', pinyin: 'Xiè xiè', en: 'Thank you', it: 'Grazie' },
+      { intent: 'hello', zh: '你好', pinyin: 'Nǐ hǎo', en: 'Hello', it: 'Ciao / Salve' },
+      { intent: 'excuse me / sorry', zh: '不好意思', pinyin: 'Bù hǎo yì si', en: 'Excuse me / Sorry', it: 'Mi scusi' },
+      { intent: 'yes / correct', zh: '对', pinyin: 'Duì', en: 'Yes / Correct', it: 'Sì / Esatto' },
+      { intent: 'no / not right', zh: '不对', pinyin: 'Bù duì', en: 'No / Not right', it: 'No / Non è giusto' },
+      { intent: "i don't get it", zh: '我听不懂', pinyin: 'Wǒ tīng bù dǒng', en: "I don't understand", it: 'Non capisco' },
+      { intent: 'do you speak english?', zh: '你会说英语吗？', pinyin: 'Nǐ huì shuō Yīngyǔ ma?', en: 'Do you speak English?', it: 'Parla inglese?' },
+      { intent: 'please speak slowly', zh: '请说慢一点', pinyin: 'Qǐng shuō màn yīdiǎn', en: 'Please speak slowly', it: 'Per favore, parli più lentamente' },
+    ],
+  },
+  {
+    label: 'at the hotel ~',
+    items: [
+      { intent: 'i have a reservation', zh: '我有预订', pinyin: 'Wǒ yǒu yùdìng', en: 'I have a reservation', it: 'Ho una prenotazione' },
+      { intent: 'my passport', zh: '我的护照', pinyin: 'Wǒ de hùzhào', en: 'My passport', it: 'Il mio passaporto' },
+      { intent: 'where is the room?', zh: '房间在哪里？', pinyin: 'Fángjiān zài nǎlǐ?', en: 'Where is the room?', it: "Dov'è la camera?" },
+      { intent: "no hot water", zh: '热水没有', pinyin: 'Rè shuǐ méiyǒu', en: "Hot water doesn't work", it: "Non c'è acqua calda" },
+      { intent: 'wifi password?', zh: 'WiFi密码是什么？', pinyin: 'WiFi mìmǎ shì shénme?', en: 'WiFi password?', it: "Qual è la password del WiFi?" },
+    ],
+  },
+  {
+    label: 'ordering food ~',
+    items: [
+      { intent: 'one of these (point)', zh: '这个一份', pinyin: 'Zhège yī fèn', en: 'One portion of this (point at menu)', it: 'Una porzione di questo (indicando)' },
+      { intent: 'delicious', zh: '很好吃', pinyin: 'Hěn hǎo chī', en: 'This is delicious', it: 'È buonissimo' },
+      { intent: 'too spicy', zh: '太辣了', pinyin: 'Tài là le', en: 'Too spicy', it: 'Troppo piccante' },
+      { intent: 'no coriander', zh: '不要香菜', pinyin: 'Bù yào xiāngcài', en: 'No coriander (cilantro)', it: 'Senza coriandolo' },
+      { intent: 'water / cold water', zh: '水 / 凉水', pinyin: 'Shuǐ / Liáng shuǐ', en: 'Water / Cold water', it: 'Acqua / Acqua fredda' },
+      { intent: 'beer', zh: '啤酒', pinyin: 'Píjiǔ', en: 'Beer', it: 'Birra' },
+      { intent: 'the bill please', zh: '买单', pinyin: 'Mǎi dān', en: 'The bill please', it: 'Il conto, per favore' },
+      { intent: 'how much?', zh: '多少钱？', pinyin: 'Duōshǎo qián?', en: 'How much?', it: 'Quanto costa?' },
+    ],
+  },
+  {
+    label: 'at scenic areas ~',
+    items: [
+      { intent: 'where is the toilet?', zh: '厕所在哪里？', pinyin: 'Cèsuǒ zài nǎlǐ?', en: 'Where is the toilet?', it: "Dov'è il bagno?" },
+      { intent: 'can i take a photo?', zh: '可以拍照吗？', pinyin: 'Kěyǐ pāizhào ma?', en: 'Can I take a photo?', it: 'Posso fare una foto?' },
+      { intent: 'how far is it?', zh: '还有多远？', pinyin: 'Hái yǒu duō yuǎn?', en: 'How far is it?', it: "Quanto manca?" },
+      { intent: 'is this the right way?', zh: '去...是这条路吗？', pinyin: 'Qù... shì zhè tiáo lù ma?', en: 'Is this the right way to...?', it: 'È questa la strada giusta per...?' },
+      { intent: 'ticket office', zh: '售票处', pinyin: 'Shòupiào chù', en: 'Ticket office', it: 'Biglietteria' },
+    ],
+  },
+  {
+    label: 'emergency ~',
+    items: [
+      { intent: 'call an ambulance', zh: '叫救护车', pinyin: 'Jiào jiùhù chē', en: 'Call an ambulance', it: "Chiamate un'ambulanza" },
+      { intent: 'i need a doctor', zh: '我需要医生', pinyin: 'Wǒ xūyào yīshēng', en: 'I need a doctor', it: 'Ho bisogno di un medico' },
+      { intent: 'police', zh: '警察', pinyin: 'Jǐngchá', en: 'Police', it: 'Polizia' },
+      { intent: 'hospital', zh: '医院', pinyin: 'Yīyuàn', en: 'Hospital', it: 'Ospedale' },
+      { intent: 'i am allergic to...', zh: '我对...过敏', pinyin: 'Wǒ duì... guòmǐn', en: 'I am allergic to...', it: 'Sono allergico a...' },
+      { intent: 'emergency numbers', zh: '120 / 110', pinyin: '120 (ambulance) · 110 (police)', en: 'Emergency numbers — 120 ambulance, 110 police', it: 'Numeri di emergenza — 120 ambulanza, 110 polizia' },
+    ],
+  },
+  {
+    label: 'transport & navigation ~',
+    items: [
+      { intent: 'train station', zh: '火车站', pinyin: 'Huǒchē zhàn', en: 'Train station', it: 'Stazione ferroviaria' },
+      { intent: 'where is the platform?', zh: '站台在哪里？', pinyin: 'Zhàntái zài nǎlǐ?', en: 'Where is the platform?', it: "Dov'è il binario?" },
+      { intent: "xi'an north station", zh: '西安北站', pinyin: "Xī'ān Běi zhàn", en: "Xi'an North Station", it: "Stazione Xi'an Nord" },
+      { intent: 'i want to go to...', zh: '我要去...', pinyin: 'Wǒ yào qù...', en: 'I want to go to...', it: 'Vorrei andare a...' },
+      { intent: 'call a taxi (didi)', zh: '叫车', pinyin: 'Jiào chē', en: 'Call a taxi (Didi)', it: 'Chiamare un taxi (Didi)' },
+      { intent: 'stop here please', zh: '在这里停', pinyin: 'Zài zhèlǐ tíng', en: 'Stop here please', it: 'Si fermi qui, per favore' },
+      { intent: 'how long does it take?', zh: '要多长时间？', pinyin: 'Yào duō cháng shíjiān?', en: 'How long does it take?', it: 'Quanto tempo ci vuole?' },
+      { intent: 'left / right / straight', zh: '左 / 右 / 直走', pinyin: 'Zuǒ / Yòu / Zhí zǒu', en: 'Left / Right / Straight', it: 'Sinistra / Destra / Dritto' },
+    ],
+  },
+  {
+    label: 'shopping & bargaining ~',
+    items: [
+      { intent: 'too expensive', zh: '太贵了', pinyin: 'Tài guì le', en: 'Too expensive', it: 'Troppo caro' },
+      { intent: 'can it be cheaper?', zh: '可以便宜一点吗？', pinyin: 'Kěyǐ piányi yīdiǎn ma?', en: 'Can it be cheaper?', it: 'Può farmi un piccolo sconto?' },
+      { intent: "i don't want it", zh: '我不要', pinyin: 'Wǒ bù yào', en: "I don't want it", it: 'Non lo voglio' },
+      { intent: "i'll take this one", zh: '我要这个', pinyin: 'Wǒ yào zhège', en: "I'll take this one", it: 'Prendo questo' },
+      { intent: 'pay with wechat?', zh: '可以微信支付吗？', pinyin: 'Kěyǐ Wēixìn zhīfù ma?', en: 'Can I pay with WeChat?', it: 'Posso pagare con WeChat?' },
+      { intent: 'cash', zh: '现金', pinyin: 'Xiànjīn', en: 'Cash', it: 'Contanti' },
+    ],
+  },
+  {
+    label: 'numbers ~',
+    items: [
+      { intent: 'one', zh: '一', pinyin: 'yī', en: '1', it: 'Uno' },
+      { intent: 'two', zh: '二 / 两', pinyin: 'èr / liǎng', en: '2', it: 'Due' },
+      { intent: 'five', zh: '五', pinyin: 'wǔ', en: '5', it: 'Cinque' },
+      { intent: 'ten', zh: '十', pinyin: 'shí', en: '10', it: 'Dieci' },
+      { intent: 'one hundred', zh: '一百', pinyin: 'yī bǎi', en: '100', it: 'Cento' },
+      { intent: 'eight people', zh: '八个人', pinyin: 'bā gè rén', en: 'How many people: 8', it: 'Otto persone' },
+    ],
+  },
+  {
+    label: 'beijing food ~',
+    items: [
+      { intent: 'peking duck', zh: '北京烤鸭', pinyin: 'Běijīng kǎoyā', en: 'Peking roast duck — the iconic Beijing dish', it: 'Anatra alla pechinese — il piatto simbolo di Pechino' },
+      { intent: 'hotpot', zh: '火锅', pinyin: 'Huǒguō', en: 'Hotpot — cook raw ingredients in boiling broth at the table', it: 'Hotpot — si cuociono gli ingredienti crudi nel brodo bollente al tavolo' },
+      { intent: 'soybean noodles', zh: '炸酱面', pinyin: 'Zhájiàng miàn', en: 'Noodles with thick soybean paste sauce', it: 'Spaghetti con salsa densa di soia fermentata' },
+      { intent: 'stewed offal', zh: '卤煮', pinyin: 'Lǔzhǔ', en: 'Stewed offal in broth — local street snack, not for everyone', it: 'Frattaglie stufate in brodo — street food locale, non per tutti' },
+      { intent: 'fermented bean drink', zh: '豆汁', pinyin: 'Dòuzhī', en: 'Fermented mung bean drink — an acquired taste', it: 'Bevanda fermentata di soia verde — gusto difficile' },
+    ],
+  },
+  {
+    label: "xi'an food ~",
+    items: [
+      { intent: 'meat in flatbread', zh: '肉夹馍', pinyin: 'Ròu jiā mó', en: 'Minced meat in crispy flatbread — "Chinese hamburger"', it: 'Carne tritata in pane piatto croccante — "hamburger cinese"' },
+      { intent: 'lamb soup with bread', zh: '羊肉泡馍', pinyin: 'Yángròu pàomó', en: "Crumbled flatbread soaked in rich lamb broth — Xi'an's signature", it: "Pane sbriciolato in brodo ricco di agnello — il piatto simbolo di Xi'an" },
+      { intent: 'spicy pepper soup', zh: '胡辣汤', pinyin: 'Húlàtāng', en: 'Spicy pepper soup — the local breakfast combo with ròujiāmó', it: 'Zuppa speziata al pepe — colazione locale, in coppia con ròujiāmó' },
+      { intent: 'cold wheat noodles', zh: '凉皮', pinyin: 'Liáng pí', en: 'Cold wheat noodles with chili oil — essential summer food', it: 'Spaghetti freddi di grano con olio al peperoncino — essenziale in estate' },
+      { intent: 'pomegranate juice', zh: '石榴汁', pinyin: 'Shíliú zhī', en: 'Fresh pomegranate juice — pressed at stalls in the Muslim Quarter', it: 'Succo di melagrana fresco — spremuto nei banchi del Quartiere Musulmano' },
+      { intent: 'mini rice cakes', zh: '镜糕', pinyin: 'Jìnggāo', en: 'Mini steamed rice cakes with various toppings', it: 'Mini tortine di riso al vapore con vari condimenti' },
+      { intent: 'cumin lamb skewers', zh: '烤羊肉串', pinyin: 'Kǎo yángròu chuàn', en: 'Cumin lamb skewers — grilled over charcoal in the Muslim Quarter', it: 'Spiedini di agnello al cumino — alla griglia nel Quartiere Musulmano' },
+      { intent: 'sour plum drink', zh: '酸梅汤', pinyin: 'Suānméi tāng', en: 'Sour plum drink — refreshing in summer heat', it: "Bevanda di prugne acide — dissetante con il caldo estivo" },
+    ],
+  },
+  {
+    label: 'northwest road trip food ~',
+    items: [
+      { intent: 'pulled noodles', zh: '拉条子', pinyin: 'Lā tiáo zi', en: 'Hand-pulled noodles with lamb sauce — Dunhuang staple', it: 'Spaghetti tirati a mano con sugo di agnello — piatto base di Dunhuang' },
+      { intent: 'hand-grabbed lamb', zh: '手抓羊肉', pinyin: 'Shǒu zhuā yángròu', en: 'Hand-grabbed lamb, boiled, eaten with hands', it: "Agnello bollito, mangiato con le mani" },
+      { intent: 'yogurt', zh: '酸奶', pinyin: 'Suānnǎi', en: 'Yogurt — local Tibetan-style in Qilian is excellent', it: 'Yogurt — quello tibetano di Qilian è ottimo' },
+      { intent: 'lamb hotpot', zh: '涮羊肉', pinyin: 'Shuàn yángròu', en: 'Lamb hotpot', it: 'Hotpot di agnello' },
+      { intent: 'baked flatbread', zh: '烤馕', pinyin: 'Kǎo náng', en: 'Baked flatbread — Silk Road staple', it: 'Pane piatto cotto al forno — alimento base della Via della Seta' },
+      { intent: 'hami melon', zh: '哈密瓜', pinyin: 'Hāmì guā', en: 'Hami melon — sweet, from Xinjiang, sold everywhere', it: "Melone Hami — dolce, dello Xinjiang, venduto ovunque" },
+      { intent: 'yak yogurt', zh: '牦牛酸奶', pinyin: 'Máoniú suānnǎi', en: 'Yak yogurt — thick, tangy, found in Qinghai', it: 'Yogurt di yak — denso, intenso, si trova nel Qinghai' },
+      { intent: 'barley wine', zh: '青稞酒', pinyin: 'Qīngkē jiǔ', en: 'Highland barley wine — local Tibetan alcohol, strong', it: "Liquore d'orzo d'altura — alcolico tibetano, forte" },
+    ],
+  },
+];
 ---
+<Base title="Useful phrases · 中文 / English / Italiano">
+  <div class="mb-4"><a href={base} class="text-sm text-muted hover:text-vermillion-soft">← Full trip overview</a></div>
 
-<Base title="Useful Chinese Phrases · For Italian First-Timers">
-  <h1 class="text-3xl font-bold mb-2">Useful Chinese Phrases · For Italian First-Timers</h1>
-  <p class="text-gray-600 dark:text-gray-400 mb-2">
-    Pronunciation guide: <strong>ǐ</strong> = short "ee", <strong>ü</strong> = like French "u", <strong>zh</strong> = like "j" in "judge", <strong>x</strong> = like "sh" but softer, <strong>q</strong> = like "ch" but lighter, <strong>c</strong> = like "ts"
-  </p>
-  <p class="text-gray-600 dark:text-gray-400 mb-2">
-    The 3 Chinese members will handle most communication. These phrases are for when you're separated, ordering food independently, or just want to connect with locals.
-  </p>
-  <p class="text-gray-600 dark:text-gray-400 mb-6">
-    Click <button class="sp" onclick="speak('你好')">🔊</button> to hear the pronunciation.
-  </p>
+  <header class="relative">
+    <Stamp rotate={-3}>survival kit</Stamp>
+    <h1 class="font-display italic font-semibold text-[36px] leading-none mt-2">Useful phrases</h1>
+    <p class="font-mono uppercase text-[10px] tracking-[.14em] text-muted mt-1">中文 · ENGLISH · ITALIANO</p>
+    <p class="mt-3 max-w-prose text-[14px] text-ink-soft">
+      The Chinese members handle most communication. These are for when you're separated, ordering food alone, or just want to connect with locals. Tap ▶ to hear pronunciation.
+    </p>
+  </header>
 
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
+  {sections.map(s => (
+    <section class="mt-8">
+      <span class="font-hand text-[20px] text-vermillion-soft inline-block -rotate-1">{s.label}</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+        {s.items.map(p => <PhraseCard {...p} />)}
+      </div>
+    </section>
+  ))}
 
-  <!-- Essentials -->
-  <h2 class="text-2xl font-bold mb-4">Essentials</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Sounds like</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Thank you</td><td class="p-3">谢谢 <button class="sp" onclick="speak('谢谢')">🔊</button></td><td class="p-3">Xiè xiè</td><td class="p-3">"Shyeh shyeh"</td></tr>
-        <tr><td class="p-3">Hello</td><td class="p-3">你好 <button class="sp" onclick="speak('你好')">🔊</button></td><td class="p-3">Nǐ hǎo</td><td class="p-3">"Nee how"</td></tr>
-        <tr><td class="p-3">Excuse me / Sorry</td><td class="p-3">不好意思 <button class="sp" onclick="speak('不好意思')">🔊</button></td><td class="p-3">Bù hǎo yì si</td><td class="p-3">"Boo how ee suh"</td></tr>
-        <tr><td class="p-3">Yes / Correct</td><td class="p-3">对 <button class="sp" onclick="speak('对')">🔊</button></td><td class="p-3">Duì</td><td class="p-3">"Dway"</td></tr>
-        <tr><td class="p-3">No / Not right</td><td class="p-3">不对 <button class="sp" onclick="speak('不对')">🔊</button></td><td class="p-3">Bù duì</td><td class="p-3">"Boo dway"</td></tr>
-        <tr><td class="p-3">I don't understand</td><td class="p-3">我听不懂 <button class="sp" onclick="speak('我听不懂')">🔊</button></td><td class="p-3">Wǒ tīng bù dǒng</td><td class="p-3">"Woh ting boo dong"</td></tr>
-        <tr><td class="p-3">Do you speak English?</td><td class="p-3">你会说英语吗？ <button class="sp" onclick="speak('你会说英语吗')">🔊</button></td><td class="p-3">Nǐ huì shuō Yīngyǔ ma?</td><td class="p-3">"Nee hway shwoh Ying-yü ma"</td></tr>
-        <tr><td class="p-3">Please speak slowly</td><td class="p-3">请说慢一点 <button class="sp" onclick="speak('请说慢一点')">🔊</button></td><td class="p-3">Qǐng shuō màn yīdiǎn</td><td class="p-3">"Ching shwoh man ee-dyen"</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- At the Hotel -->
-  <h2 class="text-2xl font-bold mb-4">At the Hotel</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">I have a reservation</td><td class="p-3">我有预订 <button class="sp" onclick="speak('我有预订')">🔊</button></td><td class="p-3">Wǒ yǒu yùdìng</td></tr>
-        <tr><td class="p-3">My passport</td><td class="p-3">我的护照 <button class="sp" onclick="speak('我的护照')">🔊</button></td><td class="p-3">Wǒ de hùzhào</td></tr>
-        <tr><td class="p-3">Where is the room?</td><td class="p-3">房间在哪里？ <button class="sp" onclick="speak('房间在哪里')">🔊</button></td><td class="p-3">Fángjiān zài nǎlǐ?</td></tr>
-        <tr><td class="p-3">Hot water doesn't work</td><td class="p-3">热水没有 <button class="sp" onclick="speak('热水没有')">🔊</button></td><td class="p-3">Rè shuǐ méiyǒu</td></tr>
-        <tr><td class="p-3">WiFi password?</td><td class="p-3">WiFi密码是什么？ <button class="sp" onclick="speak('WiFi密码是什么')">🔊</button></td><td class="p-3">WiFi mìmǎ shì shénme?</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Ordering Food -->
-  <h2 class="text-2xl font-bold mb-4">Ordering Food</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">One portion of this (point at menu)</td><td class="p-3">这个一份 <button class="sp" onclick="speak('这个一份')">🔊</button></td><td class="p-3">Zhège yī fèn</td></tr>
-        <tr><td class="p-3">This is delicious</td><td class="p-3">很好吃 <button class="sp" onclick="speak('很好吃')">🔊</button></td><td class="p-3">Hěn hǎo chī</td></tr>
-        <tr><td class="p-3">Too spicy</td><td class="p-3">太辣了 <button class="sp" onclick="speak('太辣了')">🔊</button></td><td class="p-3">Tài là le</td></tr>
-        <tr><td class="p-3">No coriander (cilantro)</td><td class="p-3">不要香菜 <button class="sp" onclick="speak('不要香菜')">🔊</button></td><td class="p-3">Bù yào xiāngcài</td></tr>
-        <tr><td class="p-3">Water / Cold water</td><td class="p-3">水 / 凉水 <button class="sp" onclick="speak('凉水')">🔊</button></td><td class="p-3">Shuǐ / Liáng shuǐ</td></tr>
-        <tr><td class="p-3">Beer</td><td class="p-3">啤酒 <button class="sp" onclick="speak('啤酒')">🔊</button></td><td class="p-3">Píjiǔ</td></tr>
-        <tr><td class="p-3">The bill please</td><td class="p-3">买单 <button class="sp" onclick="speak('买单')">🔊</button></td><td class="p-3">Mǎi dān</td></tr>
-        <tr><td class="p-3">How much?</td><td class="p-3">多少钱？ <button class="sp" onclick="speak('多少钱')">🔊</button></td><td class="p-3">Duōshǎo qián?</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- At Scenic Areas -->
-  <h2 class="text-2xl font-bold mb-4">At Scenic Areas</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Where is the toilet?</td><td class="p-3">厕所在哪里？ <button class="sp" onclick="speak('厕所在哪里')">🔊</button></td><td class="p-3">Cèsuǒ zài nǎlǐ?</td></tr>
-        <tr><td class="p-3">Can I take a photo?</td><td class="p-3">可以拍照吗？ <button class="sp" onclick="speak('可以拍照吗')">🔊</button></td><td class="p-3">Kěyǐ pāizhào ma?</td></tr>
-        <tr><td class="p-3">How far is it?</td><td class="p-3">还有多远？ <button class="sp" onclick="speak('还有多远')">🔊</button></td><td class="p-3">Hái yǒu duō yuǎn?</td></tr>
-        <tr><td class="p-3">Is this the right way to...?</td><td class="p-3">去...是这条路吗？ <button class="sp" onclick="speak('去这里是这条路吗')">🔊</button></td><td class="p-3">Qù... shì zhè tiáo lù ma?</td></tr>
-        <tr><td class="p-3">Ticket office</td><td class="p-3">售票处 <button class="sp" onclick="speak('售票处')">🔊</button></td><td class="p-3">Shòupiào chù</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Emergency -->
-  <h2 class="text-2xl font-bold mb-4">Emergency</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Call an ambulance</td><td class="p-3">叫救护车 <button class="sp" onclick="speak('叫救护车')">🔊</button></td><td class="p-3">Jiào jiùhù chē</td></tr>
-        <tr><td class="p-3">I need a doctor</td><td class="p-3">我需要医生 <button class="sp" onclick="speak('我需要医生')">🔊</button></td><td class="p-3">Wǒ xūyào yīshēng</td></tr>
-        <tr><td class="p-3">Police</td><td class="p-3">警察 <button class="sp" onclick="speak('警察')">🔊</button></td><td class="p-3">Jǐngchá</td></tr>
-        <tr><td class="p-3">Hospital</td><td class="p-3">医院 <button class="sp" onclick="speak('医院')">🔊</button></td><td class="p-3">Yīyuàn</td></tr>
-        <tr><td class="p-3">I am allergic to...</td><td class="p-3">我对...过敏 <button class="sp" onclick="speak('我对这个过敏')">🔊</button></td><td class="p-3">Wǒ duì... guòmǐn</td></tr>
-        <tr><td class="p-3">Emergency number</td><td class="p-3 font-bold">120 (ambulance) · 110 (police)</td><td class="p-3"></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Transport & Navigation -->
-  <h2 class="text-2xl font-bold mb-4">Transport & Navigation</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Train station</td><td class="p-3">火车站 <button class="sp" onclick="speak('火车站')">🔊</button></td><td class="p-3">Huǒchē zhàn</td></tr>
-        <tr><td class="p-3">Where is the platform?</td><td class="p-3">站台在哪里？ <button class="sp" onclick="speak('站台在哪里')">🔊</button></td><td class="p-3">Zhàntái zài nǎlǐ?</td></tr>
-        <tr><td class="p-3">Xi'an North Station</td><td class="p-3">西安北站 <button class="sp" onclick="speak('西安北站')">🔊</button></td><td class="p-3">Xī'ān Běi zhàn</td></tr>
-        <tr><td class="p-3">I want to go to...</td><td class="p-3">我要去... <button class="sp" onclick="speak('我要去')">🔊</button></td><td class="p-3">Wǒ yào qù...</td></tr>
-        <tr><td class="p-3">Call a taxi (Didi)</td><td class="p-3">叫车 <button class="sp" onclick="speak('叫车')">🔊</button></td><td class="p-3">Jiào chē</td></tr>
-        <tr><td class="p-3">Stop here please</td><td class="p-3">在这里停 <button class="sp" onclick="speak('在这里停')">🔊</button></td><td class="p-3">Zài zhèlǐ tíng</td></tr>
-        <tr><td class="p-3">How long does it take?</td><td class="p-3">要多长时间？ <button class="sp" onclick="speak('要多长时间')">🔊</button></td><td class="p-3">Yào duō cháng shíjiān?</td></tr>
-        <tr><td class="p-3">Left / Right / Straight</td><td class="p-3">左 / 右 / 直走 <button class="sp" onclick="speak('左，右，直走')">🔊</button></td><td class="p-3">Zuǒ / Yòu / Zhí zǒu</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Shopping & Bargaining -->
-  <h2 class="text-2xl font-bold mb-4">Shopping & Bargaining</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Situation</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">Too expensive</td><td class="p-3">太贵了 <button class="sp" onclick="speak('太贵了')">🔊</button></td><td class="p-3">Tài guì le</td></tr>
-        <tr><td class="p-3">Can it be cheaper?</td><td class="p-3">可以便宜一点吗？ <button class="sp" onclick="speak('可以便宜一点吗')">🔊</button></td><td class="p-3">Kěyǐ piányi yīdiǎn ma?</td></tr>
-        <tr><td class="p-3">I don't want it</td><td class="p-3">我不要 <button class="sp" onclick="speak('我不要')">🔊</button></td><td class="p-3">Wǒ bù yào</td></tr>
-        <tr><td class="p-3">I'll take this one</td><td class="p-3">我要这个 <button class="sp" onclick="speak('我要这个')">🔊</button></td><td class="p-3">Wǒ yào zhège</td></tr>
-        <tr><td class="p-3">Can I pay with WeChat?</td><td class="p-3">可以微信支付吗？ <button class="sp" onclick="speak('可以微信支付吗')">🔊</button></td><td class="p-3">Kěyǐ Wēixìn zhīfù ma?</td></tr>
-        <tr><td class="p-3">Cash</td><td class="p-3">现金 <button class="sp" onclick="speak('现金')">🔊</button></td><td class="p-3">Xiànjīn</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Numbers -->
-  <h2 class="text-2xl font-bold mb-4">Numbers (for prices, quantities)</h2>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Number</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Pinyin</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">1</td><td class="p-3">一 <button class="sp" onclick="speak('一')">🔊</button></td><td class="p-3">yī</td></tr>
-        <tr><td class="p-3">2</td><td class="p-3">二 / 两 <button class="sp" onclick="speak('二')">🔊</button></td><td class="p-3">èr / liǎng</td></tr>
-        <tr><td class="p-3">5</td><td class="p-3">五 <button class="sp" onclick="speak('五')">🔊</button></td><td class="p-3">wǔ</td></tr>
-        <tr><td class="p-3">10</td><td class="p-3">十 <button class="sp" onclick="speak('十')">🔊</button></td><td class="p-3">shí</td></tr>
-        <tr><td class="p-3">100</td><td class="p-3">一百 <button class="sp" onclick="speak('一百')">🔊</button></td><td class="p-3">yī bǎi</td></tr>
-        <tr><td class="p-3">How many people: 8</td><td class="p-3">八个人 <button class="sp" onclick="speak('八个人')">🔊</button></td><td class="p-3">bā gè rén</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <hr class="my-6 border-gray-200 dark:border-gray-700" />
-
-  <!-- Food Glossary -->
-  <h2 class="text-2xl font-bold mb-4">Food Glossary for the Route</h2>
-
-  <h3 class="text-xl font-semibold mb-3">Beijing</h3>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">What it is</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">北京烤鸭 <button class="sp" onclick="speak('北京烤鸭')">🔊</button></td><td class="p-3">Běijīng kǎoyā</td><td class="p-3">Peking roast duck — the iconic Beijing dish</td></tr>
-        <tr><td class="p-3">火锅 <button class="sp" onclick="speak('火锅')">🔊</button></td><td class="p-3">Huǒguō</td><td class="p-3">Hotpot — cook raw ingredients in boiling broth at the table</td></tr>
-        <tr><td class="p-3">炸酱面 <button class="sp" onclick="speak('炸酱面')">🔊</button></td><td class="p-3">Zhájiàng miàn</td><td class="p-3">Noodles with thick soybean paste sauce</td></tr>
-        <tr><td class="p-3">卤煮 <button class="sp" onclick="speak('卤煮')">🔊</button></td><td class="p-3">Lǔzhǔ</td><td class="p-3">Stewed offal in broth — local street snack, not for everyone</td></tr>
-        <tr><td class="p-3">豆汁 <button class="sp" onclick="speak('豆汁')">🔊</button></td><td class="p-3">Dòuzhī</td><td class="p-3">Fermented mung bean drink — an acquired taste</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3 class="text-xl font-semibold mb-3">Xi'an</h3>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">What it is</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">肉夹馍 <button class="sp" onclick="speak('肉夹馍')">🔊</button></td><td class="p-3">Ròu jiā mó</td><td class="p-3">Minced meat in crispy flatbread — "Chinese hamburger"</td></tr>
-        <tr><td class="p-3">羊肉泡馍 <button class="sp" onclick="speak('羊肉泡馍')">🔊</button></td><td class="p-3">Yángròu pàomó</td><td class="p-3">Crumbled flatbread soaked in rich lamb broth — Xi'an's signature</td></tr>
-        <tr><td class="p-3">胡辣汤 <button class="sp" onclick="speak('胡辣汤')">🔊</button></td><td class="p-3">Húlàtāng</td><td class="p-3">Spicy pepper soup — the local breakfast combo with ròujiāmó</td></tr>
-        <tr><td class="p-3">凉皮 <button class="sp" onclick="speak('凉皮')">🔊</button></td><td class="p-3">Liáng pí</td><td class="p-3">Cold wheat noodles with chili oil — essential summer food</td></tr>
-        <tr><td class="p-3">石榴汁 <button class="sp" onclick="speak('石榴汁')">🔊</button></td><td class="p-3">Shíliú zhī</td><td class="p-3">Fresh pomegranate juice — pressed at stalls in the Muslim Quarter</td></tr>
-        <tr><td class="p-3">镜糕 <button class="sp" onclick="speak('镜糕')">🔊</button></td><td class="p-3">Jìnggāo</td><td class="p-3">Mini steamed rice cakes with various toppings</td></tr>
-        <tr><td class="p-3">烤羊肉串 <button class="sp" onclick="speak('烤羊肉串')">🔊</button></td><td class="p-3">Kǎo yángròu chuàn</td><td class="p-3">Cumin lamb skewers — grilled over charcoal in the Muslim Quarter</td></tr>
-        <tr><td class="p-3">酸梅汤 <button class="sp" onclick="speak('酸梅汤')">🔊</button></td><td class="p-3">Suānméi tāng</td><td class="p-3">Sour plum drink — refreshing in summer heat</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3 class="text-xl font-semibold mb-3">Northwest Road Trip</h3>
-  <div class="overflow-x-auto mb-6">
-    <table class="w-full text-sm border-collapse">
-      <thead>
-        <tr class="bg-gray-100 dark:bg-gray-800">
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Item</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">Chinese</th>
-          <th class="text-left p-3 font-semibold border-b border-gray-200 dark:border-gray-700">What it is</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-        <tr><td class="p-3">拉条子 <button class="sp" onclick="speak('拉条子')">🔊</button></td><td class="p-3">Lā tiáo zi</td><td class="p-3">Hand-pulled noodles with lamb sauce — Dunhuang staple</td></tr>
-        <tr><td class="p-3">手抓羊肉 <button class="sp" onclick="speak('手抓羊肉')">🔊</button></td><td class="p-3">Shǒu zhuā yángròu</td><td class="p-3">Hand-grabbed lamb, boiled, eaten with hands</td></tr>
-        <tr><td class="p-3">酸奶 <button class="sp" onclick="speak('酸奶')">🔊</button></td><td class="p-3">Suānnǎi</td><td class="p-3">Yogurt — local Tibetan-style in Qilian is excellent</td></tr>
-        <tr><td class="p-3">涮羊肉 <button class="sp" onclick="speak('涮羊肉')">🔊</button></td><td class="p-3">Shuàn yángròu</td><td class="p-3">Lamb hotpot</td></tr>
-        <tr><td class="p-3">烤馕 <button class="sp" onclick="speak('烤馕')">🔊</button></td><td class="p-3">Kǎo náng</td><td class="p-3">Baked flatbread — Silk Road staple</td></tr>
-        <tr><td class="p-3">哈密瓜 <button class="sp" onclick="speak('哈密瓜')">🔊</button></td><td class="p-3">Hāmì guā</td><td class="p-3">Hami melon — sweet, from Xinjiang, sold everywhere</td></tr>
-        <tr><td class="p-3">牦牛酸奶 <button class="sp" onclick="speak('牦牛酸奶')">🔊</button></td><td class="p-3">Máoniú suānnǎi</td><td class="p-3">Yak yogurt — thick, tangy, found in Qinghai</td></tr>
-        <tr><td class="p-3">青稞酒 <button class="sp" onclick="speak('青稞酒')">🔊</button></td><td class="p-3">Qīngkē jiǔ</td><td class="p-3">Highland barley wine — local Tibetan alcohol, strong</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p class="mt-8 text-sm text-gray-500">
-    <a href={`${base}`} class="text-blue-700 dark:text-blue-400 hover:underline">&larr; Full Trip Overview</a>
-  </p>
+  <hr class="my-8 dashed-divider" />
+  <p class="text-sm text-muted">Pronunciation: <strong>ǐ</strong> = short "ee", <strong>ü</strong> = like French "u", <strong>zh</strong> = "j" in "judge", <strong>x</strong> = soft "sh", <strong>q</strong> = light "ch", <strong>c</strong> = "ts"</p>
 
   <script is:inline>
-    function speak(text) {
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-speak]');
+      if (!btn) return;
+      const text = btn.getAttribute('data-speak');
+      if (!('speechSynthesis' in window) || !text) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN'; u.rate = 0.85;
       window.speechSynthesis.cancel();
-      var u = new SpeechSynthesisUtterance(text);
-      u.lang = 'zh-CN';
-      u.rate = 0.85;
       window.speechSynthesis.speak(u);
-    }
+    });
   </script>
-  <style>
-    .sp { background:none; border:none; cursor:pointer; font-size:14px; padding:0 0 0 4px; vertical-align:middle; opacity:0.6; }
-    .sp:hover { opacity:1; }
-  </style>
 </Base>
