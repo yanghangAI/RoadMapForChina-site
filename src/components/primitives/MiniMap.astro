@@ -1,0 +1,86 @@
+---
+interface Pin {
+  lat: number;
+  lng: number;
+  color?: string;
+}
+interface Props {
+  pins: Pin[];
+  id: string;
+  center?: [number, number];
+  zoom?: number;
+  height?: number;
+  width?: number | 'full';
+  class?: string;
+}
+const {
+  pins,
+  id,
+  center,
+  zoom = 8,
+  height = 120,
+  width = 'full',
+  class: className = '',
+} = Astro.props;
+
+const widthStyle = width === 'full' ? 'width:100%' : `width:${width}px`;
+---
+<div
+  id={id}
+  class={`relative overflow-hidden border border-border ${className}`}
+  style={`${widthStyle};height:${height}px;`}
+></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script is:inline define:vars={{ id, pins, center, zoom }}>
+  function initMini() {
+    if (typeof L === 'undefined') { setTimeout(initMini, 80); return; }
+    var el = document.getElementById(id);
+    if (!el || el._leaflet_id) return;
+
+    var c = center || [pins[0].lat, pins[0].lng];
+    var map = L.map(id, {
+      zoomControl: false, attributionControl: false,
+      dragging: false, scrollWheelZoom: false, doubleClickZoom: false,
+      touchZoom: false, boxZoom: false, keyboard: false,
+    }).setView(c, zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18 }).addTo(map);
+
+    var bounds = [];
+    pins.forEach(function(p) {
+      var col = p.color || '#c0392b';
+      var icon = L.divIcon({
+        html: '<div style="background:' + col + ';width:12px;height:12px;border-radius:50%;border:2px solid #fffbef;box-shadow:0 1px 2px rgba(0,0,0,.3);"></div>',
+        className: '', iconSize: [12,12], iconAnchor: [6,6]
+      });
+      L.marker([p.lat, p.lng], { icon: icon }).addTo(map);
+      bounds.push([p.lat, p.lng]);
+    });
+
+    if (!center && bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [12, 12] });
+    }
+
+    setTimeout(function(){ map.invalidateSize(); }, 80);
+  }
+
+  if (typeof L === 'undefined') {
+    if (!document.querySelector('script[data-leaflet]')) {
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      s.setAttribute('data-leaflet','1');
+      s.onload = function(){ window.dispatchEvent(new Event('leaflet-loaded')); };
+      document.head.appendChild(s);
+    }
+    window.addEventListener('leaflet-loaded', initMini, { once: true });
+  } else {
+    initMini();
+  }
+</script>
+
+<style>
+  :global(.leaflet-tile-pane) {
+    filter: sepia(.35) saturate(.85) hue-rotate(-12deg) brightness(.97);
+  }
+</style>
