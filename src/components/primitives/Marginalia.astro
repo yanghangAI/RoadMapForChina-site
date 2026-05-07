@@ -1,0 +1,22 @@
+---
+interface Props {
+  position?: 'br' | 'bl' | 'tr' | 'tl';
+  rotate?: number;
+  color?: 'rust' | 'ink' | 'red';
+  class?: string;
+}
+const { position = 'br', rotate = -2, color = 'rust', class: className = '' } = Astro.props;
+const tone = color === 'red' ? 'var(--color-vermillion)' : color === 'ink' ? 'var(--color-ink)' : 'var(--color-vermillion-soft)';
+const corners = {
+  br: 'right-2 bottom-1',
+  bl: 'left-2 bottom-1',
+  tr: 'right-2 top-1',
+  tl: 'left-2 top-1',
+}[position];
+---
+<span
+  class={`absolute font-hand text-[15px] leading-tight max-w-[42%] ${corners} ${className}`}
+  style={`color:${tone};transform:rotate(${rotate}deg);text-align:right;`}
+>
+  <slot />
+</span>
