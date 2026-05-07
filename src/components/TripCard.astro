@@ -1,36 +1,60 @@
 ---
+import PaperCard from './primitives/PaperCard.astro';
+import DayBadge from './primitives/DayBadge.astro';
+import MiniMap from './primitives/MiniMap.astro';
+import { locations } from '../data/locations';
+
 interface Props {
+  num: number;
   title: string;
+  titleIt?: string;
   href: string;
   dates: string;
   transport: string;
   highlights: string;
   accommodation: string;
   phase: 'beijing' | 'xian' | 'northwest' | 'chengdu' | 'yunnan';
+  /** Slugs to drop pins for; empty array → no map (used when no destination data exists yet) */
+  pinSlugs?: string[];
+  /** Fallback coords if pinSlugs are empty */
+  fallbackCoords?: [number, number];
 }
 
-const { title, href, dates, transport, highlights, accommodation, phase } = Astro.props;
+const { num, title, titleIt, href, dates, transport, highlights, accommodation, phase, pinSlugs = [], fallbackCoords } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const fullHref = href.startsWith('http') ? href : `${base}${href}`;
 
-const phaseStyles = {
-  beijing:   { border: 'border-l-phase-beijing',   bg: 'bg-badge-beijing-bg',   text: 'text-badge-beijing-text' },
-  xian:      { border: 'border-l-phase-xian',      bg: 'bg-badge-xian-bg',      text: 'text-badge-xian-text' },
-  northwest: { border: 'border-l-phase-northwest',  bg: 'bg-badge-northwest-bg',  text: 'text-badge-northwest-text' },
-  chengdu:   { border: 'border-l-phase-chengdu',   bg: 'bg-badge-chengdu-bg',   text: 'text-badge-chengdu-text' },
-  yunnan:    { border: 'border-l-phase-yunnan',     bg: 'bg-badge-yunnan-bg',     text: 'text-badge-yunnan-text' },
-};
+const pins = pinSlugs
+  .map(s => locations[s])
+  .filter(Boolean)
+  .map(l => ({ lat: l.lat, lng: l.lng }));
 
-const s = phaseStyles[phase];
+if (pins.length === 0 && fallbackCoords) {
+  pins.push({ lat: fallbackCoords[0], lng: fallbackCoords[1] });
+}
+
+const phaseColor = `var(--color-phase-${phase})`;
+const miniId = `mini-phase-${num}`;
 ---
 
-<div class={`border border-gray-200 dark:border-gray-700 rounded-xl p-4 border-l-4 ${s.border} hover:shadow-md transition-shadow`}>
-  <div class="flex justify-between items-center mb-1.5">
-    <a href={`${base}${href}`} class="font-bold text-[15px] no-underline text-inherit hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
-      {title}
-    </a>
-    <span class={`text-xs ${s.bg} ${s.text} px-2 py-0.5 rounded-full`}>{dates}</span>
-  </div>
-  <div class="text-[13px] text-gray-500 dark:text-gray-400 mb-1.5">{transport}</div>
-  <div class="text-[13px] mb-1">{highlights}</div>
-  <div class="text-xs text-gray-400 dark:text-gray-500">{accommodation}</div>
-</div>
+<a href={fullHref} class="block no-underline text-inherit group">
+  <PaperCard padded={false} class="overflow-hidden">
+    {pins.length > 0 ? (
+      <MiniMap id={miniId} pins={pins.map(p => ({ ...p, color: phaseColor }))} height={110} />
+    ) : (
+      <div class="h-[110px] bg-paper flex items-center justify-center font-hand text-muted text-sm">phase map · coming soon</div>
+    )}
+
+    <div class="relative p-4">
+      <DayBadge number={num} bleed size={32} />
+      <div class="ml-7">
+        <div class="font-mono uppercase tracking-[.14em] text-[10px] text-muted">{dates}</div>
+        <h3 class="font-display text-[18px] font-semibold leading-tight mt-0.5 group-hover:text-vermillion-soft transition-colors">{title}</h3>
+        {titleIt && <div class="font-display italic text-[13px] text-ink-soft mt-0.5">{titleIt}</div>}
+      </div>
+      <div class="mt-3 text-[13px] text-ink-soft">{highlights}</div>
+      <div class="mt-2 text-[12px] text-muted">{transport}</div>
+      <div class="mt-1 text-[12px] text-muted">{accommodation}</div>
+    </div>
+  </PaperCard>
+</a>
